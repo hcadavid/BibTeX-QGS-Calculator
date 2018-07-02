@@ -105,8 +105,7 @@ public class QGSCalculator {
 
         int relevantStudiesRetrivedCount = getRelevantStudiesRetrievedCount(qgsEntryMap, asEntryMap,relevantStudiesNotRetrieved);
                 
-        for (Key rsnrkey:relevantStudiesNotRetrieved){
-            System.out.println(rsnrkey);
+        for (Key rsnrkey:relevantStudiesNotRetrieved){            
             BibTeXEntry entry=qgsEntryMap.get(rsnrkey);
             Value keys=entry.getField(new Key("keywords"));
             if (keys!=null && keys instanceof StringValue){
