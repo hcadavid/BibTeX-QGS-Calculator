@@ -9,12 +9,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.StringTokenizer;
+import org.jbibtex.BibTeXEntry;
 import org.jbibtex.Key;
 import org.jbibtex.ParseException;
+import org.jbibtex.StringValue;
 import org.jbibtex.TokenMgrException;
+import org.jbibtex.Value;
 
 /**
  *
@@ -32,6 +38,8 @@ public class QGSCalculator {
         }
         
         LinkedList<Key> relevantStudiesNotRetrieved=null;
+        Set<String> keywordsFromMissedQGSWorks=null;
+        
         Reader sgsReader;
         try {
             sgsReader = new FileReader(new File(args[0]));
@@ -41,17 +49,30 @@ public class QGSCalculator {
             
             System.out.println("sep=,");
             System.out.println("Quasi-Gold-Standard file name:"+args[0]);
-            System.out.println("datasource,relevantStudies, retrivedStudies, relevantStudiesRetrieved, sensitivity, precision, QGS missing studies");
+            System.out.println("datasource,relevantStudies, retrivedStudies, relevantStudiesRetrieved, sensitivity, precision, QGS missed studies, missed QGS sutudies keywords ");
             for (int i=1;i<args.length;i++){
                 relevantStudiesNotRetrieved=new LinkedList<>();
-                float[] data=getData(qgsEntryMap, args[i],relevantStudiesNotRetrieved);                                  
+                keywordsFromMissedQGSWorks=new LinkedHashSet<>();
+                
+                float[] data=getData(qgsEntryMap, args[i],relevantStudiesNotRetrieved,keywordsFromMissedQGSWorks); 
+                
+                //generate semicolon-separated list of the missing QGS studies
                 StringBuilder rsnrbuff=new StringBuilder();
                 for (Key rsnr:relevantStudiesNotRetrieved){
                     rsnrbuff.append(rsnr.toString());
                     rsnrbuff.append(";");
                 }
                 
-                System.out.println(args[i]+","+data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+rsnrbuff.toString());                
+                //generate semicolon-separated list of keywords from the missed QGS studies
+                StringBuilder kwmqgs=new StringBuilder();
+                for (String keyword:keywordsFromMissedQGSWorks){
+                    kwmqgs.append(keyword);
+                    kwmqgs.append(";");                    
+                }
+
+
+                
+                System.out.println(args[i]+","+data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+rsnrbuff.toString()+","+kwmqgs.toString());                
 
             }
         } catch (FileNotFoundException ex) {
@@ -70,7 +91,7 @@ public class QGSCalculator {
      * @throws FileNotFoundException
      * @throws ParseException 
      */
-    private static float[] getData(Map<org.jbibtex.Key, org.jbibtex.BibTeXEntry> qgsEntryMap,String asBibtexFilePath, LinkedList<Key> relevantStudiesNotRetrieved) throws FileNotFoundException, ParseException{
+    private static float[] getData(Map<org.jbibtex.Key, org.jbibtex.BibTeXEntry> qgsEntryMap,String asBibtexFilePath, LinkedList<Key> relevantStudiesNotRetrieved,Set<String> missedQGSkeywords) throws FileNotFoundException, ParseException{
 
         org.jbibtex.BibTeXParser bibtexParser = new org.jbibtex.BibTeXParser();
         Reader asReader = new FileReader(new File(asBibtexFilePath));
@@ -83,6 +104,19 @@ public class QGSCalculator {
         int retrievedStudiesCount = asEntryMap.size();
 
         int relevantStudiesRetrivedCount = getRelevantStudiesRetrievedCount(qgsEntryMap, asEntryMap,relevantStudiesNotRetrieved);
+                
+        for (Key rsnrkey:relevantStudiesNotRetrieved){
+            System.out.println(rsnrkey);
+            BibTeXEntry entry=qgsEntryMap.get(rsnrkey);
+            Value keys=entry.getField(new Key("keywords"));
+            if (keys!=null && keys instanceof StringValue){
+                String keywords=((StringValue)keys).toUserString();
+                StringTokenizer st=new StringTokenizer(keywords, ",");
+                while (st.hasMoreElements()){
+                    missedQGSkeywords.add(st.nextToken().toLowerCase());
+                }                
+            }            
+        }
 
         float sensitivity = (float) relevantStudiesRetrivedCount / (float) relevantStudiesCount;
 
