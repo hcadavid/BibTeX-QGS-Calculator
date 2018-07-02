@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -38,7 +39,7 @@ public class QGSCalculator {
         }
         
         LinkedList<Key> relevantStudiesNotRetrieved=null;
-        Set<String> keywordsFromMissedQGSWorks=null;
+        Map<String,Integer> keywordsFromMissedQGSWorks=null;
         
         Reader sgsReader;
         try {
@@ -52,7 +53,7 @@ public class QGSCalculator {
             System.out.println("datasource,relevantStudies, retrivedStudies, relevantStudiesRetrieved, sensitivity, precision, QGS missed studies, missed QGS sutudies keywords ");
             for (int i=1;i<args.length;i++){
                 relevantStudiesNotRetrieved=new LinkedList<>();
-                keywordsFromMissedQGSWorks=new LinkedHashSet<>();
+                keywordsFromMissedQGSWorks=new HashMap<>();
                 
                 float[] data=getData(qgsEntryMap, args[i],relevantStudiesNotRetrieved,keywordsFromMissedQGSWorks); 
                 
@@ -65,12 +66,13 @@ public class QGSCalculator {
                 
                 //generate semicolon-separated list of keywords from the missed QGS studies
                 StringBuilder kwmqgs=new StringBuilder();
-                for (String keyword:keywordsFromMissedQGSWorks){
+                for (String keyword:keywordsFromMissedQGSWorks.keySet()){
                     kwmqgs.append(keyword);
-                    kwmqgs.append(";");                    
+                    kwmqgs.append("(");
+                    kwmqgs.append(keywordsFromMissedQGSWorks.get(keyword));
+                    kwmqgs.append(")");
+                    kwmqgs.append(";");
                 }
-
-
                 
                 System.out.println(args[i]+","+data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+rsnrbuff.toString()+","+kwmqgs.toString());                
 
@@ -91,7 +93,7 @@ public class QGSCalculator {
      * @throws FileNotFoundException
      * @throws ParseException 
      */
-    private static float[] getData(Map<org.jbibtex.Key, org.jbibtex.BibTeXEntry> qgsEntryMap,String asBibtexFilePath, LinkedList<Key> relevantStudiesNotRetrieved,Set<String> missedQGSkeywords) throws FileNotFoundException, ParseException{
+    private static float[] getData(Map<org.jbibtex.Key, org.jbibtex.BibTeXEntry> qgsEntryMap,String asBibtexFilePath, LinkedList<Key> relevantStudiesNotRetrieved,Map<String,Integer> missedQGSkeywords) throws FileNotFoundException, ParseException{
 
         org.jbibtex.BibTeXParser bibtexParser = new org.jbibtex.BibTeXParser();
         Reader asReader = new FileReader(new File(asBibtexFilePath));
@@ -112,7 +114,14 @@ public class QGSCalculator {
                 String keywords=((StringValue)keys).toUserString();
                 StringTokenizer st=new StringTokenizer(keywords, ",");
                 while (st.hasMoreElements()){
-                    missedQGSkeywords.add(st.nextToken().toLowerCase());
+                    String kw=st.nextToken().toLowerCase();
+                    if (missedQGSkeywords.containsKey(kw)){
+                        missedQGSkeywords.put(kw, missedQGSkeywords.get(kw)+1);
+                    }
+                    else{
+                        missedQGSkeywords.put(kw, 1);
+                    }
+                    
                 }                
             }            
         }
