@@ -10,15 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.StringTokenizer;
-import nl.rug.search.tools.qgs.calculator.QGSCalculator;
 import org.jbibtex.BibTeXEntry;
 import org.jbibtex.Key;
 import org.jbibtex.ParseException;
@@ -34,8 +26,7 @@ public class BibtexSetTools {
 
     public static void main(String args[]) {
 
-        //System.err.println("Quasi-Gold-Standard Calculator for Systematic Reviews Search String Assessment.");
-        
+                
         if (args.length < 3 || (args[1].equals("SD") && args[1].equals("U")) ) {
             
             System.err.println("Usage: java " + BibtexSetTools.class + " bibtex-file1 [OPERATION] bibtex-file2 [fields]");            
