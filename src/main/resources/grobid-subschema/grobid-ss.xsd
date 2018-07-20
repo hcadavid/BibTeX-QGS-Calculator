@@ -1,0 +1,73 @@
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listBibl">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="biblStruct">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="analytic">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="title">
+                      <xsd:complexType>
+                        <xsd:attribute name="level" type="xsd:string" />
+                        <xsd:attribute name="type" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="author">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="persName">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="forename">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="type" type="xsd:string" />
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="surname" type="xsd:string" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="monogr">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="title">
+                      <xsd:complexType>
+                        <xsd:attribute name="level" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="imprint">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" name="biblScope">
+                            <xsd:complexType>
+                              <xsd:attribute name="unit" type="xsd:string" />
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="date">
+                            <xsd:complexType>
+                              <xsd:attribute name="type" type="xsd:string" />
+                              <xsd:attribute name="when" type="xsd:dateTime" />
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

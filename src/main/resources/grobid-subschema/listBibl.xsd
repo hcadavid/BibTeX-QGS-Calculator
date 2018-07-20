@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Fri Jul 20 2018 16:45:07 GMT+0200 (Central European Summer Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="listBibl">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="biblStruct" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="analytic">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="title" type="xs:string">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="level" type="xs:string"></xs:attribute>
+                                                                           <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="author">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="persName">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="forename" maxOccurs="unbounded" type="xs:string">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                                   <xs:element name="surname" type="xs:string"></xs:element>
+                                                                                             </xs:sequence>
+                                                                                             <xs:attribute name="xmlns" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="monogr">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="title" type="xs:string">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="level" type="xs:string"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                               <xs:element name="imprint">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="biblScope" maxOccurs="unbounded" type="xs:int">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="unit" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                                 <xs:element name="date">
+                                                                                       <xs:complexType>
+                                                                                             <xs:attribute name="type" type="xs:string"></xs:attribute>
+                                                                                             <xs:attribute name="when" type="xs:string"></xs:attribute>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                       <xs:attribute name="xml:id" type="xs:string"></xs:attribute>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>
