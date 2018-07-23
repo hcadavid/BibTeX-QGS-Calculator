@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Rethinking Interoperability in Contemporary Software Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rebeca</forename><surname>Campos Motta</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">COPPE/UFRJ</orgName>
+								<orgName type="laboratory">LAMIH CNRS UMR</orgName>
+								<orgName type="institution">UVHC</orgName>
+								<address>
+									<postCode>8201</postCode>
+									<settlement>Rio de Janeiro, Valenciennes</settlement>
+									<country>Brasil, France, Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Káthia</forename><surname>Marçal De Oliveira</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">COPPE/UFRJ</orgName>
+								<orgName type="laboratory">LAMIH CNRS UMR</orgName>
+								<orgName type="institution">UVHC</orgName>
+								<address>
+									<postCode>8201</postCode>
+									<settlement>Rio de Janeiro, Valenciennes</settlement>
+									<country>Brasil, France, Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Guilherme</forename><surname>Horta</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">COPPE/UFRJ</orgName>
+								<orgName type="laboratory">LAMIH CNRS UMR</orgName>
+								<orgName type="institution">UVHC</orgName>
+								<address>
+									<postCode>8201</postCode>
+									<settlement>Rio de Janeiro, Valenciennes</settlement>
+									<country>Brasil, France, Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Travassos</forename><surname>Coppe</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">COPPE/UFRJ</orgName>
+								<orgName type="laboratory">LAMIH CNRS UMR</orgName>
+								<orgName type="institution">UVHC</orgName>
+								<address>
+									<postCode>8201</postCode>
+									<settlement>Rio de Janeiro, Valenciennes</settlement>
+									<country>Brasil, France, Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">/</forename><surname>Ufrj</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">COPPE/UFRJ</orgName>
+								<orgName type="laboratory">LAMIH CNRS UMR</orgName>
+								<orgName type="institution">UVHC</orgName>
+								<address>
+									<postCode>8201</postCode>
+									<settlement>Rio de Janeiro, Valenciennes</settlement>
+									<country>Brasil, France, Brasil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Rethinking Interoperability in Contemporary Software Systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Interoperability is a critical software system attribute since it enables different systems interaction to support the society&apos;s daily activities. The emerging technologies composing systems-of-systems, such as smart objects, internet of things, context-aware and pervasive systems have increased its importance and scope. To better understand the evolution of interoperability and its influence in the building of contemporary software systems we undertook a quasi-Systematic Literature Review to collect interoperability characteristics regarding context-awareness software systems. Five dimensions (ability to exchange, cooperation, integration, system relation, and property) and seven characteristics (adaptive behavior, availability, compatibility, conformance with organization requirements, conformance with system&apos;s requirements, dynamic connection, Standardization) of interoperability emerged from the findings. They should be taken into account when developing a contemporary software system. Besides, they suggest that interoperability can be thought as the ability of things (an object, a place, an application or anything that can engage an interaction in a system) to interact for a specific purpose, once their differences (development platforms, data formats, culture, legal issues) have been overcome. Interoperability; Systems-of-Systems; Context-aware software systems; Systematic Literature Review; Evidence-Based Software Engineering</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>In the last years, significant technological evolution made possible advances in several domains. For instance, the wireless network enabled the development of new systems, smart devices and the dawn of Internet of Things, opening the doors to the era of living services and global digitalization. The popularization of technology is making such things increasingly present in our daily life. Reading, running or sending a message are now technology supported activities, very similar to the future imagined by Weiser <ref type="bibr" target="#b1">[2]</ref> in his seminal work on ubiquitous and pervasive computing.</p><p>The number of users relying on technical solutions due to the attractiveness and accessibility of technology is growing, increasing the demand for new software systems and promoting additional concerns like privacy, security, and transparency <ref type="bibr" target="#b2">[3]</ref>. Therefore, it is necessary to increase the communication, awareness, and functionalities to address the growing demand and to allow the technical solutions to be available everywhere. At the same time, there is a need to develop computing technologies seamlessly integrated with the daily life objects. Different devices (sensors, computers, mobile technologies), services and systems-of-systems (SoS) should interoperate to achieve the envisioned objectives. The diversity of pieces of technologies is one of the distinguishing characteristics of SoS <ref type="bibr" target="#b3">[4]</ref>, which focus on diverse capabilities and functionalities. When dealing with a variety of systems and devices, connectivity challenges arise. SoS face challenges, especially when connecting new systems to the already existing ones. Aside from this diversity, some particular features, such as context sensitivity, require alternative approaches to allow the SoS development <ref type="bibr" target="#b4">[5]</ref>- <ref type="bibr" target="#b6">[7]</ref>.</p><p>In this scenario, interoperability is an essential software system property <ref type="bibr" target="#b7">[8]</ref> needing more attention of researchers and practitioners. According to IEEE <ref type="bibr" target="#b7">[8]</ref> interoperability is "the ability of two or more systems or components to exchange information and to use the information that has been exchanged." However, we find ourselves in the era of global digitalization in which the emerging technologies are all around the society enabling to extend actions from the virtual to the physical world. With different current devices engaging new interactions and composing the SoS, we argue that the classical perception of interoperability needs to evolve to better support the design of contemporary software systems. Rethinking interoperability is necessary to reflect the current scenario where the integration of parts is not enough, and it should cover beyond the exchange of information to support the new functional demands.</p><p>This research aims to work in the characterization of interoperability considering the features of this new society scenario in which complex software systems become invisible and pervasive to support all daily activities. Therefore, we started capturing knowledge regarding interoperability, looking for definitions and attributes of contemporary software systems (SoS, ubiquitous, pervasive and contextaware software systems -CASS) by undertaking a secondary study supported by backward/forward snowballing procedures <ref type="bibr" target="#b9">[10]</ref>. Next, we performed qualitative data analysis using Grounded Theory <ref type="bibr" target="#b10">[11]</ref> to reveal evidence on five dimensions and seven characteristics of interoperability. CASS and its variations have been used as surrogate to observe contemporary systems This work is organized as follows: Section II presents the research methodology, which combines qSLR and Grounded Theory. Section III discusses interoperability according to the findings. Section IV concludes our discussion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. RESEARCH METHODOLOGY</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Collecting Data: quasi-Systematic Literature Review</head><p>Systematic Literature Reviews (SLR) are a type of secondary study <ref type="bibr" target="#b9">[10]</ref> aiming to identify all relevant material that meets the research purpose. At least, four perspectives (Population, Intervention, Comparison and Outcome) are expected to guide the research protocol. Since our study does not use the comparison dimension but keeps all formalism expected in SLR, we classify it as a quasi-Systematic Literature Review (qSLR) <ref type="bibr" target="#b8">[9]</ref>. This paper presents the qSLR protocol main features. For further information on keywords, selection criteria, trials and initial analysis, the complete research protocol is depicted in <ref type="bibr" target="#b11">[12]</ref> and <ref type="bibr" target="#b12">[13]</ref>.</p><p>This research protocol followed <ref type="bibr" target="#b9">[10]</ref>  <ref type="bibr" target="#b13">[14]</ref>. Its research goal (GQM based <ref type="bibr" target="#b14">[15]</ref>) is to analyze interoperability with the purpose of characterizing regarding its characteristics and measurements from the point of view of software engineering researchers in the context of CASS. The following research questions compose the protocol: (RQ1) How interoperability is discussed in CASS? (RQ2) Which are the interoperability characteristics used in CASS? (RQ3) How to evaluate interoperability in CASS?</p><p>This paper targets the discussions on RQ1 and RQ2. RQ3 is not addressed at this moment. The selected search engine was Scopus, which covers most of the leading digital libraries. It has been combined with snowballing procedures to enlarge coverage and provide a representative set of papers to a characterization work <ref type="bibr" target="#b11">[12]</ref>, <ref type="bibr" target="#b15">[16]</ref>. Four researchers participated together and interactively in each step to reduce selection bias. Therefore, doubts or changes were discussed to reach a consensus. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interoperability definition</head><p>Verbatim, as presented in the article.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interoperability dimension</head><p>The range variation of interoperability as presented in the article.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interoperability perspective</head><p>The domain where interoperability is considered.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interoperability characteristic</head><p>Name or list of interoperability characteristics and how they were derived.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interoperability characteristic evaluated</head><p>Name or list of interoperability attributes evaluated in the presented technique/ article.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Interoperability measures or method</head><p>Type and value of the measurement system used to evaluate the presented interoperability or the attributes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pre-existent approach</head><p>To indicate whether the article presents an adaption or evolution of an existent approach.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conditions</head><p>Limitations or restrictions for applicability. Software systems category Main setting of software category</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental study type and data</head><p>Study strategy and Any information regarding the design, experimental variables and threats to validity when available.</p><p>The execution of searches resulted in 408 articles, with six duplicates and 42 conference proceedings (removed by the selection criteria). Title and abstract reading filtered the remaining 360 papers, selecting 16 candidate papers. The snowballing performed from these candidate papers revealed nine additional primary sources. Then, the 25 candidate papers passed through full reading, data extraction, and quality assessment. In the end, the final set included 17 papers.</p><p>From the included ones, we collected some pre-defined data <ref type="table" target="#tab_0">(Table I)</ref>, which allowed to observe new ways of interaction due to the development and use of new systems and applications. In addition to the exchange of information, contemporary systems can also sense and/or react to their environment, relying on context-awareness. Also, the interaction engaged can change depending on the purpose, such as the case of pieces of software that can be part of a larger SoS. These remarks motivated us for a deep analysis of the findings to better understand the value of interoperability in this new scenario.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Analyzing Data: Grounded Theory Procedures</head><p>The 17 included papers provided a significant amount of qualitative data related to interoperability definition. Aside the initial analysis usually performed in SLR, the principles, and procedures of Grounded Theory (GT) <ref type="bibr" target="#b10">[11]</ref> were used to assist us to develop and analyze the concepts related to interoperability in this study. We choose to use GT due to the lack of a unified approach in the technical literature regarding interoperability in CASS. The analysis emergent from data based on primary studies offers a high potential to fill this gap. However, this analysis does not intend to reach the deepest level of generating a theory <ref type="bibr" target="#b10">[11]</ref>. However, we decided to follow all GT procedures to support our analysis, observing similarities and differences between the several definitions found as a mean to answer our RQ´s. We based our procedure on textual analysis, using codes to assign concepts to a portion of data. In this study, we followed <ref type="bibr" target="#b10">[11]</ref> and performed the coding process in three steps: open, axial, and selective coding. During the open coding, the goal is to identify concepts, comparing similarities and differences. When relevant for the analysis, we identified excerpts of data and assigned codes to them. Whenever coming across another excerpt that seemed to talk about the same concept, we grouped the respective code into a subcategory. Then, in axial coding, codes are associated to subcategories. This step requires some abstraction since the subcategory represents every code related to it. In selective coding, we identified a core category to express the main research idea and to relate subcategories from axial coding. <ref type="figure" target="#fig_0">Fig. 1</ref> shows the data analysis evolution with the increasing level of abstraction during the coding process. The excerpts and initial codes "ability to cooperate" and "Working together despite differences" were established during the open coding and they compose the subcategory "cooperation," organized in axial coding. "Cooperation" is part of the "Interoperability Definition" the core category from the selective coding.</p><p>All the coding was performed by two researchers and then integrally revised by a third one, all participants of the qSLR. The followed procedure was to review each extraction and the respective code in the same order they appeared, contributing to the constant comparison. Every match was then classified and justified by the reviewers as:</p><p>• Agreement -the code is adequate to represent the excerpt and is consistent in all the segments. In this case, we keep the original code. Example: Excerpt: "It refers to make different data models and query languages working together." <ref type="bibr" target="#b16">[17]</ref>. Initial and Final code: Working together.</p><p>• Partial agreement -the code should be modified to address the excerpt completely. Example: Excerpt: "the ability of systems, units, or forces to provide data, information, materiel, and services to and accept the same from other systems, units, or forces and to use the data, information, and material, and services so exchanged to enable them to operate effectively together" <ref type="bibr" target="#b17">[18]</ref>. Initial code: Ability of systems to provide, accept and use resources. Discussion: The generalization of the term resources, for both information and material, not being in the same level of abstraction. Final code: Ability of systems to provide, accept and use resources and information.</p><p>• Disagreement -suggest other code for the excerpt. Example: Excerpt: "Interoperability can be considered as being a problem, which can only arise when some resources are put together to interoperate. Because such resources of a system are themselves systems, interoperability simply concerns relations between systems." <ref type="bibr" target="#b18">[19]</ref>. Initial code: Relation between systems. Discussion: The stronger concept should be "resources put together to interoperate" leading to cooperation. Final code: Ability to cooperate.</p><p>The reviewers discussed to achieve a consensus and full agreement in every code as a way to decrease potential misinterpretation and bias. This strategy was beneficial to keep the critical sense in the analysis, preserve consistency and learn from the knowledge exchange among researchers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. From the Literature Review: Demographic Data</head><p>After discussions and assessments against the selection criteria, we included the 17 papers in the final set for analysis. This set shows us that the topic, interoperability in contextaware systems, is broad and widely discussed in different perspectives as Ubiquitous systems (25%), Systems-ofsystems (12%), Service (19%) and Organizational domains (44%). Various points of view can lead to various interoperability interpretations in the respective domains. The way one looks at interoperability can change the definition. As a result, it can improve the understanding and the needs of interoperability for a given system. The included papers were also classified from the perspective of empirical software engineering study strategies <ref type="bibr" target="#b19">[20]</ref>. Consequently, the following study types drove the papers organization: case study (16%), laboratory experiment (5%), survey (10%), basic research (21%), normative writing (32%, non-research writings about a phenomenon covering aspects like concept development, ideas, and suggestions), and secondary study (16%). This classification was used to strength the information and results in reliability provided by each study.</p><p>The seventeen papers contributed with the following information <ref type="figure" target="#fig_1">(Fig. 2)</ref>, which is the basis for the performed analysis: 70.5% present an interoperability definition and its dimensions. 76.4% present interoperability attributes and characteristics but only 41.1% report some attribute evaluation. 11.7% present an empirical evaluation of their proposal. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. From the Analysis: Interoperability Definition</head><p>Our interest is in the interoperability views and the perspectives it has been discussed (RQ1). Although many papers provided an interoperability definition, we observed that separate definitions were assigned to the concept, having little similarity among them and with a limited vision of the contemporary scenario. Besides, many works present an attribute or characteristic (RQ2). However, we could observe discrepancies as well, either using the same term for different objects (for example, concerns the use of protocols, <ref type="bibr" target="#b20">[21]</ref> talks about RDF and others, and <ref type="bibr" target="#b21">[22]</ref> about WSDL, SOAP, and so on) or different terms for the same concept (for example, "Agreed upon semantics" <ref type="bibr" target="#b22">[23]</ref> and "Semantic compatibility" <ref type="bibr" target="#b23">[24]</ref>). These two findings motivated us to go further with the data analysis. The strength of information was also a concern. Therefore, each category has two measures to fulfill <ref type="bibr" target="#b10">[11]</ref>: the Groundedness (GD -the number of occurrences, i.e. how many excerpts are related to it, there is no maximum value) and the Density (DE -how many papers support it, i.e. how far-reaching a particular code is considering the total of sources. Maximum value is 17) of each category. With these measures, we can observe that some subcategories are more frequent than others, leading to stronger concepts due to having more data grounding them (higher number, stronger concept).</p><p>The seventeen papers provided 96 excerpts, which were coded and organized into five subcategories, all related to the main category interoperability definition. With the original excerpts extracted from the primary studies and based on the performed coding and analysis, a contemporary interoperability definition emerged. The result is illustrated in <ref type="figure" target="#fig_2">Fig. 3</ref>: a larger circle with strong line represents the main category -definition -and subcategories composing them, smaller circles with thin lines. The findings presented here arose from and are grounded in research data. The interoperability definition <ref type="figure" target="#fig_2">(Fig. 3)</ref> emerged from the coding and discussions among the researchers during the analysis. The subcategories and examples of excerpts and codes that supported such definition are as follows:</p><p>(1) Ability to exchange: the exchange allows the interaction between systems. Exchange means a trade; something is given, and every transaction something is received. The concept of exchange is one of the most used to define interoperability. The trade can be data, information, and resources of different types. Here, interoperability means the system's ability to exchange something. Excerpt example: "Interoperability is the ability of two or more systems or components to exchange information and to use that information." <ref type="bibr" target="#b23">[24]</ref> Code example: Exchanging and using resources or information. GD: 42. DE: 11.</p><p>(2) System property: interoperability perceived as a system's property. It can be seen as functionality or requirement. Excerpt example: "Interoperability was first defined as a property of IT systems." <ref type="bibr" target="#b17">[18]</ref> Code example: Systems property. GD: 10. DE: 7.</p><p>(3) Integration: interoperability is often confounded with the integration of systems, a general misconception of these terms. In our perspective interoperability is not only integration, although parts of the system need to be somehow related. Excerpt example: "…interoperability often serves as a surrogate for integration when independently developed, stand-alone systems are combined to provide a new capability." <ref type="bibr" target="#b24">[25]</ref> Code example: Surrogate for integration. GD: 7. DE: 6.</p><p>(4) Cooperation: indicates cooperation among systems, meaning to act or work together for a purpose. It covers: collaboration, operate together, work together, harmonized work, function together, function jointly, operate in synergy. Excerpt example: "Ability of two or more software components to cooperate despite differences in language, interface, and execution platform" <ref type="bibr" target="#b21">[22]</ref>. Code example: Working together despite differences. GD: 28. DE: 8.</p><p>(5) Systems relation: relation represents the way in which two or more systems are connected. If the system does not interact with others, there is no need for interoperability. This relation can evolve and change depending on the purpose. Excerpt example: "An interoperability problem appears when two or more incompatible systems are put in relation. Interoperability per se is the paradigm where an interoperability problem occurs." <ref type="bibr" target="#b18">[19]</ref> Code example: Relation between systems. GD: 9. DE: 3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. From the Analysis: Interoperability Characteristics</head><p>More than saying that a system can interact with another one, we are concerned with the state that any software system or component for which interoperability is a need should have characteristics and mechanisms in common, because, without them, interoperability cannot be achieved. A fragmented environment of technological solutions can lead to a future characterized by "islands of functionality," where some devices are explicitly developed to interoperate only with their set or family from the same vendor, but not with others <ref type="bibr" target="#b25">[26]</ref>, <ref type="bibr" target="#b26">[27]</ref>.</p><p>Aside from this issue, we observed in our study that interoperability is usually addressed in the initial development phase and is based on previous agreements and shared knowledge. In many cases, it is not clear if or how the systems are planned, when considering interoperability. The lack of planning or alternatives to confirm the adequacy of the interaction between the systems can have an adverse impact on usage and economic aspects.</p><p>To act against the possibility of a divided future and to contribute to the decision-making towards interoperable systems, we also investigated which interoperability characteristics are presented in the technical literature (RQ2). For that, all results presented here are from the extracted material following the same analysis procedures. From the data, 43 excerpts were coded organized into seven systems characteristics related to interoperability. In other words, if a software system has some features it will be easier to interoperate with other software systems. The seven characteristics are:</p><p>(1) Adaptive behavior: the ability to adapt dynamically to the environment the system is being used within its limitations. The adaptation is chosen from a set of possible alternatives known by the system. GD: 4. DE: 3.</p><p>(2) Availability: it is directly related to connectivity since all the interacting systems should be available during the interaction time. Availability refers to the system being available, able to be used. In a dynamic environment, availability may vary over time. GD: 1. DE: 1. (4) Conformance with organization requirements: each organization has features that should be aligned with the other ones to interoperate. Concerned with to the decisionmaking and non-technological aspects. GD: 5. DE: 3.</p><p>(5) Conformance with system's requirements: an explicit prescription of the general requirements that should be present in the systems intending to interoperate. If systems' constraints are not satisfied, the systems may not be capable of interoperating. GD: 9. DE: 6.</p><p>(6) Dynamic connection: to enable the interaction between entities it is necessary to identify them. Decisions related to connecting with the identified partners according to their permissions. Authenticate and authorize interactions in automatic connection based on previous interactions (history) or re-establish lost connection. GD: 5. DE: 3.</p><p>(7) Standardization: bringing conformity between the systems that have to interoperate. Some decisions cannot necessarily be a current standard but should have an agreement by all parties wishing to interoperate, to ensure compatibility and integration with different systems. Despite the efforts in the field to spontaneous interoperability, where no a priori knowledge is shared, so far standardized solutions are necessary to achieve interoperability. GD: 6. DE: 5.</p><p>Despite the data simplicity as presented here, which seems to be elementary to some people, the problems with interoperability are real and out there, with also the risks associated with the development or acquisition of new technologies. The intent of these characteristics is to reflect what is present in the technical literature. More than one extensive list of features or definitive list of solutions, we would like to understand the research being conducted systematically, foster some light in the presented issues, and to be used as a guidance to overcome the differences (in practice or research), as the proposed definition states.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Regarding the Interoperability definition</head><p>During this study, we came across some widely known interoperability definitions and tried to analyze those considering aspects of contemporary systems <ref type="bibr" target="#b27">[28]</ref>. The idea of this study is not to propose "yet another definition" without looking to knowledge built so far. That is why we undertook a qSLR added by a qualitative data analysis procedure.</p><p>As technology evolves, the software systems are becoming more elaborate. If we consider the context variance, for instance, it is required systems modifications at runtime to act according to the changes. For this reason, an adaptive behavior is desirable since it refers to the system ability to adapt itself dynamically to the environment in use; that calls for monitoring the systems environment and adjusting it to a different condition. Alongside, the concept of components has reached a larger scale of use; that goes from big building blocks for system-of-systems to smaller pieces of a smart environment. This characteristic requires different composition, which is based on what is available to create what is requested by the user. The heterogeneity of devices is also a concern since the application can migrate among devices and adjust itself to each one of them. With this aspect in mind, we discussed the findings of the review.</p><p>A recurrent perception during the data analysis is that interoperability is usually interchanged with the concepts of connectivity, integration or exchange. However, if a researcher or developer considers interoperability as integration, the effort and results of the work will vary from another one in which interoperability is set as communication. Moreover, the definitions can provide the foundations for any further development. Therefore, understanding this concept using general software system perspective is the first step towards its comprehension and observation in other contemporary scenarios, such as CASS and its variations.</p><p>From the excerpts analyzed and coded, it has emerged the interoperability definition in <ref type="figure" target="#fig_2">Fig. 3</ref>. This definition is generic enough to cover the definitions we found while also reporting the complexity of the interoperability concept. We decided to use the term things because we are dealing with SoS and their components as well. However, we took advantage of the topic, also considering smart things. In this way, the definition is more comprehensive. The interaction stands for any relation where a system, component, service or thing can engage with another. That way it covers exchange and trade of any kind. Together for a specific purpose, the definition embraces the idea of cooperation and collaboration, frequently related to interoperability while uniting with one of the concepts uncovered during the data analysis. Each of the interacting things are different, that is why interoperability is needed. To state these differences in the definition is a step towards a deeper comprehension of interoperability. Once the differences are known, it is easier to overcome them to achieve interoperability correctly. Once their differences have been overcome, represents the solutions and decisions to be made to achieve interoperability. Therefore, the definition is not only the representation of its subcategories but also includes other concepts contributing to the understanding and definition of interoperability.</p><p>An interoperability definition is given by the American Department of Defense <ref type="bibr" target="#b28">[29]</ref>: "The ability of systems, units, or forces to provide services to and accept services from other systems, units, or forces and to use the services so exchanged to enable them to operate effectively together." Matching the emerged definition with this one, we see that system, units and forces are the things that should interact. The purpose is to operate effectively together, and the interaction is to provide, accept and use services.</p><p>Another definition is presented by IEEE <ref type="bibr" target="#b7">[8]</ref>: "The ability of two or more systems or components to exchange information and to use the information that has been exchanged." Things can embrace systems and components as presented in this definition, where the interaction is to exchange and use information. These are examples of the subcategory ability to exchange.</p><p>In some works, interoperability is not directly defined <ref type="bibr" target="#b20">[21]</ref>, <ref type="bibr" target="#b29">[30]</ref>, instead it is classified as a system property, or quality requirement, therefore, were also analyzed and included in a particular subcategory (system property).</p><p>"…interoperability often serves as a surrogate for integration when independently developed, stand-alone systems are combined to provide a new capability" <ref type="bibr" target="#b24">[25]</ref>. In this definition independently developed, stand-alone systems are very prone to have differences that do not prevent the interaction that aims to provide a new system capability and interoperability. In our perspective, interoperability is not integration, although the parts of the system need to be somehow related. Integration means to compose existing systems contributing to a larger one. To differ integration and interoperability concepts is important to develop interoperable systems, which can be more complex than simple plug and play. From this point, interoperability is not only about exchanging information, but it can also cover the ability to share functions, services, and different interactions.</p><p>For the cooperation subcategory, we mean to act or work together for a particular purpose. "Ability of two or more software components to cooperate despite differences in language, interface, and execution platform" <ref type="bibr" target="#b21">[22]</ref>. In our definition, cooperation is covered by the interaction between things, which has a purpose built in its meaning, not being hampered by differences.</p><p>Systems relation subcategory represents the way in which two or more systems can interact. If a system does not interact with others interoperability is not required. This relation can evolve and change, be more complex, depending on the purpose. A definition, for example, is provided in <ref type="bibr" target="#b18">[19]</ref>: "because such resources of a system are themselves systems, interoperability simply concerns relations between systems." In the example, it considers the components of the system as systems as well, a reality observed in SoS for example. Systems relations can be presented in different ways like a simple communication link or a constraint imposed on a system, each one with its differences.</p><p>Interoperability is concerned with identifying, composing and enabling these entities, often designed and implemented separately, to work together for a purpose. Moreover, the differences precisely arise during the interaction. Some strategies are required, such as specific mechanisms, as the characteristics presented, to overcome these differences so the interaction can happen, and interoperability achieved. The idea to consider the current differences in the proposed definition is because we understand the complexity of this task. The definitions found did not go beyond saying that interoperability enables different systems to interact. However, how can this be done? The differences should be overcome or handled in such a way as not to prevent interaction. That is why it is so important to consider the characteristics together with interoperability; the concept is complete only with the two aspects together.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Related Work</head><p>The work of Ford et al. <ref type="bibr" target="#b28">[29]</ref> identified 34 different definitions for interoperability. The definitions presented are widespread through other technical papers and based on their references they extract some interoperability characteristics as a foundation for a proposed methodology for measuring interoperability, called the "iScore." A review focusing on interoperability evaluation models is presented in <ref type="bibr" target="#b19">[20]</ref>. They presented ten different models and compared them regarding twelve distinct issues at several levels, technical, syntactic and semantic interoperability. It presents different interoperability definitions from the literature revised. However, they do not discuss the idea of a unified definition neither characteristics of contemporary systems.</p><p>Despite the relevance of each of these works both highlight the need for more research in the interoperability and, like us, observe the lack of consensus in the technical literature. That is the main difference among the works. We understand that it is necessary for the interoperability concept to evolve alongside with the technologies from the different interactions engaged.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Adequacy and Groundedness of the Analysis</head><p>The coding process is challenging and was important to have the support of other researchers during the whole analysis. Some difficulties are related to the abstraction and how to raise the concept level without losing what is relevant from this research goal. Conceptualizing, observing the similarities and differences among the excerpts, keeping the consistency and working in data interpretation are significant activities to any qualitative analysis.</p><p>Adequacy of the research process: the analysis is based on the data extracted. The major categories are presented in the axial coding subsection and emerged considering its GD corresponding to the data and suitability for the substantive area of interoperability. The relationships are given considering density and discussed in the results subsection. These conceptual relations lead to the core category, Interoperability, the central theme of this research.</p><p>The grounding of the findings: each concept can be linked to the codes, and then to the excerpts, where it is grounded. When a concept relates to another, the relationship is presented by examples from the data analyzed. These examples also illustrate the variations of which the concepts were examined and developed.</p><p>Despite the adequacy of the research and the grounding of the findings, different researchers may have a different understanding of the data, leading to another interpretation. These are some of the limitations of this work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Threats to Validity</head><p>In the qSLR: Since only Scopus was used as a search engine and the search string <ref type="bibr" target="#b11">[12]</ref> is somehow limited, may be missing some relevant studies, we performed snowballing (backward and forward) to reduce this possibility. Regarding the data extraction, the form evolved during the qSLR execution being revised by the authors and external researchers. Extraction bias was mitigated by always having a second researcher to revisit any extracted information.</p><p>In the GT Analysis: A common threat when analyzing data is the interpretation bias. To reduce bias, two researchers followed the GT procedures, and the results have been entirely revised by another, separately. The meaning of a concept was clarified by using a dictionary to avoid misinterpretation. QDAMiner Lite, a qualitative analysis tool, heavily supported this process.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. CONCLUSION</head><p>This article presented the results of a secondary study on interoperability and how it is addressed in contemporary systems. 17 studies were selected through a qSLR and analyzed using GT. The results show differences in concept understanding and lack of consensus, despite the extension of the research associated with interoperability issues.</p><p>This study also identified the absence of a common interoperability definition, since we could observe in the open coding stage 96 different segments related to interoperability definitions (open coding). Therefore, these codes were grouped into subcategories (axial coding) representing five key concepts (ability to exchange, system´s property, integration, cooperation and system´s relation) shaping our definition of Interoperability: Ability of things to interact for a specific purpose, once their differences have been overcome, including a list of seven software systems characteristics regarding interoperability. These characteristics allow seeing the importance of technical decisions during systems development. To deliver interoperable solutions, the concerns about interoperability should start at the software project conception phase.</p><p>With this work, we addressed the purpose of characterizing interoperability, with the proposed definition and the identified characteristics. This characterization is the first step towards an extensive study regarding interoperability considering aspects such as evaluation methods and interoperability levels. We hope the body of knowledge organized in this paper can contribute to the progress in this field of investigation and towards a future with simple, seamless and fluid interaction among contemporary software systems.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. An example of abstraction changes in the coding process.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. General Assessment Results [9].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. The core category Definition and its subcategories.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>( 3 )</head><label>3</label><figDesc>Compatibility: deals with what ease the system can operate with shared applications. It also covers the system's compatibility on different platforms. GD: 14. DE: 4.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="false"><head>TABLE I . DATA EXTRACTION FORM</head><label>I</label><figDesc></figDesc><table></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGMENT</head><p>We thank Victor Vidigal for the contribution in this study. This work is part of "CAcTUS -Context-Awareness Testing for Ubiquitous Systems" project supported by <ref type="bibr">CNPq -Universal (484380/2013-3)</ref>. Prof. Travassos is a CNPq Researcher <ref type="bibr">(305929/2014-3</ref>).</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Enterprise Interoperability Framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">EMOI-INTEROP</title>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The Computer for the 21st Century</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Weiser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Scientific American</title>
+		<imprint>
+			<biblScope unit="volume">265</biblScope>
+			<biblScope unit="page" from="94" to="104" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Ubiquitous software engineering: Achievements, challenges and beyond</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Rocha</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Lima</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Maia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Viana</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>De Castro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Andrade</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">25th Brazilian Symp. Softw. Eng</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="132" to="137" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">System of Systems -the meaning of</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Boardman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SMC</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2006-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Survey of requirements and solutions for ubiquitous software</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Niemelä</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Latvakoski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 3rd Int. Conf. Mob. ubiquitous Multimed</title>
+		<meeting>3rd Int. Conf. Mob. ubiquitous Multimed</meeting>
+		<imprint>
+			<date type="published" when="2004-10" />
+			<biblScope unit="page" from="71" to="78" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The Internet of Things: A survey</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Atzori</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Iera</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Morabito</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Networks</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="2787" to="2805" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">The internet of things: an overview</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Rose</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Eldridge</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Lyman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internet Soc</title>
+		<imprint>
+			<biblScope unit="page">53</biblScope>
+			<date type="published" when="2015-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+			</analytic>
+	<monogr>
+		<title level="m">IEEE Standard Glossary of Software Engineering Terminology</title>
+		<imprint>
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+	<note>IEEE</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">An Environment to Support Large Scale Experimentation in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Travassos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Santos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Mian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Neto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Biolchini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">13th IEEE Int. Conf. Eng. Complex Comput. Syst</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="193" to="202" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Guidelines for Performing Systematic Literature Reviews in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<ptr target="https://goo.gl/qJNW2q" />
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">1051</biblScope>
+		</imprint>
+	</monogr>
+	<note>Engineering</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Basics of qualitative research: Techniques and procedures for developing grounded theory</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Strauss</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Corbin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SAGE</title>
+		<imprint>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Characterizing Interoperability in Context-aware Software Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Motta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Travassos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Brazilian Symposium on Computing System Engineering</title>
+		<imprint>
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">qSLR ProtocolInvestigating Interoperability in Context-aware Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Motta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Ribeiro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Travassos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Marçal</surname></persName>
+		</author>
+		<ptr target="https://goo.gl/BqSClK" />
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Scientific research ontology to support systematic review in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Biolchini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Mian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Natali</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Conte</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Travassos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Eng. Informatics</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="133" to="151" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Software modeling and measurement: the Goal/Question/Metric paradigm</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Basili</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page">24</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Challenges in Testing Context-Aware Software Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Matalonga</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Rodrigues</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Travassos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">9th Workshop on Systematic and Automated Software Testing</title>
+		<imprint>
+			<date type="published" when="2015-10" />
+			<biblScope unit="page" from="51" to="60" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Architectures for enterprise integration and interoperability: The Past, present and future</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Doumeingts</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Vernadat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Ind</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="647" to="659" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Addressing interoperability in military systems-of-systems architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Wyatt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Griendling</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Mavris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Systems Conference, IEEE International</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Towards a systemic formalization of interoperability</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Naudet</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Latour</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Guedria</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Ind</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="176" to="185" />
+			<date type="published" when="2010-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">A review of computer aided software engineering research methods</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Wynekoop</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Conger</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+		</imprint>
+		<respStmt>
+			<orgName>Department of Statistics and Computer Information Systems, College of the City University NY</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Interoperability Among Heterogeneous Services</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Athanasopoulos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Tsalgatidou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Pantazoglou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Int. Conf. Serv. Comput</title>
+		<imprint>
+			<biblScope unit="page" from="174" to="181" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A service interoperability assessment model for service composition</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings -IEEE International Conference on Services Computing</title>
+		<meeting>-IEEE International Conference on Services Computing</meeting>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="153" to="158" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Interoperability evaluation models: A systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rezaei</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Chiew</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Aliee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Ind</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="23" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A Framework for Service Interoperability Analysis using Enterprise Architecture Models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Ullberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Lagerström</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Int. Conf. Serv. Comput</title>
+		<imprint>
+			<biblScope unit="page" from="99" to="107" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">System of Systems Integrationn: Key Considerations and Challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Madni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sievers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="330" to="347" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">The internet of things: an overview -Understanding the issues and challenges of a more connected world</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Jaren</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internet Soc</title>
+		<imprint>
+			<date type="published" when="2015-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">At Home with Ubiquitous Computing: Seven Challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Edwards</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Grinter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 3rd Int. Conf. Ubiquitous Comput</title>
+		<meeting>3rd Int. Conf. Ubiquitous Comput</meeting>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="256" to="272" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Supporting requirements definition and quality assurance in ubiquitous software project</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Spínola</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Pinto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Travassos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Communications in Computer and Information Science</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="587" to="603" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">A Survey on Interoperability Measurement</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Ford</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Colombi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Graham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Jacques</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Command Control Res. Technol. Symp</title>
+		<imprint>
+			<biblScope unit="issue">937</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Ambient assisted living healthcare frameworks, platforms, standards, and quality attributes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Wagner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Pedersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Beevi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Hansen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="4312" to="4353" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

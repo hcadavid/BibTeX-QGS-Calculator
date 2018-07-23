@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Investigating the Model-Driven Development for Systems-of-Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date>August 25 -29 2014,</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Valdemar</forename><surname>Vicente</surname></persName>
+							<email>valdemarneto@inf.ufg.br</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Federal University of Goiás Goiânia</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Graciano</forename><surname>Neto</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Federal University of Goiás Goiânia</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Milena</forename><surname>Guessi</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">University of São Paulo -USP São Carlos</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Lucas</forename><surname>Bueno</surname></persName>
+							<email>buenolro@icmc.usp.br</email>
+							<affiliation key="aff1">
+								<orgName type="institution">University of São Paulo -USP São Carlos</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Oliveira</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">University of São Paulo -USP São Carlos</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavio</forename><surname>Oquendo</surname></persName>
+							<email>flavio.oquendo@irisa.fr</email>
+							<affiliation key="aff2">
+								<orgName type="laboratory">IRISA -Université de Bretagne Sud (UBS) Vannes</orgName>
+								<orgName type="institution">University of São</orgName>
+								<address>
+									<addrLine>Paulo -USP</addrLine>
+									<settlement>São Carlos -Brazil milena</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Elisa</forename><forename type="middle">Yumi</forename><surname>Nakagawa</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="institution">University of São</orgName>
+								<address>
+									<addrLine>Paulo -USP</addrLine>
+									<settlement>São Carlos -Brazil, Vienna</settlement>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Investigating the Model-Driven Development for Systems-of-Systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published">August 25 -29 2014,</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1145/2642803.2642825</idno>
+					<note>Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. To copy otherwise, to republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. ECSAW</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>D23 [Software Engineering]: Coding Tools and Tech- niques-Tools</term>
+					<term>Methods</term>
+					<term>Processes Keywords Model-Driven Development</term>
+					<term>System-of-Systems</term>
+					<term>Software Gen- eration</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Software-intensive systems have become increasingly large and complex and new techniques and methodologies are necessary to deal with such complexity. Model-Driven Development (MDD) has been used to deal with complex scenarios , since software models, despite details, facilitate the visu-alization of the whole. Moreover, MDD has been widely recognized as a way to assure quality, reducing time and effort, and making possible the automatic transformation of models to generate source code. In this direction, software-intensive Systems-of-Systems (SoS) is a class of software systems that have emerged over the iminence of large systems which have a high-level of complexity. Considering the success of MDD in other areas, we decided to investigate how MDD has been used in the context of SoS. This paper presents results of a Systematic Literature Review conducted to scrutinize and bring to light the state of the art in the field of MDD for SoS. Besides that, we discuss future research directions and perspectives, aiming at contributing to the development of SoS.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>Software-intensive systems have become larger and complex. Increasing size of the systems is pressuring on traditional design methodologies. Even traditionally less complex systems are being transformed into highly complex systems in order to meet new customer requirements <ref type="bibr" target="#b10">[11]</ref>. Legacy and new systems need to interoperate and this interaction has raised a new class of software systems so-called Systemsof-Systems (SoS). SoS is a class of complex software systems composed by different pre-existing systems interconnected (called constituents) to achieve a specific goal <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b21">22]</ref>. Interoperability is the essential quality attribute and the development process does not follow a conventional monolithic system development process <ref type="bibr" target="#b0">[1]</ref>.</p><p>When considering SoS, the task of integrating systems continues, sometimes, to be accomplished using an ad hoc approach without support of automated tools, and a wide gap has been created in the availability and sophistication of tools to allow developers to compose, analyze, and test a complete SoS <ref type="bibr" target="#b4">[5]</ref>. Considering that the complexity of SoS development lends itself nicely to a model centric approach <ref type="bibr" target="#b0">[1]</ref>, Model-Driven Development (MDD) is an approach that could properly fit the context of SoS making use of models in high level of abstraction and automatic model transformations <ref type="bibr" target="#b4">[5]</ref>. Additionally, MDD has been broadly recognized as a useful tecnique to deal with complex scenarios through the use of abstraction <ref type="bibr" target="#b15">[16]</ref>. SoS can benefit from MDD due to the well-established advantages, such as quality assurance, time and effort reduction, making it possible to automatically generate source code.</p><p>This paper reports results of a Systematic Literature Review (SLR) carried out to investigate how MDD has been applied to deal with the complex activity of developing and maintaining SoS. By presenting a panorama of this topic of research and indicating future research perspectives, we intend to promote the use of MDD practices into the context of SoS.</p><p>The remainder of this paper is structured as follows: Section 2 brings foundations and definitions useful in this SLR. Section 3 details the planning, conduction, and results of our systematic review. Section 4 discusses on the findings of this SLR, while Section 5 presents final considerations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">BACKGROUND</head><p>Traditional software development process refers to a succession of models transformations from requirements to analysis, design, architecture design, coding, testint, and deployment. MDD consists of a prescriptive model of software development process <ref type="bibr" target="#b17">[18]</ref>, where models are the first class citizens <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b31">32]</ref> and the succession of models transformations are performed in an automated way. MDD guarantees the semantic consistency of the systems, which are built by enforcing the philosophy of "correct-by-construction" <ref type="bibr" target="#b4">[5]</ref>.</p><p>Mittal and Martin present and explain a taxonomy of model-driven flavors, evidencing a difference between Systems Engineering, i.e., an interdisciplinary approach and means to enable the realization of successful systems not considering the underlying software <ref type="bibr" target="#b11">[12]</ref>, and Software Engineering, as follows <ref type="bibr" target="#b23">[24]</ref>:</p><p>Model-Based Engineering (MBE): An approach to support the system development process. Models are used to represent the system during the design, integration, validation, verification, testing, documentation and maintenance stages;</p><p>Model-Based System Engineering (MBSE): The application of the MBE principles in systems engineering to provide the insight in the analysis and design phases, enhancing a better communication between stakeholders, enabling effective management of the system complexity through models;</p><p>Model-Driven Engineering (MDE): A software system development approach that uses models in the whole development life cycle and can be seen as a subset of MBE. MDE relies on models, metamodels, meta-metamodels, and technologies to automate model transformations and code generation within MBE;</p><p>Model-Driven Architecture (MDA): A software design and development approach that provides a set of guidelines for specifying and structuring models. MDA relies on the Meta Object Facility (MOF) <ref type="bibr" target="#b27">[28]</ref> to integrate the modeling steps and provide the model transformations <ref type="bibr" target="#b22">[23]</ref>;</p><p>Model-Driven Development (MDD): The application of the MDE principles in software engineering is called MDD (Model Driven Development) or MDSD (Model Driven Software Development). MDD started in the early 1990s and offers a notable range of methods and tools;</p><p>Model Integrated Computing (MIC): refines MDD approach and provides an open integration framework to support formal analysis tools, verification techniques and model transformations in the development process. MIC is used to generate an integrated hardware-software product.</p><p>Agner et. al claim that the style and strictness of models adoption along the software development lifecycle vary, what makes to emerge a lot of intensities of model-driven approaches adoption in organizations <ref type="bibr" target="#b1">[2]</ref>, enforcing the taxonomy described by Mittal and Martin <ref type="bibr" target="#b23">[24]</ref>. That is, the intensity of MDD adherence could be measured according to the size of the subset of model-driven techniques used in a software development lifecycle. For example, a software development project can use models only for software representation through the use of UML and other languages;</p><p>another project can use model transformations to convert software models in software code using model transformers; another project can use MDD through the entire software development life cycle, from requirements representation to test cases generation, with the use of models, metamodels, and model transformations. In short, the intensity varies according to the amount of model-driven techniques and methods used in the software development project (models, metamodels, model transformations, and so on). For this scope, we use the expression model-driven approach to refer to the class of model-driven variants presented in this taxonomy. Besides that, in this paper, we use the word synthesis to denote the process of automatically obtaining source code from model transformations.</p><p>On the other hand, SoS are large systems composed by other independent systems (constituents) that interoperate to accomplish a mission <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b29">30]</ref>. They are distinguished from large monolithic systems by a set of eight key 'dimensions' of SoS <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b26">27]</ref>: autonomy, independence, distribution, evolution, emergent behaviour, dynamic behaviour, interdependence and interoperability. Besides these dimensions, we also observe geographic distribution as a recurrent feature for SoS <ref type="bibr" target="#b29">[30]</ref>. They have been classified by the level of managerial control <ref type="bibr" target="#b9">[10]</ref>.</p><p>SoS are largely distinguished by their central authority and collaboration in evolution <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b29">30]</ref>. This classification establishes four kinds of SoS <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b21">22,</ref><ref type="bibr" target="#b29">30]</ref>: directed, collaborative acknowledge, and virtual. Directed SoS are those in which their systems operate subordinated to the central managed purpose. Collaborative SoS are those where systems voluntarily collaborate to fulfill the agreed central purposes. Acknowledge SoS are those in which there are recognized objectives, a designated manager, and resources for the SoS, and changes in the systems are agreed on collaboration between the SoS and the systems. Finally, Virtual SoS lack a central management authority and a centrally agreed purpose for the SoS <ref type="bibr" target="#b29">[30]</ref>.</p><p>Once SoS development can be characterized by the capabilities of constituent systems and expressed in terms of models <ref type="bibr" target="#b0">[1]</ref>, MDD can be a suitable solution for defining and analyzing communications among the systems constituting the SoS <ref type="bibr" target="#b5">[6]</ref>. Different approaches and tools can be combined in an SoS development process <ref type="bibr" target="#b23">[24]</ref> and, in fact, MDD started to get a permanent spot within approved systems engineering guides <ref type="bibr" target="#b14">[15]</ref>, what motivates the investigation being reported. We envision that SoS can benefit from MDD techniques, since there is a necessity to work in a high-level of abstraction given the degree of complexity in developing SoS and the necessity to represent, manage, and realize the relationships among their constituents. Several tasks, such as model validation, configuration, and deployment of SoS could benefit from MDD techniques, since they are wellestablished and available as tools for monolithic systems and could be extended to support SoS <ref type="bibr" target="#b15">[16]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">SYSTEMATIC LITERATURE REVIEW</head><p>The main objective of our SLR was to identify and report all relevant primary studies (i.e., publications) related to the application of MDD practices into the software-intensive SoS' context. It was conducted from April 25th, 2014 to June 5th, 2014 and involved four people (software engineering researchers). To conduct our systematic review, we followed the process proposed by Kitchenham and Charles <ref type="bibr" target="#b18">[19]</ref>.</p><p>(system of systems OR system-of-systems OR systems of systems OR systems-of-systems) AND (Model-Driven Development OR Model-Driven Engineering OR ModelDriven Architecture OR Model-Based System Engineering OR Model-Based Software Development OR ModelDriven Software Development OR MDA OR MDE OR MDD OR MDSD OR Model-Driven OR Model-Based OR Model Based) <ref type="table">Table 1</ref>: Search String In short, process is composed by three main phases: (i) planning; (ii) conduction; and (iii) reporting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Phase 1: Planning</head><p>During the planning phase, the objectives of our SLR and the protocol were defined. The protocol guides the conduction of the SLR and is composed of research questions, search strategy, primary study selection criteria, and data extraction and synthesis methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Research Questions</head><p>Aiming to find all relevant primary studies related to the application of MDD in SoS, the following research questions (RQ) were established:</p><p>RQ 1: Which model-driven approaches have been applied in software-intensive SoS? RQ 2: Which models have been used to represent softwareintensive SoS in model-driven approaches? RQ 3: Which tools and technologies have been developed or applied to use model-driven approaches into the context of software-intensive SoS? RQ 4: Which quality attributes of SoS are addressed through a model-driven perspective?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2) Search Strategy</head><p>The search string is used for retrieving related primary studies from publication databases. Our search string is a combination of the main keywords identified in the research questions ("System-of-Systems" and "model-driven development") with their respective synonyms. Moreover, the term "Model-Based" was included, as some works use it to refer to model driven approaches. The final search string is presented in <ref type="table">Table 1</ref>. Furthermore, we established ACM Digital Library, IEEEXplore, ISI Web of Knowledge, and Scopus, as search sources (i.e., publication databases) to find the primary studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3) Inclusion and Exclusion Criteria</head><p>The selection criteria is used to evaluate studies obtained from the publication databases. Thus, the Inclusion Criteria (IC) used to include relevant studies in our SLR were:</p><p>IC 1: The primary study uses a model-driven approach to automatically generate software-intensive SoS from models; i.e., it is a finished and mature work. IC 2: The primary study proposes a model-driven approach to automatically generate software-intensive SoS from models; i.e., it is a proposal and not complete work. IC 3: The study synthesizes/compares existing model-driven approaches explored in the context of SoS.</p><p>Alternatively, the Exclusion Criteria (EC) used to exclude the studies that do not contribute to answer the research questions were:</p><p>EC 1: The primary study does not address SoS; EC 2: The primary study does not address software-intensive systems; EC 3: The primary study does not use model-driven development to automatically synthesize (generate) softwareintensive SoS; EC 4: The primary study does not present an abstract or its full text is not available; EC 5: The primary study is written in a language other than English; EC 6: The primary study is directly related to another primary study of the same author. In this case, only the most recent primary study will be considered; EC 7: The primary study consists of a compilation of work, for instance, from a conference or workshop; EC 8: The primary study uses model-driven approaches only to evaluate quality in SoS engineering; EC 9: The primary study proposes processes or activities or methods to SoS engineering as a whole;</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4) Quality Questions</head><p>Aiming to evaluate the quality of the studies recovered in our SLR, we defined Quality Questions (QQ) based on questions commonly used in similar evidence-based studies <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b12">13]</ref>, presented as follows:</p><p>QQ1: There is a rationale to be undertaken. QQ2: The authors present an overview about the related works and background of the area in which the study is developed QQ3: There is an adequate description of the context (industry, laboratory setting, products used, etc.) in which the work was carried out. QQ4: The study provides a clear justification about the methods used during the study. QQ5: There is a clear statement of contributions and has sufficient data been presented to support them. QQ6: The authors explicitly discuss the credibility and limitations of their findings. QQ7: The authors discuss perspectives of future works based on the contributions of the study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>5) Data Extraction</head><p>We created a data extraction form to extract data and document the selection of primary studies of our SLR. As a strategy of cross-validation, a specialist in MDD and SoS was designated to review the extracted data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Phase 2: Conduction</head><p>During the conduction phase, primary studies were retrieved, selected, and evaluated according to the protocol.</p><p>To support organization and analysis of primary studies, we used JabRef 1 , an open source reference management system. It is worth highlighting that only primary studies published until April 30, 2014 were considered in this SLR.</p><p>The selection of relevant primary studies was split into   steps: (i) selection of primary studies based on their title and abstract; (ii) selection of primary studies based on their full text; and (iii) data extraction. Quality assessment of included primary studies was performed and disagreements among researchers in any of the these steps were solved in consensus meetings.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Phase 3: Reporting</head><p>Our search retrieved 286 primary studies from publication databases. After removing repeated studies, 177 primary studies remained for the selection step. After reading titles, abstracts, and, when necessary, the introduction of each study, 67 primary studies were selected to be read in full. Applying the IC and EC criteria, 12 primary studies were selected as included and revised. <ref type="table" target="#tab_1">Table 2</ref> summarizes our results for each publication database, including the index rate 2 and the precision rate 3 . For example, only two included primary studies in our SLR were retrieved from ISI Web of Science (WoS), which originally had 73 retrieved primary studies. Thus, ISI WoS presents a precision rate of 2.73% (2/73) and a index rate of 16.66% (2/12).</p><p>The list of the 12 included primary studies is in <ref type="table" target="#tab_3">Table 3</ref>. It is worth observing that most of these studies were recently published, concentrating mainly in the last five years. <ref type="figure" target="#fig_0">Figure  1</ref> presents the distribution of publications through years in percentage. From a total of 12 publications, nine (75%) of the included studies were published from 2009 to 2013, what can indicate growth in the interest for that research area.</p><p>Considering the maturity of the research, two out of 12   <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b16">17]</ref> were included because they use a modeldriven approach to automatically generate software-intensive SoS from models (i.e., it is a finished and mature research). Seven out of 12 propose a model-driven approach to automatically generate software-intensive SoS from models, and have a nature of proposal and not complete work. The remainder <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b30">31]</ref> were classified as a study that evaluates, reviews, or presents the state of the art about model-driven development to automatically generate software-intensive SoS. Thus, we observed that there is still opportunities of research to be investigated, since most of the included papers report ongoing research.</p><note type="other">Included Study IC Year Bay [7] IC3 2002 Feiler</note><p>Research Question 1: Analyzing the included studies, only four of them address exclusively SoS software synthesis using MDD <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b28">29]</ref>, two of them addressed Interoperability management through MDD <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b32">33]</ref>, and four of them addressed both software synthesis and interoperability management through MDD <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b30">31]</ref>. This data show that in 1/3 of the times which MDD has been used to generate software in SoS context, interoperability has been considered as well. The other two studies have other contribution focus: one uses MDD models and technologies to specify interfaces in architectural views <ref type="bibr" target="#b7">[8]</ref>, and the other one reports how AADL (The Architecture Analysis Design Language) has been used to represent architecture to, in a following step, generate SoS with MDD <ref type="bibr" target="#b13">[14]</ref>. <ref type="table" target="#tab_5">Table 4</ref> shows the application domains of software-intensive SoS. Barbi et. al focused on MDD for defense domain for configuration and deployment of systems for defense and air traffic control <ref type="bibr" target="#b5">[6]</ref>. Tu et al. use MDD to re-implementat existing information systems and reuse them in a system of systems of enterprise information systems that interoperate <ref type="bibr" target="#b32">[33]</ref>. Neema et al. <ref type="bibr" target="#b25">[26]</ref> describe a model-based framework that enables information fusion researchers to integrate their algorithms and assess, evaluate, and validate in realistic scenarios in militar domain. Gokhale et. al proposes a new paradigm called Model Driven Middleware (MDM), which combines model-based software development techniques with middleware to address challenges in Distributed real-time and embedded (DRE) systems composition, integration in avionics domain; while Feiler et al. uses AADL in a model based approach to represent architecture models and to analyze the system and to drive its integration and evolution, resulting in a predictable and powerful engineering approach in avionics and defense domain <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b16">17]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Domain</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Studies</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Defense</head><p>Bay <ref type="bibr" target="#b6">[7]</ref>, Barbi et. al <ref type="bibr" target="#b5">[6]</ref>  Lang and Schreiner uses the concept of model-driven security accreditation to automatically generate security rules that will be deployed in the SoS software code <ref type="bibr" target="#b19">[20]</ref>. Therefore, the remainder (four studies that comprises 33.33% of the total) do not focus on such a specific domain. Therefore, most of the MDD approaches reported in the studies regard to SoS composed by Critical Embedded Systems.</p><p>When considering the types of model transformations, one study (8.33%) used exclusively model-to-model transformations to generate software-intensive SoS <ref type="bibr" target="#b25">[26]</ref>. Three (25%) work exclusively with model-to-text (M2T) transformations <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b28">29]</ref>, and seven studies address both (M2M and M2T) transformations. Only one study does not report any transformation <ref type="bibr" target="#b13">[14]</ref>; but it presents a literature review about MDD in the context of SoS. Other two detail the SoS production process where transformations are used throughout the development process, but no one code is generated.</p><p>Regarding the type of SoS, two primary studies regard Directed SoS <ref type="bibr" target="#b25">[26,</ref><ref type="bibr" target="#b32">33]</ref>, one describe a Collaborative SoS <ref type="bibr" target="#b28">[29]</ref>, and one designed an Acknowledged SoS <ref type="bibr" target="#b7">[8]</ref>. In particular, one study reported the use of more than one type of SoS <ref type="bibr" target="#b16">[17]</ref>, while seven studies do not specify the type of SoS.</p><p>In our SLR, we observed that MDD concepts (e.g., metamodels, transformations) were used in the following way: ten studies used to document architecture <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b32">33]</ref> (83.33%); nine used those concepts to perform transformations obtaining SoS software code as output <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b32">33]</ref> (75%); five used for test <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b28">29]</ref> (41.66%), followed by those that used models to represent requirements <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b30">31]</ref> (33.33%).</p><p>Several model-driven approaches were found in the included primary studies: Model-Based Engineering/Systems Engineering/Development (MBE / MBSE / MBD) <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b30">31]</ref>, Model-Driven Software Development (MDSD) <ref type="bibr" target="#b20">[21]</ref>, Model-Driven Engineering (MDE) <ref type="bibr" target="#b5">[6]</ref>, Model-Driven Architecture (MDA) <ref type="bibr" target="#b32">[33]</ref>, Model-Integrated Computing (MIC) <ref type="bibr" target="#b25">[26]</ref>, Model-Driven Middleware (MDM) <ref type="bibr" target="#b16">[17]</ref>, and Model Driven Security Accreditation (MDSA) by Lang et. al <ref type="bibr" target="#b19">[20]</ref>. Therefore, we observed a low consensus about model-driven approaches in the MDD community itself, and that different focus and intensity of models are given over the conducted research.</p><p>Research Question 2: Considering the types of models and languages used to represent SoS, the following were used: UML <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b32">33]</ref>, Object-Constraint Lan- guage (OCL) <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b20">21]</ref>, DEVS <ref type="bibr" target="#b25">[26]</ref>, DoDAF or MoDAF <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b30">31]</ref>, SySML <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b30">31]</ref>, BPMN <ref type="bibr" target="#b23">[24]</ref>, AADL <ref type="bibr" target="#b13">[14]</ref>, SelfMML <ref type="bibr" target="#b28">[29]</ref>, OCML <ref type="bibr" target="#b16">[17]</ref>, and XML <ref type="bibr" target="#b16">[17]</ref>. Other used textual representation as configuration files <ref type="bibr" target="#b5">[6]</ref>. One does not specify a specific model <ref type="bibr" target="#b6">[7]</ref>, and another specific a set of languages and models (GME, GReAT, UDM) <ref type="bibr" target="#b25">[26]</ref>.</p><p>Research Question 3: When we consider tools that support model management and model transformation, <ref type="figure" target="#fig_1">Figure  2</ref> shows the tools are mostly used to manage models and/or to automatically generate software for SoS context. Tools based on EMF/GMF 4 are the absolute majority corresponding to 41,67% of the studies <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b5">6,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b32">33]</ref>. Customized tools are also expressive, responding 25% of the studies <ref type="bibr" target="#b23">[24,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b28">29]</ref>. Considering the selected studies, two of them did not use any tool to manage models or to do automatic software generation through model transformations <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b13">14]</ref>.</p><p>Research Question 4: Our SLR also focused on the main quality attributes addressed by SoS. Depicted in <ref type="figure" target="#fig_2">Figure 3</ref>, we observed that interoperability is the main concern for SoS <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b32">33]</ref>. Additionally, safety, security, adaptability, and usability are also frequent concerns in studies applying MDD for SoS. Only one study did not focus on any specific quality attribute <ref type="bibr" target="#b16">[17]</ref>. <ref type="table" target="#tab_7">Table 5</ref> brings the results of the quality evaluation. Considering the Quality Questions (QQ), most of them were answered as YES. Just for QQ6, one study does not discuss about the credibility of its findings. Only QQ5 had less than 50% of papers that did not answered the question with Yes. As most primary studies refer to ongoing research, they   do not provide concrete evidences yet. Therefore, more research is certainly needed for enhancing the maturity of the studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">SLR Credibility</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">DISCUSSION</head><p>Considering the publication vehicles, only three of the included primary studies were retrieved from journals. The majority of the primary studies were published in proceedings of conferences and workshops. Indeed, there are two main conferences that published studies focused on MDD and SoS: International Conference on System of Systems Engineering (SoSE) (two studies) and IEEE International Systems Conference (SysCon) (two studies). The other results are spread in conferences related of Modeling, Simulation, and Security. We expect more contributions on MDD for SoS in the next years, as well as specific conferences and workshops for its discussion.</p><p>We also analyzed which countries are leading the research in this research topic. From our SLR, we observed that most primary studies were developed by research groups located in the USA. But, we also found contributions from Spain, UK, Portugal, Italy, and France.</p><p>As observed in our SLR, MBSE has not been sufficiently explored for modeling and synthesis of SoS. We noticed that MBSE is a System Engineering approach to represent complex systems (including SoS) based on models. Studies that use MBSE detail the SoS documentation using models as SysML, UML, DoDAF, and so on, but they do not report automatic code generation. Only one study <ref type="bibr" target="#b23">[24]</ref> is clearly lucid about the difference between MDE and MBSE and associates both with a lot of well-established models (SOA, DoDAF, ontologies, and DSL) to create a hybrid approach (Model-Driven Systems Engineering (MDSE)) that culminates in software properly.</p><p>Some hypotheses (H) for why most of the studies stops the MBSE approach in a SoS simulation or in architecture specification:</p><p>H1 -MBSE community: Systems Engineering teams believes that their architecture definition is enoughly rich, concrete, and detailed that, even if manual, their own code derivation is automatic and free of errors; H2 -Embedded Systems community: Constituents have embedded nature and the problem is solved because they could have tools (as Quartus 5 and QSYS 6 ) that automatically synthesises their constituents (that usually are embedded systems) and they interoperate naturally in a preconfigured environment;</p><p>H3 -Interoperability Issue: The underlying middleware that interoperates constituents is a well-established product and does not need to be generated. The middleware is the integrator element for the constituents in a networked-SoS, and it is enough to understand how communication happens between the constituents, closer to a simulation model; H4 -Middleware community: Code generation for SoS is an old, well-established technique and it is actually called Model-Driven Middleware.</p><p>The last hypothesis has been refuted, at least for softwareintensive SoS, by Ramos et. al <ref type="bibr" target="#b30">[31]</ref>. They mention that the effective automatic generation of software-intensive SoS is a job for the future. Moreover, they say that agile methodologies should be planned in this direction. Additionally, Gokhale et al. <ref type="bibr" target="#b16">[17]</ref> say that ad hoc techniques for determining, composing, assembling, and deploying the constituents do not scale well as the system size and requirements increase. And lastly, only one of our included studies has explicitly presented an effective code generation approach from models for software-intensive SoS. The other three hypotheses need to be investigated.</p><p>Furthermore, the hypotheses we raised perspectives for future research directions:</p><p>• Research needs to be performed bringing processes, tools, techniques, methods, models, and practices from Model-Based Systems Engineering (that focuses on purely specifying the SoS models) to an MDD-SoS, where models are effectively used to generate the glue code that integrates and interoperates constituent systems;</p><p>• It is necesssary to investigate if the well-established techniques and processes used to automatically synthesize traditional software systems could be extended 5 http://www.altera.com/products/software/quartusii/web-edition/qts-we-index.html 6 http://www.altera.com/products/software/quartusii/subscription-edition/qsys/qts-qsys.html to SoS;</p><p>• Interoperability needs to be scrutinized to verify how the underlying infrastructure, usually based on middleware, can be engineered to make it possible to deploy and run software-intensive SoS;</p><p>• It is necessary to investigate if Model-Driven Middleware community already has solutions to interoperate constituents that will form the iminent forthcoming class of software-intensive SoS, as for Smart Cities, Smart Buildings, and so on, via a middleware automatically generated through models.</p><p>Additionally, we envision that MDD can foster SoS development by addressing its eight key dimensions <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b26">27]</ref> in the following way:</p><p>• Interoperability: Models could be used to represent how constituents must interact to accomplish a mission and model transformations could be performed to automatically generate configuration files, underlying middleware, and glue code to support constituents interoperability; Service-Oriented Architecture (SOA) could be explored to represent how the constituent systems should offer and invocate functionalities among themselves;</p><p>• Autonomy: Intelligent agents and related models could represent constituents and their behaviour within a SoS; Agent-based frameworks could be extended to support the automatic registration of constituents and dynamics of SoS architecture; Transformations could be applied to automatically generate these constituents represented as agents;</p><p>• Independence: Constituents behaviour and autonomy be represented using abstract models that helps to realize independence details that could be obtained by code generation;</p><p>• Distribution: Model-driven middleware approach and related methods and technologies could support an automatic model-driven production and deployment of SoS;</p><p>• Evolution: Model-driven evolution of monolithic systems are becoming well-established and these results could be extended to to SoS;</p><p>• Emergent behaviour: Emergent behaviour could be modeled as a coreography of services and functionalities offered by constituents to accomplish an SoS mission; automatic transformations could be used to generate code that guides how these functionalities should work to emerge a new behaviour for the entire SoS;</p><p>• Dynamic behaviour: Interaction models from SySML and UML could be explored to model the inherent dynamic behaviour delivered by an SoS;</p><p>• Interdependence: An associaton between methods and technologies applied for interoperability and autonomy could be extended to represent, manage, and generate code to guide how constituents could interact to benefit the SoS as a whole.</p><p>These are some of research directions that we have identified. However, certainly there are several other directions that need to be investigated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">CONCLUSIONS</head><p>This paper presented results of an SLR we conducted to observe how MDD has been applied by Software Engineering and Systems Engineering communities to automatically generate software code for software-intensive SoS.</p><p>We highlight that we reviewed literature related to MDD and SoS and presented the state-of-art associated to them. Additionally, we envisioned perspectives for future research that comprises bridging the gap between MDD and the wellestablished Systems Engineering methodologies. It is necessary to bring processes, tools, techniques, methods, models, and practices from MBSE (that focus on purely specifying SoS models) to inaugurate a Model-Driven Development of SoS (MDD-SoS)</p><p>Considering the well-known benefits that are promised by model-driven approaches for the software development as traceability, productivity, models up-to-date with code, saving in budget and time, quality, instantaneity, and others, we intend that this work could be seen as a first step to motivate the shifting of MBSE concepts for MDD-SoS, that could bring all these benefits to support the advent of really large and complex systems that are being thought, designed, envisioned, and started around the world.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Percentage of publications through years.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Tools used for model management/transformation in SoS context. (in percentage).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Quality attributes focused on studies (in percentage).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table 2 : Included Primary Studies Statistical Data</head><label>2</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>Table 3 :</head><label>3</label><figDesc></figDesc><table>List of Included Primary Studies 
+
+studies </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="false"><head>Table 4 : Application Domains for SoS</head><label>4</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" validated="false"><head>) .</head><label>.</label><figDesc></figDesc><table>Quality Question Yes To some extent No 
+QQ1 
+11 
+1 
+0 
+QQ2 
+9 
+3 
+0 
+QQ3 
+10 
+2 
+0 
+QQ4 
+11 
+1 
+0 
+QQ5 
+5 
+7 
+0 
+QQ6 
+6 
+5 
+1 
+QQ7 
+8 
+4 
+0 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" validated="false"><head>Table 5 : Quality Questions answers</head><label>5</label><figDesc></figDesc><table></table></figure>
+
+			<note place="foot" n="1"> http://jabref.sourceforge.net</note>
+
+			<note place="foot" n="2"> Ratio between the included primary studies of a database and the total of included primary studies in the SLR. 3 Ratio between the quantity of included studies and the total of retrieved primary studies in a particular publication database.</note>
+
+			<note place="foot" n="4"> http://www.eclipse.org/modeling/emf/</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Model Based Systems Engineering for System of Systems Using Agent-Based modeling</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Acheson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Dagli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Kilicay-Ergin</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="11" to="19" />
+			<pubPlace>Atlanta, Georgia, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A brazilian survey on UML and model-driven practices for embedded software development</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">T W</forename><surname>Agner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">W</forename><surname>Soares</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">C</forename><surname>Stadzisz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Simão</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Systems and Software</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="997" to="1005" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">A systematic review of comparative evidence of aspect-oriented programming</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">S</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">Ali</forename><surname>Babar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K.-J</forename><surname>Stol</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Software Technology</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="871" to="887" />
+			<date type="published" when="2010-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A tridimensional approach for studying the formal verification of model transformations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Amrani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Lucio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Selim</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Combemale</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Dingel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Vangheluwe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Le Traon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Cordy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">VOLT 2012</title>
+		<meeting><address><addrLine>Montreal, QC, Canada</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="921" to="928" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Developing applications using model-driven design environments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Balasubramanian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gokhale</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Karsai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Sztipanovits</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Neema</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="33" to="40" />
+			<date type="published" when="2006-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A model-driven approach for configuring and deploying systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Barbi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Cantone</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Falessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Morciano</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Rizzuto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Sabbatino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Scarrone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">In SoSE</title>
+		<imprint>
+			<biblScope unit="page" from="214" to="218" />
+			<date type="published" when="2012-07" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Recent Advances in the Design of Distributed Embedded Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bay</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SPIE 2002</title>
+		<meeting><address><addrLine>Orlando, FL, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="volume">4741</biblScope>
+			<biblScope unit="page" from="36" to="45" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Semi-formal and formal interface specification for system of systems architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bryans</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Holt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Perry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SysCon 2013</title>
+		<meeting><address><addrLine>Orlando, FL, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013-04" />
+			<biblScope unit="page" from="612" to="619" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Systems of systems and net-centric enterprise systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Dahmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">J</forename><surname>Baldwin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">R</forename><genName>Jr</genName></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page">4</biblScope>
+		</imprint>
+		<respStmt>
+			<orgName>MITRE Corporation, Loughborough University</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Systems engineering for capabilities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">S</forename><surname>Dahmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">R</forename><genName>Jr</genName></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Lane</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CrossTalk Journal -The Journal of Defense Software Engineering</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="4" to="9" />
+			<date type="published" when="2008-11" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Requirements driven development from contract win to customer sign-off</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Decher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">AC 2010</title>
+		<meeting><address><addrLine>Manhattan Beach, CA, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2010-03" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Relational oriented systems engineering (rose): Preliminary report</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Dickerson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Mavris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE 2011</title>
+		<meeting><address><addrLine>Irvine, CA, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011-06" />
+			<biblScope unit="page" from="149" to="154" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Empirical studies of agile software development: A systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Software Technology</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="833" to="859" />
+			<date type="published" when="2008-08" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">The SAE Architecture Analysis Design Language (AADL) a standard for engineering performance critical systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Feiler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Vestal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICCA 2006</title>
+		<meeting><address><addrLine>Munich, Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006-10" />
+			<biblScope unit="page" from="1206" to="1211" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Overcoming the generation gap in aircraft designs with executable specifications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Salzwedel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">DASC 2011</title>
+		<meeting><address><addrLine>Sydney, Australia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011-10" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Model-driven development of complex software: A research roadmap</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>France</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Rumpe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future of Software Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="37" to="54" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Model driven middleware: A new paradigm for developing distributed real-time and embedded systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gokhale</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Balasubramanian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">S</forename><surname>Krishna</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Balasubramanian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Edwards</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Turkay</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Parsons</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">C</forename><surname>Schmidt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science Computer Programming</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="39" to="58" />
+			<date type="published" when="2008-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Evolution of an Application Framework Architecture for Information Systems with Model Driven Development(In Portuguese)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">V</forename><surname>Neto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">L</forename><surname>Oliveira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SBSI 2013</title>
+		<meeting><address><addrLine>João Pessoa, Brazil</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<idno>EBSE 2007-001</idno>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University and Durham University Joint</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Model driven security accreditation (MDSA)for agile, interconnected it landscapes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Lang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Schreiner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">WISG 2009</title>
+		<meeting><address><addrLine>Chicago, Illinois, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="13" to="22" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">A model driven framework for n-version programming</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Beaulieu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SysCon 2011</title>
+		<meeting><address><addrLine>Montreal, QC, Canada</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011-04" />
+			<biblScope unit="page" from="59" to="65" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="267" to="284" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">MDA Guide Version 1.0.1</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mukerji</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Object Management Group</title>
+		<imprint>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Model-driven systems engineering for netcentric system of systems with devs unified process</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mittal</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Risco</forename><surname>Martin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">WSC 2013</title>
+		<meeting><address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013-12" />
+			<biblScope unit="page" from="1140" to="1151" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">An Execution Framework for MARTE-Based Models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Mraidha</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Tanguy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Jouvray</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Terrier</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Gérard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICECCS 2008</title>
+		<meeting><address><addrLine>Belfast, Ireland</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="222" to="227" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Model based integration and experimentation of Information Fusion and C2 Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Neema</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Bapty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Koutsoukos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Neema</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Sztipanovits</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Karsai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">FUSION 2009</title>
+		<meeting><address><addrLine>Seattle, Washington, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009-07" />
+			<biblScope unit="page" from="1958" to="1965" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Model-based engineering of systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">B</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">G</forename><surname>Larsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fitzgerald</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Woodcock</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Peleska</surname></persName>
+		</author>
+		<ptr target="http://www.compass-research.eu/resources/sos.pdf" />
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m" type="main">Object Facility (MOF) Core Specification Version 2</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Omg</forename><surname>Meta</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">The sicossys approach to sos engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pavon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gomez-Sanz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Paredes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE 2011</title>
+		<meeting><address><addrLine>Irvine, CA, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011-06" />
+			<biblScope unit="page" from="179" to="184" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Large-scale smart grids as system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Díaz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Garbajosa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Yagüe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Gonzalez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lopez-Perea</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SESoS 2013</title>
+		<meeting><address><addrLine>Montpellier, France</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="38" to="42" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Model-based Systems Engineering: An Emerging Approach for Modern systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">L</forename><surname>Ramos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">V</forename><surname>Ferreira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Barcelo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions On Systems Man Cybernetics Part C-applications Rev</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="101" to="111" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Model transformation: The heart and soul of model-driven software development</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sendall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Kozaczynski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="42" to="45" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Harmonized and reversible development framework for HLA based interoperable application</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Tu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Zacharewicz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">TMS-DEVS 2011</title>
+		<meeting><address><addrLine>San Diego, CA, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="51" to="59" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

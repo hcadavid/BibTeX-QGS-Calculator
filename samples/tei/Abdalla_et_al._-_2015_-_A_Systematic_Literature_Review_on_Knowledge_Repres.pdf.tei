@@ -1,0 +1,1394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:25+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Systematic Literature Review on Knowledge Representation Approaches for Systems-of-Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Gabriel</forename><surname>Abdalla</surname></persName>
+							<email>gabriel.abdalla@usp.br</email>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Diego</forename><forename type="middle">N</forename><surname>Carlos</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Damasceno</surname></persName>
+							<email>damascenodiego@usp.br</email>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Milena</forename><surname>Guessi</surname></persName>
+							<email>milena@icmc.usp.br</email>
+							<affiliation key="aff1">
+								<orgName type="laboratory">IRISA-UMR CNRS</orgName>
+								<orgName type="institution">Université de Bretagne-Sud</orgName>
+								<address>
+									<settlement>Vannes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavio</forename><surname>Oquendo</surname></persName>
+							<email>flavio.oquendo@irisa.fr</email>
+							<affiliation key="aff1">
+								<orgName type="laboratory">IRISA-UMR CNRS</orgName>
+								<orgName type="institution">Université de Bretagne-Sud</orgName>
+								<address>
+									<settlement>Vannes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Elisa</forename><forename type="middle">Yumi</forename><surname>Nakagawa</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">ICMC</orgName>
+								<orgName type="institution" key="instit2">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Systematic Literature Review on Knowledge Representation Approaches for Systems-of-Systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1109/SBCARS.2015.18</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Systems-of-Systems</term>
+					<term>Knowledge Representa- tion</term>
+					<term>Ontology</term>
+					<term>Terminology</term>
+					<term>Systematic Literature Review</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Systems-of-Systems are a class of systems composed of diverse, independent constituent systems. Together, these constituents can accomplish missions that otherwise could not be performed by any of them separately. In another perspective, knowledge representation approaches can assist in the establishment of a common understanding in this field by formalizing and standardizing the main terms and concepts adopted. In spite of the relevance of SoS, a consolidated terminology which could support the community working with such systems is still missing. Furthermore, the multiplicity of stakeholders, technologies, and expertise involved in an SoS makes the need of a common understanding even more imperative. In this study, we report on the main findings of a systematic literature review covering knowledge representation approaches in the SoS field. With this study, we are able to present a comprehensive panorama of the knowledge representation approaches that are currently adopted. Even though a consolidated terminology is not available yet, such panorama can be helpful for devising a common, comprehensive terminology for the SoS field. Therefore, we conclude this paper with directions for future work.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. Introduction</head><p>Systems-of-Systems (SoS) are a class of systems composed of independent constituent systems, which interact with each other for accomplishing a common mission. The importance of the research field of SoS is emphasized by Jamshidi et al. <ref type="bibr" target="#b18">[19]</ref>, who also points out that there is a large gap from basic definitions up to theory, management, and implementation. As SoS may involve several disciplines, specialists, and technologies, an adequate communication is essential. However, stakeholders of SoS can face several difficulties by using related terms and concepts with different meanings and purposes. In fact, the lack of a standard terminology hampers the understandability and reuse of knowledge in this field. To enhance the clarity of such systems, it is necessary to correctly and consistently represent and interpret the knowledge related to the SoS field, including its concepts and terms <ref type="bibr" target="#b3">[4]</ref>.</p><p>In this perspective, Knowledge Representation is a subarea of Artificial Intelligence concerned with understanding, designing, and implementing ways of representing information so that computers can use it <ref type="bibr" target="#b34">[35]</ref>. We observe that Knowledge Representation approaches, such as ontologies, taxonomies, thesauri, and vocabularies, can be used for supporting different activities. For instance, ontologies have been used in the context of Systems Engineering <ref type="bibr" target="#b41">[42]</ref>, Software Architecture <ref type="bibr" target="#b0">[1]</ref>, and Software Testing <ref type="bibr" target="#b2">[3]</ref>. In this sense, knowledge representation approaches could offer an important support for disseminating a shared understanding of SoS terms and concepts.</p><p>Aiming to characterize the application of Knowledge Representation approaches to the field of SoS, we performed a Systematic Literature Review (SLR) <ref type="bibr" target="#b19">[20]</ref>. Proposed by Evidence-Based Software Engineering (EBSE), SLRs provide ways for systematically finding and summarizing evidences on a specific topic of research. Besides investigating which and how Knowledge Representation approaches have been applied to this field, we also investigate in which context they have been applied and the potential benefits that they could bring to the development of SoS. In general, the terms found in the Knowledge Representation approaches are not repeated among the studies and refer to specific tasks instead of the SoS field itself. By analyzing the approaches separately, some of their terms may be related to the SoS field as whole, but they do not establish a common terminology.</p><p>The remainder of this paper is organized as follows. Section II introduces the necessary background for this SLR. Section III presents the method applied for performing this review, which encompasses the research questions, the publication databases, the search string, the selection criteria, and the procedures guiding data extraction. Section IV presents and discusses the results of this review. Section V discusses the main limitations of this review. Finally, Section VI presents our conclusions and future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. Background</head><p>Although a consensus regarding SoS definition is still missing, some characteristics presented by such systems are frequently acknowledged. SoS is a kind of system that is constituted from other systems that already represent large-scale systems themselves. The main characteristics of an SoS are operational independence, managerial independence, evolutionary and adaptive development, emergent behavior and geographic distribution <ref type="bibr" target="#b25">[26]</ref>  <ref type="bibr" target="#b32">[33]</ref>. The operational independence means that, if an SoS is disassembled, its components must operate independently. The managerial independence means that the component systems maintain operational existence independent of the SoS. The evolutionary development means that an SoS continually evolves, that is, new features can be added, changed or removed, according to new requirements. The emergent behavior refers to the fact that SoS functions are not placed in any constituent system, but belongs to the SoS as a whole. Finally, geographic distribution defines that the constituent systems may be placed in different locations. Integrated air defense networks, the Internet, and enterprise information networks are examples of SoS <ref type="bibr" target="#b25">[26]</ref>. Another example of SoS is the GEOSS (Global Earth Observation System-of-Systems) <ref type="bibr" target="#b0">1</ref> , which provides decisionsupport tools to a wide variety of users, enabling a global public infrastructure which must generate environmental data and analysis.</p><p>As mentioned before, several Knowledge Representation approaches exist and they can present different levels of formality and expressiveness. A vocabulary is a finite list of terms belonging to a given area. A glossary is a list of terms with their meanings specified as natural language statements. A taxonomy is a controlled vocabulary organized into a hierarchical or parent-child structure. A thesaurus is similar to a taxonomy, with the addition of other relationships, such as equivalence.</p><p>An ontology consists of a formal explicit specification of a shared conceptualization <ref type="bibr" target="#b14">[15]</ref>  <ref type="bibr" target="#b36">[37]</ref>, and can be seen as an approach to represent the knowledge related to a given area. The World Wide Web Consortium (W3C) 2 defines an ontology as a set of terms used to describe and represent an area of knowledge. Ontologies can be classified according their degree of formality <ref type="bibr" target="#b40">[41]</ref>. An 1 http://www.earthobservations.org/geoss.php 2 http://www.w3.org/TR/2004/REC-webont-req-20040210/ informal ontology is expressed in natural language or some restricted and structured form of a natural language, such as glossaries or controlled vocabularies. A semi-formal ontology is expressed in an artificial formally defined language, such as conceptual models or Unified Modeling Language (UML) diagrams <ref type="bibr" target="#b2">3</ref> . Formal ontologies define terms with formal semantics, including first order logic and axioms, description logics or some machine-readable language, such as OWL (Web Ontology Language) <ref type="bibr" target="#b3">4</ref> and RDF (Resource Description Framework) <ref type="bibr" target="#b4">5</ref> . Regarding their space of use, ontologies can be used for communication between people, interoperability among systems, or systems engineering <ref type="bibr" target="#b40">[41]</ref>. Communication refers to sharing a common understanding of concepts, thus providing a standardization of the terms, their meaning and relationship in a domain for people with different needs and viewpoints in a given context. Interoperability refers to capacity of exchanging information between systems, which may require some processing or interpretation. Regarding systems engineering, ontologies can be used to support activities in the design and development of software systems, such as specification.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. Systematic Literature Review</head><p>In this paper we present a summarized version of the protocol and the results of the SLR. The complete reference for this SLR can be found at a technical report <ref type="bibr" target="#b5">6</ref> . This SLR followed the process defined by Kitchenham and Charters <ref type="bibr" target="#b19">[20]</ref>. In summary, this process presents three main phases: (i) planning; (ii) execution; and (iii) reporting. As part of the review planning, we defined a protocol detailing the search strategy, which includes the search string, selection criteria, and data extraction procedures.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Planning</head><p>Aiming to find relevant primary studies regarding knowledge representation approaches in the context of SoS, the following research questions (RQ) were established:</p><p>RQ 1: Which Knowledge Representation approaches have been applied to SoS? RQ 1.1: What is the degree of formality of the approach (i.e., informal, semi-formal, formal, or undetermined)? RQ 2: What is the main motivation for using <ref type="bibr">Knowl</ref> In RQ1 and RQ1.1 we expected to identify the Knowledge Representation approaches that have been used in the area of SoS and their degree of formality. The answer for these research questions enabled us to build a list containing approaches included in the spectrum of ontology kinds <ref type="bibr" target="#b43">[44]</ref> that have been applied in the SoS field, the number of studies using each one, and their degree of formality. This panorama also indicated which are the most prominent approaches for representing knowledge in the domain of SoS as well as which are current research gaps. In RQ2 we aimed to identify the main motivation for using the Knowledge Representation approaches in the SoS field. In RQ3, RQ3.1, and RQ3.2 we aimed to identify the context or problems, such as the scope of the approach, application domains, SoSE processes, or life cycle stages that make use of Knowledge Representation approaches. Additionally, we checked if any validation processes were conducted. The nature of the validation was also checked, for instance, a real case study / system or a toy example. In RQ4 we intended to identify what terms were included in Knowledge Representation approaches found. This answer gave us a picture of which are the most important underlying terms, definitions, and the interrelationships among them.</p><p>This SLR used as the source of primary studies a set of five recognized scientific database libraries: ACM Digital Library 7 , Science Direct 8 , ISI Web of Science 9 , Scopus 10 , and IEEE Xplore Digital Library 11 .</p><p>Those database libraries are the most relevant to Software Engineering research <ref type="bibr" target="#b12">[13]</ref> and they cover important conferences and journals in Software Engineering, SoS, and Knowledge Representation (e.g. International Conference on Systems of Systems Engineering, Journal of Computer Science, and IEEE Systems Journal.</p><p>Aiming to identify all relevant primary studies related to our research questions, we carefully designed the search string used in these databases. This search string covers variations and synonyms for terms related to Systems-ofSystems and Knowledge Representation, such as glossary, dictionary, thesaurus, and ontology. The terms were extracted from the spectrum of kinds of ontologies <ref type="bibr" target="#b43">[44]</ref>.</p><p>The Knowledge Representation approaches was also adapted for meeting particularities of each aforementioned search engine, such as the plural form for these terms. The search scope of this SLR was limited to the content of the title, abstract, and keywords of primary studies, as suggested by <ref type="bibr">Kitchenham and Charters [20]</ref>. The final version of the search string is shown in <ref type="table">Table I</ref>. <ref type="table">Table I</ref>. Search string.</p><p>("system of system" OR "system of systems" OR "systems of systems" OR "system-of-system" OR "systemof-systems" OR "systems-of-systems") AND ("glossary" OR "glossaries" OR "classification" OR "dictionary" OR "dictionaries" OR "thesaurus" OR "thesauri" OR "taxonomy" OR "taxonomies" OR "ontology" OR "ontologies" OR "vocabulary" OR "vocabularies" OR "schema" OR "frame" OR "hierarchy" OR "hierarchies" OR "knowledge representation" OR "body of knowledge") Aiming to include only those primary studies contributing for this SLR, we defined two kinds of selection criteria. Inclusion criteria were applied for identifying primary studies that contribute for answering one or more research questions. Conversely, exclusion criteria were applied for removing primary studies that are not relevant for this SLR. All primary studies recovered from digital libraries were analyzed in regards to both criteria.</p><p>We considered four criteria for including primary studies, which covered studies: (i) discussing knowledge representation in the SoS field, (ii) addressing the representation of a SoS, application domain, problem, or activity related to SoSE using knowledge representation approaches, (iii) discussing spaces of use for a knowledge representation approach, and (iv) listing or describing a set of terms related to SoS using any knowledge representation approach.</p><p>As exclusion criteria, we considered nine criteria, which covered studies: (i) not related to SoS, (ii) not discussing any knowledge representation approach, (iii) without Knowledge representation for SoS as a main focus, (iv) categorized as gray literature (e.g. technical reports, manuals, tutorials or electronic books), (v) editorials, keynotes, opinion, tutorials, posters, or panels, (vi) duplicated, (vii) when there was a newer or more complete study about the same research, (viii) not written in English, and (ix) when the full text was not available.</p><p>The final set of included studies was fully read to identify and extract all relevant information for this SLR. The following data were extracted from the selected studies: title, country of the authors, Knowledge Representation approach, degree of formality, main motivation for using the approach, application domain, case study conducted, space of use, and the list of terms covered by the approach.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Conduction</head><p>This SLR included studies indexed in the databases up to <ref type="bibr">October 17, 2014</ref>, which was the date that the search string was executed. Our search returned a total of 576 studies.</p><p>We conducted the selection phase in two phases. In the first phase, we selected 124 papers. The application of selection criteria was limited to primary studies' title, abstract, and keywords. This information was read by the reviewers, who also discussed the application of the inclusion and exclusion criteria. In the case of any disagreement, the reviewers discussed together until reaching a consensus. At the second phase, the selection criteria were applied to the introduction and conclusion in order to have a better understanding of the studies. In the case of doubts to include or not a study, the reviewers read the full study to reach an agreement. As a result, we obtained the set of 31 studies, shown in <ref type="table" target="#tab_1">Table II</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. Reporting</head><p>In this section we report and discuss the answers for each research question based on the data extracted from the studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Knowledge Representation Approaches Applied to SoS</head><p>Considering the Knowledge Representation approaches investigated in this SLR, we observed that no study makes an explicit mention to glossary, hierarchy, dictionary, or frame. The type of approaches used in the included studies is summarized in <ref type="figure" target="#fig_0">Figure 1</ref>. Following, we discuss each of these approaches.</p><p>The majority of included studies in this review is related to ontologies. Study S31 presents a framework describing a set of attributes that can be used as metrics to characterize Systems of Systems. Study S18 presents an ontology for Systems Engineering and discusses the possibility of an ontology for SoSE. In S22 a framework is presented to address integration of requirements engineering and knowledge engineering techniques in SoS. Study S3 presents a model-based approach for requirements engineering for SoS which uses ACRE, a requirements engineering ontology that was extended to support SoS features. In study S10 the authors propose a new method, SoSO (SoS Ontology), to evaluate the capability of SoS using an ontology. Study S30 proposes a framework for modular ontologies based knowledge management approach for GEOSS in which approaches are explored on formulating smaller interconnected ontologies. The possibility of using modular ontologies for formulating smaller interconnected ontologies is explored in study S19. Study S21 proposes a conceptual semantic mediation framework for integrating autonomous and heterogeneous ubiquitous systems. In study S17, design-oriented attributes that may provide a useful basis for classifying systems of systems are suggested. Study S28 proposes an ontology for SoS integration (SoSI) and uses the ontology to develop an SoSI model using Systems Modeling Language (SysML) notation for a directed SoS used for Earth seismic studies. A service-oriented security framework is proposed in S6 to protect the information exchanged among the parties in an SoS, while parties' autonomy and interoperability are preserved. Confidentiality and integrity of information are protected by combining context-aware access control with trust management and autonomy, and interoperability among parties are enabled by the use of ontology-based services. In S9 a conceptual model of a system and a set of ontologies are used to map the relationship among concepts of different domains and enable interoperability and reuse of knowledge. Study S20 presents a definition of a product-centric supply chain ontology for facilitating the interoperation between all enterprise applications involved in an extended supply chain. Study S8 presents a model to manage crisis supported by a model that include tools and ontologies. In S16 an updated version of the Ontology of Interoperability (OoI) is presented, focusing on the systemic approach and integrates it with the Framework for Enterprise Interoperability. ISyCri, an ontology for crisis management, is presented in S7. Study S4 presents a failure ontology. This ontology is based on interaction patterns describing how components interplay in a distributed system and is used by services to detect and mitigate failures at the service / interaction level. The utility of these techniques is shown using a large scale oceanographic system. The Knowledge Base System presented in study S2 is based on the ontological formalism and represents the properties and the relations of each simulation domain and the dependency relations Nonetheless, instead of proposing an ontology for SoS, those studies make use of ontologies for subjects related to SoS or specific domains. Actually, none of the studies present an ontology for establishing a common understanding for SoS as whole. We see that the ontologies discussed in studies are related to specific activities, such as crisis management and requirements engineering.</p><p>Taxonomies were also used to address SoS issues. The taxonomy presented in studies S23 and S13 can guide design method development and use for SoS. In study S11 a taxonomy is proposed to help to classify and organize system related terms and concepts, including SoS. In studies S26 and S24, a taxonomy of disturbances and disruptions is presented. It is intended to assist system architects and researchers in identifying the ways in which systems can fail to deliver value. In study S29 a crisis taxonomy is presented, where it allows to classify specific incidents, helping in communication and collaboration. In study S1, a geospatial service taxonomy for global service discovery and interoperability is presented. It is intended to promote the global sharing and interoperability among geospatial service instances.</p><p>Only studies S15 and S12 discussed the use of thesaurus. They refer to the same research, but with a different perspective. It aims to represent and ensure that SoS concepts and terms are consistently interpreted. The studies discuss how the thesaurus will be implemented, describe its architecture, how the concepts will be structured, and give examples of usage. According to the studies, the thesaurus has not been implemented yet.</p><p>The other approach found was a vocabulary, and only study S25 discussing it has been identified. This vocabulary provides terms that, when applied to SoS, establish a terminology framework that could assist the engineer in understanding, discussing, and designing complex systems.</p><p>1) Degree of Formality: Taking into account that each of these approaches present different degrees of formality, we classified the primary studies regarding the formality selected. An informal approach is expressed in natural language or some restricted and structured form of a natural language. A semi-formal approach is expressed in an artificial formally defined language. Formal approaches define terms with formal semantics, including first order logic and axioms, description logic or some machinereadable language.</p><p>We observed that 10 primary studies included in this SLR address formal approaches. In eight studies we identified semi-formal approaches and another eight studies were classified as using semi-formal approaches. There was also a subset of studies that we could not identify the degree of formality due to limited information, or even because it was still undefined. In a certain way, the amount of studies discussing each degree of formality considered in this study is approximately equal. Table III presents the studies grouped by degree of formality.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Main Motivation for Using Knowledge Representation in SoS</head><p>Among the motivations for using Knowledge Representation approaches in SoS we have identified the following goals as the most prominent ones:  <ref type="table">Total  Undetermined  S17, S18, S21, S27,  S29  5   Informal  S11, S13, S19, S23,  S24, S25, S26, S31  8</ref> Semi-formal S1, S3, S10, S12, S15, S20, S22, S28 8 Formal S2, S4, S5, S6, S7, S8, S9, S14, S16, S30 10</p><p>• Terminology standardization and knowledge sharing: studies addressing information and expertise sharing, building common terminology, and reducing confusion around terms. In this sense, Knowledge Representation approaches can contribute for communication. Here we included the studies S11, S12, S15, S18, S19, S22, and S25.</p><p>• SoS integration: studies addressing formal specification of systems integration using Knowledge Representation approaches, e.g. ontologies. In this sense, Knowledge Representation approaches can provide the means for supporting interoperability between systems. Here we had the studies S1, S5, S6, S14, S16, S28, S20, S21, and S30.</p><p>• SoSE activities: studies guiding SoSE activities, such as SoS evaluation and requirements. Thus, Knowledge Representation approaches can contribute for SoSE as well as they support systems engineering. Under this category we classified the studies S3, S9, S10, S13, S17, S23, and S27.</p><p>• SoS management: studies addressing management activities related do SoS, such as failure mitigation and crisis management. Here we included the studies S2, S4, S7, S8, S24, S26, S29, and S31.</p><p>We observe that these goals are aligned with the main objectives for Knowledge Representation approaches. Moreover, we observe that the challenges faced <ref type="bibr" target="#b18">[19]</ref> by SoS can largely contribute from adequate Knowledge Representation approaches.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Application Domains of the Knowledge Representation Approaches</head><p>The RQ3 aimed to identify the application domains to which the Knowledge Representation approaches had been applied to. The results show that 10 studies focus on general domain, followed by the military (6 studies), and crisis management (4 studies). By "general domain" we mean that the study did not address a specific application domain, so it is assumed that the approach can be applied to any application domain. The data collected for this RQ are shown in <ref type="figure" target="#fig_1">Figure 2</ref>. Regarding the subjects of study, most of the studies considered industrial scenarios (11 studies) and own / toy examples (10 studies). There were also two other studies evaluating the approaches based on experts or specialists' opinion. The results of this RQ are shown in <ref type="table" target="#tab_3">Table IV.</ref> Furthermore, we could relate the subject of study with the degree of formality of the Knowledge Representation approach. In <ref type="table" target="#tab_5">Table V</ref> this relation is shown. We identified that all formal studies were validated, either using an own / toy or an industrial scenario. Thus, we can see that the more formality the approach presents, there is a tendency that the study is validated, which demonstrates a concern of the authors in evaluating their results when proposing formal approaches. Own / Toy S4, S5, S6, S11, S14, S22, S24, S27, S28, S30 10 Experts S12, S15 2 Industrial S1, S2, S3, S7, S8, S9, S10, S13, S16, S23, S29 11</p><p>2) Purpose of the Study: Within the domain of problems solved by the approaches, the results show that most of the studies were addressing interoperability of SoS (16 studies). Communication and support to SoSE were in second place, both with the same number of occurrences (10 studies). In this RQ, there were studies addressing more than one space of use, so they were included in two categories. The results of this RQ are shown in Table VI.</p><p>Besides that, we related the degree of formality with the space of use of the Knowledge Representation approaches. This relation is shown in <ref type="table" target="#tab_1">Table VII</ref>. It is worth noting that interoperability leads to formality and most of the studies addressing this space of use present formal approaches. Since interoperability refers to systems working together, the proposed approaches need to be machine-readable, that is, the systems need to interact with the approach in order to accomplish their goals. And this is accomplished only when the approach is formal and implemented in some machine-readable language, such as OWL.</p><p>Another aspect that we could observe is that no studies addressing the SoSE space of use present formal approaches. This can be related to the fact that those approaches are used to guide systems engineering, either by providing semi-formal representations, such as diagrams, or informal representations, such as text in natural language or some structured form of text. The same can be inferred for communication, in which it may not be mandatory to have a formal approach to guide knowledge acquisition, for example. Interoperability S1, S2, S4, S5, S6, S7, S8, S9, S14, S16, S19, S20, S21, S27, S28, S30</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>16</head><p>SoSE S3, S10, S13, S17, S22, S23, S24, S25, S26, S31 10</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Terms Covered by Knowledge Representation Approaches in SoS</head><p>Some problems were faced while identifying the terms used in the approaches as many of the included studies do not explicitly present terms. Additionally, the extraction was limited to the information described in studies and no secondary source was considered.</p><p>We could see no direct relationship among the terms. Moreover, there are not so many repeated terms across the studies. For instance, the term stakeholder, which could be related to the communication space of use, was repeated across only three different studies (S3, S23, and S28).</p><p>It suggests that there is a lack of consistency on the terminology of the studies. A reason for this lack of consistency could be that the studies found address specific tasks, such as crisis management and requirements engineering, and do not concern with the SoS field as a whole. In studies addressing interoperability, for example, the Knowledge Representation approaches contain terms specifically related to a given context.  <ref type="table">Experts Industrial Total  Undetermined  S17, S18, S21, S27, S29  3  1  0  1  5  Informal  S11, S13, S19, S23, S24, S25, S26, S31  4  2  0  2  8  Semi-formal  S1, S3, S10, S12, S15, S20, S22, S28  1  2  2  3  8  Formal  S2</ref>, S4, S5, S6, S7, S8, S9, S14, S16, S30 0 5 0 5 10 Despite this lack of consistency among the studies, some of them presented terms that could be directly related to the SoS field. Some of the terms of study S3 are "constituent system", "goal", "capability" (also present in studies S9 and S10), "virtual", "acknowledged", "collaborative", and "directed". The term constituent system represents a system that are in the context of the SoS. The terms goal and capability can be related to the mission of an SoS, which is accomplished by the collaboration of the constituent systems <ref type="bibr" target="#b35">[36]</ref>  <ref type="bibr" target="#b4">[5]</ref>. On the other hand, virtual, acknowledged, collaborative, and directed represent the terms used in SoS classification, that is, they are the types of SoS currently adopted in the literature <ref type="bibr" target="#b21">[22]</ref>. The term "interoperability", related to the ability of communication between systems, is present in study S16. Since the systems of an SoS need to communicate with other systems, this is a term that is frequently adopted in the SoS field. Moreover, the terms "integration" (found in study S28) and "connectivity" (found in study S23) are also related to the ability of constituent systems to establish effective connections, that is, to communicate with each other. Finally, the term "domain", found in study 25, is widely adopted in the SoS field, and is used to represent in what area the SoS is being used, for instance, military or crisis management.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. Limitations</head><p>In this SLR we only considered the digital libraries mentioned in Section III-A and we did not search for studies in other external sources, such as journals, conferences, or workshops related to Knowledge Representation or SoS. Thus, journals or events not indexed by those databases are out of the scope of this SLR. Moreover, we only considered studies written in English, as it is the main language adopted in international scientific publications. For the definition of our search string, we did not consider some of the terms identified in the spectrum of ontology kinds as they referred to particular technologies for realizing these Knowledge Representation approaches, such as XML (eXtensible Markup Language) <ref type="bibr" target="#b11">12</ref> . As a consequence, our SLR could have ignored contributions that did not make explicit references to any of the terms defined in our search string.</p><p>In the first selection phase, there may be problems in interpreting the abstract of the studies due to omitted information in primary studies, such as authors not explicitly mentioning information relevant to our SLR. In order to mitigate bias during the data extraction, the reviewers split the studies and, when any doubts extracting the data arose, the reviewers met to resolve them.</p><p>The degree of formality extracted from the studies were limited only to the information available in the study. So if the studies did not properly detail the implementation of the Knowledge Representation approach, we may have classified it incorrectly.</p><p>With respect to the subject of study, we classified it based on what was the most adequate according to our understanding. For instance, some toy scenarios were designed based on industrial standards. However, we considered them toy scenarios.</p><p>There may be inconsistencies related to the terminology presented in studies. For instance, a study may be referring to an approach as taxonomy instead of hierarchy. This way we limited our analysis only considering the terminology used in study without inferring anything about the approach. Lastly, inconsistencies in the search engine of the digital libraries might have affected our results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>VI. Conclusion</head><p>SoS are a class of systems composed of independent systems, which interact among themselves to achieve a common mission. Since the SoS field is quite new, there is still no consolidated terminology and definitions for it. In this context, Knowledge Representation approaches, such as ontologies, can be used to establish a common understanding and formalization of concepts and terms.</p><p>In this paper, we conducted an SLR to identify the existing Knowledge Representation approaches for SoS, how they have been used, and where they have been applied.</p><p>Our results show that the most used approach in the SoS field is formal ontology and interoperability is the most addressed space of use. Moreover, we could see a relation between interoperability and the degree of formality. Since the interoperability between systems requires machinereadable approaches, the studies addressing this space of use are more likely to use formal approaches. On the other hand, studies that address SoSE as the main space of use tend to use semi-formal or informal approaches due to the fact that they are used to guide systems engineering or knowledge acquisition.</p><p>The degree of formality is also related to the validation of the approaches proposed in studies. In this perspective, we observed that formal approaches tend to be validated, either using toy scenarios or with industrial cases.</p><p>Thereby, many studies do not address a specific application domain. Although the "general" application domain was pointed as predominant, there is no consistency among the extracted terms. Hence, a common understanding cannot be established from these terms, which might be a consequence of the lack of consensus in SoS definitions.</p><p>In this sense, an approach to formally define and relate the concepts and terms in the SoS field could contribute by establishing a common understanding, also supporting the communication among the SoS community. Such approach could gather all the relevant known terms in the SoS research field, describe them, and establish relationships. This way the knowledge about SoS could be more abstracted and better understood. The content could also be machine-readable (that is, formal), so in this case it would be possible to integrate it into a semantic system, being accessed by users or agents aiming to use or acquire the knowledge of this field.</p><p>As a future work, we intend to keep updating this SLR and possibly identify additional studies addressing Knowledge Representation approaches in the SoS field.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Knowledge Representation Approaches p</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Application domain g pp</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table II . Studies Selected</head><label>II</label><figDesc></figDesc><table>ID 
+Title 
+Reference 
+S1 
+A taxonomy of geospatial services for global service discovery and interoperability 
+[2] 
+S2 
+An ontological approach to simulate critical infrastructures 
+[38] 
+S3 
+A Model-Based Approach for Requirements Engineering for Systems of Systems 
+[18] 
+S4 
+Model-based failure management for distributed reactive systems 
+[14] 
+S5 
+The Role of Ontologies in Emergent Middleware: Supporting Interoperability in Complex 
+Distributed Systems 
+[6] 
+
+S6 
+A semantic security framework for systems of systems 
+[39] 
+S7 
+A metamodel and its ontology to guide crisis characterization and its collaborative management 
+[7] 
+S8 
+Collaborative process design for mediation information system engineering 
+[40] 
+S9 
+A service-oriented method for system-of-systems requirements analysis and architecture design 
+[47] 
+S10 Based on ontology methodology to model and evaluate System of Systems (SoS) 
+[46] 
+S11 General taxonomy of systemic approaches for analysis and design 
+[21] 
+S12 Design of a web-based thesaurus for Systems of Systems Engineering 
+[4] 
+S13 A taxonomy-based perspective for systems of systems design methods 
+[8] 
+S14 On the Use of Description Logic for Semantic Interoperability of Enterprise Systems 
+[45] 
+S15 Formalisation and mapping of terminologies for Systems of Systems Engineering thesaurus 
+[10] 
+S16 A systemic approach to interoperability formalization 
+[30] 
+S17 Collective Intelligence: Toward Classifying Systems of Systems 
+[32] 
+S18 Developing Systems Engineering Ontologies 
+[34] 
+S19 An Information Semantics Approach for Knowledge Management and Interoperability for the Global 
+Earth Observation System of Systems 
+[12] 
+
+S20 Ontology approach for the interoperability of networked enterprises in supply Chain environment 
+[24] 
+S21 A semantic mediation framework for architecting federated ubiquitous systems 
+[29] 
+S22 Ontology-based active requirements engineering framework 
+[23] 
+S23 Appropriate modeling and analysis for systems of systems: Case study synopses using a taxonomy [9] 
+S24 A taxonomy of perturbations: Determining the ways that systems lose value 
+[28] 
+S25 Towards a common system of systems vocabulary 
+[16] 
+S26 Examining survivability of systems of systems 
+[27] 
+S27 Data Fusion Enabled Networks 
+[43] 
+S28 System of systems integration: Key considerations and challenges 
+[25] 
+S29 Information systems for crisis response and management 
+[31] 
+S30 Semantics-Enabled Knowledge Management for Global Earth Observation System of Systems 
+[11] 
+S31 A Framework for Characterising Complex Systems and System of Systems 
+[17] 
+
+among different domains. Study S5 uses ontologies in the 
+middleware design to dynamically emerge behavior based 
+on semantic knowledge about the environment. An SoS 
+approach to the provision of Data Fusion Enabled Net-
+works (DFEN) systems has been adopted and described in 
+study S27. Within a network enabled C4ISR infrastructure 
+using a Service-Oriented Architecture (SOA) development 
+environment and DFEN ontology, a DFEN software and 
+hardware infrastructure is being developed to provide a 
+structure for re-use of both DFEN and supporting function 
+system components. Study S14 presents an overview of 
+the features of the interoperation in System-of-Information 
+Systems (SoIS) and proposes guidelines to evaluate and 
+
+formalize it in order to identify semantic gaps between 
+information systems concepts and models. It provides an 
+approach to use Description Logic for evaluating semantic 
+interoperability concerns. 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table III .</head><label>III</label><figDesc></figDesc><table>Degree of Formality 
+Degree of Formality 
+Primary Studies 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>Table IV .</head><label>IV</label><figDesc></figDesc><table>Subjects of Study 
+Subject of Study 
+Primary Studies 
+Total 
+None 
+S17, S18, S19, S20, S21, 
+S25, S26, S31 
+8 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table VI .</head><label>VI</label><figDesc></figDesc><table>Space of Use 
+Space of Use 
+Primary Studies 
+Total 
+Communication S2, S7, S11, S12, S15, 
+S17, S18, S25, S27, S29 
+10 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="false"><head>Table V .</head><label>V</label><figDesc></figDesc><table>Degree of Formality and Subjects of Study 
+Subject of Study 
+Degree of Formality 
+Studies 
+None Own/Toy </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" validated="false"><head>Table VII .</head><label>VII</label><figDesc></figDesc><table>Degree of Formality and Space of Use 
+Space of Use 
+Degree of Formality 
+Studies 
+Communication Interoperability SoSE Total 
+Undetermined 
+S17,S18,S27,S29 
+4 
+2 
+1 
+7 
+Informal 
+S11,S13,S19,S23,S24,S25, S26, S31 
+2 
+1 
+6 
+9 
+Semi-formal 
+S1,S3,S10,S12,S15,S20,S22,S28 
+2 
+3 
+3 
+8 
+Formal 
+S2,S4,S5,S6,S7,S8,S9,S14,S16,S30 
+2 
+10 
+0 
+12 
+
+</table></figure>
+
+			<note place="foot" n="3"> http://www.uml.org/ 4 http://www.w3.org/OWL/ 5 http://www.w3.org/RDF/ 6 Technical Report, http://www.icmc.usp.br/CMS/Arquivos/arquivos enviados/ESTAGIO-BIBLIO 171 RT%20405.pdf</note>
+
+			<note place="foot" n="7"> http://dl.acm.org/ 8 http://www.sciencedirect.com/ 9 http://webofscience.com/ 10 http://www.scopus.com/ 11 http://ieeexplore.org/</note>
+
+			<note place="foot" n="12"> http://www.w3.org/XML/</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>This research is supported by the National Council for Scientific and Technological Development (CNPq), process number 132249/2011-6, and by São Paulo Research Foundation (FAPESP), Grant N.: 2014/02244-7 and 2014/01646-4.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Archvoc-towards an antology for software architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Babu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Seetha Ramaiah</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">V</forename><surname>Prabhakar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Rambabu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2nd Workshop on SHAring and Reusing Architectural Knowledge Architecture, Rationale, and Design Intent (SHARK-ADI &apos;07)</title>
+		<meeting><address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page">5</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A taxonomy of geospatial services for global service discovery and interoperability</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yuqi</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Liping</forename><surname>Di</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yaxing</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers Geosciences</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="783" to="790" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+	<note>Geoscience Knowledge Representation in Cyberinfrastructure</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Towards the establishment of an ontology of software testing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">F</forename><surname>Barbosa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Maldonado</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">18th International Conference on Software Engineering and Knowledge Engineering (SEKE 2006)</title>
+		<meeting><address><addrLine>San Francisco, CA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006-07" />
+			<biblScope unit="page" from="522" to="525" />
+		</imprint>
+	</monogr>
+	<note>Short Paper</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Design of a web-based thesaurus for systems of systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Barot</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Henshaw</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Siemieniuch</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Dogan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">8th International Conference on System of Systems Engineering (SoSE)</title>
+		<meeting><address><addrLine>Wailea-Makena , HI, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013-06" />
+			<biblScope unit="page" from="7" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Towards a conceptual model for softwareintensive system-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Benites Goncalves</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Cavalcante</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Batista</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Yumi</forename><surname>Nakagawa</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE International Conference on</title>
+		<imprint>
+			<date type="published" when="2014-10" />
+			<biblScope unit="page" from="1605" to="1610" />
+		</imprint>
+	</monogr>
+	<note>Systems, Man and Cybernetics</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The role of ontologies in emergent middleware: supporting interoperability in complex distributed systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Gordons</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Amel</forename><surname>Blair</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Nikolaos</forename><surname>Bennaceur</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paul</forename><surname>Georgantas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Valérie</forename><surname>Grace</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Vatsala</forename><surname>Issarny</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Massimo</forename><surname>Nundloll</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Paolucci</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Middleware</title>
+		<meeting><address><addrLine>Berlin Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="volume">7049</biblScope>
+			<biblScope unit="page" from="410" to="430" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">A metamodel and its ontology to guide crisis characterization and its collaborative management</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Bénaben</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Hanachi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lauras</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Couget</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Chapurlat</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="189" to="196" />
+			<pubPlace>Washington, DC, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A taxonomy-based perspective for systems of systems design methods</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Delaurentis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Systems, Man and Cybernetics</title>
+		<meeting><address><addrLine>Waikoloa, HI, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005-10" />
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="86" to="91" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Appropriate modeling and analysis for systems of systems: case study synopses using a taxonomy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Delaurentis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on System of Systems Engineering (SoSE &apos;08)</title>
+		<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008-06" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Formalisation and mapping of terminologies for systems of systems engineering thesaurus</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Dogan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Barot</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Henshaw</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Siemieniuch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">8th International Conference on System of Systems Engineering (SoSE)</title>
+		<meeting><address><addrLine>Wailea-Makena , HI, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013-06" />
+			<biblScope unit="page" from="46" to="51" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Semanticsenabled knowledge management for global earth observation system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">S</forename><surname>Durbha</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">L</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">P</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">H</forename><surname>Younan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Geoscience and Remote Sensing Symposium (IGARSS 2006)</title>
+		<meeting><address><addrLine>Denver, CO, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006-07" />
+			<biblScope unit="page" from="25" to="28" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">An information semantics approach for knowledge management and interoperability for the global earth observation system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">S</forename><surname>Durbha</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">L</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">H</forename><surname>Younan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="358" to="365" />
+			<date type="published" when="2008-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Evidence-based software engineering for practitioners</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jørgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="58" to="65" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Model-based failure management for distributed reactive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Ermagan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Krüger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Menarini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics</title>
+		<imprint>
+			<biblScope unit="page" from="4888" to="53" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A translation approach to portable ontology specifications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thomas</forename><forename type="middle">R</forename><surname>Gruber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowledge Acquisition</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="199" to="220" />
+			<date type="published" when="1993-06" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Towards a common system of systems vocabulary</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Henrie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">E</forename><surname>Delaney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Systems, Man and Cybernetics</title>
+		<meeting><address><addrLine>Waikoloa, HI, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005-10" />
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="2732" to="2737" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A framework for characterising complex systems and system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Hessami</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Systems, Man, and Cybernetics (SMC)</title>
+		<meeting><address><addrLine>Manchester, United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013-10" />
+			<biblScope unit="page" from="1702" to="1708" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A model-based approach for requirements engineering for systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Holt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Perry</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bryans</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Hallerstede</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">O</forename><surname>Hansen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="issue">99</biblScope>
+			<biblScope unit="page" from="1" to="11" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+	<note>PP</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Introduction to System of Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mo</forename><surname>Jamshidi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">System of Systems Engineering: Innovations for ther 21th Century</title>
+		<imprint>
+			<publisher>John Wiley &amp; Sons, Inc</publisher>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="1" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Barbara</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Stuart</forename><surname>Charters</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University and Durham University Joint</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">General taxonomy of system[ic] approaches for analysis and design</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">F</forename><surname>Kovacic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Systems, Man and Cybernetics</title>
+		<meeting><address><addrLine>Waikoloa, HI, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005-10" />
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="2738" to="2743" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">What is a system of systems and why should i care?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jo</forename><forename type="middle">Ann</forename><surname>Lane</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Ontology-based active requirements engineering framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">W</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">A</forename><surname>Gandhi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">12th Asia-Pacific Software Engineering Conference (APSEC &apos;05)</title>
+		<meeting><address><addrLine>Taipei, Taiwan</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005-12" />
+			<biblScope unit="volume">8</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Ontology approach for the interoperability of networked enterprises in supply chain environment. Lecture Notes in Computer Science (including subseries</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Panetto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Gu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)</title>
+		<imprint>
+			<biblScope unit="volume">6428</biblScope>
+			<biblScope unit="page" from="229" to="238" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>LNCS</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">System of systems integration: key considerations and challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Madni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sievers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="330" to="347" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mark</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="267" to="284" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Examining survivability of systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Mekdeci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Ross</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">H</forename><surname>Rhodes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">E</forename><surname>Hastings</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="3184" to="3195" />
+			<pubPlace>Denver, CO, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A taxonomy of perturbations: determining the ways that systems lose value</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Mekdeci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Ross</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">H</forename><surname>Rhodes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">E</forename><surname>Hastings</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Systems Conference (SysCon)</title>
+		<meeting><address><addrLine>Vancouver, BC, Canada</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012-03" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">A semantic mediation framework for architecting federated ubiquitous systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Moschoglou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Eveleigh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Holzer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sarkani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">7th International Conference on System of Systems Engineering (SoSE)</title>
+		<meeting><address><addrLine>Genova, Italy</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012-07" />
+			<biblScope unit="page" from="485" to="490" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">A systemic approach to interoperability formalization</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Naudet</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Latour</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="volume">17</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Information systems for crisis response and management</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Nieuwenhuis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics</title>
+		<imprint>
+			<biblScope unit="page" from="4458" to="4459" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Collective intelligence: toward classifying systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Alan</forename><forename type="middle">J</forename><surname>Ramsbotham</surname><genName>Jr</genName></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">9th Workshop on Performance Metrics for Intelligent Systems (PerMIS &apos;09)</title>
+		<meeting><address><addrLine>Gaithersburg, MD, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="268" to="273" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">On the systems engineering and management of systems of systems and federations of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrew</forename><forename type="middle">P</forename><surname>Sage</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Christopher</forename><forename type="middle">D</forename><surname>Cuppan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Knowledge Systems Management</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="325" to="345" />
+			<date type="published" when="2001-12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Developing systems engineering ontologies</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sarder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ferreira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on System of Systems Engineering (SoSE &apos;07)</title>
+		<meeting><address><addrLine>San Antonio, TX, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007-04" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Knowledge representation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Stuart</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Shapiro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Encyclopedia of Cognitive Science</title>
+		<meeting><address><addrLine>Ltd</addrLine></address></meeting>
+		<imprint>
+			<publisher>John Wiley Sons</publisher>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">On the characterization of missions of systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Eduardo</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Everton</forename><surname>Cavalcante</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thais</forename><surname>Batista</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavio</forename><surname>Oquendo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavia</forename><forename type="middle">C</forename><surname>Delicato</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paulo</forename><forename type="middle">F</forename><surname>Pires</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2014 European Conference on Software Architecture Workshops, ECSAW &apos;14</title>
+		<meeting>the 2014 European Conference on Software Architecture Workshops, ECSAW &apos;14<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="1" to="26" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Knowledge engineering: principles and methods</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rudi</forename><surname>Studer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">Richard</forename><surname>Benjamins</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dieter</forename><surname>Fensel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Data &amp; Knowledge Engineering</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="161" to="197" />
+			<date type="published" when="1998-03" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">An ontological approach to simulate critical infrastructures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Alberto</forename><surname>Tofani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Elisa</forename><surname>Castorini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paolo</forename><surname>Palazzari</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrij</forename><surname>Usov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Cesaire</forename><surname>Beyel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Erich</forename><surname>Rome</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paolo</forename><surname>Servillo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computational Science</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="221" to="228" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">A semantic security framework for systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Trivellato</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Zannone</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Glaundrup</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Skowronek</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Etalle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Cooperative Information Systems</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Collaborative process design for mediation information system engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Truptil</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Benaben</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Pingaud</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<pubPlace>Gothenburg, Sweden</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Building ontologies: Towards a unified methodology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mike</forename><surname>Uschold</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">16th Annual Conf. of the British Computer Society Specialist Group on Expert Systems</title>
+		<imprint>
+			<date type="published" when="1996" />
+			<biblScope unit="page" from="16" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Ontology for systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">C</forename><surname>Van Ruijven</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">0</biblScope>
+			<biblScope unit="page" from="383" to="392" />
+			<date type="published" when="2013" />
+		</imprint>
+		<respStmt>
+			<orgName>Conference on Systems Engineering Research</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Data fusion enabled networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Vila</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">10th International Conference on Information Fusion</title>
+		<meeting><address><addrLine>Québec City, Québec, Canada</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007-07" />
+			<biblScope unit="page" from="1" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Ontology learning from text: A look back and into the future</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wilson</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wei</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mohammed</forename><surname>Bennamoun</surname></persName>
+		</author>
+		<idno>20:1-20:36</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Comput. Surv</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<date type="published" when="2012-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">On the use of sescription logic for semantic interoperability of enterprise systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Esma</forename><surname>Yahia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jing</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Alexis</forename><surname>Aubry</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hervé</forename><surname>Panetto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">On the Move to Meaningful Internet Systems: OTM 2009 Workshops</title>
+		<meeting><address><addrLine>Berlin Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2009" />
+			<biblScope unit="volume">5872</biblScope>
+			<biblScope unit="page" from="205" to="215" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Based on ontology methodology to model and evaluate system of systems (SoS)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">He</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Zhang</forename><surname>Jing</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yue</forename><surname>Li-Qun</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Li</forename><surname>Ze-Min</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Tang</forename><surname>Li-Jian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">9th International Conference on System of Systems Engineering (SOSE)</title>
+		<meeting><address><addrLine>Glenelg, Australia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014-06" />
+			<biblScope unit="page" from="101" to="106" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">A service-oriented method for system-of-systems requirements analysis and architecture design</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Software</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="358" to="365" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

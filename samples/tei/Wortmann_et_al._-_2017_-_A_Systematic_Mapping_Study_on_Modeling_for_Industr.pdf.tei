@@ -1,0 +1,2096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:28+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Systematic Mapping Study on Modeling for Industry 4.0</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andreas</forename><surname>Wortmann</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">University of Rennes 1</orgName>
+								<orgName type="institution" key="instit2">IRISA</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Benoit</forename><surname>Combemale</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">University of Rennes 1</orgName>
+								<orgName type="institution" key="instit2">IRISA</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Olivier</forename><surname>Barais</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">University of Rennes 1</orgName>
+								<orgName type="institution" key="instit2">IRISA</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Systematic Mapping Study on Modeling for Industry 4.0</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1109/MODELS.2017.14</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Industry 4.0 is a vision of manufacturing in which smart, interconnected production systems optimize the complete value-added chain to reduce cost and time-to-market. At the core of Industry 4.0 is the smart factory of the future, whose successful deployment requires solving challenges from many domains. Model-based systems engineering (MBSE) is a key enabler for such complex systems of systems as can be seen by the increased number of related publications in key conferences and journals. This paper aims to characterize the state of the art of MBSE for the smart factory through a systematic mapping study on this topic. Adopting a detailed search strategy, 1466 papers were initially identified. Of these, 222 papers were selected and categorized using a particular classification scheme. Hence, we present the concerns addressed by the modeling community for Industry 4.0, how these are investigated, where these are published, and by whom. The resulting research landscape can help to understand, guide, and compare research in this field. In particular, this paper identifies the Industry 4.0 challenges addressed by the modeling community, but also the challenges that seem to be less investigated.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. RELATED WORK</head><p>Several mapping studies have been published in software engineering <ref type="bibr" target="#b8">[9]</ref>, such as on the classification of techniques for test-set generation and selection <ref type="bibr" target="#b9">[10]</ref>, on software development effort and cost estimation <ref type="bibr" target="#b10">[11]</ref>, on the use of experimental studies <ref type="bibr" target="#b11">[12]</ref>, on object-oriented design <ref type="bibr" target="#b12">[13]</ref> and the use of patterns <ref type="bibr" target="#b14">[14]</ref>, on the usage of UML diagrams <ref type="bibr" target="#b15">[15]</ref>, on the empirical evaluation of software requirements specifications techniques <ref type="bibr" target="#b16">[16]</ref>, on software product lines <ref type="bibr" target="#b17">[17]</ref>, <ref type="bibr" target="#b18">[18]</ref>, and on domain-specific languages <ref type="bibr" target="#b19">[19]</ref>. These mapping studies vary in the form of analysis and in the number of included publications (between 35 and 400). We found only a single mapping study on model-driven engineering <ref type="bibr" target="#b20">[20]</ref>. In this study, Mehmood and Jawawi survey existing researches on aspect-oriented modeling (AOM) and code generation. To the best of our knowledge, there is no mapping study on modeling and systems engineering or modeling and Industry 4.0, yet. However, several literature reviews and surveys focus on the Industry 4.0 domain.</p><p>Originally initiated in Germany in 2011, Industry 4.0 has attracted much attention in recent literature. In their perspective on Industry 4.0, Vogel-Heuser and Hess identify a set of challenges for the domain <ref type="bibr" target="#b21">[21]</ref>. In particular, they identify challenges for software engineering that are well-known to the modeling community:</p><p>• Transition to modular and maintainable interfaces as a fundamental basis for adaptable and evolvable systems.</p><p>• Tracking of changes in hundreds of heterogeneous and distributed machines or plants on different operation sites operated over decades.</p><p>• Management while ensuring consistency of software variants and versions, including self-adaptation and reconfiguration at runtime. • Adaptation of big data algorithms and technologies. Following this paper, Mosterman and Zander discuss the needs and challenges for designing and operating cyberphysical systems (CPS) along with corresponding technologies to address the challenges and their potential impact <ref type="bibr" target="#b22">[22]</ref>. In the same trend, Turowski et al. identify the current challenges on Industry 4.0 faced by companies through a survey <ref type="bibr" target="#b23">[23]</ref>. The survey aims at understanding the stakeholder's expectations, requirements and the potential challenges Industry 4.0 poses in real case studies. Complementary to these works, Trappey et al. <ref type="bibr" target="#b24">[24]</ref> provide a consolidated review of the latest CPS literature. In this survey, they provide a complete review of international standards and an analysis of patent portfolios related to the CPS architecture model. <ref type="bibr">Hermann et al.</ref> identify design principles of Industry 4.0 based on a quantitative text analysis and a qualitative literature review <ref type="bibr" target="#b25">[25]</ref>. This paper illustrates how the identified design principles support practitioners in identifying Industry 4.0 scenarios. Recently, Lu proposes an extensive literature review on Industry 4.0 <ref type="bibr" target="#b26">[26]</ref>. In this review, 88 papers related to Industry 4.0 are grouped into five research categories. In addition, this paper outlines the critical issue of the interoperability of Industry 4.0, and proposes a conceptual framework of interoperability regarding Industry 4.0. It also discusses challenges and trends in Industry 4.0, but does not focus on its modeling concerns.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESEARCH METHOD</head><p>A systematic mapping study identifies and classifies primary studies of the field under investigation. As such, it aims to provide a systematic overview on the topics of research contributed to this area and the forms of contribution. We conducted this study following established guidelines <ref type="bibr" target="#b7">[8]</ref>, <ref type="bibr" target="#b8">[9]</ref> and included useful practices and suggestions from similar studies <ref type="bibr" target="#b19">[19]</ref>, <ref type="bibr" target="#b27">[27]</ref>, <ref type="bibr" target="#b28">[28]</ref>, <ref type="bibr" target="#b29">[29]</ref>. Ultimately, we employed a fivephase process for conducting this study: (1) Define research questions; (2) Search for primary studies; (3) Identify inclusion and exclusion criteria and screen primary studies based on these criteria; (4) classify primary studies; (5) Extract and aggregate data. In the first phase, we characterize the scope of this study. In the second phase, we build up the initial corpus of potentially relevant publications. In the third and fourth phases, we reduced this corpus to include only relevant publications and classified according to research qualities derived from the research questions. In the fifth phase, we extracted data 1 to enable answering our research questions. The remainder of this section describes the activities and decisions of these phases.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Research Questions</head><p>We aim to identify relevant publications about MBSE in Industry 4.0, which concerns MBSE research addresses in this context, how research addressing these concerns is conducted, and which tools and languages are used to contribute to these concerns. Moreover, we investigate who is contributing to MBSE in Industry 4.0, where the contributions are published, and when they occurred. This manifests in the following research questions: ("digital factory" OR "digital factories" OR "smart factory" OR "smart factories" OR "factory of the future" OR "factories of the future" OR "Industry 4.0") AND ("metamodel" OR "DSL" OR "UML" OR "domain-specific language" OR "modeling language" OR "modelling language") </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Search Strategy and Data Sources</head><p>Finding possibly relevant publications to answer the research questions requires creating an appropriate search clause and selecting relevant libraries to apply this clause to. As Industry 4.0 aims at interconnecting all participants of the value-added chain to optimize various aspects of manufacturing, at its core, it focuses on manufacturing, production processes, and ultimately the "factory of the future" <ref type="bibr" target="#b30">[30]</ref>, <ref type="bibr" target="#b31">[31]</ref> or the "smart factory" <ref type="bibr" target="#b32">[32]</ref>, <ref type="bibr" target="#b33">[33]</ref>. Consequently, we included these terms into our search clause. Similarly, MBSE uses various terminology (such as "model-based", "model-driven engineering", "modelbased software development") with varying meaning depending on the authors. Instead of selecting a possibly biased set of nearsynonyms, we decided to include the objects of MBSE into the search clause instead. Hence, we consider papers mentioning metamodels, DSLs, modeling languages, or UML as relevant contributions to MBSE in our context. This ultimately lead to the logical search clause depicted in <ref type="figure" target="#fig_1">Fig. 1</ref>.</p><p>Essentially, this is a conjunction of two disjunctions: The first part of the conjunction specifies terms related to Industry 4.0. The second part specified terms representing the objects of MBSE research. As we conducted a full-text search with this clause, we omitted including synonyms for "DSL" or "modeling language". Papers contributing to MBSE should at least use these terms in either related work or the referenced literature. Although we cannot exclude missing a small number of relevant publications that do not provide such discussions, searching this way yields better results than just searching titles and abstracts. We also did not enforce any inferior year-limit and included papers published until April 2017. We applied the search clause to ACM Digital Library, IEEE Explore, SpringerLink, and Google Scholar, which produced the results depicted in Tbl. I. Where such complex logical conditions were not supported, we searched for parts of the query and joined the results manually. Performing this search, we received 495 papers from ACM Digital Library, IEEE Explore, and SpringerLink and almost twice as many papers from Google Scholar 2 . We are aware that this is due to Google Scholar returning other documents, such as non-peer reviewed documents as well. These were removed in the next phases.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Digital</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Screening Papers for Inclusion/Exclusion</head><p>Inclusion of a study into the classification phase of a systematic mapping study usually is decided on its title, abstract, and keywords. To reduce the corpus and enable reproduction of the study, we established the following criteria:</p><p>Inclusion criteria: 1) Peer-reviewed studies published in journals, conferences, and workshops. 2) Studies are accessible electronically. 3) From title, abstract, and keywords we can deduce that the paper focuses on contributing MBSE to Industry 4.0. Exclusion criteria: 1) Studies not available in English. 2) Studies not subjected to systematic peer-review, such as books, slides, websites. 3) Teasers and short papers of less than two pages, such as calls for papers, editorials, or curriculums. 4) Studies where Industry 4.0 is mentioned as future application, related work, or broad context only, e.g., papers on Internet of Things (IoT) or Cyber-Physical Systems (CPS) mentioning Industry 4.0 as a possible use case only. We applied the criteria to titles, keywords, and abstracts. Where this did not suffice to determine inclusion, we temporarily included the publications for the classification phase. There, the final inclusion or exclusion could be decided based on the publication's full text. Thus, this phase only eliminates publications clearly not within our study's scope and publications failing on formal requirements (such as being available in English). In detail, we eliminated 402 publications outside this study's scope, 166 non-English publications, 78 books 43 bachelor, master, and Ph.D. theses, 38 technical reports, 30 teasers, 28 full proceedings (Google Scholar produces complete conference proceedings as results), 10 patents, 10 project deliverables, and 3 websites. Whenever a publication was given in another language than English, we excluded it for this reason alone. Overall, this left 658 papers for classification.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Classifying Studies</head><p>In the classification phase, the remaining papers were investigated to assign qualities of the dimensions derived from the research questions to them. To achieve this, we followed <ref type="bibr" target="#b8">[9]</ref> in considering at least introduction and conclusion. However, for many papers this was insufficient and we considered the complete paper for proper classification. This also is the last phase in which publications can be eliminated. Hence, after further elimination of 436 unrelated papers, a total of 222 publications remained. These were classified along the facets described in the following.</p><p>Contribution Type Facet: The first facet is inspired by <ref type="bibr" target="#b8">[9]</ref> to classify publications according to the type of research they contribute (RQ4). We adapted this to our study by employing the five contribution types presented in Tbl. II. The contribution types are disjoint and each paper was classified to provide exactly one contribution type.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Analyses</head><p>Papers contributing investigations without constructive contributions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Concepts</head><p>Papers suggesting ways of thinking things, such as new metamodels or taxonomies (this was titled "models" in <ref type="bibr" target="#b8">[9]</ref>, which is misleading in the context of your study) Methods</p><p>Papers suggesting ways of doing things, such as novel approaches to use UML for integrating materials flows and the participating cyber-physical production systems <ref type="bibr" target="#b34">[34]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Metrics</head><p>Papers suggesting ways of measuring things.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Tools</head><p>Papers presenting software tools. Research Type Facet: Also inspired by <ref type="bibr" target="#b8">[9]</ref>, we classified the publications according to the research type they contribute. This enables addressing RQ4 on the most frequently applied research methods contributed to MBSE for Industry 4.0. Again, we adjusted the taxonomy <ref type="bibr" target="#b8">[9]</ref> to better match our study. In particular, we eliminated the category of philosophical papers as these did not occur. The resulting, disjoint, research types are depicted in Tbl. III. Each paper was classified to belong to exactly one research type.</p><p>Industry 4.0 Concern Facet: We also classified the publications along the concerns addressed by the various publications. This addresses RQ2 and aims to uncover which concerns are investigated how often. During classification, keywording (cf. <ref type="bibr" target="#b8">[9]</ref>) the abstracts, introductions, conclusions, and in complex cases the complete paper, produced the following Industry 4.0 concerns. These concerns are not disjoint and included papers can contribute to multiple concerns.</p><p>Modeling Technique Facet: To answer RQ3 on the MBSE tools and languages used in Industry 4.0, we also classified</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation</head><p>Papers evaluating existing techniques, such as the evaluation of modeling tools for SMEs presented in <ref type="bibr" target="#b35">[35]</ref>. Experience</p><p>Report of personal experiences, for instance on the application of a specific method (cf. <ref type="bibr" target="#b36">[36]</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Solution</head><p>A novel solution is presented and argued for with case studies, such as composing UML and OWL <ref type="bibr" target="#b37">[37]</ref> to facilitate agile factory planning <ref type="bibr" target="#b38">[38]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Validation</head><p>Papers presenting novel techniques and experimenting with them (cf. <ref type="bibr" target="#b39">[39]</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Vision</head><p>Non-disruptive research agendas, such as the vision of model-based logistics engineering presented in <ref type="bibr" target="#b40">[40]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Digital Representation</head><p>Modeling systems, factories, or knowledge as well as the standardization of digital representations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Failure Handling</head><p>Publications focusing on failure management or safety aspects.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Human Factors</head><p>Publications addressing the human side of Industry 4.0, such as worker localization or human-machine interaction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Information Management</head><p>Publications on accessing and distributing information.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Integration</head><p>Papers focusing on integrating CPS with something (other CPS, processes, the cloud) at design time and run time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Processes</head><p>Their modeling and management.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Product Modeling</head><p>Publications contributing to modeling (smart) products.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>(Re-) configuration</head><p>Publications focusing on modeling configuration, monitoring, system resiliency, and self-* properties.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Verification &amp; Validation</head><p>Publications employing MBSE to simulation and testing.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Visualization</head><p>Publications on using MBSE for achieve better system visualization, such as 3D modeling, augmented reality, or virtual reality. the publications along this dimension. Overall, we identified 81 modeling techniques and many papers addressed more than one modeling technique. To prevent dissipating the results we aggregated modeling techniques into groups (such as 3D modeling, architecture description languages, or business process modeling techniques) and isolated modeling techniques more specific to Industry 4.0 (such as AutomationML). This led to the 15 groups presented in Tbl. V. Moreover, we also investigated whether the classified publications report on realworld industrial applications. Out of the 222 publications included into classification, only 10 reported such applications in automotive <ref type="bibr" target="#b52">[52]</ref>, avionics manufacturing <ref type="bibr" target="#b47">[47]</ref>, packaging <ref type="bibr" target="#b53">[53]</ref>, production of white goods <ref type="bibr" target="#b54">[54]</ref>, oil production <ref type="bibr" target="#b55">[55]</ref>, and production of windows and doors [56] The next section presents our main findings along the classification dimensions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. MAIN FINDINGS</head><p>This section presents our findings on the expectations researchers in MBSE for Industry 4.0 have regarding the impact of their papers as well as on the contribution types, research</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3D Modeling</head><p>Techniques for representing geometric properties, e.g., for factory planning or augmented reality systems, including AutoCAD <ref type="bibr" target="#b41">[41]</ref> and CATIA 3D <ref type="bibr" target="#b39">[39]</ref>. types, Industry 4.0 concerns, and modeling concerns for the included papers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Expectations on the Impact of MBSE</head><p>With RQ1 we address the reasons why researchers contribute MBSE to the challenges of Industry 4.0. To this end, we investigated the expected impact of modeling approaches to Industry 4.0 challenges and extracted whenever these were made explicit. Out of the 222 publications included after classification, only 25 (11%) explicitly stated the authors' expectations on the impact of their contribution. The expectations include reducing the cost for production system integration <ref type="bibr" target="#b57">[57]</ref>, saving energy on production system reconfiguration <ref type="bibr" target="#b49">[49]</ref>, and remaining internationally competitive in high-wage countries <ref type="bibr" target="#b34">[34]</ref>. We classified the expectations into expectations on reducing time (development time, time-to-market), reducing costs (of development, integration, (re-)configuration), and improving either sustainability or international competitiveness.</p><p>Overall, the included publications mentioned 27 expectations. Out of these, most publications expected MBSE to either reduce time (12x mentioned) or costs (10x), whereas only few publications expect MBSE to improve sustainability (4x), increase international competitiveness (2x), or enhance the quality of products (1x). However, as the number of papers making the expectations of contributing MBSE to Industry 4.0 is rather small, this cannot be generalized.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Industry 4.0 Concerns Addressed with MBSE</head><p>With RQ2, we aim at uncovering which concerns of Industry 4.0 are addressed using MBSE and how they are addressed in terms of contribution types (Tbl. II) and research methods (Tbl. III). Investigating this, we found that most publications on MBSE for Industry 4.0 contribute methods to challenges in digital representation (78 publications), integration (58), and processes (32). Moreover, many publications contribute concepts to digital representation (25) and integration (15). Out of the 347 concerns addressed by the included publications, these five combinations of contribution types and concerns are addressed by 60% of the papers in this corpus. Overall, the majority of papers contributes methods (61%) or concepts (17%), whereas analyses, metrics, or tools are contributed less often. With contributions claiming to reduce costs and time (cf. Sec. IV-A), the lack of papers contributing metrics to track these claims is surprising. The results concerning contribution types (as inquired by RQ4) are depicted on the left part of <ref type="figure">Fig. 2</ref> and these findings are reflected by the types contributions on its right part. Most contributions are solution proposals (i.e., application of existing techniques to solve particular problems) that focus either on digital representation or integration challenges. It is also surprising, that only few papers address modeling for the smart product, which is supposed to control its production processes in many visions of Industry 4.0. Overall, solution proposals make 79% of the research, whereas only few experience reports, validation research, evaluation reports, and vision papers are contributed. That most solution papers also are method papers might reflect the very constructive research typical to MBSE. However, the large number of method papers over paper contributing new concepts, validating new techniques, or proposing visions implies that research mainly approaches Industry 4.0 with established methods and techniques. This is supported by our findings on the modeling techniques contributed to Industry 4.0 presented in the next section. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Modeling Techniques Applied to Industry 4.0</head><p>Regarding RQ3, out of the 222 publications included into classification, 178 (80%) explicitly specified the (meta)modeling technique the authors applied to contribute to MBSE for Industry 4.0. Examining these publications produced 96 different techniques. Most notably among these are:  <ref type="bibr" target="#b67">[67]</ref>, the virtual factory data model <ref type="bibr" target="#b68">[68]</ref>, the Industry 4.0 process modeling language <ref type="bibr" target="#b69">[69]</ref>, the graphical modeling language for value networks <ref type="bibr" target="#b70">[70]</ref>, or the graphical modeling framework for production processes <ref type="bibr" target="#b71">[71]</ref>. Overall, out of the 222 classified papers, 47 employ UML and variants, 36 use DSLs specific to Industry 4.0 challenges, 26 employ knowledge representation techniques, and 19 papers use AutomationML <ref type="bibr" target="#b43">[43]</ref>. Where a column of <ref type="figure" target="#fig_2">Fig. 3</ref> sums up to a higher number (e.g., column UML), the column's modeling technique was applied to multiple concerns. We also found eight papers applying explicit metamodeling techniques to Industry 4.0 challenges. These either used specific language workbenches, such as Xtext <ref type="bibr" target="#b72">[72]</ref>, <ref type="bibr" target="#b73">[73]</ref>, <ref type="bibr" target="#b74">[74]</ref> or MetaEdit+ <ref type="bibr" target="#b75">[75]</ref>, <ref type="bibr" target="#b76">[76]</ref> or more generic metamodeling frameworks, such as MOF <ref type="bibr" target="#b32">[32]</ref>, EMF/ECore <ref type="bibr" target="#b77">[77]</ref>. Overall, 40% of the contributions address Industry 4.0 challenges with new DSLs, language profiles of UML or SysML, or metamodeling techniques. This hints at modeling challenges that cannot be properly addressed by established modeling techniques.</p><p>To answer RQ3, we also aim to understand which modeling techniques are applied to address the different Industry 4.0 concerns. The results, depicted in <ref type="figure" target="#fig_3">Fig. 4</ref>, show that UML is used mostly to solve challenges regarding digital representation (28 papers) and regarding integration (23 papers). This is consistent with identifying these as the most important challenges addressed by included publications. Hence, these are the two concerns most often addressed with knowledge representation techniques, DSLs, and architecture description languages as well. For failure handling and process modeling, knowledge representation techniques are more prominent than UML. Overall, the concerns digital representation and integrationaddressed by either AutomationML, various DSLs, knowledge representation techniques, SysML, or UML -make up for 36% of the included publications. While the usage of UML is almost equally distributed between both concerns, DSLs and knowledge representation techniques lean towards digital representation challenges. This might imply that UML and its variants are more suitable to integration than the former.</p><p>The results also show, that neither validation &amp; verification, nor the human factors crucial to the success of Industry 4.0 or product modeling are investigated as much as integration and digital representation. Whereas the former might require solving digital representation and integration (to some degree) first, the lack of research on the latter two is elusive. Unless the smart factory of the future is fully automated, human interaction and control are necessary and should be considered appropriately.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Countries and Institutions Contributing to the Field</head><p>Investigating RQ5, we found that almost half of the papers were contributed by teams including German authors, followed by teams including authors from the USA, Italy, Greece, and France as depicted in <ref type="figure" target="#fig_4">Fig. 5</ref>. Overall 38 countries contributed to MBSE for Industry 4.0 in 278 contributions (papers with authors from multiple countries produce multiple country contributions). Out of these, the top 10 contributing countries produce 210 (i.e., 79%) of the 278 country contributions. Among these, 176 (66%) contributions are from European countries, which suggests that MBSE for Industry 4.0 still largely is a European research program. Whether this is due to the focus on manufacturing or on MBSE cannot be derived from the data.</p><p>Aside from the contributing authors' countries, we also identified the institutions most actively engaging into MBSE for Industry 4.0 research. Due to Industry 4.0 originating in Germany and 51% of the included publications having German co-authors, it is not surprising that of the 10 most active institutions in this field, 7 are from Germany as depicted in <ref type="figure">Fig. 6</ref>. Out of the 197 overall contributing institutions, 124 (63%) are universities and 31 (16%) are research institutes. This indicates that despite the business-driven term, its research largely is academic. Further research is contributed by 42 companies and other organizations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Popular Venues for Publications on MBSE for Industry 4.0</head><p>Investigating RQ6, we determined that most papers are published at conferences (151, 68%), followed by journals (63,  28%), and workshops (8, 4%). We also identified the most popular journals, conferences and workshops of this particular field of research, to answer RQ6 on the most popular venues for MBSE research in the context of Industry 4.0. <ref type="figure">Fig. 7</ref> presents the 10 most popular journals, where 41% of the related journal papers are published. Where journals produced the same number of publications, we selected in alphabetical order. The low numbers of publications in these most popular journals, however, do not support conclusions over their importance. As the Industry 4.0 will mature, future studies may draw such conclusions based on a larger corpus of relevant publications.</p><p>The 10 most popular conferences to MBSE for Industry 4.0, depicted in <ref type="figure">Fig. 7</ref>, publish, with 40%, a similar share of the related conference publications. However, the bigger number of conference publications supports the conclusion that the conference on Emerging Technologies And Factory Automation (ETFA) is the most important conference for publications on MBSE for Industry 4.0. The other conferences published between 1 and 2 papers on the topic and distinguishing their importance, hence, is not feasible. Overall, the publication activities regarding conferences and journals focus on venues on automation engineering, The 10 most popular journals and conferences publish in total 39% of the included papers, which hints at a healthy distribution of publications over multiple venues. This is reflected by the eight workshop papers included in the classification, each of which was published at a different workshop. Hence, no results on popularity can be drawn.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. Publication Activities over Time</head><p>On RQ7, we found that MBSE in Industry 4.0 was already addressed as early as 1991 <ref type="bibr" target="#b78">[78]</ref>, although neither the term "Industry 4.0" was coined, nor MBSE was a common research topic. Over half (123) of related publications were published starting in 2015 and 182 (81%) of the publications are from 2011 (the year the term "Industry 4.0" was coined) or later (cf. <ref type="figure" target="#fig_6">Fig. 9</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. THREATS TO VALIDITY</head><p>The presented study is subject to threats to construct validity (research design), internal validity (data extraction), and conclusion validity (reliability). Threats to external validity (generalizability) are irrelevant as the results of this study cannot be generalized to other problems domains (Industry 4.0) or other solution domains (MBSE).</p><p>Regarding threats to research design, the findings presented in Sec. III and Sec. IV are valid only for our sample of papers. Hence, it is crucial to ensure inclusion of as many relevant papers as possible. To achieve this, we included the Google Scholar digital library. Although we are aware that a great number of subsequent exclusions for formal reasons (e.g., nonpeer-reviewed materials) are due to including Google Scholar, its inclusion was useful to capture venues not published at the other libraries. Overall, considering Google Scholar led to including 108 papers that would have otherwise been omitted.</p><p>Furthermore, we did not restrict our search to papers mentioning "Industry 4.0" explicitly, but also included the related terms of the search clause's first part. Similarly, the search clause's second part included terms closely related to model-based software engineering, without narrowing it to the exact terms. Instead, we used terms one can expect from relevant contributions to be included in the full text. This enabled to capture related publications without focusing on the very specific, partly ambiguous, modeling terminology. Another threat to research design validity arises from the definition of the inclusion/exclusion criteria. During the screening, only title, abstract, and keywords were considered. To prevent excluding relevant publications based on the lack of investigation, we included papers we were uncertain of temporarily. In the subsequent classification phase, the complete papers were read and inclusion/exclusion were decided ultimately.</p><p>Threats to internal validity arise from the data extraction performed for screening and classification. The lack of established terminology, absent information, or unfavorably presented papers may lead to wrong decisions regarding inclusion and exclusion. To mitigate this, inclusion and classification of problematic papers was discussed among the authors. These discussions served as quality assessment also and, e.g.,, lead to excluding very short papers (cf. excluded teasers). We did, however, not discard papers based on their comprehensibility or venue alone. We also assigned each paper to the most suitable research type facet to yield a clear partitioning of the data set according to the categories of Tbl. III. Where debatable, we discussed this also among all authors. To prevent the threat of classification fatigue, the classification was performed in blocks of at most one hour broken up by at least 15 minute breaks.  correspond to our research questions. Threats to conclusion validity arise drawing wrong conclusions and from the study's replicability. Regarding the former, we have discussed various issues that could lead to wrong conclusions in the context of threats to internal and external validity. For replicability, we detailed the complete research method in Sec. III, which enables replicating every phase of this mapping study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>VI. CONCLUSION</head><p>Industry 4.0 is the application of systems engineering concepts, methods, and tools to the development of adaptive systems of systems that enable smart manufacturing with CPS in the IoT. Model-based systems engineering has shown to facilitate development of such systems, but its application to Industry 4.0 was not systematically investigated, yet. To comprehend the contribution of MBSE to Industry 4.0, we conducted a systematic mapping study, which revealed that digital representation of automation systems, i.e., their interfaces and data models, as well as their integration and (re-)configuration are the prime Industry 4.0 concerns addressed by MBSE. Also, the majority of papers contribute methods and concepts to solve particular challenges of Industry 4.0. Despite this is a relatively new term, we found only 9 vision papers addressing its various concerns. If this is considered an indicator for the domain's maturity, the lack of experience papers and experience reports is notable. We do not consider this point regarding the mapping study validity. Indeed, systematic mapping studies in software engineering have been recommended mostly for research areas where there is a low number relevant, high-quality primary studies <ref type="bibr" target="#b8">[9]</ref>. There is a similar lack of research contributing metrics and analyses on the applicability of specific concepts, methods, and tools to the Industry 4.0 challenges. It is also surprising that there is relatively little research in validation &amp; verification despite the huge costs that production system failures might entail. However, with Industry 4.0 being businessdriven and aiming at reducing cost and time, such contributions might arise once the field has matured. Regarding the most popular venues for publications on MBSE for Industry 4.0, we found that the publications are almost equally spread over the different journals, whereas the conference on Emerging Technologies And Factory Automation (ETFA) appears to be the most important conference for this field. It is, however, notable that no software-engineeringcentric venues are among the top venues. We also found that Industry 4.0 is still largely a European research program with common contributions from the USA, China, and the Republic of Korea. Future studies will reveal whether Industry 4.0 will be addressed increasingly in other countries as well.</p><p>UML is the modeling technique applied most often to Industry 4.0, followed by DSLs and knowledge representation techniques. There is a conceptual gap between the software modeling techniques of UML and knowledge representation techniques whose bridging appears to be crucial to successful modeling the factory of the future. Domain-specific languages are the second most popular modeling technique. With the majority (82%) of DSL related contributions being published since 2010 and increasing in number since then, we expect to see more modeling techniques specifically tailored to Industry 4.0 in the future. It would be interesting to compare this trend to more mature domains that incorporated modeling, such as embedded systems in automotive or avionics, as well as to the corpora of MBSE-related publications on CPS and IoT.</p><p>Future research on MBSE for Industry 4.0 hence should address the integration of knowledge representation techniques with UML and AutomationML to ultimately achieve an integrated factory system model that enables fully automated reasoning about production optimization based on product information. Such a basis might lead to increasing research in validation &amp; verification of integrated production systems as well as in including modeling the human factors of Industry 4.0 applications more often. Moreover, research is lacking metrics that enable checking whether Industry 4.0 fulfills the promises of reducing integration costs and energy consumption. Development of appropriate measures can help to guide future research in MBSE for Industry 4.0. Overall, this study has uncovered that research on modeling for Industry 4.0 currently focuses on digital representation and integration using established techniques, but also that there is an increasing trend towards customized modeling techniques to address the more specific challenges of Industry 4.0. Future studies will show whether established modeling techniques are adequate to address Industry 4.0 challenges. There also still is a lack of benchmarks for Industry 4.0. Consequently, there is no real comparison between approaches and only little work on their validation. Sharing benchmarks on top of existing case studies, such as MyJoghurt 3 , would be another challenge for the modeling community.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>RQ1 What are the expected benefits from applying MBSE to contribute to Industry 4.0? This question aims to identify the benefits expected by applying MBSE at Industry 4.0. RQ2 Which Industry 4.0 concerns are addressed through applying MBSE? With this question, we investigate which concerns of Industry 4.0 are addressed by the MBSE researchers and to which extent. RQ3 Which MBSE tools and languages are used in In- dustry 4.0 and which concerns do they address? This question relates the findings of RQ2 to the solutions contributed to the research field.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Logical search clause defined to identify relevant literature.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Modeling techniques by research type and contribution type.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Individual Industry 4.0 concerns and modeling techniques addressing them.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. The top 10 countries with authors contributing to MBSE in Industry 4.0 are mostly from Europe and contribute 79% of the publications.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .Fig. 8 .</head><label>68</label><figDesc>Fig. 6. The 10 institutions engaging most actively in research on MBSE for Industry 4.0.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9. Number of publications per year until April 2017 (missing numbers identify years without related publications).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>TABLE II CONTRIBUTION TYPE FACETS.</head><label>II</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>TABLE III RESEARCH TYPE FACETS.</head><label>III</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>TABLE IV INDUSTRY 4.0 CONCERN FACETS.</head><label>IV</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" validated="false"><head>• Variants of UML, such as</head><label></label><figDesc></figDesc><table>DiSpa [58], Mechatronic 
+UML [59], UMM [60], and UML4IoT [61]; 
+• The systems modeling language (SysML) [62] and 
+its variants, such as SysML4Mechatronics [63] and 
+SysML4Modelica [64]; 
+• Knowledge representation techniques (mostly employing 
+OWL [65], [66]); 
+• Various DSLs, such as the EXPRESS DSL for product 
+data modeling </table></figure>
+
+			<note place="foot" n="1"> Available from companion website http://gemoc.org/modeling4Industry4.0/</note>
+
+			<note place="foot" n="2"> Data available from: http://gemoc.org/modeling4Industry4.0/</note>
+
+			<note place="foot" n="3"> http://i40d.ais.mw.tum.de/</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Bundesministerium Für Bildung Und Forschung</surname></persName>
+		</author>
+		<ptr target="https://www.bmbf.de/de/zukunftsprojekt-industrie-4-0-848.html" />
+		<imprint>
+			<biblScope unit="page" from="2017" to="2021" />
+		</imprint>
+	</monogr>
+	<note>Zukunftsprojekt Industrie 4.0</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Design principles for Industrie 4.0 scenarios</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Hermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Pentek</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Otto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">49th Hawaii International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="3928" to="3937" />
+		</imprint>
+	</monogr>
+	<note>System Sciences (HICSS)</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">The digitization of manufacturing and its societal challenges: a framework for the future of industrial labor</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Dregger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Niehaus</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Ittermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Hirsch-Kreinsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Ten Hompel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2016 IEEE International Symposium on Ethics in Engineering</title>
+		<imprint>
+			<date type="published" when="2016-05" />
+			<biblScope unit="page" from="1" to="3" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The Smart Factory -Risk Management Perspectives</title>
+		<ptr target="http://www.thecroforum.org/wp-content/uploads/2015/12/CROF-ERI-2015-The-Smart-Factory1.pdf" />
+	</analytic>
+	<monogr>
+		<title level="j">CRO Forum</title>
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+<note type="report_type">Tech. Rep.</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Systematic literature review of the objectives, techniques, kinds, and architectures of models at runtime</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Szvetits</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Zdun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Software &amp; Systems Modeling</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="31" to="69" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">ModelDriven Development in Robotics Domain: A Systematic Literature Review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Heineck</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Sousa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Castro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Software Components, Architectures and Reuse (SBCARS), 2016 X Brazilian Symposium on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="151" to="160" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A systematic literature review on methods that handle multiple quality attributes in architecture-based self-adaptive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mahdavi-Hezavehi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">H</forename><surname>Durelli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Weyns</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Avgeriou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Information and Software Technology</title>
+		<imprint>
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Keele</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+	<note>in Technical Report, Ver. 2.3 EBSE Technical Report. EBSE</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Systematic Mapping Studies in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Petersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Feldt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mujtaba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mattsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">in EASE</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="68" to="77" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">In Search of What We Experimentally Know about Unit Testing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Juristo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Moreno</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Vegas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Solari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="72" to="80" />
+			<date type="published" when="2006-11" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A Systematic Review of Software Development Cost Estimation Studies</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jorgensen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shepperd</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="33" to="53" />
+			<date type="published" when="2007-01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">A Survey of Controlled Experiments in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">I K</forename><surname>Sjoberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">E</forename><surname>Hannay</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Hansen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>By Kampenes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Karahasanovic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N.-K</forename><surname>Liborg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">C</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="733" to="753" />
+			<date type="published" when="2005-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Evidence Relating to Object-Oriented Software Design: A Survey</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Linkman</surname></persName>
+		</author>
+		<idno>ser. ESEM &apos;07</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Symposium on Empirical Software Engineering and Measurement</title>
+		<meeting>the First International Symposium on Empirical Software Engineering and Measurement</meeting>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">C</forename><surname>Washington</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Usa</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+			<publisher>IEEE Computer Society</publisher>
+			<biblScope unit="page" from="482" to="484" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">What Do We Know About the Effectiveness of Software Design Patterns?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1213" to="1231" />
+			<date type="published" when="2012-09" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A Mapping Study on Empirical Evidence Related to the Models and Forms Used in the UML</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Pretorius</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Second ACM-IEEE International Symposium on Empirical Software Engineering and Measurement, ser. ESEM &apos;08</title>
+		<meeting>the Second ACM-IEEE International Symposium on Empirical Software Engineering and Measurement, ser. ESEM &apos;08<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="342" to="344" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A Systematic Mapping Study on Empirical Evaluation of Software Requirements Specifications Techniques</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Condori-Fernandez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Daneva</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Sikkel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Wieringa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Dieste</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Pastor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2009 3rd International Symposium on Empirical Software Engineering and Measurement</title>
+		<meeting>the 2009 3rd International Symposium on Empirical Software Engineering and Measurement</meeting>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Software Product Line Testing -A Systematic Mapping Study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Engström</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Runeson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="2" to="13" />
+			<date type="published" when="2011-01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">A Systematic Mapping Study on Software Product Line Evolution: From Legacy System Reengineering to Product Line Refactoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Laguna</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Crespo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Comput. Program</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1010" to="1034" />
+			<date type="published" when="2013-08" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Domain-specific languages: A systematic mapping study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Kosar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Bohra</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mernik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information and Software Technology</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="77" to="91" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Aspect-oriented model-driven code generation: A systematic mapping study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Mehmood</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">N</forename><surname>Jawawi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">special Section: Component-Based Software Engineering (CBSE)</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="395" to="411" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Guest Editorial Industry 4.0 -Prerequisites and Visions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Vogel-Heuser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Hess</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Automation Science and Engineering</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="411" to="413" />
+			<date type="published" when="2016-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Cyber-physical Systems Challenges: A Needs Analysis for Collaborating Embedded Software Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">J</forename><surname>Mosterman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Zander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Softw. Syst. Model</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="5" to="16" />
+			<date type="published" when="2016-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A Survey of Current Challenges in Manufacturing Industry and Preparation for Industry 4.0</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Turowski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Scientific Conference on Intelligent Information Technologies for Industry (IITI&apos;16)</title>
+		<meeting>the First International Scientific Conference on Intelligent Information Technologies for Industry (IITI&apos;16)</meeting>
+		<imprint>
+			<date type="published" when="2016-01" />
+			<biblScope unit="page" from="15" to="26" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A Review of Technology Standards and Patent Portfolios for Enabling Cyber-Physical Systems in Advanced Manufacturing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">J C</forename><surname>Trappey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">V</forename><surname>Trappey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><forename type="middle">H</forename><surname>Govindarajan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">C</forename><surname>Chuang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="7356" to="7382" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Design Principles for Industrie 4.0 Scenarios</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Hermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Pentek</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Otto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2016 49th Hawaii International Conference on System Sciences (HICSS), ser. HICSS &apos;16</title>
+		<meeting>the 2016 49th Hawaii International Conference on System Sciences (HICSS), ser. HICSS &apos;16<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="3928" to="3937" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Industry 4.0: A Survey on Technologies, Applications and Open Research Issues</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<ptr target="http://www.sciencedirect.com/science/article/pii/S2452414X17300043" />
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Industrial Information Integration</title>
+		<imprint>
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A systematic mapping study on domainspecific languages</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">M</forename><surname>Do Nascimento</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">L</forename><surname>Viana</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">A S</forename><surname>Neto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Martins</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">C</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">R</forename><surname>Meira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Seventh International Conference on Software Engineering Advances</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="179" to="187" />
+		</imprint>
+	</monogr>
+	<note>ICSEA 2012</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Systematic literature reviews in software engineeringa systematic literature review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Linkman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information and Software Technology</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="7" to="15" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+	<note>special Section -Most Cited Articles in 2002 and Regular Research Papers</note>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Using mapping studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of PPIG</title>
+		<meeting>PPIG</meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="195" to="204" />
+		</imprint>
+		<respStmt>
+			<orgName>Lancaster University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Integrated system for control and monitoring industrial wireless networks for labor risk prevention</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Gisbert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Palau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Uriarte</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Prieto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Palazón</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Esteve</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>López</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Correas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">C</forename><surname>Lucas-Estañ</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Giménez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Network and Computer Applications</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="233" to="252" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Model predictive control as a module for autonomously running complex plastics production processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Stemmler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Reiter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Abel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Polymer Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">SMARTFACTORY -an Implementation of the Domain Driven Development Approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Lahire</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Parigot</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Tundrea</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SACI&apos;2004, 1st Romanian-Hungarian Joint Symposium on Applied Computational Intelligence</title>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page">6</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Service Composition in the Cloud-Based Manufacturing Focused on the Industry 4</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Pisching</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Junqueira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">J S</forename><surname>Filho</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">E</forename><surname>Miyagi</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015" />
+			<publisher>Springer International Publishing</publisher>
+			<biblScope unit="page" from="65" to="72" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Assembly process driven component data model in cyber-physical production systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Strang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Anderl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the World Congress on Engineering and Computer Science</title>
+		<meeting>the World Congress on Engineering and Computer Science</meeting>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Modeling of system knowledge for efficient agile manufacturing: Tool evaluation, selection and implementation scenario in SMEs</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Constantinescu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Matarazzo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Dienes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Francalanza</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bayer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia CIRP</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="246" to="252" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">On the use of the Core Manufacturing Simulation Data (CMSD) standard: experiences and recommendations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Bergmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Straßburger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fall Simulation Interoperability Workshop 2015 (SIW)</title>
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">OWL: Representing information using the web ontology language</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">W</forename><surname>Lacy</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<publisher>Trafford Publishing</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Semantic Information Modelling for Factory Planning Projects</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Büscher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Voet</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Krunke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Burggräf</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Meisen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Jeschke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia CIRP</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="478" to="483" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">A new method for automatic optimization of drawbead geometry in the sheet metal forming process based on an iterative learning control model</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="17" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Model-driven logistics engineering-challenges of model and object transformation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lütjen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H.-J</forename><surname>Kreowski</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Franke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K.-D</forename><surname>Thoben</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Freitag</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Technology</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="303" to="312" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Automating generation of the assembly line models in aircraft manufacturing simulation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Fan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Assembly and Manufacturing (ISAM), 2013 IEEE International Symposium on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="155" to="159" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">A Classification and Comparison Framework for Software Architecture Description Languages</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Medvidovic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">N</forename><surname>Taylor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Software Engineering</title>
+		<imprint>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">AutomationML -the glue for seamless automation engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Drath</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Luder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Peschke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Hundt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies and Factory Automation</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="616" to="623" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Towards agent-based smart factories: A subject-oriented modeling approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Kannengiesser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Müller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Web Intelligence (WI) and Intelligent Agent Technologies (IAT)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="83" to="86" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Contextsensitive adaptive production processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">T</forename><surname>Sungur</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Breitenbücher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Leymann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wieland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia CIRP</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="147" to="152" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Toward the ideal of automating production optimization</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Michaloski</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Proctor</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Arinez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Berglund</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ASME 2013 International Mechanical Engineering Congress and Exposition</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="2" to="02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">ERP Life-cycle Management for Aerospace Smart Factory: A Multi-disciplinary Approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Rashid</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Qureshi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Khan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computer Applications</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Potentials of coloured petri nets for realistic availability modelling of production systems in Industry 4.0</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Zeiler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Bertsche</surname></persName>
+		</author>
+		<idno>07.09.-10.09</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the ESREL 2015 Conference</title>
+		<meeting>the ESREL 2015 Conference<address><addrLine>Zürich, Switzerland</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="4455" to="4463" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Evaluation of prediction accuracy for energy-efficient switching of automation facilities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mechs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Grimm</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lamparter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Industrial Electronics Society, IECON 2013-39th Annual Conference of the IEEE</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="6928" to="6933" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Serviceoriented robotics manufacturing by reasoning about the scene graph of a robotics cell</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Hoffmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Angerer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schierl</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Vistein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Reif</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">41st International Symposium on Robotics; Proceedings of. VDE</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+	<note>ISR/Robotik</note>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Context-based orchestration for control of resource-efficient manufacturing processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Loskyll</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Heck</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Schlick</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Schwarz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Internet</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="737" to="761" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">A skill-based system for object perception and manipulation for automating kitting tasks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Holz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Topalidou-Kyniazopoulou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Rovida</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">R</forename><surname>Pedersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Krüger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Behnke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies &amp; Factory Automation (ETFA), 2015 IEEE 20th Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Fault handling in PLC-based industry 4.0 automated production systems as a basis for restart and self-configuration and its evaluation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Vogel-Heuser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Rösch</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Simon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ulewicz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Folmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Software Engineering and Applications</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">01</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">A concept for context-aware computing in manufacturing: the white goods case</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Alexopoulos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Makris</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Xanthakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Sipsas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Chryssolouris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computer Integrated Manufacturing</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="839" to="849" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">A modelbased approach for process monitoring in oil production industry</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Irisarri</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">V</forename><surname>García</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Estévez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Marcos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies and Factory Automation (ETFA)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+	<note>IEEE 21st International Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">A case study on the object-oriented framework for modeling product families with the dominant variation of the topology in the one-of-a-kind production</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">S</forename><surname>Aleksi´caleksi´c</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">S</forename><surname>Jankovi´cjankovi´c</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">V</forename><surname>Stoimenov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="397" to="412" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">OPC-UA communications integration using a CPPS architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">V</forename><surname>García</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Irisarri</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Estévez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Marcos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Ecuador Technical Chapters Meeting (ETCM), IEEE</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Automated PLC software generation based on standardized digital process information</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bergert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Diedrich</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kiefer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Bar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies and Factory Automation</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="352" to="359" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Towards Safe Execution of Reconfigurations in Cyber-Physical Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Schubert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Heinzemann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Gerking</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Component-Based Software Engineering (CBSE)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="33" to="38" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">A standards framework for value networks in the context of Industry 4.0</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Mazak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Huemer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Industrial Engineering and Engineering Management (IEEM), 2015 IEEE International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="1342" to="1346" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">UML4IoT -a UML-based approach to exploit IoT in cyber-physical manufacturing systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Thramboulidis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Christoulakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers in Industry</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="259" to="272" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Fault-centric system modeling using SysML for reliability testing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Thoma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kormann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Vogel-Heuser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies &amp; Factory Automation (ETFA), 2012 IEEE 17th Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Towards effective management of inconsistencies in modelbased engineering of automated production systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Feldmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">J</forename><surname>Herzig</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Kernschmidt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Wolfenstetter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Kammerl</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Qamar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Lindemann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Krcmar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">J</forename><surname>Paredis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Vogelheuser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IFAC-PapersOnLine</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="916" to="923" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Functional Modelling And Simulation Of Overall System Ship-Virtual Methods For Engineering And Commissioning In Shipbuilding</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Berndt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><forename type="middle">F</forename><surname>Lukas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Kuijper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ECMS</title>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="347" to="353" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Requirements and languages for the semantic representation of manufacturing systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Negri</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Fumagalli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Garetti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Tanca</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers in Industry</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="55" to="66" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Ontologies for flexible production systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Harcuba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Vrba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies &amp; Factory Automation (ETFA), 2015 IEEE 20th Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Using the EXPRESS language as a reference interface to define MMS communication</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Divoux</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Rondeau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Lepage</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Intelligent Manufacturing</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="59" to="66" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Semantic Virtual Factory supporting interoperable modelling and evaluation of production systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kádár</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Terkaj</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sacco</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CIRP Annals-Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="443" to="446" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Process modeling for Industry 4.0 applications: Towards an Industry 4.0 process modeling language and method</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Petrasch</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Hentschke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Computer Science and Software Engineering (JCSSE)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="1" to="5" />
+		</imprint>
+	</monogr>
+	<note>13th International Joint Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">International Association for Management of Technology (IAMOT)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Schneider</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Mittag</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gausemeier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">25th International Association for Management of Technology Conference Proceedings, ser. 25th International Association for Management of Technology Conference</title>
+		<meeting><address><addrLine>Orlando, Florida; MayMay</addrLine></address></meeting>
+		<imprint>
+			<publisher>IAMOT</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="94" to="110" />
+		</imprint>
+	</monogr>
+	<note>Modeling Language for Value Networks</note>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">GRAMOSA framework for graphical modelling and simulation-based analysis of complex production processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lütjen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Rippel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="issue">1-4</biblScope>
+			<biblScope unit="page" from="171" to="181" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">A service-oriented domain specific language programming approach for batch processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">M</forename><surname>Merkumians</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Baierling</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Schitter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies and Factory Automation (ETFA)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+	<note>IEEE 21st International Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Model-based Development of Automation Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Niggemann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Maier</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jasperneite</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">MBEES</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="45" to="54" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Intelligent and self-adapting integration between machines and information systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Kern</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Stefan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Dimitrieski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IADIS International Journal on Computer Science &amp; Information Systems</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">A virtual environment for the management and development of cyber-physical manufacturing systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Maffei</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Ferreirar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Akillioglu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">R</forename><surname>Khabazzi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IFAC-PapersOnLine</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="29" to="36" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">A modelbased approach to qualified process automation for anomaly detection and treatment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">V</forename><surname>Panfilenko</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">R</forename><surname>Khabbazi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Sonntag</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies and Factory Automation (ETFA)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+	<note>IEEE 21st International Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Modeling AutomationML: Semantic web technologies vs. model-driven engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Kovalenko</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sabou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Lüder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">J</forename><surname>Ekaputra</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Biffl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies &amp; Factory Automation (ETFA), 2015 IEEE 20th Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Modeling for Ship Design and Production</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Wollert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lehne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Ship Production Symposium Proceedings: Building the Ships and Boats of 2010-The Way Forward</title>
+		<imprint>
+			<date type="published" when="1991" />
+			<biblScope unit="page">1</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

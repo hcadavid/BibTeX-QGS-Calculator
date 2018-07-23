@@ -26,8 +26,12 @@
             <groupId>info.debatty</groupId>
             <artifactId>java-string-similarity</artifactId>
             <version>1.1.0</version>
-        </dependency>        
-        
+        </dependency>
+        <dependency>
+            <groupId>org.grobid</groupId>
+            <artifactId>grobid-core</artifactId>
+            <version>0.5.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     
 </project>

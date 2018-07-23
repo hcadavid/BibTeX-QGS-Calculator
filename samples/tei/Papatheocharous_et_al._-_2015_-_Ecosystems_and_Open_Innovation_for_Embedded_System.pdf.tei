@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Ecosystems and Open Innovation for Embedded Systems: A Systematic Mapping Study</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2015">2015</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Efi</forename><surname>Papatheocharous</surname></persName>
+							<email>efi.papatheocharous@sics.se</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Swedish Institute of Computer Science (SICS)</orgName>
+								<address>
+									<postCode>SE-164 29</postCode>
+									<settlement>Kista</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jesper</forename><surname>Andersson</surname></persName>
+							<email>jesper.andersson@lnu.se</email>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Linneaus University</orgName>
+								<address>
+									<addrLine>SE-351 95</addrLine>
+									<settlement>Växjö</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jakob</forename><surname>Axelsson</surname></persName>
+							<email>jakob.axelsson@sics.se</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Swedish Institute of Computer Science (SICS)</orgName>
+								<address>
+									<postCode>SE-164 29</postCode>
+									<settlement>Kista</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Ecosystems and Open Innovation for Embedded Systems: A Systematic Mapping Study</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">LNBIP</title>
+						<imprint>
+							<biblScope unit="volume">210</biblScope>
+							<biblScope unit="page" from="81" to="95"/>
+							<date type="published" when="2015">2015</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1007/978-3-319-19593-3_7</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Software ecosystems · Open innovation · Embedded systems</keywords>
+			</textClass>
+			<abstract>
+				<p>This paper surveys work on ecosystems and open innovation of systems in the context of software engineering for embedded systems. The primary research goal is to develop a research agenda based on the topics identified within the research publications on the topic. The agenda is based on a systematic mapping study of 260 publications obtained from digital libraries and is influenced by a set of areas of interest, i.e., product lines, open source, third party, business models, open innovation, and strategy. The results from the study include analysis of the type of research conducted in the field, its origin and research contribution. The study identifies the need for more solutions to specific open innovation problems such as mapping business models to technical platforms; defining open ecosystem processes that foster open innovation; and improving how ecosystem players can leverage on tool support for open innovation. A direction for future research is also provided.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Technological advances allow more and more systems to be connected to one another nowadays. The technology is straightforward and flexible and removes several impediments for innovation and new business opportunities. It has already been recognised in the software domain, that an increasing number of companies make their products and services available to offer opportunities for extended services and increase the value of existing products to customers that exceeds the typical company boundaries <ref type="bibr" target="#b0">[1]</ref>. From the engineering perspective however, the challenge is larger and it involves to satisfy the compelling needs for more flexibility, shorter time-to-market, and greater ability to build systems of systems. We have introduced in our previous work <ref type="bibr" target="#b1">[2]</ref> a specific form of these systems where plug-ins can be installed in different products (i.e., embedded systems) giving them the opportunity to collaborate for higher-order functionality or with data-intensive applications. We have highlighted the need for new or innovative business models, sustainable networks, ecologies or federations in the embedded systems domain, as they are less flexible and resilient to change, than for example in comparison to other domains, like pure software products. Some connected topics that both interest us as researchers and the industrial community we have interviewed, are software ecosystems, open innovation processes methods and tools, organisational and business architectures, product lines, open source and third party options for collaborations and sustainability <ref type="bibr" target="#b1">[2]</ref>.</p><p>Much of the research related to the open-innovation part of ecosystems of embedded systems is empirical, and drawn from specific domains, such as mobile phones <ref type="bibr" target="#b2">[3]</ref> or the automotive <ref type="bibr" target="#b3">[4]</ref>. To the best of our knowledge no domainindependent study exists that aims at understanding the quantities and trends of research, types of existing research and contributions on innovation for embedded software, its origin and application domains. Conducting research on this topic is challenging and no mature examples have been made available to the public or reported in scientific publications. The reasons for this are many, for instance that these systems are difficult to investigate empirically due to the number of stakeholders involved. Therefore, some of the definitions do not have much theoretical support and current research is still explorative.</p><p>This paper summarises the results from a systematic mapping study <ref type="bibr" target="#b4">[5]</ref> on aspects of ecosystems, product lines, open source or third party collaborations and business models, open strategic innovations in product development of embedded systems and software. The aim is to identify what there is already research on (which research domains) and pro-actively explore prospective venues of research. Thus, the study maps the existing research and practice in the literature providing a foundation for where does the research originate from, what are the trends during the last years, which are the main application domains and what kind of research and research contributions exist. This information can enhance the researchers' understanding of the quantities and trends in the literature of the area. The mapping study provides an overview and quantification of the research contributions in the field, and as reported in <ref type="bibr" target="#b4">[5]</ref>, systematic studies are considered necessary to conduct especially when researchers are entering a new or unknown field of research, which is true for the field we are interested in. The results help us to define a direction for future research on open innovation for embedded systems' software and their ecosystems.</p><p>The interest in ecosystems and in particular the software ecosystem, has expanded beyond company platforms, business models and definitions. The systematic literature by Manikas and Hansen <ref type="bibr" target="#b5">[6]</ref> focuses primarily on definitions in this context from a software engineering perspective. The authors conclude that analytical descriptions and monitoring of real-world ecosystems is limited. The consequences are that research results do not feed from industry and vice-versa, and that industry misses out on innovation improvements and efficiency when is not influenced by research. The objective of our research is to improve our understanding on the nature of existing research on ecosystems of open innovation and connections between different types of research and contributions, primarily from academia and practitioners. Our study uses a different strategy and scope compared to study <ref type="bibr" target="#b5">[6]</ref>. It examines the literature body that includes these notions and the primary contribution is a research agenda that can direct future research towards challenges relevant for industry and academia and leverage on existing research in the field. The remainder of this paper is organised as follows: the next section summarises the design of the study, Section 3 describes the findings, Section 4 presents analysis of the results, a research agenda, and Section 5 concludes the paper and describes of our future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Research Method</head><p>A modified version of the systematic mapping process described in <ref type="bibr" target="#b4">[5]</ref> was used for the study. The process steps and the results (marked in grey) are illustrated in <ref type="figure">Fig. 1</ref>. The process contains five distinct steps: planning, scoping (including searching), selecting, classifying and mapping. This section is structured according to these steps.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fig. 1. Systematic mapping process and results of the study</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Planning</head><p>In the planning phase, we defined the research scope by a set of Research Questions (RQ), which is summarised in <ref type="table" target="#tab_0">Table 1</ref>. They aim at collecting fundamental demographic information that characterises the field.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Scoping</head><p>The research questions guided the second phase (scoping) where the search scope was defined. The search scope included a set of scientific databases as data sources, namely ACM, Springer Link, Engineering Village, Science Direct and IEEE Explore digital libraries. As recommended in <ref type="bibr" target="#b4">[5]</ref> we defined the search string by performing iterative search of publication databases and evaluating the results each time. The search string was revised and modified accordingly based on the quality of the results obtained. The final search string was: "embedded AND (software OR system) AND ("product development") AND (ecosystem OR "eco system" OR "eco-system" OR "product-line" OR "product line" OR productline OR "open-source" OR "open source" OR "third party" OR "third-party") AND ("business model" OR "businessmodel" OR businessmodel OR "innovation system" OR "open innovation" OR "strategic innovation")". Identify the affiliations of the authors and specify the country from which the publication originates. RQ2 Which are the main publication venues of the research?</p><p>Identify the publication type of the research (book chapter, conference paper, journal paper or standard), and the primary venues that publish the research. RQ3 What is the affiliation of the researchers?</p><p>Identify the affiliations of the authors either as academia, industry, professional organisation, or governmental. RQ4 What is the research domain of the research conducted?</p><p>Classify the primary research domain(s) where research is conducted (many times more than one domain applies and domains are identified using the abstract keywords). RQ5 When is the research conducted?</p><p>Identify the publication year of the research.</p><p>RQ6 What is the application domain of the research?</p><p>Identify the application domain(s) of the research, if available. RQ7 What type of research is conducted?</p><p>Classify papers according to the research type facets <ref type="table" target="#tab_2">(Table 3)</ref> as described in <ref type="bibr" target="#b6">[7]</ref>. RQ8 What is the contribution of the research conducted?</p><p>Classify papers according to the research contribution <ref type="table" target="#tab_3">(Table 4)</ref> as described in <ref type="bibr" target="#b7">[8]</ref>.</p><p>This search string was designed to target papers in the domain of product development embedded systems, dealing with software-related systems, and then qualify them in aspects of ecosystems, product lines, open source software, third party or business models, or innovation. The same search string was applied to the selected databases, where we searched the full paper, abstract and keywords. In total we identified 73 papers from ACM Digital library, 294 papers from Springer Link, 5 papers from Engineering Village, 558 papers from Science Direct and 192 papers from IEEE Xplore digital library. The search scoping data is summarised in <ref type="table" target="#tab_1">Table 2</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Selecting</head><p>As keyword searches are considered to be too coarse-grained <ref type="bibr" target="#b4">[5]</ref>, a more precise selection method must be applied to identify the most relevant publications. Two researchers carried out this step independently and any differences were discussed until an agreement was reached.</p><p>In the selection phase the primary studies were selected by the application of the following inclusion/exclusion criteria that the researchers defined together:</p><p>1. Exclude search results that contain "Table of Contents", "Contents", "Index", "Front Matter", "Proceedings", or "from the editor" in the title, or have an empty title, are duplicate results, or are interviews, standards, full books, encyclopaedia sections, dictionary sections, or written in other languages than English. 2. Include search results that contain in the title something near any of the terms "software", "development", "embedded", "product" or "system". 3. Include search results that contain in the title something near any of the terms "innovation", "business", or "market" and check if in the list of keywords of the publication any of the terms "software", "development", "embedded", "product" or "system" appear. 'Something near' here, implies a subjective selection that required discussions before an agreement could be reached. 4. Screen the abstracts of the papers that after conducting steps 1-3 a disagreement between the researchers is reached and resolve the conflict by deciding which ones to include or exclude in the final paper selection. 5. Exclude papers where the full text was not available for the synthesis part only (3 papers from Science Direct).</p><p>The searching and screening steps should include all papers that match the search criteria and exclude papers deemed as 'not relevant' for the study. Parts of the screening process was subjective and sometimes discussions where required to reach an agreement. In the screening step the disagreement level was low, less than 3%. The process finished with 18 papers from the ACM, 25 papers from the Springer Link, 4 papers from the Engineering Village, 109 papers from the Science Direct and 104 papers from the IEEE Xplore digital library, all together 260 studies. <ref type="table" target="#tab_1">Table 2</ref> summarises how the number of studies evolved during the process.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Classifying</head><p>In the classification step, the abstracts were processed to validate that the search string used was meaningful and helped in the definition of the classification scheme (i.e., ensured that the scheme takes the type of words used in the studies into account). Text mining was used to derive major topic clusters and derive preliminary hierarchies, i.e., lists topics that frequently appear. Then, keywording was used to identify the primary concepts (keywords) found in the abstracts of the publications, extracting topics of interest. The papers were classified based on a set of classification schemes (related to the RQs in <ref type="table" target="#tab_0">Table 1</ref> and explained in the last column). <ref type="table" target="#tab_2">Tables 3 and 4</ref> summarise the type of research facet <ref type="bibr" target="#b6">[7]</ref> and type of research result <ref type="bibr" target="#b7">[8]</ref> (or contribution) in software engineering.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">Mapping</head><p>With the classification schemes in place the publications were mapped on them. Again, this step was carried out independently by two researchers and any differences were discussed until an agreement was reached. On average the disagreement level was around 30% (79 studies were analytically discussed). From the studies that were analytically discussed, there were 6 papers for which classification was not possible. These papers were either part of a book (not a single book chapter and not a full book and thus were not excluded in the first step of the Inclusion/Exclusion process) or could not be analysed as stand-alone publications. Thus, these papers were reported as "None", "Other" or "NA". The map was used to create different frequency plots, to answer the RQs <ref type="table" target="#tab_0">(Table 1)</ref> and highlight a direction for future research <ref type="table" target="#tab_6">(Table 7)</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation research papers</head><p>Techniques are implemented in practice and an evaluation of the technique is conducted. That means, it is shown how the technique is implemented in practice (solution implementation) and what are the consequences of the implementation in terms of benefits and drawbacks (implementation evaluation). Papers identify problems in industry.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Solution proposal papers</head><p>A solution for a problem is proposed, the solution can be either novel or a significant extension of an existing technique. The potential benefits and the applicability of the solution is shown by a small example or a good line of argumentation. Papers propose a solution technique and argue for its relevance, without a full-blown validation. The technique must be novel, or at least a significant improvement of an existing technique. A proof-of-concept may be offered by means of a small example, sound argument, or some other means.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Philosophical papers</head><p>Papers sketch a new way of looking at existing things by structuring the field in form of a taxonomy or conceptual framework.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Opinion papers</head><p>Papers express the personal opinion of somebody whether a certain technique is good or bad, or how things should been done. They do not rely on related work and research methodologies. Papers contain the author's opinion about what is wrong or good about something, how we should do something, etc.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experience papers</head><p>Explain on what and how something has been done in practice. It has to be the personal experience of the author. Papers' emphasis is on what and not on why. The experience may concern one project or more, but it must be the author's personal experience. The papers should contain a list of lessons learned by the author from his or her experience. Papers in this category will often come from industry practitioners or from researchers who have used their tools in practice, and the experience will be reported without a discussion of research methods. The evidence presented in the paper can be anecdotal. Solution to application problem that shows use of software engineering principles -may be design, rather than implementation. Careful analysis of a system or its development.</p><p>Running system that embodies a result; it may be the carrier of the result, or tis implementation may illustrate a principle that can be applied elsewhere. Answer or judgement Result of a specific analysis, evaluation, or comparison.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Report</head><p>Interesting observations, rules of thumb.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Findings</head><p>This section reports on the study's findings obtained from the classification and mapping. The classification was based on the kind of data that we found about the publications and we present the results according to the RQs <ref type="table" target="#tab_0">(Table 1)</ref>. RQ1: What is the origin of the research? The researchers scanned the studies and produced a list of countries based on the affiliations of all authors. The count was based on the number of papers affiliated with each one of the authors for each country (i.e., one count was made for a country per paper if one of the authors' affiliation originated from that country). 42 unique countries were identified and the top countries publishing in the area were: USA (24%), Germany (17%), Sweden (10%), UK (10%), and Finland (10%). More than 60% of the research originates from one of these countries; an indication that the field does not attract worldwide attention. RQ2: Which are the main publication venues of the research? The researchers identified first the publication type (book chapter, conference paper, journal paper or standard) and then there the top venues publishing the research were found. The total unique publication venues found was relatively high, 112, which shows that the research is scattered in many publication venues. Most of the research is published in journals (54%) and more than one third of the papers appear in conference proceedings (36%). We collected the h5-index values as reported in Google Scholar of the top venues (accounting for 29% of the total publications). The papers' venues were highly ranked and even though no specific publication venues exist, they represent qualitative publications and results present some additional value.</p><p>RQ3: What is the affiliation of the researchers? The researchers classified the origin of the research contribution to one or more affiliation categories. The results are shown in <ref type="table" target="#tab_4">Table 5</ref>. In total 249 papers are listed, as 2 papers included the combination of affiliations industry, academic and professional organisation and 9 papers could not be classified due to lack of information (affiliation was not reported and could not be found from searching the internet). The majority of the affiliations are academia and the type of research they carry out is mostly evaluation research (34%) and then philosophical papers (21%). More rarely validation research (10%) and solution proposals (9%) appear in their work. As expected, academics dominate in the publications (they are typically more interested in publishing than industry), the number of authors that originate industry is considered high. The research carried out by industrial authors is distributed in various types of research. In some cases, industrial partners didn't co-author papers, i.e., they appear in the acknowledgements' section and thus the real industry participation in the field is not corresponded in our data.</p><p>RQ4: What is the research domain of the research conducted? The union of the domains listed by each researcher individually while scanning the papers is reported. A ranking scheme was used to prioritise to primary, secondary and tertiary domains. <ref type="table" target="#tab_5">Table 6</ref> shows the results. Innovation research is the domain that has received the least attention regarding solutions. The results have highlighted the interest in the field of research from both academia and industrial practitioners and researchers, but an indication was visible on lack of specific solutions, answers and judgements of specific questions and implementations is needed.  RQ5: When is the research conducted? The researchers identified the chronological year that the publications were available. Most of the research is conducted in the past few years <ref type="bibr">(2007)</ref><ref type="bibr">(2008)</ref><ref type="bibr">(2009)</ref><ref type="bibr">(2010)</ref><ref type="bibr">(2011)</ref><ref type="bibr">(2012)</ref><ref type="bibr">(2013)</ref> as shown in <ref type="figure" target="#fig_0">Fig. 2</ref>. There is an increasing number of publications happening in years after 2007 on the topic, a peak was reached in 2012 and then it decreased for the next year <ref type="bibr">(2013)</ref>. This is primarily due to the timing of this study and the limited availability of more recent articles from the scientific databases.</p><p>RQ6: What type of research is conducted? The researchers collected all the application domains the papers belonged to. 45% of the papers belonged to 41 unique domains and the predominant domains found were 12% open source, 10% manufacturing, 8% telecom and mobile phones, 7% automotive and 6% information systems. RQ7: What type of research is conducted? Two researchers individually classified the papers based on the type facets as described by Wieringa at al. <ref type="bibr" target="#b6">[7]</ref>. While papers were classified individually, the researchers resolved all disagreements by thoroughly discussing the papers and the consolidated results are reported in <ref type="figure" target="#fig_1">Fig. 3</ref> They provide an indication on what kind of research is conducted in the particular field. The majority of the research is found in the category of evaluation research and then philosophical papers follow. RQ8: What is the contribution of the research conducted? Two researchers individually classified the papers in terms of research contribution based on the categories described by Shaw <ref type="bibr" target="#b7">[8]</ref> and any disagreements on the classification were resolved by discussing the papers. The consolidated results are shown in <ref type="figure" target="#fig_2">Fig. 4</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Analysis and Discussion</head><p>This section includes an analysis of the results, presented as synthesis from selected observations that lead up to an agenda for directing future research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Analysis of the Results</head><p>The literature collected contributes mostly in identifying requirements and ways to manage change in business environments, and assess the evolution of technologies due to this change. One example, is the framework (presented in <ref type="bibr" target="#b8">[9]</ref>) "for understanding innovation management as digital technology is integrated in traditionally physical products" which discusses issues like organising logic, market dynamics and architecture design. The literature study showed that product innovation and IT innovation have a significantly different and competing outlook on innovation. For instance, product innovation cultivates centralised firm control while the IT innovation ecosystem supports network centricity and creation of digital options. A consequence mentioned in horizontally structured industries, networked collaborative environments with highly non-linear open innovation processes, is that governance mechanisms are useless. The CEO of a company (co-authoring <ref type="bibr" target="#b9">[10]</ref>) overseeing methodology, software and strategy for the company's products, confirms the theory in <ref type="bibr" target="#b10">[11]</ref> that differentiates business for software innovation into primary and secondary innovations. Innovation is expressed as applied knowledge, and results in the following four types of innovation: new and competitive architecture, organisational capability, product platform and, finally, product family and product. These need to be aligned to become the "source of innovation extensions that will keep the architecture alive for a realistic commercial timeframe" <ref type="bibr" target="#b10">[11]</ref>. An interesting observation is that "organizational processes for the adoption of open innovation are reliant on practices for closed innovation" <ref type="bibr" target="#b11">[12]</ref>. The topic of innovation and performance enhancement of the offerings provided by organisations if opened to external partners is also discussed. Among the benefits, services, as mentioned in <ref type="bibr" target="#b12">[13]</ref>, are to be improved in descending order from the collective contribution of customers, suppliers and competitors. The first are the only ones to actually contribute to the development of new innovative services, while universities and consultants are reported as not likely to immediately effect innovation performance, at least in the specific services industry. In other cases, a survey conducted on software product companies <ref type="bibr" target="#b13">[14]</ref> showed that their biggest challenge to growth was not technical, but related to management and marketing. The competence of the personnel is a contributing factor, but also the networks developed in particular for younger companies are important for improvement. Other factors that enable new product development management argued, are for example the degree of networks coupling in collaboration environments, while negative effect is attributed to high rates of entry and exit of parties <ref type="bibr" target="#b14">[15]</ref>.</p><p>Most of the research describes how a solution is implemented and what are the consequences, i.e., benefits and drawbacks, and many times industrial problems are identified. Another aspect found in the literature is that risks are highlighted for businesses opening up to outsiders, third parties, or open source communities, but also benefits from doing so. The common risks mentioned are related to intellectual property rights, interoperability, ownership, control, cost of adaptation, technology evolution and complexity, market shift, and cover legal, managerial and business aspects. Many cases report open innovation processes (e.g., outside-in, inside-out and coupled <ref type="bibr" target="#b11">[12]</ref>), methods (e.g., agile and knowledge management <ref type="bibr" target="#b15">[16]</ref>) or policies (e.g., selectively revealing code <ref type="bibr" target="#b16">[17]</ref>) and tools (e.g., cloud-computing for collaboration spaces <ref type="bibr" target="#b17">[18]</ref>). In <ref type="bibr" target="#b17">[18]</ref> challenging new requirements for complex industrial infrastructures and products are emphasised that "require added manufacturing know-how along the value chain to drive the next level of operational efficiency and performance. The development of these complex interlaced systems over the entire product lifecycle represents an increasing challenge for all manufacturers and their suppliers."</p><p>In the literature we found most of the above aspects are highlighted from a single industry or company perspective and only in a few studies are ecosystems and systems of ecosystems discussed. A study <ref type="bibr" target="#b18">[19]</ref> conducted with decision makers from European companies showed that even though they "look to open innovation for value creation and capture, there is still a desire to remain self-reliant" and thus limited cases exist on decision making together with value network partners. A few examples of mentioning collaborative and across-company networks with multiple players exist and we exemplify them next. The glocal enterprise notion <ref type="bibr" target="#b17">[18]</ref> is about "value creation from global networked operations and involving global supply chain management, productservice linkage, and management of distributed manufacturing units". In particular domains, even after several years of development "the concrete result of the open innovation process seems rather scarce" <ref type="bibr" target="#b19">[20]</ref>. In product lines, a requirement would be that the software needs to carry more information than traditional software packages <ref type="bibr" target="#b20">[21]</ref>, and a lot of work needs to be done on the coordination and management regarding the federation aspect. In <ref type="bibr" target="#b21">[22]</ref> it is mentioned that "the power of the platform leader depends on the degree of dependence of other agents in the ecosystem of platform leaders" and based on examples in the US IT industry the authors try to understand better the role of the platform leader in the business ecosystem. In <ref type="bibr" target="#b22">[23]</ref> cases are indicated where companies became more flexible and applied more free managerial practices based on the expectations of open source communities while in <ref type="bibr" target="#b23">[24]</ref> the theoretical gap of business ecosystems and network structures, strategy and evolution is emphasised.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Research Agenda</head><p>Based on the discussion above we have identified areas that require additional research. Clearly, ecosystems for embedded software require additional research to better understand innovation, business, and organisational aspects for that specific area. Miller and Morris <ref type="bibr" target="#b10">[11]</ref> describe innovation in two levels; primary innovation that creates a new competitive architecture based on knowledge from existing markets and products, which requires new organisational capability to transform innovations into products. The primary innovations are prerequisites for efficient open-innovation of products, that is, secondary innovations in the ecosystem. The product is based on a product platform, which is a reflection of the organisational capabilities and forms the basis for product families. More specifically, better understanding of the mechanisms for primary innovations, that is, the learning knowledge processes that form the innovation system, its organisational and architectural aspects in an ecosystem context, is needed and how capabilities can be transformed into supporting ecosystem platforms. <ref type="table" target="#tab_6">Table 7</ref> presents an agenda with research topics that target the primary innovations as discussed above. The research focus is initially on learning from existing product platforms and ecosystems, which is reflected in the agenda. New knowledge is the basis for primary innovations. Based on new knowledge the community can innovate solutions, such as specific patterns, methods and techniques, which can then be validated. The items on the agenda are thus concerned with deriving knowledge about the competitive architecture and organisational capability for open innovation. An important aspect of the innovation system is the competitive architecture. We need to better understand the transition from learning about existing products and markets to knowledge and further to the definition of a new competitive architecture in ecosystems. Beyond defining the architecture, what descriptions (e.g., technical, architectural, quality assurance) are parts of the organisational capability that enable open innovation in a software ecosystem? Process flexibility in the ecosystem One important aspect of the competitive architecture and organisational capability that we may learn from existing markets and product families is which kind of ecosystem processes support software innovation across domains and players. There is currently a lack of generalizable results here.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ecosystem procedures and techniques</head><p>On a more detailed level, we may derive knowledge from studies about procedures and techniques that support innovation in ecosystems that could be part of the organisational capabilities and strengths. Business innovation for software</p><p>The other important aspect of innovation in ecosystems is business innovation, which could be equally useful for the creation of new organisational capability. For a start we need to research best current practices for business innovation in the software domain. Currently there are no general answers to what works and what doesn't as existing knowledge is based on single data points reported by industry or academia in experience papers. Business environments for innovation in ecosystems</p><p>On the more detailed level business agreements with respect to relationships and operations that enable software innovation and collaboration across organisational borders are currently not well understood and more research is required. Ensuring understandability and analysability require support from models and it is unclear which business environment characteristics need to be included in such models, for example size, type of offering, resources, existing and planned networks, roles. Business processes and software innovation</p><p>The final capability we include in our agenda is concerned with understanding how ecosystem processes and practices support business innovation and software innovation combined. Jansen et al. <ref type="bibr" target="#b24">[25]</ref> categorises processes into five core areas (i.e., governance, R&amp;D, software product management, marketing and sales, consulting and support services). Thus, further research is needed for them to be better understood in the context of open-innovation in ecosystems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusions and Future Work</head><p>This paper is the first step in charting the research on ecosystems and open innovation of systems in the context of software engineering for embedded systems based on the specific research questions we posed. We have identified several areas researched and others that require additional research. The systematic map provides and overview of this field of research that includes information about the origin of the research, publication venues, and publication frequency from 1993 until when this research was conducted (early 2014). In addition the map emphasized on the type of research conducted, the research and application domains and the research results and contributions achieved. The map was analysed for trends and patterns. Overall, the result shows that the field is an emerging field of research. The type of research is primarily explorative, that is, philosophical, experience or evaluation research producing reports, opinions, or descriptive models from specific parts of the world. Finding concrete answers to most questions the studies we found pose is very difficult, something that our analysis confirms. Here lies the community challenges and thus, we provide a research agenda based on the mapping analysis. In the future, we plan to extract more results from the systematic study conducted and present them in an extended publication.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Answer to RQ5: When is the research conducted?</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Answer to RQ6: What type of research is conducted?</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Answer to RQ8: What is the contribution of the research conducted?</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="false"><head>Table 1 . Research Questions of the study</head><label>1</label><figDesc></figDesc><table>RQ # Description 
+Evidence 
+RQ1 What is the origin of the 
+research? 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="true"><head>Table 2 . Search scoping and selection results from the study</head><label>2</label><figDesc></figDesc><table>Database 
+Resulting Papers Included Papers 
+ACM 
+73 
+18 
+Springer Link 
+294 
+25 
+Engineering Village 
+5 
+4 
+Science Direct 
+558 
+109 
+IEEE Xplore 
+192 
+104 
+Total 
+1122 
+260 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table 3 .</head><label>3</label><figDesc>Techniques investigated are novel and have not yet been implemented in practice. Techniques used are for example experiments, i.e., work done in the lab. Papers investigate the properties of a solution proposal that has not yet been implemented in practice. The solution may have been proposed elsewhere, by the author or by someone else. The investigation uses a systematic, thorough, methodologically sound research setup. Possible research methods are experiments, simulation, prototyping, mathematical analysis, mathematical proof of properties, etc.</figDesc><table>Type of research as described in [7] 
+
+Type 
+Description 
+Validation 
+research 
+papers 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>Table 4 . Type of research results in software engineering as described in [8] Type Description Procedure or technique New or better way to do some task, such as design, implementation, measurement, evaluation, selection from alternatives.</head><label>4</label><figDesc></figDesc><table>Includes 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="true"><head>Table 5 . Answer to RQ3: What is the affiliation of the researchers?</head><label>5</label><figDesc></figDesc><table>Affiliation 
+Academic Industry Professional organisation Governmental 
+Academic 
+167 
+-
+-
+-
+Industry 
+31 
+30 
+-
+-
+Professional organisation 
+5 
+2 
+7 
+-
+Governmental 
+5 
+0 
+0 
+2 
+Total (249) 
+208 
+32 
+7 
+2 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="true"><head>Table 6 . Answer to RQ4: What is the research domain of the research conducted?</head><label>6</label><figDesc></figDesc><table>Domain 
+Primary domain Secondary domain Tertiary domain 
+Product 
+91 
+34 
+2 
+Software 
+88 
+31 
+5 
+Innovation 
+0 
+24 
+0 
+Business 
+0 
+15 
+0 
+Other 
+1 
+154 
+253 
+Total 
+180 
+259 
+260 </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" validated="false"><head>Table 7 . Research agenda Topic Research need Software innovation In the context of software ecosystems we need to further understand the competitive architecture and organisational capabilities that foster open- innovation, for example, investigate if some specific ecosystem structures</head><label>7</label><figDesc></figDesc><table>better 
+</table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Software Ecosystem: Understanding an Indispensable Technology and Industry</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">G</forename><surname>Messerschmitt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Szyperski</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003" />
+			<publisher>MIT Press</publisher>
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Characteristics of Software Ecosystems for Federated Embedded Systems: A Case Study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Axelsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Papatheocharous</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Andersson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inform. Software Tech</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1457" to="1475" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">A Reference Architecture for Consumer Electronics Products and Its Application in Requirements Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Trew</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Botterweck</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Nuseibeh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Avgeriou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Grundy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Lago</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-3-642-21001-3_13</idno>
+		<ptr target="http://link.springer.com/chapter/10.1007/978-3-642-21001-3_13" />
+	</analytic>
+	<monogr>
+		<title level="m">Relating Software Requirements and Architectures</title>
+		<editor>Mistrík, I.</editor>
+		<meeting><address><addrLine>Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="203" to="231" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Open Innovation and Control: A Case from Volvo</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kuschel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Remneland</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Holmqvist</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">43rd Hawaii International Conference on System Sciences</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Systematic Mapping Studies in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Petersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Feldt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mujtaba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mattsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 12th International Conference on Evaluation and Assessment in Software Engineering</title>
+		<meeting>the 12th International Conference on Evaluation and Assessment in Software Engineering<address><addrLine>Swinton, UK</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="68" to="77" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Software Ecosystems -A Systematic Literature Review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Manikas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">M</forename><surname>Hansen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Software</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1294" to="1306" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Requirements Engineering Paper Classification and Evaluation Criteria: A Proposal and a Discussion</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Wieringa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">A M</forename><surname>Maiden</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">R</forename><surname>Mead</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Rolland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Requir. Eng</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="102" to="107" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">What makes good research in software engineering?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shaw</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal on Software Tools for Technology Transfer</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="7" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">The Dual Regimes of Digital Innovation Management</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Svahn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Henfridsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">45th Hawaii International Conference on System Science</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="3347" to="3356" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Process Innovation Imperative (Software Product Development Organisation)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Van Zyl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Change Management and the New Industrial Revolution</title>
+		<meeting>the Change Management and the New Industrial Revolution</meeting>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="454" to="459" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Fourth Generation R&amp;D, Managing Knowledge, Technology and Innovation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">L</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Morris</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999" />
+			<publisher>Wiley Publishers</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Open Innovation in Secondary Software Firms: An Exploration of Managers&apos; Perceptions of Open Source Software</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Morgan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Finnegan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SIGMIS Database</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="76" to="95" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Partners for Business-to-Business Service Innovation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">M</forename><surname>Wagner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Engineering Management</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="113" to="123" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Challenges of Software Product Companies: Results of a National Survey in Finland</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Hietala</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kontio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J.-P</forename><surname>Jokinen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pyysiainen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">10th International Symposium on Software Metrics</title>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="232" to="243" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Managing Collaborative New Product Development of Complex Software Systems: Mythical Man-Month Re-Visited</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">S</forename><surname>Uzuegbunam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Engineering Management Conference</title>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="494" to="498" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Enhancing Knowledge Creation and Innovation in SMEs</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Gourova</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Toteva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2012 Mediterranean Conference on Embedded Computing</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="292" to="297" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Selective Revealing in Open Innovation Processes: The Case of Embedded Linux</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Henkel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Research Policy</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="953" to="969" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Collaborative Networks in Support of Service-Enhanced Products</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">M</forename><surname>Camarinha-Matos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Afsarmanesh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Koelmel</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-3-642-23330-2_11</idno>
+		<ptr target="http://link.springer.com/chapter/10.1007/978-3-642-23330-2_11" />
+	</analytic>
+	<monogr>
+		<title level="m">PRO-VE 2011</title>
+		<editor>Camarinha-Matos, L.M., Pereira-Klen, A., Afsarmanesh, H.</editor>
+		<meeting><address><addrLine>Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="volume">362</biblScope>
+			<biblScope unit="page" from="95" to="104" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Deciding on Open Innovation: An Exploration of How Firms Create and Capture Value with Open Source Software</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Morgan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Finnegan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>León</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Bernardos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Casar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Kautz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">De</forename><surname>Gross</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-0-387-87503-3_13</idno>
+		<ptr target="http://link.springer.com/chapter/10.1007/978-0-387-87503-3_13" />
+	</analytic>
+	<monogr>
+		<title level="m">Open IT-Based Innovation: Moving Towards Cooperative IT Transfer and Knowledge Diffusion. IFIP</title>
+		<editor>J.I.</editor>
+		<meeting><address><addrLine>Boston</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="volume">287</biblScope>
+			<biblScope unit="page" from="229" to="246" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Information and Communications Technology for Development (ICT4D) -A Design Challenge</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Tongia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Subrahmanian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Information and Communication Technologies and Development</title>
+		<imprint>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="243" to="255" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Software Product Families in Europe: The Esaps Cafe Projects</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">[</forename><surname>S13] Van Der Linden</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="41" to="49" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Platform Leadership in Business Ecosystem: Literature-Based Study on Resource Dependence Theory (RDT). In: Technology Management for Emerging Technologies</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Phan</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="133" to="138" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Letting Go of Control&apos; to Embrace Open Source: Implications for Company and Community</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shaikh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Cornford</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">43rd Hawaii International Conference on System Sciences</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">From Value Chain, Supply Network, towards Business Ecosystem (BE): Evaluating the BE Concept&apos;s Implications to Emerging Industrial Demand</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Rong</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Industrial Engineering and Engineering Management</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="2173" to="2177" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Shades of Gray: Opening up a Software Producing Organization with the Open Software Enterprise Model</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Jansen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Brinkkemper</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Souer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Luinenburg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Software</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1495" to="1510" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

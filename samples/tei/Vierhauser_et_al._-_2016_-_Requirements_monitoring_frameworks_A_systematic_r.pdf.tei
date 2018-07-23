@@ -1,0 +1,2504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:28+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Requirements monitoring frameworks: A systematic review</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2016">2016</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Michael</forename><surname>Vierhauser</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Software Systems Engineering</orgName>
+								<orgName type="laboratory">Christian Doppler Laboratory MEVSS</orgName>
+								<orgName type="institution">Johannes Kepler University Linz</orgName>
+								<address>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rick</forename><surname>Rabiser</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Software Systems Engineering</orgName>
+								<orgName type="laboratory">Christian Doppler Laboratory MEVSS</orgName>
+								<orgName type="institution">Johannes Kepler University Linz</orgName>
+								<address>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paul</forename><surname>Grünbacher</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institute for Software Systems Engineering</orgName>
+								<orgName type="laboratory">Christian Doppler Laboratory MEVSS</orgName>
+								<orgName type="institution">Johannes Kepler University Linz</orgName>
+								<address>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Requirements monitoring frameworks: A systematic review</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Information and Software Technology</title>
+						<imprint>
+							<biblScope unit="volume">80</biblScope>
+							<biblScope unit="page" from="89" to="109"/>
+							<date type="published" when="2016">2016</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1016/j.infsof.2016.08.005</idno>
+					<note type="submission">Article history: Received 22 December 2015 Revised 12 May 2016 Accepted 18 August 2016</note>
+					<note>Contents lists available at ScienceDirect Information and Software Technology journal homepage: www.elsevier.com/locate/infsof a r t i c l e i n f o</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Requirements monitoring Systems of systems Systematic literature review</keywords>
+			</textClass>
+			<abstract>
+				<p>Context: Software systems today often interoperate with each other, thus forming a system of systems (SoS). Due to the scale, complexity, and heterogeneity of SoS, determining compliance with their requirements is challenging, despite the range of existing monitoring approaches. The fragmented research landscape and the diversity of existing approaches, however, make it hard to understand and analyze existing research regarding its suitability for SoS. Objective: The aims of this paper are thus to systematically identify, describe, and classify existing approaches for requirements-based monitoring of software systems at runtime. Specifically, we (i) analyze the characteristics and application areas of monitoring approaches proposed in different domains, we (ii) systematically identify frameworks supporting requirements monitoring, and finally (iii) analyze their support for requirements monitoring in SoS. Method: We performed a systematic literature review (SLR) to identify existing monitoring approaches and to classify their key characteristics and application areas. Based on this analysis we selected requirements monitoring frameworks, following a definition by Robinson, and analyzed them regarding their support for requirements monitoring in SoS. Results: We identified 330 publications, which we used to produce a comprehensive overview of the landscape of requirements monitoring approaches. We analyzed these publications regarding their support for Robinson&apos;s requirements monitoring layers, resulting in 37 identified frameworks. We investigated how well these frameworks support requirements monitoring in SoS. Conclusions: We conclude that most existing approaches are restricted to certain kinds of checks, particular types of events and data, and mostly also limited to one particular architectural style and technology. This lack of flexibility makes their application in an SoS context difficult. Also, systematic and automated variability management is still missing. Regarding their evaluation, many existing frameworks focus on measuring the performance overhead, while only few frameworks have been assessed in cases studies with real-world systems.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>An increasing number of software systems are systems of systems with decentralized control; inherently conflicting, unknowable, and diverse requirements; continuous evolution and deployment; as well as heterogeneous, inconsistent, and changing elements <ref type="bibr" target="#b42">[1]</ref> . SoS comprise multiple heterogeneous systems and often have been developed by different teams over many years. As the full behavior of SoS only emerges during operation, system testing is not sufficient to determine compliance with requirements. Instead, the behavior of the systems and their interactions need to be continuously monitored and checked during operation.</p><p>Due to the diversity of the research communities working on runtime monitoring, it is difficult to understand and analyze existing approaches without a systematic approach. For instance, different terms and notations exist and a wide range of methods have been proposed. Also, many approaches focus on very specific contexts and domains and there is no clear picture regarding their support for monitoring large-scale systems such as SoS. Some efforts have been made to classify runtime monitoring tools or verification approaches. Delgado et al. <ref type="bibr" target="#b53">[11]</ref> provide a taxonomy for software-fault monitoring tools distinguishing them by the types of specification languages used, characteristics of monitors and event handlers, as well as operational issues. Dwyer et al. <ref type="bibr" target="#b54">[12]</ref> analyzed patterns for finite-state verification. However, a comprehensive and systematic analysis of requirements monitoring approaches is still missing.</p><p>In this paper we thus use a systematic literature review <ref type="bibr" target="#b55">[13,</ref><ref type="bibr" target="#b56">14]</ref> to systematically identify, classify, and describe existing approaches supporting requirements monitoring of software systems. Specifically, we provide a map showing the characteristics and application areas of monitoring approaches proposed in different domains. Furthermore, following the definition in Robinson's seminal paper on requirements monitoring <ref type="bibr" target="#b57">[15]</ref> , we select frameworks that collect and aggregate events and data from running systems, which are analyzed regarding their compliance with requirements to facilitate error diagnosis or system adaptation. Finally, we analyze these requirements monitoring frameworks regarding their support for monitoring SoS <ref type="bibr" target="#b58">[16]</ref> .</p><p>The remainder of this paper is structured as follows: In Section 2 we first discuss key concepts of requirements monitoring and systems of systems and then explain our research questions and method. We then describe the results of our SLR separately for each research question. More specifically, we present a map of monitoring approaches ( Section 3 ), we discuss the identified frameworks for requirements monitoring ( Section 4 ), and we assess their support for monitoring SoS ( Section 5 ). We describe related SLRs in Section 6 , discuss threats to validity in Section 7 , and conclude the paper in Section 8 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Background, research questions and method</head><p>We assess requirements monitoring of software systems at runtime, with a focus on requirements monitoring frameworks and their support for SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Requirements monitoring</head><p>As software systems are subject to continuous change and ongoing evolution during their lifetime <ref type="bibr" target="#b59">[17]</ref> , the importance of managing requirements describing the software's intended behavior increases. In particular, there is a shift from requirements being statically defined during the elicitation phase, and then forgotten, towards requirements as runtime entities which are ubiquitous throughout the whole lifecycle <ref type="bibr" target="#b60">[18]</ref> . Requirements monitoring approaches stress the need for continuously checking the adherence of systems to their requirements during operation <ref type="bibr" target="#b43">[2]</ref> . Software monitors are used to observe the behavior of a software system to check at runtime if it still behaves as intended or if (and how) it deviates from its requirements.</p><p>Robinson <ref type="bibr" target="#b43">[2]</ref> has proposed a conceptual framework for requirements monitoring taking into account the capturing of low-level runtime data as well as high-level applications analyzing these events. His framework is structured in four different layers: the event layer is responsible for retrieving events and data from various sources, and transporting them to a storage facility. Sources include the software to be monitored, e.g., when collecting events through instrumentation, as well as its execution environment, e.g., when observing memory consumption or CPU usage. Furthermore, this layer transports events to the actual monitoring environment, for further analysis, often after some preprocessing and filtering. The model layer is responsible for analyzing the events and data captured at runtime, i.e., interpreting software behavior based on a model describing the requirements. This includes for instance, goal models <ref type="bibr" target="#b61">[19]</ref> , (domain-specific) constraint languages <ref type="bibr" target="#b43">[2]</ref> , or temporal logic <ref type="bibr" target="#b52">[10]</ref> . The presentation layer provides services for presenting the results of the analyses to the users of the monitoring framework. They are informed about deviations from the expected behavior, i.e., violations of the requirements facilitate further diagnosis activities. Finally, the application layer contains tools and application-specific services for various purposes. This may include capabilities for controlling the monitored system, e.g., by adapting it to react to detected violations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Systems of systems</head><p>A system of systems (SoS) is "an integration of a finite number of constituent systems which are independent and operable, and which are networked together for a period of time to achieve a certain higher goal " <ref type="bibr" target="#b62">[20]</ref> . Maier <ref type="bibr" target="#b42">[1]</ref> , Dahmann and Baldwin <ref type="bibr" target="#b63">[21]</ref> , and Nielsen <ref type="bibr" target="#b64">[22]</ref> have described different types of systems of systems:</p><p>• Directed . The SoS is centrally managed during long-term operation and fulfills the specific purpose or any new emerging purpose. The component systems operate independently but their operational mode is subordinated to the centrally managed purpose.</p><p>• Collaborative . The central management organization does not have the necessary power to run the system. Thus the component systems have to voluntarily collaborate to fulfill the agreed central purposes.</p><p>• Virtual . The SoS lacks a central management authority and centrally agreed purposes. Large-scale behavior emerges and may be desirable but the "super-system" must rely upon relatively invisible mechanisms to maintain it.</p><p>• Acknowledged . The SoS has recognized objectives, a designated manager, and resources, but the constituent systems retain their independent ownership, objectives, funding, and sustainment approaches. Changes are based on collaboration between the SoS and its constituent systems.</p><p>In SoS different stakeholders involved in the engineering process are in charge of the requirements, which may be cross-cutting, overlapping, or even conflicting. SoS comprise various heterogeneous systems, which differ regarding their architecture, technologies, or development organization. Different release cycles mean that systems evolve independently, often requiring synchronization of changes. SoS often are subject to decentralized control and the individual systems often are operated independently, yet they interact in different ways <ref type="bibr" target="#b42">[1,</ref><ref type="bibr" target="#b64">22]</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Challenges for requirements monitoring in systems of systems</head><p>Certain characteristics of SoS impede the direct use of existing requirements monitoring techniques for such systems. In previous work we have derived challenges for SoS monitoring based on our experiences with an SoS in the industrial automation domain <ref type="bibr" target="#b58">[16]</ref> . A main aim of this paper is to analyze and discuss how well existing requirements monitoring frameworks address these SoS monitoring challenges.</p><p>A -Monitoring at different layers and levels of granularity: The information needed for monitoring comes from multiple sources, such as the different systems in an SoS, interfaces between the systems, as well as interfaces to legacy and third-party systems. In addition, information about events may need to be obtained by parsing and analyzing log files, trace output, or data archived in databases. Monitoring approaches thus need to extract, aggregate, and represent events and data from all these sources. B -Checking properties across different systems: The systems constituting an SoS not only communicate internally but also share data with other systems to satisfy the overall customer requirements. Many requirements in SoS, however, cannot be allocated to a single system or component. Validating such requirements thus requires reasoning across data collected from different independent, yet interrelated systems. Single-system monitoring approaches usually do not allow instrumenting heterogeneous systems and their interactions, and thus cannot check such global SoS properties.</p><p>C -Supporting different technologies: Due to the architectural diversity of SoS, monitoring support cannot be limited to a single technology or implementation language. For instance, while instrumenting a Java system using aspect-oriented programming <ref type="bibr" target="#b65">[23]</ref> is comparably easy, this task may be much harder for systems developed in legacy languages or DSLs. Instrumenting the interfaces between different system levels can also be challenging depending on the means of communication used. Furthermore, monitoring user interactions depends a lot on the concrete implementation of the user interfaces. An SoS monitoring approach thus needs to support the instrumentation and runtime analysis of diverse architectures and technologies.</p><p>D -Diversity of requirements and monitors: Monitoring approaches need to be customizable to work with different types of requirements. Also, SoS evolve continuously and monitoring approaches need to be adaptable to co-evolve with the systems they monitor, calling for variability management support in monitoring tools to address customer-specific usage scenarios and different system variants.</p><p>E -Managing the performance of the monitoring solution: A lot of data needs to be collected, analyzed, and persisted in an SoS and its constituent systems. The monitoring solution must not significantly impact the system during operation and the performance overhead must be carefully controlled. The monitoring solution must further scale to industrial requirements regarding the number of monitors, frequency of events, and amount of data collected. Also, persistence solutions need to support storing and retrieving huge event traces.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Research questions</head><p>The goals of our research are to identify and classify existing monitoring approaches; to identify requirements monitoring frameworks among these approaches; and to assess their support for monitoring SoS. We investigate three research questions: RQ1 -What are the application areas and types of runtime monitoring approaches? -focuses on identifying and classifying the wide variety of existing runtime monitoring approaches from different research communities. Answering this research question yields our first contribution: a comprehensive overview of the landscape of existing research in this field.</p><p>Regarding RQ2 -Which specific frameworks exist for monitoring requirements? -we discuss requirements monitoring approaches that are frameworks according to the layers of Robinson <ref type="bibr" target="#b57">[15]</ref> . Specifically, we consider all existing approaches as requirements monitoring frameworks, if they support at least two of Robinson's layers. We thus exclude publications focusing only on one particular aspect of monitoring (e.g., instrumentation) and include frameworks covering a wider range of features at different layers. By addressing this research question, we provide our second contribution: a detailed description of existing frameworks supporting requirements monitoring.</p><p>Finally, RQ3 -What capabilities do requirements monitoring frameworks provide to address the characteristics of systems of systems? -assesses how useful existing approaches are in the context of SoS (cf. Section 2.3 ). Answering RQ3 allows us to provide our third contribution, an analysis of existing requirements monitoring frameworks regarding their support for monitoring SoS architectures.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">SLR research method</head><p>We performed a systematic literature review (SLR) <ref type="bibr" target="#b55">[13,</ref><ref type="bibr" target="#b56">14]</ref> to identify existing approaches and their support for requirements monitoring according to Robinson <ref type="bibr" target="#b57">[15]</ref> . Systematic literature reviews -often also termed systematic reviews -have been defined as "a means of identifying, evaluating and interpreting all available research relevant to a particular research question, or topic area, or phenomenon of interest " <ref type="bibr" target="#b55">[13]</ref> . SLRs originally come from the field of medicine but are increasingly used in software engineering research <ref type="bibr" target="#b66">[24]</ref><ref type="bibr" target="#b67">[25]</ref><ref type="bibr" target="#b68">[26]</ref> . The main motivations to conduct an SLR instead of an ad-hoc and "at-will" literature review are to make the scope of the review traceable and to ensure that the identified literature is relevant and of sufficient quality. The SLR methodology thus aims to avoid biased review results. It can however not protect against bias in the primary studies identified in the SLR.</p><p>Conducting an SLR requires high effort compared to traditional literature reviews. An SLR comprises the phases of planning, conducting, and reporting: during planning, a review protocol guiding all further steps is developed, that aims at reducing researchers' bias and structuring the retrieved results. The protocol defines the focus and research questions; the search strategy including the sources; the time frame for searching; the rationale for choosing particular sources; the selection criteria used for searching and other general restrictions; the quality assessment criteria determining whether to include or exclude the found publications; and the data extraction process including storage procedures for retrieved files and data extraction forms. The review protocol needs to be validated by experienced researchers. In our case <ref type="figure" target="#fig_0">( Fig. 1 )</ref>, the review protocol was developed by the first author as part of his PhD research and then validated by the second and the third author, before starting the SLR.</p><p>Following the guidelines of Kitchenham et al. <ref type="bibr" target="#b55">[13]</ref> we developed a review protocol including a rationale, the research question(s), a search strategy, selection and quality criteria, as well as information regarding data extraction and synthesis: the rationale of this SLR was to get an overview about existing approaches in the area of runtime monitoring and to identify frameworks suitable for requirements monitoring of SoS.</p><p>Based on the RQs we defined the following search strategy to identify existing work: we first identified keywords most frequently used by researchers working on runtime monitoring by analyzing publications retrieved from an informal literature search. We further checked publications from three different venues: the International Conference on Software Engineering (ICSE), ( www. icse-conferences.org ), the IEEE Conference on Software Architecture (WICSA) ( www.wicsa.net ), and the IEEE International Systems Conference ( ieeesyscon.org ) over the last 5 years. Based on the terms extracted from this manual search (cf. Appendix) we performed automated searches using IEEE, ACM, and Google Scholar. The search results showed that depending on the search terms used, the results were either too broad or missing important publications we already knew, such as the paper by Robinson <ref type="bibr" target="#b43">[2]</ref> . This can be explained with the diversity of research areas in runtime monitoring, such as formal approaches for runtime verification, monitoring of service-based systems, or low-level hardware monitoring (cf. Section 3.3 ).  We thus decided to only restrict the search on publications containing the terms monitoring AND runtime (in various different notations -cf. Appendix A). As sources for our search we chose the four most important publication databases in computer science, i.e., by IEEE, ACM, Springer, and Elsevier. We limited the search to the last 20 years, i.e., 1994 until 2014. We selected 1994 as key seminal requirements monitoring publications have been published after this year, e.g., Fickas and Feather <ref type="bibr" target="#b69">[27]</ref> or Dwyer <ref type="bibr" target="#b54">[12]</ref> .</p><p>The searches were conducted between April 2014 and July 2014. Due to the broad search terms we did not search in full-text. Rather, for IEEE, ACM and Elsevier we searched in abstracts and titles. In case of Springer we searched in titles only due to the limitations of the search engine. We used scripts querying the different library resources to partially automate this process. However, an initial screening of the queries' results had to be performed manually. An overview of the search results is presented in <ref type="table" target="#tab_0">Table 1</ref> .</p><p>The initial search resulted in 2201 publications. To reduce this huge set, in a first review step, based on reading the titles and checking publications' meta-data, the first author excluded publications that clearly did not fit the area of runtime monitoring of software systems based on the following assumptions (in case of any uncertainty publications were kept for later analyses):</p><p>Some researchers use the term "runtime monitoring", even if the actual monitoring does not occur at runtime but is based on recorded event traces that are analyzed post-mortem and offline. While the recording of event traces obviously has to be done at runtime, a lot of existing research does not focus on this actual recording but assumes traces to be available for analysis. In the context of this SLR we want to consider only research that supports continuous requirements monitoring of software systems at runtime, which excludes offline analysis and debugging approaches. For example, a publication titled "A portable virtual machine for program debugging and directing" was excluded. Also, as we focus on monitoring software systems, we excluded hardware monitoring approaches (e.g., monitoring of network traffic, clusters, or parallel computing architectures). For example, a publication titled "Hardware-Assisted Integrity Monitoring" was excluded. Furthermore, we excluded publications not peer-reviewed, not available for download, or written in a language other than English.</p><p>Applying these exclusion criteria reduced the set of publication by almost 50% resulting in 1235 publications to be inspected in more detail.</p><p>We then conducted a pilot voting on 100 randomly selected publications (from the set of 1235 publications). All three authors of this study voted these publications according to the criteria described above based on reading the publications' titles and abstracts. After the pilot vote, authors discussed their experiences and decided that additionally -if possible -the type of approach and its support for Robinson's layers should be extracted from the abstract.</p><p>The three authors then voted on inclusion/exclusion for the 1235 publications based on reading their abstracts. Specifically, they applied the criteria described above to extract the type of approach and to indicate whether the approach constitutes a framework. Publications were only excluded when all authors agreed on exclusion. All 2:1 voting cases were discussed among all authors before making a decision. While voting, the authors also indicated when they were unsure about a vote, which also led to a discussion.</p><p>This voting resulted in 356 publications, of which 65 were marked as describing a framework. The 365 publications were used as input for addressing research question 1 (creating a map of monitoring approaches). The 65 publications were considered as the primary studies of the SLR used to answer RQ2 and RQ3.</p><p>The first author checked all 356 publications to extract the information required to answer research question 1, i.e., the type of monitoring approach and application domain. During this process, the author identified 26 publications, which did not provide sufficient information or which should have been excluded during the initial voting already. In these cases, one of the senior researchers discussed with the main author about exclusion/inclusion. This process further reduced the number of publications for RQ1 from 356 to 330 publications.</p><p>Using open coding techniques <ref type="bibr" target="#b70">[28]</ref> we grouped the 330 identified publications describing approaches to runtime monitoring of software systems in two different dimensions: on the one hand we were interested in the application areas of the approaches described in the publications. On the other hand we defined the types of approaches to runtime monitoring, i.e., key concepts underlying the approaches such as used technologies or models. After reading the 330 publications, the main author of this paper created a list of application areas and types of approaches. This list was incrementally refined over time in discussions with the two senior researchers. For instance, similar application areas and types of approaches were grouped, to provide an overview of runtime monitoring and to discover "hot spots" of approaches in a particular application area. Some publications describe approaches that fit in more than one type of approach. However, each publication was assigned to exactly one application area. We describe elicited application areas and types of approaches as well as the assignment of the 330 publications in these categories in Section 3 to answer our first research question. We also double checked our results using the automated tool REVIS <ref type="bibr" target="#b71">[29]</ref> to cluster similar approaches.</p><p>For the 65 primary studies describing a requirements monitoring framework we read the whole text of the publications. We randomly divided the 65 publications among the three authors to reduce the work load. For each retrieved publication the following information was collected in a data extraction form:</p><p>• Author(s), title, and publication year.</p><p>• Source (e.g., journal), publisher and venue.</p><p>• Short description of publication.</p><p>• Publication type: research, experience, position or concept paper.</p><p>• Conformance to quality criterion Q1: "The publication contains no unsupported claims, i.e., it provides, for each claim made, proper references to existing work or results that prove the claim." • Contributions of the publication: concept, implementation, application example, experiment, case study.</p><p>• Conformance to quality criterion Q2: "The publication at least describes a concept and either an implementation and/or an application example or an experiment or a case study." In other words, we excluded pure concepts such as vision papers or position papers.</p><p>• Classification according to Robinson: event, model, presentation, application.</p><p>• Support for SoS challenges A-E.</p><p>• Selected: yes or no.</p><p>• Rationale for exclusion (if not selected).</p><p>• Comments.</p><p>The three authors discussed the completed extraction form in a face-to-face discussion and removed publications that did not adhere to the quality criteria. Also, duplicates and follow-up publications of the same author(s) or research group were removed. In such cases we kept the newer version of a publication. For instance, we kept a journal article instead of a conference paper by the same author(s). Furthermore, we excluded introductions to special issues, workshops, tutorials, and conferences; book chapters; editorials; as well as short papers and position papers. This resulted in a final set of 37 primary studies describing frameworks for requirements monitoring.</p><p>We then read all 37 publications in detail to analyze the support of the selected frameworks for Robinson's layers (RQ2). For each layer, again using open coding <ref type="bibr" target="#b70">[28]</ref> , we categorized the frameworks to better structure the description of their capabilities. For instance, on the event layer we grouped frameworks based on the technologies they support for instrumenting software systems to extract events. On the model layer, we reused the type of approach from RQ1 for categorization. Because only few frameworks provide support for the presentation and application layer, we merged these two layers and discuss them together. We describe the results of our analysis of frameworks in Section 4 .</p><p>Based on our analysis of frameworks we also assessed their support for the SoS monitoring challenges described in Section 2.3 (RQ3). For each challenge, we describe capabilities the frameworks provide to address the challenge. We put a particular emphasis on identifying gaps, i.e., if challenges are only weakly supported by existing frameworks. We discuss this in detail in Section 5 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">RQ1: Characteristics of existing monitoring approaches</head><p>The goal of RQ1 was to get an overview of existing work in the area of runtime monitoring of software systems. As described in Section 2.5 we analyzed and grouped the 330 identified publications regarding their application areas and types of approaches, i.e., key concepts underlying the approaches such as used technologies or models. <ref type="table">Table 2</ref> provides and overview in a map. <ref type="figure">Fig. 2</ref> provides an overview in the form of a "heat map" by highlighting accumulations of approaches.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Application areas</head><p>We applied open coding <ref type="bibr" target="#b70">[28]</ref> to the 330 publications and through subsequent discussions with all three researchers, we iteratively refined the identified areas and finally extracted the following five application areas:</p><p>• Embedded and real-time systems <ref type="bibr">(15 publications</ref>  <ref type="bibr">[A184]</ref>).</p><p>• (Self-)Adaptive systems (5 publications) . This area covers approaches focusing on the adaptation of the system based on monitored events and data, e.g., replacing a component with low performance with a better alternative providing the same functionality (e.g., <ref type="bibr">[A289]</ref>). Many monitoring approaches describe adaptation as one of their key goals but only very few describe in detail how the actual adaptation is supported. We only grouped approaches within the (self-)adaptation area that clearly focus on (self-)adaptation and describe in detail how they support it.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 2</head><p>Map showing the types of identified monitoring approaches and their application areas.</p><p>Areas and types Embedded and real-time Service-based systems Security, safety, and privacy Adaptive systems Not specified</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fig. 2. Heat map of types of monitoring approaches and their application areas.</head><p>• Area not specified (140 publications) . This group contains approaches that could not be assigned to one of the former categories or where the approaches do not explicitly state a specific application area (e.g., <ref type="bibr">[A126]</ref>[A209]). This large number can be explained by the fact that many approaches have been designed to be useful in different application areas, e.g., to support runtime verification of arbitrary event-based systems <ref type="bibr" target="#b72">[30]</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Types of approaches</head><p>To further structure the monitoring approaches -again through discussion and iterative refinement -we finally extracted the following eleven types of approaches from the 330 identified publications based on the classification by Delgado et al. <ref type="bibr" target="#b53">[11]</ref> . The different types reflect key concepts of the underlying approaches such as used technologies or models:</p><p>• Automata-based approaches (65 publications) are frequently used to describe or verify properties of a system at runtime.  <ref type="bibr">[A84]</ref>. We grouped all these approaches as many of these build on the same theoretical background and most rely on LTL.</p><p>• Model-checking approaches (15 publications) apply solvers to verify system properties, e.g., requirements are translated into a satisfiability problem such that they can be solved by existing SAT solvers based on information obtained at runtime  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Summary and discussion</head><p>Runtime monitoring is a particularly popular topic in the area of service-based systems. Complex-event processing approaches, UML-based approaches, and diverse custom implementations are used to monitor the interaction of services as well as their performance. Furthermore, many different formal approaches, i.e., various forms of temporal logic, are used to describe the services' behavior. In several cases, multiple approaches are combined, e.g., when using temporal logic to describe system properties, which are then transformed to automata to be verified at runtime.</p><p>Many publications do not describe any specific application area. Still, most of these publications are limited to a particular technology or implementation language (e.g., approaches for monitoring Java systems) and do not investigate their applicability to different types of systems developed using other technologies or languages.</p><p>Security, safety and privacy are hot topics in research on runtime monitoring, for example, to prevent intrusions into running software. Mainly automata-based or formal approaches are used to fully specify desired behavior and to allow complete runtime verification of this behavior.</p><p>Almost a third of all publications use custom implementations, either regarding their mechanism or DSL to specify the properties to be monitored, or their reasoning engine to check properties at runtime. Often, these custom implementations are research prototypes, which are not maintained anymore or no longer available.</p><p>In addition to manually grouping the approaches, we also analyzed and visualized the 330 publications using REVIS, a tool developed to support SLRs based on visual text mining <ref type="bibr" target="#b71">[29]</ref> . REVIS takes a set of primary publications in an extended BibTeX format, which can then be used for different analyses and visualizations. The document map in <ref type="figure" target="#fig_1">Fig. 3 (left)</ref> depicts the results of a similarity analysis of the language used in titles, calculated using the VSM (see <ref type="bibr" target="#b71">[29]</ref> for details). In the clustering, only absolute distances between publications carry a meaning. We manually renamed the different clusters based on what REVIS suggested to make them readable.</p><p>For example, instead of "web, properties, services, ..." we named a cluster Service and Web service monitoring. While the automatically identified clusters do not match perfectly with our map of application areas and types of approaches -because REVIS automatically generates these clusters based on parsing and interpreting the similarity of language only -it still shows key types of approaches similar to the map we created manually.</p><p>Even more interesting is the edge bundle visualization shown in <ref type="figure" target="#fig_1">Fig. 3 (right)</ref>. It shows the internal reference structure of the 330 publications displayed by edges connecting publications in the outer circle. In other words, it shows the cited/cited by relations between the publications based on their reference lists (dark side of edge: cited; bright side of edge: cites). Furthermore it shows the different clusters (similar keywords) to which the publications belong (other view on the clustering in <ref type="figure" target="#fig_1">Fig. 3 (left)</ref>). We can learn from the edge bundle visualization that there are not many citations among the 330 publications from different areas of runtime monitoring. Especially there are very few citations across different clusters. However, there are also only few citations within the different clusters. This further motivates our overall SLR, but especially the detailed analyses of monitoring frameworks, which we report in Sections 4 and 5 . We hope that our SLR may help researchers to identify and cite relevant related work outside their research community.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">RQ2: requirements monitoring frameworks</head><p>We discuss the identified requirements monitoring frameworks according to the four layers of Robinson <ref type="bibr" target="#b57">[15]</ref> : event layer, model layer, as well as presentation and application layer. As pointed out above, we discuss the presentation and application layers together in one subsection as only few frameworks support these layers. The frameworks are shown in <ref type="table" target="#tab_4">Table 3</ref> . The table also summarizes SoS support addressed by the frameworks. We will discuss details on that analysis in Section 5 (RQ3). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Event layer</head><p>As described in Section 2.5 we categorized the frameworks' support for the event layer into the six categories described below.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.1.">Aspect-oriented instrumentation</head><p>Aspect-oriented programming is used in several of the selected frameworks as a primary mechanism to retrieve events and data from systems. Some frameworks require aspects to be defined and implemented manually, while others provide means for automatically generating aspect-oriented instrumentation code based on some type of higher-level specification.</p><p>The ARAMIS infrastructure <ref type="bibr">[A32]</ref> and the Java-MOP approach [A35] both use AspectJ, aspect-oriented programming for Java programs, to instrument systems and to collect events from the run- The framework presented by Zmuda et al.</p><p>[A34] is based on the interceptor pattern (cf. Section 4.1.3 ), which can be plugged into the monitored environment to provide monitoring data when needed. The described interceptor socket mechanism uses aspectoriented programming.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.2.">Service-based instrumentation</head><p>Monitoring frameworks for service-based systems mainly use custom solutions or existing solutions provided by the serviceoriented architecture (e.g., an event bus) to retrieve events from the running services.</p><p>For instance, Guinea et al.</p><p>[A5] describe a framework for multilayered monitoring and adaptation of service-based systems, which relies on existing tools for instrumenting service-oriented architectures. The framework uses Siena, a publish-and-subscribe event bus, as a primary source of events. Regarding instrumentation, they rely on two sources for collecting events: (i) low-level events are extracted using Dynamo <ref type="bibr" target="#b74">[32]</ref> , which provides low-level data and events from the process or from the execution context; (ii) infrastructure events are extracted using the Laysi infrastructure <ref type="bibr" target="#b75">[33]</ref> . Similarly, the framework by Popescu et al. <ref type="bibr">[A17]</ref> uses an existing publish-and-subscribe event bus where monitoring units and human application operators can register as publishers of events.</p><p>The framework by Mos et al.</p><p>[A9] uses the SOA4All infrastructure which provides data through the SOA4All Distributed Service Bus using different data collectors (bus, grid, and engine collectors). The approach distinguishes between infrastructure events providing low-level details of the execution platform, and application events providing data on the actual execution of the application services.</p><p>The Multi-layer Collection and Constraint Language (mlCCL) is at the core of the framework described by <ref type="bibr">Baresi et al. [A33]</ref>. It builds on the framework by Guinea et al. <ref type="bibr">[A5]</ref> and provides capabilities for specifying events and data that are captured in Service Data Objects, a generic data structure. The approach distinguishes between two different sources: messages refer to the request or response messages that are exchanged during service invocations and Indicators represent information obtained periodically about a service.</p><p>The framework by <ref type="bibr">Keller and Ludwig [A15]</ref> relies on a dedicated measurement service that provides information on the current system configuration and runtime information about four different groups of metrics: (i) resource metrics directly rely on data provided by the managed resources (routers, instrumented server applications); (ii) composite metrics result from combining multiple metrics; (iii) SLA parameters are obtained from a service provider; and (iv) business metrics relate SLA parameters to financial terms specific to a customer's business goals.</p><p>Ruz et al.</p><p>[A20] use the GCM/ProActive platform <ref type="bibr" target="#b76">[34]</ref> for collecting various attributes such as service response times using different techniques such as interception of messages or event listeners.</p><p>Becker et al.</p><p>[A6] present a framework for non-invasive, provider-side service instrumentation for measuring service executions. Properties are collected using several Unix tools/commands (such as 'top'or 'time') for measuring the memory load and CPU time consumed by applications. Java profiling libraries and a dedicated XCLEngine are used to measure different quality of service (QoS) properties.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.3.">Interceptor-based instrumentation</head><p>Several frameworks do not directly support low-level instrumentation but rather use some kind of existing interception mechanism.</p><p>RuMoR [A4] uses the interceptor-based approach presented by Simmonds et al. <ref type="bibr" target="#b51">[9]</ref> built in the IBMWebSphere business integration environment <ref type="bibr" target="#b77">[35]</ref> .</p><p>The framework by Bratanis et al.</p><p>[A19] provides an approach for monitoring conversational Web services and distinguishes between light-weight and heavy-weight monitors. Whereas the former is used to monitor a single aspect of a Web service (e.g., responsiveness, or availability) the latter allows combining multiple aspects within one single monitor. Both, heavy-weight and lightweight monitors rely on an interceptor-based approach, intercepting messages between a service provider and the consumer. propose a framework comprising an Eventing DSL and code generation templates, which are used for monitoring different aspects of a service-based system (e.g., service invocations, or process executions). Desired events are captured by generating code for a customized event handler embedded in a Web service framework intercepting the required SOAP messages.</p><p>MORPED [A25] uses dedicated monitors, which receive requests by intercepting run-time messages exchanged between services.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.4.">Software sensors and probes</head><p>Several frameworks use probes <ref type="bibr" target="#b78">[36]</ref> or software sensors <ref type="bibr" target="#b57">[15]</ref> to retrieve runtime events and data.</p><p>In Glimpse [A3] the primary source of events are Glimpse Probes, which provide capabilities for infrastructure monitoring and service monitoring. For infrastructure monitoring the framework makes use of Ganglia <ref type="bibr" target="#b79">[37]</ref> , an approach for monitoring gridbased systems. For service monitoring interceptors are used that are directly deployed into the middleware to capture messages from different services and the enterprise service bus.</p><p>ReqMon [A12] relies on existing commercial and open source software for instrumentation, event transport, and event sinks. For example, sinks can be provided by Microsoft's Enterprise Instrumentation Framework (EIF). ReqMon's monitoring abstraction layer (MAL) defines monitoring templates within an object-oriented, real-time temporal-logic language. Java-MOP [A35] is the Java-specific implementation of the MOP [A23] framework. It uses logical annotations, which are inserted into the source code of the Java program. Annotations are generated automatically based on future time linear temporal logic (FTLTL) formulae. The framework also supports instrumentation through aspect-orientation, i.e., parametric specifications are translated into AspectJ code and then weaved into the application.</p><p>HiFi [A8] uses a hierarchical, event-based monitoring architecture. Monitoring agents, application-level monitoring programs that run independently of other applications, capture primitive and composite events. Agents are divided into local monitoring agents used for detecting events generated by local applications, and domain monitoring agents responsible for detecting composite events based on those provided by local agents.</p><p>The framework by Ehlers and Hasselbring [A10] uses Kieker's <ref type="bibr" target="#b47">[6]</ref> capabilities for inserting probes to intercept the execution of system interface operations. Kieker supports different kinds of probes for application-level monitoring and probes for retrieving system-level measurements such as memory consumption or CPU usage of an application.</p><p>The framework by Chan et al.</p><p>[A1] uses the Windows Management Instrumentation (WMI) framework to implement probes. WMI events are used to monitor important changes in an application (e.g., component activation, method calls and exceptions), whereas WMI objects are used to collect data views of a specific application.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.5.">Java and JVM instrumentation</head><p>Two frameworks focus on directly instrumenting Java programs and/or the Java Virtual Machine (JVM).</p><p>The SPASS-meter [A36] framework for resource monitoring of Java Programs distinguishes static, dynamic, source code-level, and binary instrumentation. Based on the selected resource to be monitored, (e.g., CPU time or memory allocation) in conjunction with the desired instrumentation mode, SPASS-meter automatically decides on the appropriate instrumentation strategies (e.g., notification by caller, by wrapper, or by callee) and generates the appropriate code.</p><p>The J-OMIS framework [A16] for monitoring distributed Java applications uses Local Monitors as independent monitoring processes. These local monitors control Java virtual machines via agents, which are directly embedded into the target JVM using existing interfaces, e.g., JVMPI or JVMDI.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.6.">Other approaches for instrumentation</head><p>Several frameworks cannot be assigned to one of the former categories or use specific tools for collecting information about the system at runtime.</p><p>The framework by Zeginis et al.</p><p>[A18] uses the Astro monitoring tools <ref type="bibr" target="#b80">[38]</ref> , which automatically generate Java code from specifications written in the Run-Time Monitor Language. Events are collected from the business process and management layer as well as the service composition and coordination layer, including various QoS attributes (e.g., execution time, throughput, or availability). For resource-based monitoring Nagios <ref type="bibr" target="#b81">[39]</ref> is used for monitoring system resources (e.g., memory usage, disk usage, and CPU load), while Amazon Cloudwatch ( http://aws.amazon.com ) is used for monitoring cloud resources.</p><p>In the RCMM framework [A28] different entities can be monitored. Agents collect runtime information using resource monitoring libraries (such as SIGAR <ref type="bibr" target="#b82">[40]</ref> ), JVM Agents, the Java Management Extensions (JMX) Interface, or Service Probes manually inserted into the target code.</p><p>Monere <ref type="bibr">[A14]</ref> distinguishes several types of components and events on various layers of a middleware-based distributed system. Metrics -e.g., availability of components, actions performed by a BPEL process, latencies experienced by clients, execution times, and throughput -are collected without changing or interfering with the monitored systems. Furthermore, Monere obtains resource usage metrics for Java-based components via the JMX interface. Furthermore, Monere uses metrics obtained from commandline tools.</p><p>Six of the primary studies</p><formula xml:id="formula_0">([A7], [A13], [A27], [A29], [A31], [<label>A37]</label></formula><p>) provide no details on how systems are instrumented or how events are retrieved, but only focus on their subsequent analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Model layer</head><p>Based on the types of approaches identified in Section 3 , we describe the types of models used by the requirements monitoring frameworks to support analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.1.">Formal models</head><p>Several frameworks specify monitors using formal models such as temporal logic or the Event Calculus.</p><p>MOP [A23] describes desired behavior using a specification formalism that can be added to the framework modularly by extending it with logic plug-ins. These specifications are either part of a Java class file (within Java-MOP [A35]) or specified separately. A MOP specification is composed of three parts: a header containing meta-information on the formalism used (such as LTL or regular expressions), a body specifying the desired property to be checked, and a handler performing certain actions in case the property is violated. The actual evaluation is performed by the mechanism defined in the specification header (e.g., a dedicated logic engine for LTL).</p><p>Doherty et al.</p><p>[A7] present a task planning and execution monitoring framework for unmanned aircrafts using mission plans. The framework relies on temporal action logic (TAL) <ref type="bibr" target="#b83">[41]</ref> to specify the behavior of the system and for reasoning about actions and changes to describe different types of constraints (e.g., safety constraints). For monitoring the (correct) execution, information about the surrounding environment is collected to generate and check different states.</p><p>Chan et al.</p><p>[A1] present a framework for runtime verification of timed and probabilistic non-functional properties in componentbased systems. Behavior is described using probabilistic assertions based on Probabilistic Computational Tree Logic (PCTL) <ref type="bibr" target="#b84">[42]</ref> . At runtime, the assertions can be verified using a monitoring program. Furthermore, the framework provides capabilities for linking domain-specific models with the system interception code (using an ontology infrastructure) to enable traceability between constraints and system implementation.</p><p>Bratanis et al.</p><p>[A19] propose a flexible framework for monitoring Web services at runtime. The behavior of the services is verified using Stream X-Machine (SMX) models <ref type="bibr" target="#b85">[43]</ref> . Based on the runtime data provided and checked against the predefined output.</p><p>MORPED [A25] provides capabilities for defining monitoring rules for service-based systems using BPEL. Based on predefined patterns and XML-based user models describing different context types, a rule adaptor component is responsible for the modification, creation, and removal of monitor rules. The framework uses the Event Calculus <ref type="bibr" target="#b86">[44]</ref> to describe behavior and to verify the system at runtime. The rule adaptor receives context characteristics about the users from the user models. Then, using the patterns related to the defined contexts, the adaptor invokes the path iden-tifier component that retrieves the expected sequence of service operations to be performed.</p><p>RuMoR <ref type="bibr">[A4]</ref> is an approach for monitoring and recovery of Web service applications using a formal model extracted from a set of BPEL programs using Doubly Labelled Transition Systems to analyze execution traces. When violations are discovered, recovery plans are generated to support the user in repairing the system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.2.">CEP</head><p>Especially in the domain of service-based systems, complex event processing is widely used (cf. Section 3 ) and there exist a number of frameworks using CEP as a way to express and analyze system behavior.</p><p>The Baresi and Guinea <ref type="bibr">[A33]</ref> propose the Multi-layer Collection and Constraint Language (mlCCL) for specifying events and data to be collected, and for analyzing runtime data. Regarding data processing, the framework uses three different kinds of processors: Key Performance Indicators are processed using Esper <ref type="bibr" target="#b45">[4]</ref> , a CEP tool for defining event conditions or correlations; aggregators are used for combining several different event streams and allowing subsequent analysis of multiple streams; and analyzers provide service data objects containing several service-related properties. The analyzers are built with WSCoL <ref type="bibr" target="#b74">[32]</ref> , an assertion language for defining and checking properties over XML snippets.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.3.">UML</head><p>Some of the frameworks employ the Unified Modeling Language to specify monitoring models. <ref type="bibr">Li et al. (b)</ref>  <ref type="bibr">[A26]</ref> propose a framework following a UML-based approach using uMSD (universal Modal Sequence Diagrams) representing events with messages and conditions. These diagrams are used to specify constraints and are transformed into Weak Alternating Büchi Automata (WABA) <ref type="bibr" target="#b87">[45]</ref> .</p><p>Muccini et al.</p><p>[A2] follow an UML-based approach for defining temporal architectural properties specifying how components may interact in component-based systems. They employ Property Sequence Charts (PSC) <ref type="bibr" target="#b88">[46]</ref> to describe wanted/unwanted execution flows among architectural elements. An analyzer engine is used to verify the defined properties based on the runtime data provided. <ref type="bibr">Li et al. (a)</ref> [A24] use a WS-Policy model to express the requirements, including timeliness, security, or reliability properties. Three different types of requirements are considered: temporal logic, timeouts, and reliability requirements. The Web Service Policy Framework provides a model to express such requirements in terms of XML-based policies and uses a Monitoring Requirement Expression Graph and Extended Message Sequence Charts to check the requirements at runtime.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.4.">Goal-oriented approaches</head><p>Goal-oriented approaches use goal models for specifying and checking the desired behavior of the system at runtime. For instance, <ref type="bibr">Wang et al.</ref> [A11] use a goal modeling approach to specify requirements. The goal models are enhanced by adding monitoring switches, preconditions, and effects for a particular goal or for particular tasks. The evaluation is performed using a SAT solver to determine whether requirements have been violated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.5.">Custom implementations</head><p>Several frameworks are based on custom-developed models including rule-based approaches, constraint DSLs, or other custom models to describe and validate system properties. Some use offthe-shelf languages like SQL or XML as a starting points to define their models.</p><p>DynaMICs [A37] specifies constraints as event-condition-action rules stored in a knowledge repository. The framework also supports traceability between constraints, code, as well as documentation. Comuzzi and Spanoudakis <ref type="bibr">[A29]</ref> propose a generic monitoring framework for service-based systems. Their rule generator supports the automatic generation of monitoring rules based on service-level agreements defined for business processes and services. The framework's monitor component is responsible for checking monitoring rules and storing detected violations. Ehlers and Hasselbring [A10] also propose a rule-based monitoring framework, which is embedded into the Kieker <ref type="bibr" target="#b47">[6]</ref> monitoring framework.</p><p>ReqMon <ref type="bibr">[A12]</ref> allows defining different monitoring models. For each requirement to be monitored (specified using the KAOS language), the structure of the requirement is mapped to a particular monitor (e.g., SQL monitors or ECA rules).</p><p>Breadcrumbs [A31] provides support for detecting timing constraint violations of event flows. The framework allows specifying timing constraints in a constraint DSL, which are then used to detect and analyze the cause of timing violations. A timing constraint consists of an initial event, a final event, a deadline, and a faulthandling method.</p><p>The WSLA framework <ref type="bibr">[A15]</ref> provides an extensible XML-based language for specifying service level agreement parameters and metrics, which are then used for evaluating the state of a service.</p><p>HiFi [A8] uses filters described in the High-level Filter Specification Language that follows an event-condition-action paradigm. A filter is a set of predicates and consists of three parts: an event expression specifying the event relations, a filter expression specifying the attribute values of the different events, and an action to be performed if both the event and the filter expression evaluate to true.</p><p>Li et al. (c) <ref type="bibr">[A30]</ref> propose a framework and DSL for defining and checking constraints for Web services. A constraint contains a pattern type describing the type of constraint (e.g., precedes or exists at most), as well as various constraint conditions specifying parameters to be checked. For the purpose of runtime validation, the constraints are transformed into finite state automata. These automata run in parallel with the system to be monitored and provide violations (e.g., when terminating in a non-end state) handled by a dedicated validation management component.</p><p>Ruz et al.</p><p>[A20] propose a framework for checking service-level agreements and QoS properties in service-based applications as well as for adapting applications based on monitored properties. A domain-specific language allows to describe conditions, which are then checked by an analysis component based on runtime data.</p><p>Zeginis et al.</p><p>[A18] propose a framework following an event model-based approach for monitoring cloud-based services. The event meta-model allows to describe common event types and patterns may that occur during runtime. Events are grouped in simple events and composite events, thus allowing to define a hierarchical ordering of event types.</p><p>Guinea et al.</p><p>[A5] propose a Monitoring and Correlation Model that supports aggregating and manipulating collected data. It also defines general and domain-specific metrics which are used for checking key performance indicators in service-based systems. Furthermore, the approach supports adaptation by analyzing anoma-lies and providing information on adaptation needs across multiple layers of the monitored system.</p><p>Mulo et al. (b) <ref type="bibr">[A21]</ref> employ an event view model to link concepts of the SOA domain to an event-based approach in an abstract manner, making it possible to specify components or artifacts regardless of the actual technology used for the implementation. An event DSL allows to specify instances of services and events defined in the event view model. <ref type="bibr">Shao et al.'s [A28]</ref> runtime model for cloud monitoring provides different views for users to hide the heterogeneity of underlying infrastructures and platforms. The model represents various different entities of a cloud instance (e.g., physical and virtual machines, applications, and end users) and is used for checking monitored data and raising alarms in case of violations.</p><p>OMIS [A16] provides a generic tool interface specification of monitors. J-OCM implements this specification for Java systems. Furthermore, an event model is used to define patterns of the events of interest in a hierarchical manner.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.6.">No model layer or model layer not described</head><p>A number of frameworks provide capabilities for instrumentation, aggregation and presentation of runtime events and data but have no model layer analyzing the captured events and data. The framework by <ref type="bibr">Becker et al. [A6]</ref>, for example, measures the processing time of a service execution but does not provide means for evaluating such measurements. Dragomir and Lichter [A32] describe a framework focusing on the visualization of captured runtime data but do not consider data analysis. Similarly, Monere [A14] focuses on the collection of metrics about service-based systems and their visualization in a dedicated tool. SPASS-Meter [A36] provides capabilities for instrumentation and data aggregation and explicitly takes into account the need for data analysis but leaves this to external applications using the SPASS-Meter framework. Also, the framework by <ref type="bibr">Popescu et al.</ref> [A17] focuses on adaptation, i.e., the execution of appropriate adaptation patterns assuming failures within the application. However, it remains unclear how failures can be determined.</p><p>Other frameworks mention a model layer, but do not provide details on its realization. For instance, the ARAMIS [A32] approach supports the architecture-centric evolution and evaluation of software systems by visualizing and checking architecture rules at runtime. The Plato-RE [A27] approach for monitoring requirements is capable of generating monitoring configurations at run time in response to changing conditions (e.g., to increase the probing frequency of a given sensor).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Presentation and application layer</head><p>The SOA4All framework [A9] supports the presentation of information describing three views on business activity monitoring: a Process View showing key performance indicators of different services, a Resource View visualizing human and mechanized resources, and an Object View showing business objects (e.g., orders, claims). GUI implementations of the approach are integrated in the SOA4All Studio ( http://technologies.kmi.open.ac.uk/soa4all-studio ).</p><p>ReqMon [A12] also considers monitoring feedback to the user. The ReqMon Presenter provides a digital dashboard for monitoring results presenting information on the status of requirements at runtime as well as historical data. Furthermore, ReqMon can visualize various types of UML diagrams, goals and requirements hierarchies, and monitored failures.</p><p>ECoWare <ref type="bibr">[A33]</ref> provides the ECoWare Dashboard, a Java application for analyzing violations online and offline as well as for visualizing runtime data using live charts. Also, historical data can be viewed using persisted data provided by storage components.</p><p>RuMoR <ref type="bibr">[A4]</ref> is directly integrated in the IBM WebSphere environment (described in detail in <ref type="bibr" target="#b89">[47]</ref> ). A violation reporter presents detected violations to the user and proposes and executes recovery plans.</p><p>While ARAMIS [A32] lacks analysis capabilities, the main focus of the framework is the real-time visualization of software architectures. A Web-based monitoring client presents sequence diagrams of the system to be monitored.</p><p>Monere [A14] provides a resource tree view showing a hierarchical overview of all discovered components and a dependency view displaying dependencies of a selected component. Furthermore, it displays activities, log messages and metrics of monitored BPEL processes and historical data, to support users in manually identifying deviations from desired behavior.</p><p>MOP <ref type="bibr">[A23]</ref> provides an Eclipse-based GUI and a Web-based interface for managing and processing MOP specifications. Java-MOP [A35] provides a rich client, command-line tools, and a Web client for editing and processing specifications (available at: http: //fsl.cs.uiuc.edu/mop ).</p><p>Some frameworks rely on other tools to present monitoring results to users. For instance, the tool by Ehlers and Hasselbring [A10] relies on visualization capabilities of the underlying Kieker framework providing, for example, calling context trees and responsiveness time series visualizations. MOSAICO [A2] provides extensions for the CHARMY tool for defining and visualizing property sequence charts ( http://www.di.univaq.it/charmy ).</p><p>Several frameworks report about tool support without providing details. For instance, the framework by <ref type="bibr">Li et al. (a)</ref> [A24] discusses tool support for presenting monitoring and checking results to the user without providing details. The RMCM framework <ref type="bibr">[A28]</ref> provides a monitoring center with alarms indicating rule violations and support for querying historical data, but again no details are provided on how the views look like. <ref type="bibr">Zmuda et al.</ref> [A34] present a data presentation layer in their framework, but provide no details on the implementation or supporting tools. Also, SPASS-meter [A36] contains a dedicated data presentation layer in their framework, but the authors do not describe its implementation or possible tools. The WLSA approach [A15] provides management interfaces and an admin console as interface to the user of their framework, also without providing details.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.">Summary and discussion</head><p>Our analysis shows that requirements monitoring frameworks are used for diverse purposes ranging from runtime verification of generic system properties [A23] to performance monitoring for a specific architecture or implementation language of a program <ref type="bibr">[A10]</ref>. We observed that depending on the application area the importance of the event layer varies. While frameworks for runtime verification based on formal approaches hardly mind the origin of data to be verified, other frameworks developed for service-based or component-based (distributed) systems consider the origin of events and support processing events and data.</p><p>Requirements monitoring frameworks commonly employ some kind of requirements monitoring model. Depending on the concrete approach, such a model serves different purposes. Some frameworks use models to describe the structure and hierarchy of the system to be monitored (e.g., <ref type="bibr">[A21]</ref>, <ref type="bibr">[A28]</ref>) whereas other frameworks use models to specify constraints or properties to be checked for the monitored system (e.g., <ref type="bibr">[A24]</ref>). Complex event processing is widely used, especially in the domain of service-based systems. Several frameworks are based on custom-developed models, not relying on an existing formalism or language. Some frameworks provide capabilities for instrumentation, aggregation and presentation of runtime events and data but do not support analyzing the captured events and data.</p><p>Only few frameworks provide support for presenting monitored events and data to end users and for integrating further applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">RQ3: Support for SoS</head><p>Requirements monitoring for systems of systems imposes diverse challenges that need to be taken into account when developing a requirements monitoring solution <ref type="bibr" target="#b58">[16]</ref> . Research question 3 thus assesses whether, and to what extent, the frameworks described in the 37 primary studies address those challenges, which we already discussed in Section 2.3 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.">A -monitoring at different layers and levels of granularity</head><p>Most frameworks we have analyzed focus on particular types of events or data that can be collected from systems and analyzed with the framework. Only about one third of the frameworks explicitly consider monitoring different kinds of events and data at different layers and levels of granularity, which is essential in SoS.</p><p>The frameworks by Guinea et al.</p><p>[A33] and Baresi et al.</p><p>[A5] consider different layers in service-based systems. Their Multilayer Collection and Constraint language <ref type="bibr">[A33]</ref> allows defining events and constraints on multiple layers for monitoring serviceoriented architectures. Specifically, they support monitoring the service layer represented as BPEL processes and the underlying service infrastructure. Different probes as well as different means for adapting the two layers are employed. Similarly, <ref type="bibr">Wang et al.</ref> [A11] present a framework for monitoring service-based applications at multiple levels. In addition to the business process and infrastructure levels, they also consider a component layer containing business logic for the diverse processes. Monere [A14] considers multiple layers and different types of events for service composition, however, without describing the layers to collect events from in detail. <ref type="bibr">Popescu et al.</ref> [A17] apply the ALIVE framework that allows defining generic events on service level, coordination level, organization level, and operator level. The monitoring framework for unmanned aircraft systems presented by <ref type="bibr">Doherty et al.</ref> [A7] takes into account different layers of a monitored system's architecture, i.e., a deliberative layer, a reactive layer, and a control layer. The Runtime Model for Cloud Monitoring [A28] provides a hierarchical view on the system considering different types of events ranging from infrastructure and platform events to application and enduser events. HiFi <ref type="bibr">[A8]</ref> considers different types of events and uses two types of monitoring agents: (i) local monitoring agents responsible for detecting primitive events generated by local applications in the same machine and (ii) domain monitoring agents for detecting composite events. The MOP monitoring model [A23] also considers different types of events and properties that can be monitored. Additionally, MOP considers various logic engines that can be integrated in the framework, thus allowing to extend the scope of properties that can be checked. ReqMon [A12] supports monitoring arbitrary levels and layers depending on the monitoring technology applied.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.">B -checking properties across different systems</head><p>Many of the frameworks we analyzed support monitoring service-based systems, and thus address the challenge of checking properties across independent systems, if realized as distributed services. For instance, these frameworks explicitly consider multiple service providers <ref type="bibr">[A2]</ref></p><formula xml:id="formula_1">, [A3], [A4], [A5], [A6], [A9], [A14], [A15], [A18], [A19], [A20], [A21], [A22], [A24], [A25], [A26], [A28], [A29], [A30], [A33]</formula><p>or use a pool of services <ref type="bibr">[A13]</ref>. However, a servicebased system still follows a particular architectural style, while systems of systems comprise multiple systems with different types of architectures. Checking properties across these systems requires combining and reasoning over data contained in and provided by these different independent systems.</p><p>Some monitoring frameworks support distributed systems. For instance, HiFi [A8] assumes several event producers in the framework's monitoring model for distributed systems, i.e., components are distributed across several physical machines. <ref type="bibr">Kim et al. [A31]</ref> propose a monitoring approach for monitoring the event flow between different modules in distributed real-time systems. Such frameworks thus also address the challenge of checking properties across different systems. However, the "components" monitored by existing frameworks all contribute to a single application rather than a number of independent systems with different architectures as in the context of SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3.">C -supporting different technologies</head><p>Although most existing frameworks allow monitoring multiple systems or components, only few support systems implemented in different languages or technologies. Many frameworks that support requirements monitoring in component-based systems or distributed services are limited to a particular instrumentation technology (e.g., aspect-oriented programming for Java <ref type="bibr">[A2]</ref>, <ref type="bibr">[A11]</ref>) or a specific application (e.g., using the IBMWebSphere environment <ref type="bibr">[A4]</ref>). Some do not provide detailed information on the actual instrumentation technology (e.g., <ref type="bibr">Popescu et al. [A17]</ref> or Breadcrumbs <ref type="bibr">[A31]</ref>). In an SoS environment it is crucial, however, to provide capabilities for integrating probes using different technologies. Some of the frameworks explicitly address the diversity of the systems the framework can be applied to. For instance, Becker et al.</p><p>[A6] present a framework for SOA monitoring that is not limited to a particular technology. The authors stress the fact that their architecture is capable of measuring performance attributes of a variety of applications including C ++ applications, Java applications, and client-server tools. Also, the framework by Bratanis et al. <ref type="bibr">[A19]</ref> considers different kinds of stakeholders, service providers, consumers, and brokers in their approach. The proposed monitoring architecture thus is extendable with regard to the monitors that can be plugged in. The framework by <ref type="bibr">Michlmayr et al.</ref> [A22] combines different technologies for client-side and server-side monitoring. MOP [A23] also incorporates support for various technologies by decoupling logic specification and logic engines. Specification processors, for example, can be implemented for Java, C, and other languages, which are subsequently interpreted and analyzed by a corresponding logic engine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4.">D -diversity of requirements and monitors</head><p>Only few frameworks consider the diversity of monitors and the variability of the monitoring solution at all. While none (!) of the frameworks provides a systematic way to manage the variability of a monitoring framework, e.g., using variability models <ref type="bibr" target="#b90">[48]</ref> . Some, however, consider the adaptation and configuration of (parts of) the framework. A main aim behind such configuration support is to reduce performance overhead by deactivating certain parts of the framework, e.g., probes not needed for a particular monitoring task.</p><p>For instance, the work by Ehlers and Hasselbring [A10] considers the adaptation of the monitoring rules for their Kieker framework. The framework provides an adaptation approach (Monitoring Adaptation Plugin) for instrumenting systems at several different locations, only activating the probes relevant for the current monitoring task, thus reducing the performance overhead of the monitoring framework. HiFi <ref type="bibr">[A8]</ref> provides programmable agents and a subscription mechanism where filters can be submitted to manually configure the infrastructure at runtime and to adapt the agents to the current monitoring tasks. <ref type="bibr">Popescu et al. [A17]</ref> propose a lightweight architecture for their framework i.e., applications can be configured (manually) to use only those monitoring and adaptation units they need (thus again increasing performance). MOR-PED [A25] provides a dedicated rule adaptor component for monitoring rule management. It allows adapting, activating or deactivating rules based on the user context specified in a user model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.5.">E -managing the performance of the monitoring solution</head><p>Surprisingly, less than a third of the frameworks report on the issues of performance and scalability at all. Some of the primary studies at least provide an evaluation of certain performance or scalability aspects (e.g., the overhead of the instrumentation used by the framework).</p><p>Mos et al.</p><p>[A9] stress the need for optimizing data processing as well as data storage for achieving performance and scalability in their framework for a potentially high number of nodes that need to be monitored in a service-oriented architecture. Analyses therefore can be performed separately in multiple instances, considering particular services omitting the large number of services the user is not interested in. <ref type="bibr">Ehlers and Hasselbring [A10]</ref> focus on the monitoring overhead of their framework in an evaluation. They decompose monitoring costs into three parts, i.e., instrumentation, data collection, and logging, to show that their approach is applicable in practical settings. In further work, <ref type="bibr">Waller and Hasselbring [49]</ref> evaluated the influence of multi-core processors on the overhead of the framework discussed by Ehlers and Hasselbring <ref type="bibr">[A10]</ref> in controlled laboratory experiments. Their experiments show that the already low overhead of the framework may be further reduced on multi-core processors with asynchronous writing of monitoring logs. Similarly, the ARAMIS framework <ref type="bibr">[A32]</ref> is evaluated by splitting up the response-time of the studied system into three different phases: before instrumentation, after instrumentation without sending the data, and after sending the collected information. The mlCCL <ref type="bibr">[A33]</ref> approach is evaluated by scaling the number of monitoring components from 0 to 4 and measuring the invocation times. Also, MOP [A23] provides a performance overhead evaluation of the monitoring code for Java-MOP using the DaCapo benchmark suite. The Breadcrumbs framework <ref type="bibr">[A31]</ref> measures the message size overhead as well as the CPU overhead of their implementation. <ref type="bibr">Zmuda et al. [A34]</ref> measure the overhead of the service processing time when monitoring is activated. <ref type="bibr">Wang et al.</ref> [A11] evaluate their approach for transforming a goal model into a propositional formula using two real-world systems scaling up the size of the goal model from 50 to 10 0 0 goals. The SPASS-Meter [A36] framework is evaluated using two case studies and various test cases focusing on the overhead with regards to monitoring (i.e., instrumentation), processing power, and memory consumption using the SPECjvm2008 benchmark.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.6.">Summary and discussion</head><p>More than two thirds of the analyzed frameworks are restricted to certain kinds of checks of particular types of events and data collected from particular layers and levels of interest in a monitored system. This lack of flexibility makes their application in an SoS context difficult. Below we summarize, for each originally defined SoS monitoring challenge A-E (cf. Section 2.3 ), what we have learned from analyzing the frameworks identified with our SLR. We also discuss suggestions for improving the identified gaps. 12 of 37 frameworks support monitoring at different layers and levels of granularity (challenge A). However, support for multilayer, multi-level monitoring is restricted to particular types of architectures of the monitored systems. For instance, while some frameworks allow monitoring service-based systems on multiple layers (e.g., service level, coordination level, organization level, or operator level), it would be hardly possible to directly apply them to an SoS with a heterogeneous architecture. Monitoring frameworks have to support heterogeneous architectures as well as technologies on different layers and levels of granularity. Approaches such as the ExplorViz approach by Fittkau et al. <ref type="bibr" target="#b92">[50,</ref><ref type="bibr" target="#b93">51]</ref> could be employed to increase program comprehension, e.g., by providing support for hierarchical, multi-layer visualization in large software systems.</p><p>Most frameworks only support checking properties within one (type of) system (challenge B). While some frameworks support checking properties, e.g., across distributed services, checking properties across multiple systems with different types of architectures is not supported. Monitoring frameworks also have to support defining and checking constraints between different (types of) systems.</p><p>Only few approaches explicitly consider monitoring of different technologies (challenge C), which is, however, essential for supporting monitoring across systems and considering cross-cutting requirements and properties to be checked across system borders in an SoS. Monitoring frameworks have to abstract from the instrumentation technology and allow collecting and aggregating events and data from different systems implemented using different technologies.</p><p>While the diversity of monitors (challenge D) required in an SoS context is supported by some frameworks, basic means to configure rules and constraints are supported only by few frameworks. Systematic and automated variability management is still lacking. Only 5 of 28 frameworks</p><formula xml:id="formula_2">([A8], [A10], [A17], [A25], [A28])</formula><p>explicitly consider variability of certain parts of the framework. Some approaches support manually configuring the monitoring rules/constraints or (de-)activating probes. However, manual configuration or parameterization of the framework and its elements has some major limitations when the framework is used in practice. Especially in an SoS context the large number of probes and constraints can have a negative impact on the acceptance of manual configuration approaches. The evolutionary independence of systems in an SoS also motivates automated and systematic variability management: each change in a system that is monitored can result in potential changes and adaptations in the monitoring framework <ref type="bibr" target="#b90">[48]</ref> . Monitoring frameworks should apply systematic variability management approaches, e.g., feature modeling or decision modeling <ref type="bibr" target="#b94">[52]</ref> and automate the configuration of probes, models, and constraints. In addition, the re-configuration of these elements in monitoring frameworks should be supported at runtime, based on changes occurring in the monitored system due to evolution.</p><p>Regarding performance and scalability (challenge E), existing frameworks focus mainly on performance overhead measurements. Most focus on the CPU or memory overhead of single probes whereas the overall performance of the framework itself -e.g., regarding the maximal load of events or checks performed -is mostly not discussed. In an SoS context, however, for practical application the performance of the overall monitoring framework should be investigated as well. In recent work, for example, Fittkau and Hasselbring <ref type="bibr" target="#b95">[53]</ref> have presented an approach for "elastic, distributed application-level monitoring" for large software systems by utilizing cloud computing. Their approach dynamically inserts and removes "worker levels" to control the performance overhead introduced by the monitoring approach.</p><p>In addition to learning about their support for the five SoS challenges, we have learned from our SLR that only few frameworks have been used in case studies with real-world systems or have been validated with state-of-the-art benchmark suites. Most frameworks have only been assessed through simple examples or through friendly-enough systems. Clearly, research prototypes can-not be evaluated on complex, real cases at the very beginning of a research project, but more attention to the evaluation of produced solutions should become customary. Furthermore, the analysis presented in this paper has revealed that most of the tools and frameworks discussed in publications are no longer available. We think the reader should be granted access to the artifacts discussed in the paper, or at least the authors should provide clear motivations to limit access.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Related SLRs</head><p>To the best of our knowledge, so far no systematic literature review exists for the domain of requirements monitoring. However, a number of authors have conducted SLRs on requirements modeling languages, program comprehension or SoS engineering in general:</p><p>Sepúlveda et al.</p><p>[54] conducted a systematic literature review on requirements modeling languages for software product lines. In their work they analyzed 54 studies regarding the maturity, expressiveness, and practical use of the identified approaches in industrial settings as well as the degree to which the approaches have been validated. They also assessed whether tool support is provided for the requirements modeling approaches. Some of the requirements models they analyzed could also be used in a requirements monitoring context.</p><p>Nicolas and Toval <ref type="bibr" target="#b97">[55]</ref> conducted a systematic literature review on generating requirements specifications from models, analyzing 30 different studies, the techniques used, as well as the applicability in a software product line context. Such specifications are an important input to a requirements monitoring approach.</p><p>Cornelissen et al. <ref type="bibr" target="#b98">[56]</ref> performed an SLR on program comprehension by dynamic analysis and reviewed publications between 1999 and 2008 regarding the activities supported by the approaches, their target domain or technology, their underlying methods, and their evaluation. Dynamic analysis approaches focus on understanding and debugging code and could be an important input to requirements monitoring approaches, e.g., to support the diagnosis of violations detected by monitoring frameworks.</p><p>In the domain of SoS, Axelsson [57] performed a systematic mapping study including over 30 0 0 papers on system of systems engineering. The study shows that over the last 10 years the number of papers published has significantly increased making the area SoS an active and ongoing research area. However, their work is not related with requirements monitoring.</p><p>Breivold et al. <ref type="bibr" target="#b100">[58]</ref> have addressed architecture evolution in their SLR. Their results could be an interesting input for the SoS requirements monitoring challenge regarding the co-evolution of monitored system and monitoring framework. More specifically, evolving architectures also require the co-evolution of several different artifacts such as code and architecture models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">Threats to validity</head><p>Like any empirical study, our SLR involves some threats to validity.</p><p>Regarding publication bias, there is a potential general threat that positive research results are more likely to be published than negative ones. However, this problem is low, as we did not focus on the performance or the success of approaches. Still, we cannot know what negative results may have remained unpublished.</p><p>The quality of the search string is essential to an SLR and represents a potential threat. Assessing the recall and precision of the search string is an important metric to address this threat. After experimenting with different combinations of keywords for the search string (cf. Section 2.5 ) we decided to use a rather generic search term to minimize the risk of missing publications in areas we are not aware of. to further ensure the validity of our systematic review. Precision was 15% for all identified approaches including those we classified as frameworks. We defined the relevant publications for the recall calculation using the following procedure: we manually reviewed the titles and, if necessary, the abstracts of all papers published at the Automated Software Engineering Conference from the last 10 years <ref type="bibr">(2004)</ref><ref type="bibr">(2005)</ref><ref type="bibr">(2006)</ref><ref type="bibr">(2007)</ref><ref type="bibr">(2008)</ref><ref type="bibr">(2009)</ref><ref type="bibr">(2010)</ref><ref type="bibr">(2011)</ref><ref type="bibr">(2012)</ref><ref type="bibr">(2013)</ref> and defined which are relevant (12 papers) by applying our exclusion and quality criteria. We then related this number with the number of publications actually retrieved from this conference (11 papers). This led to a recall of 91%. Although this recall value is quite high we might still have missed relevant publications, a common problem of SLRs.</p><p>The search engines we used for our SLR sometimes returned different results when re-executing the same query. In most cases this was due to the sorting of the results by relevance. Some search engines also provided different capabilities to search for publications, e.g., search in meta-data or full-text only. We developed scripts to automatically execute search queries and automatically collect result data as far as possible to reduce human errors during the search phase.</p><p>Regarding the threat of an inconsistent study selection and data extraction process, we agreed on a review protocol that was used by all researchers throughout the whole selection process. Furthermore, all three authors conducted a pilot voting with 100 randomly selected publications out of the list of all 1235 publications after which we agreed on a common set of inclusion and exclusion criteria. We applied the same procedure for the second step when selecting frameworks and extracting their characteristics. All three authors again conducted a pilot first with a random subset of 20 approaches before agreeing on the kind of data relevant for our study.</p><p>Another threat is biased judgment when deciding about including, excluding, or categorizing the studies retrieved. For instance, evaluating the selection criteria of the SLR depends on the subjective rating of the reviewers. Especially for quality criterion Q1 no metric can be established thus the compliance depends on the experience and personal rating of the reviewer. Each of the three authors voted independently on including or excluding a publication, and in case of inclusion, if the publication describes a framework. If mutual agreement was achieved, the publication was included or excluded, in case of disagreement, the publication was discussed to mitigate any misunderstandings or misinterpretations until agreement has been achieved by all three reviewers. We used a spreadsheet to tabulate and subsequently discuss the data extracted from the primary studies. As argued by <ref type="bibr">Dyba and Dingsøyr [59]</ref> such an approach is preferable when synthesizing qualitative data in an SLR.</p><p>Repeating our SLR is possible although if the study will be repeated by different researches the included and excluded publications might be slightly different. We believe that it is unlikely that a replicated study will lead to fundamentally different results regarding the identified frameworks and their capabilities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8.">Conclusions</head><p>In this article we have presented the results of a systematic literature review on requirements monitoring approaches. We addressed three research questions, i.e., the application areas and types of runtime monitoring approaches (RQ1); requirements monitoring frameworks according to the definition of Robinson <ref type="bibr" target="#b57">[15]</ref> (RQ2); and the suitability of these frameworks to support requirements monitoring in the context of systems of systems (RQ3).</p><p>We learned that runtime monitoring is a particularly popular topic in the area of service-based systems and an increasingly popular topic when it comes to security, safety and privacy of software systems. Furthermore, we learned that research is still fragmented and that there are not many citations among the 330 publications from the different areas of runtime monitoring. Especially across different types of approaches, very few citations can be found. However, also within one group of approaches citations are scarce.</p><p>Our analysis further shows that requirements monitoring frameworks are used for diverse purposes ranging from runtime verification of generic system properties to performance monitoring for a specific architecture or implementation language of a program. Only few frameworks provide support for presenting monitored events and data to end users and for integrating further applications.</p><p>Many approaches are limited to a particular technology or implementation language and do not investigate their applicability to different types of systems developed using heterogeneous technologies or languages making it hard to apply them in a systems of systems context. Moreover, most frameworks are restricted to certain kinds of checks of particular types, or events and data collected from particular layers and levels of interest in a monitored system. This lack of flexibility makes their application to SoS difficult. While the diversity of monitors is supported by some frameworks via basic means to configure rules/constraints in their specifications, systematic and automated variability management is still missing in the existing frameworks.</p><p>Regarding the evaluation of the frameworks and their performance and scalability, existing frameworks focus mainly on performance overhead measurements. Only few frameworks have been used in cases studies with real-world systems or validated with benchmark suites.</p><p>To address these challenges, we have been developing a requirements monitoring framework supporting system instrumentation and collecting and analyzing events and data in SoS architectures <ref type="bibr" target="#b58">[16]</ref> . Conducting the SLR helped us to understand the strengths and weaknesses of existing approaches on which we built when developing this framework. For instance, the Presentation and Application layer of Robinson have been neglected by most approaches so far. In our future work we aim to treat them as first class citizens by providing support that goes beyond monitoring and towards diagnosis.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Research method overview and research questions. In our systematic review we identified 330 approaches (AP) regarding RQ1 and 37 frameworks (FW) to investigate RQ2 and RQ3.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Visualization of 330 publications selected for RQ1 using REVIS [29] . The document map side on the left shows similarities in language among the publications' titles clustering them in different categories. The edge bundles on the right display citations among the publications.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>ning system.</head><label></label><figDesc>The MOSAICO [A2] approach uses AspectJ for mon- itoring architectural properties in J2EE applications. Aspects are created based on Aspect Templates and Property Sequence Charts specifying the architectural properties. AspectJ is also used by frameworks aiming to support monitoring of service-based sys- tems. For instance, the framework by Li et al. (b) [A26] supports automatically generating aspects based on Universal Modal Se- quence Diagram specifications to extract runtime traces from a running system. The framework by Wang et al. [A11] allows gen- erating aspects semi-automatically based on goal models and the framework by Li et al. (a) [A24] uses aspect-oriented programing to instrument Web services. The framework by Michlmayr et al. [A22] distinguishes server- side and client-side Web service monitoring. Their client-side ap- proach uses the QUATSCH tool for instrumentation. It generates aspects from Web Service Description Language (WSDL) specifi- cations describing the functionalities (interface methods) provided by Web services. For server-side monitoring their framework uses Windows performance counters for monitoring quality of service properties of running services.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>The framework by Li et al. (c) [A30] also employs an ap- proach intercepting, and subsequently analyzing SOAP messages exchanged between a Web service and its clients. Mulo et al. (b) [A21]</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="true"><head>Table 1 Search</head><label>1</label><figDesc>results before and after first manual exclusion (based on title).</figDesc><table>Publisher 
+Search result 
+After exclusion 
+% 
+
+IEEE 
+672 
+364 
+54% 
+ACM 
+436 
+249 
+57% 
+Springer 
+885 
+504 
+57% 
+Elsevier 
+208 
+118 
+57% 
+Total 
+2201 
+1235 
+56% 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>) .</head><label></label><figDesc></figDesc><table>This area cov-
+ers approaches supporting monitoring properties in embedded 
+systems [A90] or monitoring timing constraints in real-time ap-
+plications [A316]. 
+• Service-based systems (165 publications) . This application area 
+covers approaches that support monitoring in service-oriented 
+architectures, some with focus on business process monitoring. 
+Such approaches aim to check adherence to defined service-
+level agreements or checking the quality of service attributes. 
+Many of these approaches rely on the Business Process Execu-
+tion Language (BPEL). Other approaches use custom-developed 
+solutions, often based on XML. 
+• Security, safety, and privacy properties (47 publications) . This ap-
+plication area covers approaches for monitoring safety policies 
+or properties in safety-critical systems (e.g., in the Android OS 
+[A67] or train control systems [A295]). Typically formal ap-
+proaches are used in this domain employing temporal logic 
+[A118] or various forms of automata ([A55]</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table 3 Selected primary studies (requirements monitoring frameworks).</head><label>3</label><figDesc></figDesc><table>Support for Robinson [15] layers (RQ2) 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="false"><head></head><label></label><figDesc>frameworks presented by Hamida et al. [A3], Mulo et al. (a) [A13], and Michlmayr et al. [A22] use complex event process- ing (CEP) for defining rules and evaluating the runtime behavior of systems. Mos et al. [A9] present a framework that uses CEP to- gether with several additional mechanisms like a Basic Event Pro- cessor for computing averages and basic aggregated events and a Knowledge Analytics component to interpret environment infor- mation. The framework by Zmuda et al. [A34] uses CEP for processing monitoring data of service-based applications. Monitoring scenar- ios are used to define a monitoring scope and its goals (e.g., met- rics and metric attributes)</figDesc><table></table></figure>
+
+			<note place="foot">Michael Vierhauser is a PhD student at the Christian Doppler Laboratory for Monitoring and Evolution of Very-Large-Scale Software Systems at Johannes Kepler Univer-</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgments</head><p>This work has been supported by the Christian Doppler Forschungsgesellschaft, Austria. We want to thank Jürgen Thanhofer-Pilisch for helping us with the analysis of the approaches using the REVIS tool.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix</head></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Automata-based</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">EC-based [A329]</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">I</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kb-Based</forename></persName>
+		</author>
+		<imprint/>
+	</monogr>
+	<note>A122] [A141] [A146] [A147] [A18] [A279] [A283] [A306] [A307] [A30] [A309</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A Model-Oriented Framework for Runtime Monitoring of Nonfunctional Properties</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kenneth</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Iman</forename><surname>Poernomo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Heinz</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jane</forename><surname>Jayaputera</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 1st Int&apos;l Conf. on the Quality of Software Architectures</title>
+		<meeting>of the 1st Int&apos;l Conf. on the Quality of Software Architectures</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Monitoring architectural properties in dynamic component-based systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Henry</forename><surname>Muccini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrea</forename><surname>Polini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Fabiano</forename><surname>Ricci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Antonia</forename><surname>Bertolino</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 10th Int&apos;l Symp. on Component-Based Software Engineering</title>
+		<meeting>of the 10th Int&apos;l Symp. on Component-Based Software Engineering</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Monitoring service choreographies from multiple sources</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Amira</forename><surname>Ben Hamida</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Antonia</forename><surname>Bertolino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Antonello</forename><surname>Calabrò</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Guglielmo</forename><surname>De Angelis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Nelson</forename><surname>Lago</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Julien</forename><surname>Lesbegueries</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 4th Int&apos;l WS on Software Engineering for Resilient Systems</title>
+		<meeting>of the 4th Int&apos;l WS on Software Engineering for Resilient Systems</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Monitoring and recovery for web service applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jocelyn</forename><surname>Simmonds</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Shoham</forename><surname>Ben-David</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marsha</forename><surname>Chechik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computing</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="223" to="267" />
+			<date type="published" when="2013" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Multi-layered monitoring and adaptation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sam</forename><surname>Guinea</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Gabor</forename><surname>Kecskemeti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Annapaola</forename><surname>Marconi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Branimir</forename><surname>Wetzstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 9th Int&apos;l Conf. on Service-Oriented Computing</title>
+		<meeting>of the 9th Int&apos;l Conf. on Service-Oriented Computing</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">An Extensible Monitoring Framework for Measuring and Evaluating Tool Performance in a Service-Oriented Architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Christoph</forename><surname>Becker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hannes</forename><surname>Kulovits</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Michael</forename><surname>Kraxner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Riccardo</forename><surname>Gottardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andreas</forename><surname>Rauber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 9th Int&apos;l Conf. on Web Engineering</title>
+		<meeting>of the 9th Int&apos;l Conf. on Web Engineering</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">A temporal logic-based planning and execution monitoring framework for unmanned aircraft systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Patrick</forename><surname>Doherty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jonas</forename><surname>Kvarnström</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Fredrik</forename><surname>Heintz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Autonomous Agents and Multi-Agent Systems</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="332" to="377" />
+			<date type="published" when="2009" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Programmable agents for active distributed monitoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Ehab S Al-Shaer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 10th IFIP/IEEE Int&apos;l WS on Distributed Systems</title>
+		<meeting>of the 10th IFIP/IEEE Int&apos;l WS on Distributed Systems</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Multi-level monitoring and analysis of web-scale service based applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Adrian</forename><surname>Mos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Carlos</forename><surname>Pedrinaci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Guillermo</forename><forename type="middle">Alvaro</forename><surname>Rey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jose</forename><forename type="middle">Manuel</forename><surname>Gomez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dong</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Guillaume</forename><surname>Vaudaux-Ruth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Samuel</forename><surname>Quaireau</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the</title>
+		<meeting>of the</meeting>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">ICSOC/ServiceWave Workshops</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A self-adaptive monitoring framework for component-based software systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jens</forename><surname>Ehlers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wilhelm</forename><surname>Hasselbring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 5th European Conf. on Software Architecture</title>
+		<meeting>of the 5th European Conf. on Software Architecture</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yiqiao</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Sheila</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yijun</forename><surname>Mcilraith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">John</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Mylopoulos</surname></persName>
+		</author>
+		<title level="m">Monitoring and diagnosing software requirements, Automated Software Engineering</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2009" />
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="3" to="35" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A requirements monitoring framework for enterprise systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>William N Robinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Requirements engineering</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="17" to="41" />
+			<date type="published" when="2006" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Domain-specific language for event-based compliance monitoring in process-driven SOAs</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Emmanuel</forename><surname>Mulo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Uwe</forename><surname>Zdun</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Schahram</forename><surname>Dustdar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Service Oriented Computing and Applications</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="59" to="73" />
+			<date type="published" when="2013" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Monere: Monitoring of service compositions for failure diagnosis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Bruno</forename><surname>Wassermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wolfgang</forename><surname>Emmerich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 9th Int&apos;l Conf. on Service-Oriented Computing</title>
+		<meeting>of the 9th Int&apos;l Conf. on Service-Oriented Computing</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The WSLA framework: Specifying and monitoring service level agreements for web services</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Alexander</forename><surname>Keller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Heiko</forename><surname>Ludwig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Network and Systems Management</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="57" to="81" />
+			<date type="published" when="2003" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Monitoring system for distributed java applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Funika</forename><surname>Włodzimierz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marian</forename><surname>Bubak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marcin</forename><surname>Smetek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 4th Int&apos;l Conf. on Computational Science</title>
+		<meeting>of the 4th Int&apos;l Conf. on Computational Science</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">An extensible monitoring and adaptation framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Razvan</forename><surname>Popescu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Athanasios</forename><surname>Staikopoulos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Siobhán</forename><surname>Clarke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2009 ICSOC/ServiceWave Workshops</title>
+		<meeting>of the 2009 ICSOC/ServiceWave Workshops</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Towards cross-layer monitoring of multi-cloud service-based applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chrysostomos</forename><surname>Zeginis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kyriakos</forename><surname>Kritikos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Panagiotis</forename><surname>Garefalakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Konstantina</forename><surname>Konsolaki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kostas</forename><surname>Magoutis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2nd European Conf. on ServiceOriented and Cloud Computing</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+	<note>and Dimitris Plexousakis</note>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">An extensible architecture for run-time monitoring of conversational web services</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Konstantinos</forename><surname>Bratanis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dimitris</forename><surname>Dranidis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Anthony Jh</forename><surname>Simons</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 3rd Int&apos;l WS on Monitoring, Adaptation and Beyond</title>
+		<meeting>of the 3rd Int&apos;l WS on Monitoring, Adaptation and Beyond</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Component-based generic approach for reconfigurable management of component-based SOA applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Cristian</forename><surname>Ruz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Françoise</forename><surname>Baude</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Bastien</forename><surname>Sauvan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 3rd Int&apos;l WS on Monitoring, Adaptation and Beyond</title>
+		<meeting>of the 3rd Int&apos;l WS on Monitoring, Adaptation and Beyond</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">An event view model and DSL for engineering an event-based SOA monitoring infrastructure</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Emmanuel</forename><surname>Mulo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Uwe</forename><surname>Zdun</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Schahram</forename><surname>Dustdar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 4th ACM Int&apos;l Conf. on Distributed Event-Based Systems</title>
+		<meeting>of the 4th ACM Int&apos;l Conf. on Distributed Event-Based Systems</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Comprehensive QoS Monitoring of Web Services and Event-based SLA Violation Detection</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Anton</forename><surname>Michlmayr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Florian</forename><surname>Rosenberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Philipp</forename><surname>Leitner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Schahram</forename><surname>Dustdar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 4th Int&apos;l WS on Middleware for Service Oriented Computing</title>
+		<meeting>of the 4th Int&apos;l WS on Middleware for Service Oriented Computing</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Mop: An Efficient and Generic Runtime Verification Framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Feng</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Grigore</forename><surname>Ro¸sro¸s</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 22nd Annual ACM SIGPLAN Conf. on Object-oriented Programming Systems and Applications</title>
+		<meeting>of the 22nd Annual ACM SIGPLAN Conf. on Object-oriented Programming Systems and Applications</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Monitoring Web Services for Conformance</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Bixin</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Shunhui</forename><surname>Ji</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Li</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dong</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mingjie</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 7th Int&apos;l Symp</title>
+		<meeting>of the 7th Int&apos;l Symp</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">MORPED: Monitor rules for proactive error detection based on run-time and historical data</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">R</forename><surname>Contreras</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Mahbub</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 5th Int&apos;l Conf. on the Applications of Digital Information and Web Technologies</title>
+		<meeting>of the 5th Int&apos;l Conf. on the Applications of Digital Information and Web Technologies</meeting>
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Monitoring composite services with universal modal sequence diagrams</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wenrui</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Zhijian</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the</title>
+		<meeting>of the</meeting>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Asia-Pacific Software Engineering Conf</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<publisher>IEEE</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Adaptive monitoring of software requirements</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Andres J Ramirez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><forename type="middle">C</forename><surname>Betty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Philip K</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Mckinley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2010 1st Int&apos;l WS on Requirements@Run.Time</title>
+		<meeting>of the 2010 1st Int&apos;l WS on Requirements@Run.Time</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A runtime model based monitoring approach for cloud</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jin</forename><surname>Shao</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hao</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Qianxiang</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hong</forename><surname>Mei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 3rd Int&apos;l Conf. on Cloud Computing</title>
+		<meeting>of the 3rd Int&apos;l Conf. on Cloud Computing</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">A framework for hierarchical and recursive monitoring of service based systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marco</forename><surname>Comuzzi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">George</forename><surname>Spanoudakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 4th Int&apos;l Conf. on Internet and Web Applications and Services</title>
+		<meeting>of the 4th Int&apos;l Conf. on Internet and Web Applications and Services</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">A runtime monitoring and validation framework for web service interactions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Zheng</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yan</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jun</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2006 Australian Software Engineering Conf. , IEEE</title>
+		<meeting>of the 2006 Australian Software Engineering Conf. , IEEE</meeting>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">A decentralized approach for monitoring timing constraints of event flows</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hyoseung</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Shinyoung</forename><surname>Yi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wonwoo</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hojung</forename><surname>Cha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 31st Real-Time Systems Symp</title>
+		<meeting>of the 31st Real-Time Systems Symp</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Run-time monitoring and real-time visualization of software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrei</forename><surname>Dragomir</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Horst</forename><surname>Lichter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 20th Asia-Pacific Software Engineering Conf. , volume</title>
+		<meeting>of the 20th Asia-Pacific Software Engineering Conf. , volume</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="volume">1</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Event-based multi-level service monitoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Luciano</forename><surname>Baresi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sam</forename><surname>Guinea</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 20th Int&apos;l Conf. on Web Services</title>
+		<meeting>of the 20th Int&apos;l Conf. on Web Services</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Dynamic monitoring framework for the SOA execution environment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marek</forename><surname>Daniel ˙ Zmuda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Krzysztof</forename><surname>Psiuk</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Zielí Nski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="125" to="133" />
+			<date type="published" when="2010" />
+			<publisher>Elsevier</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Checking and Correcting Behaviors of Java Programs at Runtime with Java-MOP</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Feng</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marcelo</forename><surname>Amorim</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Grigore</forename><surname>Ro¸sro¸s U</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electronic Notes in Theoretical Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="3" to="20" />
+			<date type="published" when="2006" />
+			<publisher>Elsevier</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Flexible resource monitoring of Java programs</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Holger</forename><surname>Eichelberger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Klaus</forename><surname>Schmid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Systems and Software</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="163" to="186" />
+			<date type="published" when="2014" />
+			<publisher>Elsevier</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">This reference list covers the 37 primary studies of this systematic review (RQ2, RQ3). A full list of all 330 references used to answer RQ1 can be found in the Supplementary Materials online</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Q</forename><surname>Ann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Steve</forename><surname>Gates</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Oscar</forename><surname>Roach</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Nelly</forename><surname>Mondragon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Delgado</surname></persName>
+		</author>
+		<idno type="doi">doi:10.1016/j.infsof.2016.08.005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Electronic Notes in Theoretical Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="164" to="180" />
+			<date type="published" when="2001" />
+			<publisher>Elsevier</publisher>
+		</imprint>
+	</monogr>
+	<note>DynaMICs: Comprehensive support for run-time monitoring</note>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">INCOSE Int&apos;l Symposium</title>
+		<imprint>
+			<publisher>Wiley Online Library</publisher>
+			<date type="published" when="1996" />
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="565" to="573" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A requirements monitoring framework for enterprise systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">N</forename><surname>Robinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Require. Eng</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="17" to="41" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Run-time monitoring and real-time visualization of software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Dragomir</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Lichter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 20th Asia-Pacific Software Engineering Conference (APSEC)</title>
+		<meeting>of the 20th Asia-Pacific Software Engineering Conference (APSEC)</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="396" to="403" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title level="m" type="main">Complex event processing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Espertech</surname></persName>
+		</author>
+		<ptr target="http://www.espertech.com/" />
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Mop: an efficient and generic runtime verification framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Ro¸sro¸s</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM SIGPLAN Notices</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="569" to="588" />
+			<date type="published" when="2007" />
+			<publisher>ACM</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Kieker: A framework for application performance monitoring and dynamic software analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Van Hoorn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Waller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Hasselbring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the</title>
+		<meeting>of the</meeting>
+		<imprint>
+			<biblScope unit="page">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+				<title level="m">ACM/SPEC Int&apos;l Conf. on Performance Engineering</title>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="247" to="248" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Monere: Monitoring of service compositions for failure diagnosis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Wassermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Emmerich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Service-Oriented Computing</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="344" to="358" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">Włodzimierz</forename><surname>Funika</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bubak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Smetek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Monitoring system for distributed Java applications</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="472" to="479" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Runtime monitoring of web service conversations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Simmonds</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Gan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Chechik</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Nejati</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>O&amp;apos;farrell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Litani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Waterhouse</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Serv. Comput</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="223" to="244" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">A temporal logic-based planning and execution monitoring framework for unmanned aircraft systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Doherty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kvarnström</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Heintz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Autonom. Agents Multi-Agent Syst</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="332" to="377" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">A taxonomy and catalog of runtime softwarefault monitoring tools</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Delgado</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">Q</forename><surname>Gates</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Roach</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="859" to="872" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Patterns in property specifications for finite-state verification</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">B</forename><surname>Dwyer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">S</forename><surname>Avrunin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Corbett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 1999 Int&apos;l Conf. on Software Engineering</title>
+		<meeting>of the 1999 Int&apos;l Conf. on Software Engineering</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="1999" />
+			<biblScope unit="page" from="411" to="420" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Keele</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+	<note>Ver. 2.3 EBSE Technical Report. EBSE</note>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">A systematic review of systematic review process research in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="2049" to="2075" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">A roadmap for comprehensive requirements modeling</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Robinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="64" to="72" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Reminds: a flexible runtime monitoring framework for systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Vierhauser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rabiser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Grünbacher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Seyerlehner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Wallner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Zeisel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Softw</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page" from="123" to="136" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">M</forename><surname>Lehman</surname></persName>
+		</author>
+		<title level="m">Laws of software evolution revisited</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1996" />
+			<biblScope unit="page" from="108" to="124" />
+		</imprint>
+	</monogr>
+	<note>Software Process Technology</note>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Requirements reflection: requirements as runtime entities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Bencomo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Whittle</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Sawyer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Finkelstein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Letier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 32nd ACM/IEEE Int&apos;l Conf. on Software Engineering</title>
+		<meeting>of the 32nd ACM/IEEE Int&apos;l Conf. on Software Engineering</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="199" to="202" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Monitoring and diagnosing software requirements</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">A</forename><surname>Mcilraith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mylopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Autom. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="35" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jamshidi</surname></persName>
+		</author>
+		<title level="m">System of Systems Engineering: Innovations for the Twenty-first Century</title>
+		<imprint>
+			<publisher>John Wiley &amp; Sons</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="volume">58</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Understanding the current state of us defense systems of systems and the implications for systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">S</forename><surname>Dahmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">J</forename><surname>Baldwin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2nd Annual IEEE Systems Conf., IEEE</title>
+		<meeting>of the 2nd Annual IEEE Systems Conf., IEEE</meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="1" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Systems of systems engineering: Basic concepts, model-based techniques, and research directions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">B</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">G</forename><surname>Larsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fitzgerald</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Woodcock</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Peleska</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Comput. Surv</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">41</biblScope>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Kiczales</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Lamping</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Mendhekar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Maeda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Lopes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J.-M</forename><surname>Loingtier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Irwin , Aspect-oriented Programming</title>
+		<imprint>
+			<date type="published" when="1997" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Lessons from applying the systematic literature review process within the software engineering domain</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Khalil</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Softw</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="571" to="583" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Systematic literature reviews in software engineering-a systematic literature review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Linkman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="7" to="15" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Systematic literature reviews in software engineering-a tertiary study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Pretorius</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Niazi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Linkman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="792" to="805" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Requirements monitoring in dynamic environments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Fickas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">S</forename><surname>Feather</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the Second IEEE Int&apos;l Symp. on Requirements Engineering</title>
+		<meeting>of the Second IEEE Int&apos;l Symp. on Requirements Engineering</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="1995" />
+			<biblScope unit="page" from="140" to="147" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Qualitative methods in empirical studies of software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">B</forename><surname>Seaman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="557" to="572" />
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Maldonado , Using visual text mining to support the study selection activity in systematic literature reviews</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">R</forename><surname>Felizardo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Salleh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">M</forename><surname>Martins</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Mendes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">G</forename><surname>Macdonell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2011 Int&apos;l Symp. on Empirical Software Engineering and Measurement (ESEM)</title>
+		<meeting>of the 2011 Int&apos;l Symp. on Empirical Software Engineering and Measurement (ESEM)</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="77" to="86" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Event-based traceability for managing evolutionary change</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cleland-Huang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">K</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Christensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="796" to="810" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">The event calculus explained</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shanahan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial Intelligence Today</title>
+		<imprint>
+			<biblScope unit="page" from="409" to="430" />
+			<date type="published" when="1999" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Self-supervising BPEL processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Baresi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Guinea</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="247" to="263" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Autonomic sla-aware service virtualization for distributed systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Kertesz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Kecskemeti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Brandic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 19th Euromicro Int&apos;l Conf. on Parallel, Distributed and Network-Based Processing</title>
+		<meeting>of the 19th Euromicro Int&apos;l Conf. on Parallel, Distributed and Network-Based essing</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="503" to="510" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Enabling SLA monitoring for component-based SOA applications-a component-based approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ruz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Baude</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauvan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 36th Euromicro Conf. on Software Engineering and Advanced Applications</title>
+		<meeting>of the 36th Euromicro Conf. on Software Engineering and Advanced Applications</meeting>
+		<imprint>
+			<publisher>Work In Progress Session</publisher>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Websphere</forename><surname>Ibm</surname></persName>
+		</author>
+		<ptr target="http://www-01.ibm.com/software/integration/wid/" />
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Monitoring distributed systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mansouri-Samani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sloman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Netw</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="20" to="30" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">Wide area cluster monitoring with Ganglia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">D</forename><surname>Sacerdoti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">J</forename><surname>Katz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">L</forename><surname>Massie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">E</forename><surname>Culler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the IEEE Int&apos;l Conf. on Cluster Computing</title>
+		<meeting>of the IEEE Int&apos;l Conf. on Cluster Computing</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2003" />
+			<biblScope unit="page" from="289" to="298" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">Run-time monitoring of instances and classes of web service compositions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Barbon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Traverso</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Pistore</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Trainotti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2006 Int&apos;l Conf. on Web Services, ICWS&apos;06</title>
+		<meeting>of the 2006 Int&apos;l Conf. on Web Services, ICWS&apos;06</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="63" to="71" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<monogr>
+		<title level="m" type="main">Infrastructure monitoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Nagios</surname></persName>
+		</author>
+		<ptr target="https://www.nagios.org/" />
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Inc</surname></persName>
+		</author>
+		<ptr target="http://sigar.hyperic.com" />
+		<title level="m">System information gatherer and reporter (sigar)</title>
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Tal: Temporal action logics language specification and tutorial</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Doherty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gustafsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Karlsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kvarnström</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Inf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">015</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">A Logic for reasoning about time and reliability</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Hansson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Jonsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Formal Aspects Comput</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="512" to="535" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Eilenberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Tilson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Automata, Languages, and Machines</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<date type="published" when="1974" />
+			<publisher>Academic press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">A Logic-based calculus of events</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kowalski</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sergot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">New Generat. Comput</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="67" to="95" />
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Weak alternating automata are not that weak</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Kupferman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">Y</forename><surname>Vardi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Trans. Comput. Logic (TOCL)</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="408" to="429" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">A scenario based notation for specifying temporal properties</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Autili</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Inverardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Pelliccione</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 2006 Int&apos;l WS on Scenarios and state machines: models, algorithms, and tools</title>
+		<meeting>of the 2006 Int&apos;l WS on Scenarios and state machines: models, algorithms, and tools</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="21" to="28" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<monogr>
+		<title level="m" type="main">Dynamic analysis of web services</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Simmonds</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+		<respStmt>
+			<orgName>University of Toronto</orgName>
+		</respStmt>
+	</monogr>
+	<note>Ph.D. thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Evolution in dynamic software product lines: challenges and perspectives</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Quinton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rabiser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Vierhauser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Grünbacher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Baresi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 19th Int&apos;l Software Product Line Conf., ACM</title>
+		<meeting>of the 19th Int&apos;l Software Product Line Conf., ACM</meeting>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="126" to="130" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">A comparison of the influence of different multi-core processors on the runtime overhead for application-level monitoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Waller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Hasselbring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the Int&apos;l Conf. on Multicore Software Engineering, Performance, and Tools</title>
+		<meeting>of the Int&apos;l Conf. on Multicore Software Engineering, Performance, and Tools</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="42" to="53" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">Hierarchical software landscape visualization for system comprehension: A controlled experiment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Fittkau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Krause</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Hasselbring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 3rd IEEE Working Conf. on Software Visualization (VISSOFT)</title>
+		<meeting>of the 3rd IEEE Working Conf. on Software Visualization (VISSOFT)</meeting>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="36" to="45" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">Live trace visualization for comprehending large software landscapes: The explorviz approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Fittkau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Waller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wulf</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Hasselbring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 1st IEEE Working Conf. on Software Visualization (VISSOFT)</title>
+		<meeting>of the 1st IEEE Working Conf. on Software Visualization (VISSOFT)</meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title level="a" type="main">Cool features and tough decisions: a comparison of variability modeling approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Czarnecki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Grünbacher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rabiser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Schmid</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Wasowski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 6th Int&apos;l WS. on Variability Modeling of Software-intensive Systems</title>
+		<meeting>of the 6th Int&apos;l WS. on Variability Modeling of Software-intensive Systems</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="173" to="182" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title level="a" type="main">Elastic application-level monitoring for large software landscapes in the cloud</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Fittkau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Hasselbring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 4th European Conf. on Service Oriented and Cloud Computing</title>
+		<meeting>of the 4th European Conf. on Service Oriented and Cloud Computing</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="80" to="94" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title level="a" type="main">Requirements modeling languages for software product lines: a systematic literature review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sepúlveda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Cravero</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Cachero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="16" to="36" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<analytic>
+		<title level="a" type="main">On the generation of requirements specifications from software engineering models: a systematic literature review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Nicolás</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1291" to="1307" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title level="a" type="main">A systematic survey of program comprehension through dynamic analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Cornelissen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Zaidman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Van Deursen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Moonen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Koschke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="684" to="702" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<analytic>
+		<title level="a" type="main">A systematic mapping of the research literature on system-of-systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Axelsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 10th System of Systems Engineering Conf. (SoSE)</title>
+		<meeting>of the 10th System of Systems Engineering Conf. (SoSE)</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="18" to="23" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title level="a" type="main">A systematic review of software architecture evolution research</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><forename type="middle">P</forename><surname>Breivold</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Crnkovic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Larsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="16" to="40" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<analytic>
+		<title level="a" type="main">Applying systematic reviews to diverse study types: an experience report</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dyba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsoyr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">K</forename><surname>Hanssen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM / IEEE Int&apos;l Symp. Empir. Softw. Eng. Measure</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="225" to="234" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

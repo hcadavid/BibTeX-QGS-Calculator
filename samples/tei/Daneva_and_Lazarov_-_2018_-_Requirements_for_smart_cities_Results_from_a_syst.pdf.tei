@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:26+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Requirements for Smart Cities: Results from a Systematic Review of Literature</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Maya</forename><surname>Daneva</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Computer Science School</orgName>
+								<orgName type="department" key="dep2">Computer Science School</orgName>
+								<orgName type="institution">University of Twente Enschede</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Boyan</forename><surname>Lazarov</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">University of Twente Enschede</orgName>
+								<address>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Requirements for Smart Cities: Results from a Systematic Review of Literature</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Smart city systems</term>
+					<term>Requirements engineering</term>
+					<term>Software architecture</term>
+					<term>Systematic literature review</term>
+					<term>Empirical study</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Smart cities are gaining increasingly more importance in both research and business circles. Much effort is spent to defining what a smart city is and how it could be realized with today&apos;s or future technologies. However, from requirements engineering perspective, our knowledge of smart cities is fragmented; little is known about the requirements for smart cities as complex systems, or as systems of systems, in specific application domains. In this paper, we elicit requirements for smart city systems by carrying out a systematic review of scientific literature focused on the so-called &quot;hard&quot; domains of smart cities. Based on 32 selected publications, we gathered and classified requirements in respect to three types of smart city systems (instrumented, interconnected, and intelligent systems) and four classes of requirements: end-to-end experience, architectural, security, and infrastructure requirements. Our most important findings are that: (1) most authors took a bottom-up approach to defining requirements for smart cities; their efforts focused mainly on requirements important for designing an architecture that could scale up to any size and include any device or system; and (2) very little is mentioned on the newly emerging security and privacy challenges that are critical to gain the citizens&apos; acceptance of smart city apps.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>The concept of a smart city has been existing in the scientific literature for nearly two decades (i.e. since 1998). However, only in the past 7-8 years, there is a noticeable increase of the volume of scientific publications on this topic <ref type="bibr" target="#b35">[35]</ref>. The initial vision of the smart city systems (SCSs) community was to find out a concept or a model that leverages ICT (information and communication technology) for the purpose of improving urban services and resolving various daily problems that affect citizens' life. The peak of this initial vision is the work of Harrison et al. <ref type="bibr" target="#b3">[4]</ref> proposing the foundational concept of a SCS in 2010. These authors defined three types of SCSs: instrumented, interconnected and intelligent systems. Their classification contributed significantly to the creation of an initial understanding of smart cities and to the definition of a structure applicable to a wide range of cities. However, these authors focused only on technical aspects whereas a smart city is far of being limited to the application of technologies to cities. In fact, authors of recent scientific publications increasingly more emphasize the inclusion of ""people aspects" in the conceptualization of SCSs, e.g. Giffinger <ref type="bibr" target="#b0">[1]</ref> proposed to measure the cities' smartness footprint according to six characteristics − smart economy, smart people, smart governance, smart mobility, smart environment, and smart living, all of which refer to citizens and communities. There are also some more recent attempts to define the concept of smart city as urban living labs or as knowledgeable cities, which also focus on people. Plus, the 2015 definitional analysis of Albino et al. <ref type="bibr" target="#b19">[19]</ref> identified 23 different definitions for a smart city in the scientific literature that include people and community needs. Although much work took place to clarify the concept of smart cities, to the best of our knowledge very little has been published on the requirements that are posed to these systems and that are traceable to their characteristic dimensions that researchers and practitioners deemed important. As a result, our knowledge of these systems from a requirements engineering perspective, is fragmented. Our research makes a step towards bridging this gap. The goal of this paper is to identify, structure and consolidate the SCSs' requirements that have been treated in publications on smart cities. Using the systematic literature review techniques of <ref type="bibr">Kitchenham et al. [38]</ref>, we identified 32 relevant publications and, then, extracted and aggregated the requirements discussed in them.</p><p>For the purpose of our research, we use Kondepudi's working definition: "A smart sustainable city (SSC) is an innovative city that uses information and communication technologies (ICTs) and other means to improve quality of life, efficiency of urban operation and services, and competitiveness, while ensuring that it meets the needs of present and future generations with respect to economic, social and environmental aspects" ( <ref type="bibr" target="#b35">[35]</ref>). According to it, businesses providing SCSs, approach the solution development process from two angles <ref type="bibr" target="#b37">[37]</ref>: technology-intense ("hard") and sociallyintense ("soft"). The first angle implies a strong focus on delivering cyber-physical systems, while the second -on sociotechnical systems ( <ref type="bibr" target="#b37">[37]</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. RESEARCH PROCESS</head><p>Our research process implemented the guidelines in <ref type="bibr" target="#b38">[38,</ref><ref type="bibr" target="#b39">39]</ref>. It included the following steps: planning a paper search strategy, formulating inclusion and exclusion criteria for paper selection, searching literature sources, evaluating these sources based on the inclusion criteria, and analyzing the empirical evidence in those paper that we selected for inclusion. Our search was done in the Scopus digital library. We chose Scopus because (1) it is the largest database of peer-reviewed literature (as stated by Elsevier, https://www.elsevier.com/solutions/ scopus) and (2) recent bibliographic research <ref type="bibr" target="#b41">[41,</ref><ref type="bibr" target="#b42">42]</ref> indicated it as the most comprehensive and user-friendly database. Using Scopus means that the results only contain papers which are published in peer-reviewed journals, conferences and workshops (and that no master's and PhD theses are included). We used the following search string: (("smart city" OR "smart city system" OR "smart city software" OR "smart city solution") AND (requirements OR architecture OR infrastructure, OR "IT" OR "ICT")). The search was carried out on Jan 15, 2018. We applied it to Article Title, Abstract and Keywords. This resulted in 991 results. This high volume was unsurprising due to the broad smart city context. Following <ref type="bibr" target="#b39">[39]</ref>, we reviewed the abstracts of these papers and applied the inclusion and exclusion criteria. These are defined as follows:</p><p>Inclusion criteria (IC): (IC1) the paper must treat "hard" domains of SCSs, i.e. buildings, smart service networks, energy grids, natural resources, water management, waste management, mobility and logistics, where ICT plays the decisive role in the functions of the system; (IC2) the paper must treat explicitly requirements to the SCS -or the class of SCSs, that the paper talks about; (IC3) if multiple publications report the same study, only the most recent one is selected. Exclusion criteria (EC): (EC1) non-English publications; (EC2) papers dedicated to the "soft" domains of smart cities, i.e. education, culture, policy innovations, social inclusion, and government, (EC3) papers emphasizing the social context and social requirements such as language constraints, economic constraints, or geographic-specific aspects are not considered; and (EC4) articles that are not downloadable online.</p><p>The abstracts were read by both authors independently. The authors worked in different countries and had little communication between themselves (as the second author was employed in a company outside the Netherlands). Based on the review of the abstract, the authors discarded 870 papers. The whole texts of the remaining 121 papers were reviewed to assure we include only those relevant to our RQs. This step resulted in a final selection of 32 scientific articles which form references  in the reference list of this paper.</p><p>Our literature review revealed a variety of requirements addressed in the selected papers. For the purpose of this study, we classified these requirements in a framework of types of systems <ref type="bibr" target="#b3">[4]</ref> and in requirements categories <ref type="bibr" target="#b36">[36]</ref>. The types are those defined by Harrison et al. <ref type="bibr" target="#b3">[4]</ref>: (1) Instrumented systems are a category of SCSs responsible for capturing and integration of live real-world and virtual data; (2) Interconnected systems are a category of SCSs in which information is integrated throughout an end-to-end process; and (3) Intelligent systems are a category of SCSs whose critical functionality is the analysis of information to bring insights that drive decisions and action. Next, we employed the framework <ref type="bibr" target="#b36">[36]</ref> of the British Standards Institute (BSI) which was derived based on the BSI's research of more than 100 standards applicable to SCSs. The framework suggests four dimensions that can be used to categorize the requirements that we extracted from the 32 papers: (i) End-to-End Experience, referring to holistic descriptions of the behavior of a SCSs; (ii) Architecture, referring to formal descriptions of information systems, in particular by defining components or building blocks and how they will work together; (iii) Security &amp; Privacy, referring to holistic descriptions of technology and policy aspects; as data is shared between services, concerns emerge over information security, data protection and privacy; (iv) Infrastructure, referring to descriptions of the infrastructure facilitating the interaction between elements within any subsystems as well as between subsystems. This interaction is enabled and supported by ICT and electronics <ref type="bibr" target="#b37">[37]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESULTS</head><p>This section presents the demographics of our 32 papers and then describes our findings according to our RQs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Descriptive characteristics of the selected papers</head><p>Figures 1 and 2 describe the papers in terms of publication year and country of the authors' affiliations, respectively. Below, we see that 9 out of the 32 papers in our review, were published in 2014. A possible explanation for this is that a large number of inter-university projects funded by the European Union within the FP7 framework finished up in 2014 and the participating researchers had mature results to publish (e.g. <ref type="bibr" target="#b24">[24,</ref><ref type="bibr" target="#b32">32]</ref>). Also, we observe a steady growth of publications in the following years <ref type="bibr">, 2015, 2016 and 2017</ref>. This matches the current developments in the field and the new funding schemas that have been launched after 2014. Next, <ref type="figure" target="#fig_1">Figure 2</ref> indicates that (i) the highest number of papers was published by researchers from Italy (6), UK (6) and Spain (4), and (ii) the majority of papers (29 out of 32) are from the countries in the European Union (EU). In fact, this is unsurprising, considering the EU's directive for development of smart cities and the funding schemas provided to universities and businesses to help with the execution of this directive.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Requirements that SCS should meet (RQ1)</head><p>Below, we report the applicable requirements <ref type="table" target="#tab_1">(Tables I, II,  III and IV)</ref>, first classified in one of the three types <ref type="bibr" target="#b3">[4]</ref> of smart city systems (instrumented, interconnected and intelligent), and next, in Van Dam's four categories <ref type="bibr" target="#b36">[36]</ref> (end-to-end experience, architecture, security &amp; privacy, infrastructure).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) End-to-end experience requirements.</head><p>We found that 13 out of the 32 papers addressed this requirements category. <ref type="table" target="#tab_1">Table I</ref> presents the requirements extracted from these papers. We observe that most of these requirements refer to interconnected systems and intelligent systems. We also notice that only one paper (see Batty et al. <ref type="bibr" target="#b6">[7]</ref>) addressed requirements regarding instrumented SCSs and that all those are about functional properties, e.g. abilities of collecting data, preparing data for analysis and transforming data. In contrast to this, we observe that the requirements regarding interconnected and intelligent smart systems are in fact quality requirements (or non-functional), e.g. interoperability <ref type="bibr" target="#b4">[5]</ref>, distributedness of data mining processing <ref type="bibr" target="#b6">[7]</ref>, or sematic integration.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2) Architecture requirements</head><p>We found that 15 out of the 32 papers addressed this requirements category (see <ref type="table" target="#tab_1">Table II</ref>). <ref type="table" target="#tab_1">Table II</ref> indicates that these requirements are either at sensor level or at network level ones. The first address the topology of the sensors in a network and the topology's implications for architecture. These requirements acknowledge the understanding that the quality attributes of the resulting SCS depend on the architecture design choices <ref type="bibr" target="#b29">[29]</ref>. Next, the network-level requirements deal with the rules postulating the communication of local networks and broader networks, such as Wi-Fi and 3G (e.g. <ref type="bibr" target="#b1">[2]</ref>). We observe that the authors of the papers that concern intelligent smart systems, put forward service requirements (see <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b9">9]</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3) Security and privacy requirements</head><p>We found that nine papers addressed this category of requirements (see <ref type="table" target="#tab_1">Table III</ref>). An interesting observation is that six papers address security and privacy at the level of interconnected systems. Only one paper dealt with security of instrumented SCSs, and the specific requirements were concerned with identity management of citizens. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ref. Requirements regarding</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Instrumented</head><p>[7]</p><p>The system should support the acquisition of data from multiple distributed sources, including services for participatory sensing and online communities</p><p>The system should assure management of data streams at all times. The integration of heterogeneous data into a coherent database The system should perform the necessary data transformations and preparations for data analysis in the specific application domain.</p><p>The system should comply the definition of all observable variables, while extracting relevant information Interconnected systems <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b11">11]</ref> The system should support access to data, applications and users throughout the digital nation, anytime, anywhere.</p><p>The system should implement am unified e-Service gateway.</p><p>[7]</p><p>The system should integrate GSM and mobile phone networks that allow society-wide proxies for human mobile activities.</p><p>The system should implement a predefined number of methods for distributed data mining and networks analytics The system should support users in composing patterns and data models based on data mining analysis. <ref type="bibr" target="#b19">[19]</ref> The system must integrate technologies, systems, services, and capabilities into an organic network that is sufficiently multisectorial and flexible for future developments, and open-access.</p><p>The system should serve as the facilitator for creating a new type of communicative environment, which requires the comprehensive and balanced development of innovation-oriented institutions, broadband networks, and virtual collaborative spaces. <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b22">22,</ref><ref type="bibr" target="#b28">28]</ref> The system should comply with the standardization and interoperability criteria for the provision of e-government services.</p><p>[7]</p><p>The system should have abilities for data gathering, aggregation, reasoning, data analytics, and service delivering via Smart City APIs (Application Program Interfaces).</p><p>The system must be interoperable. It must provide semantic data integration in regard to open data, private data and real time data coming from administrations and different city operator. <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b28">28]</ref> The system should be able to handle open government data. Intelligent systems <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b14">14]</ref> The system should contribute to an improved quality of services The system should provide the feature to profile individual consumers, goods and services <ref type="bibr" target="#b12">[12]</ref> The system should provide publicly available services for air quality and pollution of specific regions or streets of a city.</p><p>The system should provide publicly available services for noise pollution of specific regions or streets of a city.</p><p>[8]</p><p>The system should be able to place recommendations based on social media information.</p><p>The system should providing insightful information based on social media analysis results and current user location <ref type="bibr" target="#b5">[6]</ref> The system should maintain consistent quality of user experiences when popular services are delivered to users, while delivering indepth data on their user activities, to system developers.</p><p>[13]</p><p>The system should support knowledge extraction in smart buildings for energy efficiency.</p><p>[7]</p><p>The system should provide visualization of correlations and patterns through an extended variety of data mining techniques The system should have dedicated tools for evaluating the quality of the extracted models and patterns.</p><p>The system should have features for visual analytics for the exploration of behavioral patterns and models.</p><p>The system should execute the simulation and prediction methods that are built on top of the mined patterns and models.</p><p>The system should implement incremental and distributed mining strategies to overcome the scalability issue that emerge when dealing with big data. <ref type="bibr" target="#b5">[6]</ref> The system should implement selected security technologies such as advanced encryption and access control, intelligent data aggregation techniques, without limiting the quality of service. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ARCHITECTURAL REQUIREMENTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ref. Requirements regarding Instrumented systems [2]</head><p>The system should integrate sensor networks composed of Zigbee nodes, Motes and RFID tags. <ref type="bibr" target="#b2">[3]</ref> The system's architecture should allow for management and cooperation of heterogeneous sensors <ref type="bibr" target="#b9">[9]</ref> The system should handle virtual objects that represent real world objects. <ref type="bibr" target="#b29">[29]</ref> Modularity architectural requirements: the platform should consist of data sources, layers of modular services, integration layer and solutions (parking and traffic management system) <ref type="bibr" target="#b12">[12]</ref> The system should integrate short-range communication sensors, such as RFID or NFC on parking lots The systems data should be translated into EXI format. <ref type="bibr" target="#b7">[8]</ref> It should comply to the specification of geographic areas <ref type="bibr" target="#b30">[30]</ref> It should receive user feedback on environmental condition. <ref type="bibr" target="#b29">[29]</ref> The system should comply interdependency and heterogeneity criteria. Interconnected systems <ref type="bibr" target="#b1">[2]</ref> The system should be based on a single knowledge database, feeding and being fed by subsystems, to serve as a "brain". The broadband communication network should include WiFi, cellular networks (GPRS, EDGE, 3G, HSDPA, LTE), WMAN, WiMAXZ, metropolitan mesh networks and their hybrids.</p><formula xml:id="formula_0">[9]</formula><p>The composite virtual objects should be a cognitive mashup of semantically interoperable virtual objects.</p><p>[12]</p><p>The system should be based on a publicly accessible distributed database of building structural integrity measurements.</p><p>The IoT services should comply the ReST paradigm (similar to web services). The reference protocol architecture should entail both a constrained and an unconstrained protocol stack. The transportation of data with CoAP protocol over UDP shall be used. The 6LoWPAN protocol instead of IPv4 shall be used. <ref type="bibr" target="#b7">[8]</ref> The system should have interface access to sensors data. <ref type="bibr" target="#b6">[7]</ref> The system should implement local solutions and local rules (grammars to reduce the planning costs of networks with growing complexity. Intelligent systems <ref type="bibr" target="#b1">[2]</ref> The system should include Geographic Information System (GIS) to manage data and build spatial relationships. <ref type="bibr" target="#b9">[9,</ref><ref type="bibr" target="#b14">14]</ref> Each service that the system provides, should match a specific level of quality of service.</p><p>[8]</p><p>The system should support citizen, visitor, and authority in their processes in the city. <ref type="bibr" target="#b6">[7]</ref> The system should include a travel advice system that is selfconsistent in a group of public and private advice systems. <ref type="bibr" target="#b31">[31,</ref><ref type="bibr" target="#b32">32]</ref> The system should be interoperable regarding data.</p><p>Only one paper, too, addressed security for intelligent SCSs. Therein, the respective security requirements were treated from a system-of-systems perspective: security requirements specify how the constituent systems self-organize themselves in a secure way to preserve the security properties of the composite system they make up together.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4) Infrastructure requirements</head><p>We found that 7 papers addressed this category of requirements (see <ref type="table" target="#tab_1">Table IV</ref>). As we see, they are concerned with physical space, urban locations, broadband elements and living labs positions. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ref. Requirements regarding Instrumented systems [2]</head><p>The system should maintain a citizen portable identity that enables them a secured interaction with services Interconnected systems <ref type="bibr" target="#b3">[4]</ref> The system should support redundant paths.</p><p>The system should implement encrypted links.</p><p>The system should be verified by involving at least two parties.</p><p>The system should implement a message queuing support process.</p><p>[12]</p><p>The system should provide electronic verification for vehicles. <ref type="bibr" target="#b29">[29]</ref> The system should assure privacy in waste management <ref type="bibr" target="#b28">[28]</ref> The system should include components for Security in Smart Grids, Building Automation Systems (BAS), Unmanned Aerial Vehicles (UAVs), Smart Vehicles <ref type="bibr" target="#b27">[27]</ref> The interconnected system should match the requirements of digital forensics investigators <ref type="bibr" target="#b23">[23,</ref><ref type="bibr" target="#b25">25]</ref> The system should implement end-to-end security and privacy features for trustable data acquisition, transmission, processing and legitimate service provisioning <ref type="bibr" target="#b5">[6]</ref> The system should be resilient.</p><p>The system should implement crypto and key management policies for platforms with limited memory and computation</p><p>The system should implement an evolutionary trust models for scalable and secure inter-system interaction The system should comply with abstract and comprehensive security policy languages standards. Intelligent systems <ref type="bibr" target="#b5">[6]</ref> The system should be self-monitoring and self-protecting.</p><p>The system development should include the use of formal methods for designing security and privacy into complex and interdependent systems.</p><p>The system development should include the use of thread models that allow to take multiple sub-systems into account. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ref. Requirements regarding Instrumented systems [2]</head><p>The system should serve as the foundation of the utility grids. <ref type="bibr" target="#b10">[10]</ref> The infrastructure should at all times support the smart service provisioning process.</p><p>[12]</p><p>The system should handle intelligent waste containers that detect the level of load.</p><p>The system should operate in buildings equipped with vibration and deformation sensors.</p><p>[28]</p><p>The system should be developed according to a plan that ensures the physical space and infrastructure of the city are enriched with embedded systems, smart devices, sensors, actuators. <ref type="bibr" target="#b26">[26]</ref> Infrastructure should be adaptable to local context. Interconnected systems <ref type="bibr" target="#b1">[2]</ref> The ICT infrastructure should comply with industry standards. A pervasive computing infrastructure should be built on standards based ambient intelligence and computing platforms.</p><p>High bandwidth capacity should be provided by fiber wire and wireless transmission (gigabit &amp; terabit range).</p><p>Infrastructure should be fully flexible and self-organizing. <ref type="bibr" target="#b12">[12]</ref> Exploit street lights network to provide WiFi access to citizens <ref type="bibr" target="#b28">[28]</ref> Broadband infrastructure should combine cable, optical fiber, and wireless networks.</p><p>The system should deliver its services in a sustainable way. Intelligent systems <ref type="bibr" target="#b5">[6]</ref> As with contemporary engine control system, urban infrastructure should continuously watch its own operations, predicting faults before they occur, optimizing delivery of resource or service to match demand.</p><p>[28]</p><p>The system should include living lab networks to help test new applications and e-services, and these should be used as building blocks for the more efficient development of smart cities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Application domains traceable to the requirements (RQ2)</head><p>We found 8 application domains that were covered in the 32 papers included in this review: (i) e-government and mobility service provisioning <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b11">11,</ref><ref type="bibr" target="#b24">24,</ref><ref type="bibr" target="#b25">25,</ref><ref type="bibr" target="#b30">30,</ref><ref type="bibr" target="#b31">31]</ref>, (ii) transportation, city traffic and parking usage optimization <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b9">9,</ref><ref type="bibr" target="#b10">10,</ref><ref type="bibr" target="#b12">12,</ref><ref type="bibr" target="#b14">14,</ref><ref type="bibr" target="#b17">17,</ref><ref type="bibr" target="#b27">27]</ref>, (iii) energy sustainability and optimization <ref type="bibr">[2,13,15,21,22,28,31, (iv)</ref> city pollution, microclimate, and noise monitoring <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b14">14,</ref><ref type="bibr" target="#b19">19,</ref><ref type="bibr" target="#b30">30,</ref><ref type="bibr" target="#b32">32]</ref>, (v) logistics <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b24">24,</ref><ref type="bibr" target="#b29">29]</ref>, (vi) waste management <ref type="bibr" target="#b12">[12,</ref><ref type="bibr" target="#b29">29,</ref><ref type="bibr" target="#b32">32]</ref>, (vii) smart homes <ref type="bibr" target="#b23">[23]</ref>, and (v) geographic information systems <ref type="bibr" target="#b26">[26]</ref>. While it is not surprising that e-government and mobility service provisioning, transportation and energy optimization are the most researched domains, it is unexpected that only one out of our 32 included papers deals with smart homes -knowing that both the market of smart homes and the number of connected devices per family in Europe has grown dramatically in the past three years, according to EU reports (e.g. <ref type="bibr" target="#b40">[40]</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. DISCUSSION ON RESULTS AND ON VALIDITY</head><p>As <ref type="table" target="#tab_1">Tables I, II, III</ref> and IV indicate, the majority of the identified requirements fell into the end-to-end experience and architectural categories. Few focused on security and citizens' privacy. This hints that SCS researchers might well take for granted the resolution of possible security and privacy challenges. Plus, there might be tacit expectation that existing standards would be enough as solutions in the lower layers of SCSs. However, the rapid expansion and the diversity of technologies most likely will challenge these standards as they were originally designed for different scales and problems. Therefore, we think that more research is needed on security strategies for smart cities. Second, we observe that published research took a bottom-up approach to SCS. The architectural requirements <ref type="table" target="#tab_1">(Table II)</ref> are in fact design-level requirements <ref type="bibr" target="#b34">[34]</ref> referring to sensors and networks, and not to constituent systems in a system-of-systems solution providing services to stakeholders. This is in contrast to top-down approaches to requirements in which the analysis starts from stakeholders' goals and needs <ref type="bibr" target="#b34">[34]</ref>. We found very few articles ( <ref type="bibr" target="#b25">[25,</ref><ref type="bibr" target="#b32">32]</ref>) stating SCS stakeholders and these did not go deep but discussed them in general. A significant direction for future work is therefore the deeper understanding of involved stakeholders and the SCS services that match their needs. Third, regarding infrastructure requirements, we found that many papers are hard to associate to a particular SCS category <ref type="bibr" target="#b3">[4]</ref>. E.g. in <ref type="bibr" target="#b1">[2]</ref>, 12], <ref type="bibr" target="#b28">[28]</ref>, we found some pieces of requirements applicable to the instrumented systems, while others were more logical to be associated to the interconnected systems or the intelligent systems category (such as the requirements from <ref type="bibr" target="#b28">[28]</ref>). This difficulty in associating the infrastructure requirements to a particular category might signal that the SCS categorization in <ref type="bibr" target="#b3">[4]</ref> is not fine-grained enough to classify infrastructure requirements.</p><p>Last, we compared our findings with other empirical studies of EU agencies on the distribution of smart cities (e.g. <ref type="bibr" target="#b40">[40]</ref>). The findings in <ref type="figure" target="#fig_1">Figure 2</ref> agree with the data of the EU study <ref type="bibr" target="#b40">[40]</ref> which indicated Italy, UK and Spain as the countries with the highest concentration of smart cities (p. 39). It is therefore unsurprising that the majority of the papers included in our review originate from those countries. Moreover, we found that the application domains for which we identified requirements also agree with the domains that have seen the highest number of SCSs implementation projects ( <ref type="bibr" target="#b40">[40]</ref>).</p><p>We evaluated the possible threats to the validity <ref type="bibr" target="#b38">[38,</ref><ref type="bibr" target="#b39">39]</ref> of our results. First, if another researcher reviews the papers' abstracts would he or she decide for including or excluding the same papers? To make sure this threat was limited, we reviewed independently the abstracts of the papers. If our evaluation of the inclusion/exclusion differed, they we clarified our differences in a discussion and arrived to a consensus. This enhanced our understanding of the criteria and their application. Moreover, both authors know no author among those of the included papers. This reduces the possibility of injecting professional bias in the selection of the studies, due to friendship or prior collaboration. Next, although Scopus is considered the most comprehensive library in terms of coverage, it might be the case that a highly relevant paper has not been included in it. This poses a validity threat. However, we think it is minimal because we found that quite a few journal papers had already shorter earlier versions that were already published in conferences. This signaled to us that the research studies included in this review are mature and the authors re-thought their ideas as a result of writing journal papers that have gone through a more rigorous review process compared to conference and workshop papers. Last, we are conscious about the possible bias in classifying the 32 papers according to Harrison et al <ref type="bibr" target="#b3">[4]</ref>. We found that at times it was quite difficult to assign a paper to only one category of smart systems (be it instrumental, interconnected and intelligent SCSs). This is because some of our selected 32 papers provided a more detailed contextual description of their SCS of interest than others. To counter the risk of bias, the respective texts from the papers in question, were discussed by both researchers and the categorization was done once consensus was achieved.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. SUMMARY AND IMPLICATIONS</head><p>A systematic review of literature was performed, to identify requirements for SCSs. An initial set of 991 articles was screened in a two-stage process, yielding a set of 32 papers used to extract requirements to SCSs <ref type="table" target="#tab_1">(Tables I -IV)</ref>. We found that that (i) so far research took a bottom-up approach to defining SCS requirements; we see a strong focus on requirements important for designing a scalable architecture that could include any device or system <ref type="table" target="#tab_1">(Table II, based on 15</ref> papers out of 32 in our set); (ii) end-to-end experience requirements received attention in literature, however they so far are translated in feature-level functional requirements <ref type="bibr" target="#b34">[34]</ref> and two non-functional requirements: interoperability and level of standardization; (iii) very little is mentioned on security and privacy requirements that are key to the SCS acceptance; (iv) infrastructure requirements are founded on standards and are prescriptive in nature; they recommend very specific solutions leveraging already existing technology choices.</p><p>This review has at least three implications for practitioners: (1) SCS vendors might find it informative to compare their proposed solutions against the list of requirements identified in this paper; (2) client organizations who are interested in implementing SCS concepts might use our list <ref type="table" target="#tab_1">(Tables I -IV)</ref> as an initial set of requirements that could be further elaborated to match their own context; (3) clients might also be interested in comparing different vendors' SCS offerings by using our list of requirements, as a common ground for comparison. This review has some implications for researchers: (1) those schools that were so far involved in smart city projects under the FP7 and Horizon 2020 programs could use our list of requirements for understanding better the scope of the systems that their projects deliver and for delimiting this scope; (2) researchers could possibly use the requirements as a roadmap if they focus on a particular type <ref type="bibr" target="#b3">[4]</ref> of a SCS, e.g. an instrumental SCS; (3) researchers might also use the findings to compare the outcomes of their different projects. We consider however these application scenarios of the requirements as working assumptions; therefore we plan future work with colleagues from smart city research projects to see the extent to which the requirements could add value to research in the scenarios we hypothesized.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Numbers of papers per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Number of papers by country.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>TABLE I . END-TO-END EXPERIENCE REQUIREMENTS</head><label>I</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>TABLE II .</head><label>II</label><figDesc></figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>TABLE III .</head><label>III</label><figDesc>SECURITY &amp; PRIVACY REQUIREMENTS</figDesc><table></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>TABLE IV .</head><label>IV</label><figDesc></figDesc><table>INFRASTRUCTURE REQUIREMENTS 
+
+</table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Smart cities Ranking of European medium-sized cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Giffinger</surname></persName>
+		</author>
+		<idno type="doi">10.1016/S0264-2751(98)00050-X</idno>
+		<ptr target="http://doi.org/10.1016/S0264-2751(98)00050-X" />
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="13" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">An architectural framework and enabling wireless technologies for digital cities &amp; Intelligent urban environments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">S</forename><surname>Yovanof</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">N</forename><surname>Hazapis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Personal Communications</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="445" to="463" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Smart City: An event driven architecture for monitoring public spaces with heterogeneous sensors</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Filipponi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vitaletti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Landi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Memeo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Laura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Pucci</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">4th Int. Conf. on Sensor Technologies and Applications, SENSORCOMM 2010</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="281" to="286" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Foundations for smarter cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Eckman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Hamilton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Hartswick</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kalagnanam</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Paraszczak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Williams</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IBM J. of R&amp;D</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1" to="16" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Smart cities applications and requirements</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Correia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Wunstel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Technology Platform</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="39" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Smart cities: transforming the 21st century city via the creative use of technology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Burscher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Doody</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Ashley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Tabet</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mcdermott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Smart Cities</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="13" to="18" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Smart cities of the future</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Batty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">W</forename><surname>Axhausen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Giannotti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Pozdnoukhov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Bazzani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wachowicz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Ouzounis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Portugali</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Physical Journal: Special Topics</title>
+		<imprint>
+			<biblScope unit="volume">214</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="481" to="518" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Requirements and architecture design principles for a smart city experiment with sensor and social networks integration</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Samaras</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vakali</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Giatsoglou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Chatzakou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Angelis</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page">17</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+				<title level="m">Panhellenic Conf. on Informatics -PCI &apos;13</title>
+		<imprint>
+			<biblScope unit="page">327</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Enabling smart cities through a cognitive management framework for the internet of things</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Vlacheas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Giaffreda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Stavroulaki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Kelaidonis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Foteinos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Poulios</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Demestichas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Somov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">R</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Moessner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Comm. Mag</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="102" to="111" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">SmartSantander: Internet of Things Research and Innovation through Citizen Participation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Gutiérrez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Galache</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Sánchez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Muñoz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Hernández-Muñoz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fernandes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Presser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Internet Assembly</title>
+		<imprint>
+			<biblScope unit="volume">2013</biblScope>
+			<biblScope unit="page" from="173" to="186" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Towards an effective framework for building smart cities: Lessons from Seoul and San Francisco</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">G</forename><surname>Hancock</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">C</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Technological Forecasting and Social Change</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="80" to="99" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Internet of Things for Smart Cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Zanella</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Bui</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Castellani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Vangelista</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Zorzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internet of Things</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="22" to="32" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">User-centric smart buildings for energy sustainable smart cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">V</forename><surname>Moreno</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Zamora</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">F</forename><surname>Skarmeta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transactions on Emerging Telecommunications Technologies</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="41" to="55" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">An Information Framework for Creating a Smart City Through Internet of Things</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gubbi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Marusic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Palaniswami</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internet of Things</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="112" to="121" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Integration of distributed generation in the power distribution network: The need for smart grid control systems, communication and equipment for a smart city</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ruiz-Romero</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Colmenar-Santos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Mur-Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>López-Rey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Renewable and Sustainable Energy Reviews</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="223" to="234" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The role of small cell technology in future Smart City applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Cimmino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Pecorella</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Fantacci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Granelli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">F</forename><surname>Rahman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Sacchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Carlini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Harsh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transactions on Emerging Telecommunications Technologies</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="11" to="20" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Architecture for parking management in smart cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">E</forename><surname>Barone</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Giuffrè</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">M</forename><surname>Siniscalchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Morgano</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Tesoriere</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IET Intelligent Transport Systems</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="445" to="452" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Threat-Based Security Analysis for the Internet of Things</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Atamli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">P</forename><surname>Martin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Workshop on Secure Internet of Things</title>
+		<imprint>
+			<biblScope unit="page" from="35" to="43" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Smart cities: definitions, dimensions, performance, and initiatives</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Albino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Berardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">M</forename><surname>Dangelico</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. of Urban Tech</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="21" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Kyriazopoulou</surname></persName>
+		</author>
+		<title level="m">Smart city technologies and architectures: A literature review. 4th Int. Conf. on Smart Cities and Green ICT Systems, SMARTGREENS&apos;15</title>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="5" to="16" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Building a Big Data Platform for Smart Cities: Experience and Lessons from Santander</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Longo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Cirillo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kovacs</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015" />
+			<publisher>BigData Congress</publisher>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="592" to="599" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Designing a smart city internet of things platform with microservice architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Krylovskiy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jahn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Patti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">FiCloud&apos;</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="25" to="30" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Major requirements for building Smart Homes in Smart Cities based on Internet of Things technologies</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">K L</forename><surname>Hui</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">S</forename><surname>Sherratt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Sánchez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Gen. Comp. Syst</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="358" to="369" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Analysis and assessment of a knowledge based smart city architecture providing service APIs</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Badii</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Bellini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Cenni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Difino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Nesi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Paolucci</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Gen. Comp. Syst</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="14" to="29" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Towards a secure service provisioning framework in a smart city environment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Pervaiz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">G</forename><surname>Abbasi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Gen. Comp. Syst</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="112" to="135" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Achieving smart sustainable cities with GeoICT support: The Saudi evolving smart cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><forename type="middle">A</forename><surname>Aina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cities</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="49" to="58" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Future challenges for smart cities: Cyber-security and digital forensics</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Zubair</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><forename type="middle">A</forename><surname>Baig</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Szewczyk</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Valli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Rabadia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Peacock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Digital Investigation</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="3" to="13" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Cities as enterprises: A comparison of smart city frameworks based on enterprise architecture requirements</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Bastidas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bezbradica</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Helfert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Smart-CT</title>
+		<imprint>
+			<biblScope unit="page" from="20" to="28" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Privacy concerns in smart cities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Van Zoonen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Government Information Quarterly</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="472" to="480" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">A Concept for the architecture of an open platform for modular mobility services in the smart city</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Pflügler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Schreieck</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Hernandez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wiesche</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Krcmar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transportation Research</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="199" to="206" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Rule-based system to detect energy efficiency anomalies in smart buildings, a data mining approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Peña</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Biscarri</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">I</forename><surname>Guerrero</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Monedero</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>León</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Syst. with App</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="242" to="255" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">The ESPRESSO Project-A European approach for smart city standards, computational science and its applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J.-P</forename><surname>Exner</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016" />
+			<biblScope unit="page">16</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Escher Group</surname></persName>
+		</author>
+		<ptr target="http://www.eschergroup.com/publications/five-ict-essentials-for-smart-cities.cfm" />
+		<title level="m">Five ICT Essentials for Smart Cities</title>
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Software Requirements Styles</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lauessen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Smart Sustainable Cities Analysis of Definitions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Kondepudi</surname></persName>
+		</author>
+		<ptr target="https://www.itu.int/en/ITU-T/focusgroups/ssc/Pages/default.aspx" />
+	</analytic>
+	<monogr>
+		<title level="m">The ITU-T Focus Group for Smart Sustainable Cities</title>
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+<note type="report_type">Tech Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Mapping Smart City Standards</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Van Dam</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014" />
+			<pubPlace>BSI, UK</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Dustdar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Nastić</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Šćekić</surname></persName>
+		</author>
+		<title level="m">Smart Cities</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<title level="m">Evidence-Based Software Engineering and Systematic Reviews</title>
+		<imprint>
+			<publisher>Chapman &amp; Hall</publisher>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">On the pragmatic design of literature studies in software engineering: an experience-based guideline</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Kuhrmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Méndez Fernández</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Daneva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Emp. Soft. Eng</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="2852" to="2891" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">Mapping Smart Cities in EU</title>
+		<idno>507480_ EN.pdf</idno>
+		<ptr target="http://www.europarl.europa.eu/RegData/etudes/etudes/join/2014/507480/IPOL-TRE_ET" />
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+		<respStmt>
+			<orgName>EU Directoral General for Internal Policy</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Google Scholar, Scopus and the Web of Science: a longitudinal and cross-disciplinary comparison</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A.-W</forename><surname>Harzing</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Alakangas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Scientometrics</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="787" to="804" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">The journal coverage of Web of Science and Scopus: a comparative analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Mongeon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Paul-Hus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Scientometrics</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="213" to="228" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

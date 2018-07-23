@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">On the Development of Systems-of-Systems based on the Internet of Things: A Systematic Mapping</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Pedro</forename><surname>Maia</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Everton</forename><surname>Cavalcante</surname></persName>
+							<email>evertonrsc@ppgsc.ufrn.br</email>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="laboratory">IRISA-UMR CNRS</orgName>
+								<orgName type="institution">Université de Bretagne-Sud</orgName>
+								<address>
+									<settlement>Vannes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Porfírio</forename><surname>Gomes</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thais</forename><surname>Batista</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavia</forename><forename type="middle">C</forename><surname>Delicato</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="laboratory">IRISA-UMR CNRS</orgName>
+								<orgName type="institution">Université de Bretagne-Sud</orgName>
+								<address>
+									<settlement>Vannes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paulo</forename><forename type="middle">F</forename><surname>Pires</surname></persName>
+							<email>paulo.f.pires@gmail.com</email>
+							<affiliation key="aff2">
+								<orgName type="department">DCC/PPGI</orgName>
+								<orgName type="institution">Universidade Federal do Rio de Janeiro</orgName>
+								<address>
+									<settlement>Rio de Janeiro</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">On the Development of Systems-of-Systems based on the Internet of Things: A Systematic Mapping</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1145/2642803.2642828</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>D211 [Software Engineering]: Software Architectures- domain specific architectures</term>
+					<term>K63 [Management of Com- puting and Information Systems]: Software Manage- ment-software development</term>
+					<term>A1 [General Literature]: Introductory and Survey General Terms Design, Management Keywords Systems-of-Systems, SoS, Internet of Things, IoT, System- atic Mapping</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The Internet of Things (IoT) has emerged as a paradigm in which smart things actively collaborate among them and with other physical and virtual objects available in the Web in order to perform high level tasks. These things can be engaged in complex relationships including the composition and collaboration with other independent and heterogeneous systems in order to provide new functionalities, thus leading to the so-called systems-of-systems (SoS). In the context of integrating IoT-based systems in order to compose complex, large-scale SoS, this paper presents a systematic mapping aimed to discuss current scenarios and approaches in the development of IoT-based SoS, as well as some challenges and research opportunities in this context.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>In the near future, it will be possible that every single object on the Earth can be identifiable, addressable, controlled, Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. ECSAW, <ref type="bibr">August 25-29, 2014</ref> and monitored through Internet. These smart things integrated in the Internet will actively collaborate among them and with other physical and virtual resources available in the Web, thus providing value-added information and functionalities for end-users. Such an emergent scenario constitutes the Internet of Things (IoT) paradigm <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b24">25]</ref>, whose environments are typically characterized by a high degree of hardware and software heterogeneity, and encompass devices with different capabilities/functionalities and network protocols.</p><p>The wide dissemination of the IoT paradigm has shown its potential to produce a considerable impact in the daily lives of human beings with the emergence of new systems from several real-world domains, such as transportation, energy, health, military defense, and environmental and urban monitoring. These software systems have been increasingly based on the interaction of physical devices engaged in complex relationships, including the composition and collaboration of other systems in order to provide new functionalities. For instance, as IoT-based systems are able to transmit real-time information about natural variables such as rain and water level of rivers, this information obtained from sensors spread in the proximities of a river can be used in an integrated way with information and decision-making systems for preventing floods. Therefore, the combination of remote sensing for monitoring tasks with alert and action mechanisms can compose a complex, large-scale system to notify authorities and citizens about an imminent disaster, which may damage a city and affect the lives of human beings. In addition, unmanned aerial vehicles (UAVs) can be triggered to confirm the potential flood warning detected by the sensing systems in order to minimize false-positives. Finally, in critical cases that require emergency actions, the system can also provide fast reactions supported by other integrated systems, such as triggering ambulances and helicopters to the flooded areas.</p><p>The integration of these independent and heterogeneous systems leads to the so-called systems-of-systems (SoS) <ref type="bibr" target="#b14">[15]</ref>. A SoS can be understood as a widespread set of complex, independent, heterogeneous constituent systems that have their own purpose and cooperate in order to achieve a common global mission. SoS are consensually distinguished from other complex and large-scale systems by a set of features <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b20">21]</ref> namely: (i) operational and managerial independence of the constituent systems, which can be independently managed and deliver their functionalities even when not working with other systems; (ii) evolutionary development, so that the SoS may evolve over time to respond to changing characteristics on its environment, on the constituent systems, or on its own mission; (iii) emergent behavior, which is resulted from the collaboration of the constituent systems and cannot be provided by any of these systems if they operate as individual entities, and; (iv) geographical distribution, which stands for the physical decoupling of the constituent systems, which only exchange information among them.</p><p>Due to the promising integration of IoT-based systems in order to compose complex SoS, a study addressing a comprehensive analysis about this topic seems to be quite relevant. In this perspective, the main goal of this paper is to present an overview about the current scenarios and approaches in the development of IoT-based SoS, as well as to identify and discuss some challenges and research opportunities in this context. For this purpose, we have conducted a systematic mapping (SM) <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b23">24]</ref> to accomplish a methodological, fair analysis about these topics in the literature. In recent years, systematic mappings and systematic literature reviews (SLRs) <ref type="bibr" target="#b17">[18,</ref><ref type="bibr" target="#b18">19]</ref> have been used for presenting the state of the art regarding a research topic in a comprehensive, non-biased way, and for identifying interesting and important research opportunities for further investigations.</p><p>The remainder of this paper is organized as follows. Section 2 presents the conducted SM. Section 3 presents a discussion built upon the selected studies. Section 4 enumerates some factors that may constitute threats to the validity of the conducted SM. Finally, Section 5 summarizes the main contributions of this paper and discusses perspectives for further work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">SYSTEMATIC MAPPING</head><p>The Evidence-Based Software Engineering (EBSE) has attracted much attention of the Software Engineering community as it aims to provide knowledge about when, how and in what context technologies, processes, methods and/or tools are more appropriate for Software Engineering practices <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b18">19]</ref>. In this context, systematic studies such as SMs and SLRs are means of evaluating and interpreting available relevant research to particular research question(s), topic area or phenomenon of interest, thus aiming to present a fair evaluation of a research topic by using a rigorous methodology. This rigorous methodology can be viewed as the main point that differentiates a systematic procedure from a simple, traditional literature review as it seeks to avoid the maximum of bias throughout the process, thus providing scientific value for the obtained findings. SMs and SLRs have been recently viewed as an useful way for dealing with research evidences, thus making it possible to systematically identify, select, analyze, and aggregate them for providing knowledge about a given research topic. Furthermore, they have been commonly used for synthesizing existing work from the literature in a comprehensive and non-biased way, and for identifying research challenges and opportunities in the state of the art regarding the research topic.</p><p>According to <ref type="bibr">Kitchenham et al. [17]</ref>, a SM aims to investigate the literature with broader research questions in order to get an overview of the state of the art (or state of the practice) on a given topic. Although SMs and SLRs use the same basic methodology, SMs are mainly intended to identify gaps in the literature for commissioning further research.</p><p>In contrast, a standard SLR is driven by very specific, precise research questions that can be answered by empirical research, e.g., best practices with respect to specific procedures, technologies, methods or tools <ref type="bibr" target="#b3">[4]</ref>. Therefore, a SM could be conducted first aiming at providing an overview of the investigated topic and identifying whether there are subtopics with sufficient primary studies to conduct a SLR. Moreover, due to its broader scope and varying type of studies, the collected data and the synthesis in a SM tend to be more qualitative than in SLRs <ref type="bibr" target="#b29">[28]</ref>.</p><p>Similarly to a SLR, a SM follows a systematic process typically divided in three basic steps <ref type="figure">(Fig. 1</ref>) <ref type="bibr" target="#b19">[20]</ref>:</p><p>Step 1: Planning</p><p>Step 2: Conduction</p><p>Step 3: Reporting SM protocol relevant primary studies extracted data main report <ref type="figure">Figure 1</ref>: Systematic mapping process.</p><p>1. Planning, which defines the research questions to be answered and the search strategy, selection criteria, and data extraction and synthesis methods to be used, thus yielding a protocol that will guide the conduction of the whole process;</p><p>2. Conduction, in which the primary studies are identified, selected, and evaluated according to the previously established protocol, and;</p><p>3. Reporting (or Analysis), which aggregates extracted information from the relevant primary studies considering the research questions and outlines conclusions from them.</p><p>The following subsections detail the application of each of these three steps to this SM, which was conducted on April 2014 and considered studies published so far.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Planning</head><p>In this phase, the goals and protocol of the SM were defined. This protocol consists of a predetermined plan that describes the research questions, how the SM process itself will be conducted (i.e., the search strategy to be adopted), and establishes the selection criteria and the data extraction and synthesis methods. The research questions must have a clear and well-defined focus as they drive the whole process, so that the search procedure must identify the studies that help to answer the research questions and the data extraction and analysis processes must produce data and knowledge to answer them.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.1">Research Questions</head><p>Aiming at finding primary studies to understand and summarize evidences about the IoT-based SoS and the existing solutions, scenarios, and research challenges in this context, the following research questions (RQ) were proposed: </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.2">Search Strategy</head><p>In order to establish the search strategy based on the defined research questions, two main terms were initially identified, namely Internet of Things and systems-of-systems. In addition, possible variations such as synonyms and singular/plural forms were considered, thus resulting in the following search string:</p><p>(internet of things OR iot OR web of things OR wot) AND (system-of-systems OR systems-of-systems OR system of systems OR systems of systems)</p><p>in which the main keywords were connected by using the AND logical operator and the possible variations and synonyms by using the OR logical operator. In order to select the most proper databases for the search process, the following criteria discussed by Dieste et al. <ref type="bibr" target="#b6">[7]</ref> were considered: (i) content update, i.e., if the publications are regularly updated; (ii) availability, i.e., if the full text of the primary study is available, and; (iii) quality of results, which is related to the accuracy of the results obtained by the search. Six electronic databases were selected based on these criteria, as shown in <ref type="table" target="#tab_1">Table 1</ref>. They are also the most used databases in systematic reviews in the Software Engineering domain, as pointed out by Dybå et al. <ref type="bibr" target="#b8">[9]</ref> and <ref type="bibr">Kitchenham and Charters [19]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.3">Inclusion and Exclusion Criteria</head><p>The selection criteria are used to evaluate each primary study obtained by the search procedure according to the defined research questions, thus making it possible to include studies that are potentially relevant to answer the research questions and exclude studies that do not contribute to answer them.</p><p>The considered inclusion criteria (IC) were:</p><formula xml:id="formula_0">IC1:</formula><p>The study presents a SoS composed of IoT-based systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IC2:</head><p>The study presents a relevant work in the development of IoT-based SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IC3:</head><p>The study presents scenarios and research challenges and opportunities in the development of IoT-based SoS.</p><p>The established exclusion criteria (EC) were:</p><formula xml:id="formula_1">EC1:</formula><p>The study does not address IoT or SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC2:</head><p>The study is a previous version of a more complete paper about the same research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC3:</head><p>The study does not have an abstract or the full text is not available.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC4:</head><p>The study is a table of contents, foreword, tutorial, editorial or summary of conference.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC5:</head><p>The study is not written in English, which is the most common language in scientific papers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.4">Data Extraction and Synthesis Methods</head><p>In order to extract data from the selected primary studies, data extraction spreadsheets related to each research question were built to synthesize the results and support drawing of conclusions. During the data extraction process, data of each primary study were independently extracted by the researchers when considering each research question. Conflicts found during the process were solved by discussions between the researchers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Conduction</head><p>In this phase, the primary studies were searched, selected and evaluated according to the previously established protocol, thus resulting in a set of possibly relevant studies for the SM. During the search process, the generic search string defined in the Planning phase (see Section 2.1) has undergone minor changes in order to make it compatible with the specificities of each electronic database engine. After that, the automated search of primary studies was performed over the selected electronic databases (see <ref type="table" target="#tab_1">Table 1</ref>) by searching for all primary studies that matched the adapted search string. The automated search was limited only to title, abstract, and keywords fields.</p><p>As illustrated in <ref type="figure">Figure 2</ref>, the selection of the studies was divided in two main phases: (i) the preliminary selection, which encompassed reading title, abstract, and keywords of the studies retrieved from the electronic databases, and; (ii) the final selection, which encompassed the full reading of the filtered studies. In order to minimize the effect of any bias or misinterpretation, the selection involved three researchers that have individually performed the selection activities. Moreover, each study was evaluated more than once, each time by a different researcher. After retrieving the studies from the electronic databases, studies indexed by more than one database were removed and then the researchers have performed the preliminary selection to filter studies based on the selection (inclusion/exclusion) criteria against the information available in title, abstract, and keywords. Next, an agreement meeting was conducted in order to compare the results and solve existing conflicts, thus resulting in a consensual preliminary selection. Afterwards, the filtered studies were fully read and the selection criteria were applied in order to compose the final set of relevant studies. Again, a new agreement meeting took place in order to compare results and solve conflicts.</p><p>After removing studies indexed by two or more sources, 83 studies were retrieved from the electronic databases. In the preliminary selection, 15 potentially relevant studies were filtered based on title, abstract, and keywords, and four of them were selected after being fully read. The snowballing technique <ref type="bibr" target="#b13">[14]</ref> was applied over the read studies in order to</p><note type="other">Researcher 1: selection by title, abstract, and keywords Researcher 2: selection by title, abstract, and keywords Agreement Meeting studies retrieved from the electronic databases Researcher 1: selection by full reading Researcher 2: selection by full reading Final set of relevant studies selected for analysis and data extraction Agreement Meeting Preliminary Selection Final Selection Researcher 3: selection by title, abstract, and keywords Researcher 3:</note><p>selection by full reading <ref type="figure">Figure 2</ref>: Selection process.</p><p>find additional studies that were not retrieved in the search procedure. The reference lists of the read studies were then checked and one additional study that was not retrieved in the search procedure was included. The selection criteria were applied again when reading all studies, thus resulting in a final set of five primary studies that were considered as relevant to this SM and then selected for data extraction. <ref type="figure" target="#fig_1">Fig. 3</ref> depicts these steps for selecting the relevant primary studies. In this SM, a given primary study is considered relevant if it does not meet any exclusion criterion and it meets at least one inclusion criterion. <ref type="table" target="#tab_3">Table 2</ref> summarizes the number of primary studies retrieved from the databases, the number of studies filtered to be fully read, and the number of studies selected as relevant for the SM, as well as the index 1 and precision 2 rates <ref type="bibr" target="#b30">[29]</ref> of each electronic database. SpringerLink has indexed the majority of the relevant studies (two of the five relevant studies) although it presented a low precision, i.e., more irrelevant studies were retrieved from it. In turn, the ACM Digital Library has indexed one of the five relevant studies with high precision, so that one of the two studies retrieved from such a database was selected. <ref type="table" target="#tab_4">Table 3</ref> shows the list of studies that were considered as relevant for data extraction.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Automated Search</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Reporting</head><p>In this phase, the results of the SM are presented according to the research questions and the extracted and synthesized data.</p><p>RQ1. This research question is related to what has been researched on the development of IoT-based SoS, i.e., IoTbased complex, heterogeneous systems that collaborate in order to achieve a given functionality (or set of functionalities). All selected papers were published in the last three years (from 2011 to 2014), thus indicating that this research topic is relatively new, with several open issues to be addressed. Furthermore, through the analysis of the selected studies, we have noticed that most works in this context still are in an initial stage of development. For this reason, most efforts are concentrated on: (i) understanding the requirements for these systems and the application domains in which they can be deployed; (ii) designing and implementing high level architectures and frameworks that could support and provide applications in SoS based on sensor and actuator networks (SANs) and on the IoT itself, and; (iii) developing realistic large-scale testbeds that enable proofof-concept implementations and leverage further researches.</p><p>From the analyzed studies, we have identified some functional requirements and non-functional features on the integration of the IoT paradigm and SoS engineering. The main functional requirements are presented in study S5 : (i) communication abstraction as means of addressing interoperability and heterogeneity concerns; (ii) unified information models, which are used as means of sharing information  among different applications, services, and systems, and; (iii) open services development, which is aimed to ensure interoperability at both application and service levels. In turn, the most relevant non-functional features to be tackled in IoTbased systems are highlighted in study S3 : (i) scale, which is related to the need of coordinating a myriad of devices to perform tasks; (ii) heterogeneity of devices and systems, which requires interoperability issues to address this concern; (iii) resource constraints in terms of time, memory, energy consumption, processing power, etc.; (iv) uncertainties, which are related to the dynamic discovery of devices and systems, as well as adaptation and context-awareness capabilities; (v) conflict resolution, which is aimed to solve possible conflicts in terms of the devices and systems, and; (vi) management issues related to massive data, privacy, and security concerns.</p><p>RQ2. This research question stands for the application domains in which IoT-based SoS have been deployed. We have noticed that three of the five selected studies (S1, S2, and S3 ) target smart cities as the main reference scenario for their proposals. As presented in these studies, smart cities rely on information and communication technologies for collecting data from several urban sensors, such as electric meters, GPS devices, building sensors, and weather sensors, which can range from simple sensors to complex SANs. In order to be used in management, education, health care, transportation, and public safety services of a smart city, these sensor systems can be associated to a building, a factory, city roads, or even to a whole city. With the information provided by IoT, such systems would be able to elaborate complex decision-making processes and communicate to each other by combining the information that they provide. In this perspective, smart cities can clearly be viewed as an example of SoS leveraged by the IoT paradigm, which would provide the levels of information that smart cities require for their constituent systems.</p><p>Another interesting application domain refers to intelligent vehicle systems, as presented by study S4. In this domain, roadside units include road sensors, tolls, traffic lights, etc., and intelligent vehicles are equipped with IoT-enabled devices, such as body control, light, navigation, fueling, and other critical electrical control modules. Moreover, a central authority (for instance, state government) manages the whole system at real-time by controlling the roadside units in order to reduce traffic jams and incidents, and to improve the overall quality of the traffic based on data provided by sensors. Furthermore, data collected by the external sensor systems can be used by the internal systems of a vehicle to set up vehicle parameters (such as fuel efficiency and consumption, carbon emissions, and engine performance) or to plan routes by taking into account fastest/shortest paths and/or avoiding roads with work, intense traffic or accidents. The systems of vehicles in a road can also interact with each other in order to mitigate accidents when a driver wants to change lanes, for example.</p><p>Study S5 also describes other motivational scenarios in different application domains for IoT-based SoS. As IoT systems are able to transmit real-time information about natural processes such as temperature, wind, vibration of structures, rain, water level of rivers, etc., this information can be used in an integrated way with decision-making systems for different purposes, e.g., environmental protection, natural resources management, biodiversity conservation, and prevention of environmental disasters, just to name a few. Similarly, geophysical and climatic events such as earthquakes, volcanic eruptions, floods, etc. can be foreseen through an IoT-based SoS.</p><p>RQ3. This research question investigates the existing IoTbased solutions. Each selected study uses a different approach to tackle the requirements of SoS scenarios by means of middleware platforms and frameworks that are mainly employed to abstract away the heterogeneity of IoT devices. The proposed solutions are typically structured upon three broad layers: (i) a layer associated to devices in which heterogeneous devices are responsible for data provisioning and actuating tasks; (ii) an aggregation layer, which is responsible for abstracting the communication with sensors and actuators and for aggregating data provided by them in a meaningful way, and; (iii) an application/services layer, which is responsible for providing services and applications to end-users, decision-making systems, and control systems based on the information provided by the aggregation layer. However, each study takes into account a different number of layers in the proposed solutions, whereas some approaches (the ones presented in studies S2 and S5 ) use a set of integrated modules that interact with each other to provide their services and applications, instead of using a layered architectural model.</p><p>The layer associated to devices is typically composed of two sub-layers, namely communication protocol abstraction and devices data format abstraction. The first one is responsible for obtaining data from several heterogeneous devices, independently of the proprietary protocols that they use. This outcome is usually achieved by using drivers that can be provided by devices' manufacturers and are able to make translations from proprietary protocols to standard protocols. The second sub-layer is responsible for providing a uniform representation to the data provided by sensors, so that several well-known data formats can be used in this context, e.g., XML, RDF, JSON, CSV, etc.</p><p>The aggregation layer is the one that presents more variations in each approach adopted by each analyzed study. It typically provides the following functionalities, each one covered by a particular sub-layer or architectural module: (i) storing data provided by each device connected to the platform; (ii) processing the large volume of data obtained from the device; (iii) performing asynchronous request operations to devices to gather data without needing to wait or to send actuating requests, and; (iv) cataloging and locating devices based on contextual information, such as type of data and services provided by location, remaining battery, etc.</p><p>Finally, the application/services layer provides different levels of services depending on the adopted approach. The simplest form of service is the direct manipulation of each device, typically by using REST <ref type="bibr" target="#b28">[27]</ref> Web services, as adopted in S4. In the analyzed studies, this layer also allows the manipulation of several devices for a particular purpose or it is able to provide mechanisms for developing and executing applications that use information provided by the integrated devices.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">DISCUSSION</head><p>After performing the SM, we have noticed that most works still are in an initial stage of development since the integration of the IoT paradigm and SoS engineering is a relatively new research topic. In the following, we present some challenges and research opportunities that we have identified from the analyzed studies.</p><p>Heterogeneity of both IoT devices and constituent systems of SoS. IoT-based SoS can be characterized by a high heterogeneity in terms of both used physical devices and the constituent systems that are part of the SoS. In regards to device heterogeneity, recent work in the literature has pointed out that middleware platforms would provide interoperability capabilities and abstractions over physical devices and services to applications and/or end-users, as well as means of managing the increasingly myriad of IoT devices associated to the systems that use data provided by them <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b25">26]</ref>. On the other hand, from the perspective of a SoS and its constituent systems, traditional software and systems engineering methods are inadequate for addressing the interoperation of the constituent systems of a SoS mainly due to their inherent emergent behavior and operational and managerial independence <ref type="bibr" target="#b11">[12]</ref>. Therefore, it is also necessary to provide means to integrate the distributed constituent systems of a SoS by abstracting away the specificities of each heterogeneous system and dealing with interoperability issues in order to enable their cooperation to fulfill the global purposes of the SoS as a whole.</p><p>Provision of qualitative information about each constituent system of the SoS by using aggregation mechanisms. Another important challenge identified in this SM regards to the level of information granularity provided by individual devices or SANs. End-users, applications, and other constituent systems are often more interested in aggregated and qualitative (coarse-grained) information about each constituent system of a SoS instead of fine-grained measurements of every single device deployed on the system. For instance, in the context of smart cities, there are several smart buildings equipped with several devices that are able to provide low-granularity information, such as the temperature of a given part of a room in the building. In this scenario, each system should also provide aggregated information based on data provided by its sensors, such as the average temperature and lightning of each room and of the whole building, current electrical consumption, number of people in the building, etc. Therefore, the provision of aggregated and qualitative information by each system relieves end-users, applications, and decisionmaking systems of processing such data to produce relevant information. This feature would be especially important for end-users and applications that are resource-constrained in terms of energy and processing.</p><p>Storage of raw and historical data. Besides the provision of qualitative, aggregated information (e.g., synthetical analyses, merged and summarized data, etc.), some applications may require storing both raw and historical data. Raw data may be useful when the aggregated information has some anomaly or atypical behavior that cannot be well understood, or simply to make sure that the aggregated information is correct. In turn, historical data can be very valuable when performing analyses based on the provided data. The need of storing and manipulating large volumes of data is a typical feature of an IoT environment, thus might requiring Big Data <ref type="bibr" target="#b21">[22]</ref> solutions in terms of parallel processing and high performance computing (HPC).</p><p>Cyber-physical systems and SoS. Cyber-physical systems (CPS) can be defined as large, complex networked information systems that interact with physical processes and environments through geographically distributed devices. As networked information systems, CPS encompass computation, human activities, and automated decision-making enabled by information and communication technology. Moreover, they are aimed at monitoring, controlling, and integrating physical processes and environments to support operations and management in the physical worlds <ref type="bibr" target="#b7">[8]</ref>. CPS can scale from micro-level, embedded systems to large, complex SoS composed of heterogeneous IoT-based constituent systems or even other CPS, besides exhibiting typical features of SoS such as distributed control, independence of the constituent systems, emergent behaviors, evolutionary development, etc. In this context, a promising initiative is the CPSoS Project <ref type="bibr" target="#b4">[5]</ref>, an European consortium started on October 2013 that aims to identify industrial and societal needs and the state of the art of tools and theories for the research and development of cyber-physical SoS in the next years. Therefore, the understanding of the challenges arisen from this type of SoS and the proposition of effective multidisciplinary solutions in this scenario are quite important due to its relevance and potential influence in the well-being of people and the optimal management of resources, services, energy, cost, and environment in several application domains.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">THREATS TO VALIDITY</head><p>The main threats to the validity of this SM are related to:</p><p>• Its completeness. The electronic databases used in this SM (see <ref type="table" target="#tab_1">Table 1</ref>) are considered the most relevant available sources <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b18">19]</ref>, but some studies may have been missed due to technical limitations of the search engines themselves, which are out of the control of the researchers. Furthermore, these databases do not represent an exhaustive list of publication sources, so that other databases might also be included.</p><p>• Reviewers' reliability. Although the conclusions might have been influenced by the researchers' opinions, it was adopted a multiple-revision strategy in order to minimize the effect of any bias or misinterpretation. Therefore, the studies were evaluated more than once, each time by a different researcher.</p><p>• Data extraction. Since not all information was obvious to answer the established research questions, some data had to be interpreted. Nevertheless, discussions were conducted whenever a disagreement between the researchers occurred in order to ensure the validity of this SM.</p><p>• Quality assessment. In a SM process, it is important to establish assessment criteria for evaluating the quality of the selected studies <ref type="bibr" target="#b15">[16]</ref>. Although initially considered in the Planning phase, we have not performed a quality assessment on the selected studies as it would narrow the number of included primary studies. However, this important step can be considered in a future revision of this work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">FINAL REMARKS</head><p>With the widespread adoption of the IoT paradigm, smart things will be engaged in complex relationships encompassing the composition and collaboration with other independent, heterogeneous systems in order to provide new functionalities, thus leading to large-scale SoS. In this context, we have performed a systematic mapping aiming at presenting an overview on the current scenarios and approaches in the development of IoT-based SoS, as well as discussing some challenges and research opportunities in this context. As our main findings, we have noticed that the existing works (that still are in an initial stage of development) currently focus on the understanding of the requirements for IoT-based SoS and propose high level architectures for supporting this class of systems. We have also observed that the development of middleware platforms might become a trendy element in this context as they are able to abstract away heterogeneity and interoperability issues regarding physical devices, from the IoT perspective, and the heterogeneous constituent systems, from the SoS perspective. Furthermore, we have identified that smart cities might become a typical, reference scenario of SoS leveraged by the IoT paradigm mainly due to their relevance to several aspects of economy, society, and wellbeing of people in a near future. As the integration of the IoT paradigm with SoS engineering is a recent topic (all analyzed studies were published in the last three years), we believe that this overview can open perspectives to new, important issues to be addressed in future research, thus contributing to a more effective development of IoT-based SoS.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>RQ1:</head><label></label><figDesc>Which are the main research topics that have been investigated on the development of IoT-based SoS? RQ2: Which are the application domains that have been targeted by IoT-based SoS? RQ3: Which are the existing IoT-based SoS architectures and implementations?</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FilteringFigure 3 :</head><label>3</label><figDesc>Figure 3: Steps for selecting the relevant studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table 1 :</head><label>1</label><figDesc></figDesc><table>Electronic databases selected as sources for 
+the search process in the SM. 
+Database 
+URL 
+
+IEEEXplore 
+http://ieeexplore.ieee.org 
+ACM Digital Library http://dl.acm.org 
+ScienceDirect.com 
+http://www.sciencedirect.com 
+Scopus 
+http://www.scopus.com 
+ISI Web of Science 
+http://www.webofknowledge.com 
+SpringerLink 
+http://link.springer.com 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>potentially relevant 93 search results 4 potentially relevant</head><label></label><figDesc></figDesc><table>IEEEXplore 
+ACM Digital Library 
+ScienceDirect.com 
+Scopus 
+ISI Web of Science 
+SpringerLink 
+
+83 
+
+10 studies excluded 
+
+68 studies excluded 
+
+15 
+
+potentially relevant 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="true"><head>Table 2 : Number of retrieved, filtered, and selected studies per source.</head><label>2</label><figDesc></figDesc><table>Source 
+Number of studies 
+Index rate 
+Precision rate 
+Retrieved 
+Filtered 
+Selected 
+
+IEEEXplore 
+7 
+5 
+1 
+20.00% 
+14.29% 
+ACM Digital Library 
+2 
+2 
+1 
+20.00% 
+50.00% 
+ScienceDirect.com 
+1 
+1 
+0 
+0.00% 
+0.00% 
+Scopus 
+13 
+8 
+1 
+20.00% 
+7.69% 
+ISI Web of Science 
+2 
+2 
+0 
+0.00% 
+0.00% 
+SpringerLink 
+68 
+7 
+2 
+40.00% 
+2.94% 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table 3 :</head><label>3</label><figDesc></figDesc><table>Selected primary studies. 
+</table></figure>
+
+			<note place="foot" n="1"> Index rate is the ratio between the number of relevant studies retrieved from a database and the total of relevant studies. 2 Precision rate is the ratio between the number of relevant studies retrieved from a database and the total of studies retrieved from it.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">ACKNOWLEDGEMENTS</head><p>This work is partially supported by CNPq and the Brazilian National Agency of Petroleum, Natural Gas and Biofuels </p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">SCCIR: Smart cities critical infrastructure response framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Attwood</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Merabti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Fergus</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Abuelmaatti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2011 Developments in e-Systems Engineering Conference</title>
+		<meeting>the 2011 Developments in e-Systems Engineering Conference<address><addrLine>Piscataway, NJ, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="460" to="464" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The Internet of Things: A survey</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Atzori</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Iera</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Morabito</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Networks</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="2787" to="2805" />
+			<date type="published" when="2010-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Role of middleware for Internet of Things: A study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Bandyopadhyay</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sengupta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Maiti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Dutta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computer Science &amp; Engineering Survey</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="94" to="105" />
+			<date type="published" when="2011-08" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Using mapping studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 20th Annual Meeting of the Psychology of Programming Interest Group</title>
+		<meeting>the 20th Annual Meeting of the Psychology of Programming Interest Group<address><addrLine>Lancaster, England, United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="195" to="204" />
+		</imprint>
+		<respStmt>
+			<orgName>Lancaster University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Towards a European Roadmap on Research and Innovation in Engineering and Management of Cyber-Physical Systems of Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Cpsos</surname></persName>
+		</author>
+		<ptr target="http://www.cpsos.eu/(accessedon" />
+		<imprint>
+			<date type="published" when="2014-07" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Towards an IoT ecosystem</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">C</forename><surname>Delicato</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">F</forename><surname>Pires</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Batista</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Cavalcante</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Costa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Barros</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Workshop on Software Engineering for Systems-of-Systems</title>
+		<meeting>the First International Workshop on Software Engineering for Systems-of-Systems<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="25" to="28" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Developing search strategies for detecting relevant experiments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Dieste</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Grimán</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Juristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Empirical Software Engineering</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="513" to="539" />
+			<date type="published" when="2009-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Web-of-Things framework for cyber-physical systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">S</forename><surname>Dillon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Zhuge</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Chang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Concurrency and Computation: Practice and Experience</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="905" to="923" />
+			<date type="published" when="2011-06" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Applying systematic reviews to diverse study types: An experience report</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">K</forename><surname>Hanssen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Symposium on Empirical Software Engineering and Measurement</title>
+		<meeting>the First International Symposium on Empirical Software Engineering and Measurement<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="225" to="234" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Evidence-Based Software Engineering for practitioners</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jørgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="58" to="65" />
+			<date type="published" when="2005-01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Profiling systems using the defining characteristics of systems of systems (SoS)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Firesmith</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+		<respStmt>
+			<orgName>Software Engineering Institute, Carnegie Mellon University</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">An emergent perspective on interoperation in systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Fisher</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+		<respStmt>
+			<orgName>Software Engineering Institute, Carnegie Mellon University</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Smart cities at the forefront of the Future Internet</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Hernández-Muñoz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">B</forename><surname>Vercher</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Muñoz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Galache</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Presser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">A H</forename><surname>Gómez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pettersson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Future Internet</title>
+		<editor>J. D. et al.</editor>
+		<meeting><address><addrLine>Berlin Heidelberg, Germany</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="volume">6656</biblScope>
+			<biblScope unit="page" from="447" to="462" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Systematic literature studies: Database searches vs. backward snowballing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Jalali</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wohlin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2012 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement</title>
+		<meeting>the 2012 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="29" to="38" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Systems of Systems Engineering: Innovations for the 21st Century</title>
+		<editor>M. Jamshidi</editor>
+		<imprint>
+			<date type="published" when="2009" />
+			<publisher>John Wiley &amp; Sons, Inc</publisher>
+			<pubPlace>Hoboken, NJ, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Linkman</surname></persName>
+		</author>
+		<title level="m">Systematic literature reviews in software engineering: A systematic literature review. Information and Software Technology</title>
+		<imprint>
+			<date type="published" when="2009-01" />
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="7" to="15" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Using mapping studies as the basis for further research: A participant-observer case study. Information and Software Technology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011-06" />
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="638" to="651" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Procedures for performing systematic reviews</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University/National ICT Australia Ltd.</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University/University of Durham</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Evidence-Based Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jørgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 26th International Conference on Software Engineering</title>
+		<meeting>the 26th International Conference on Software Engineering<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="273" to="281" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="267" to="284" />
+			<date type="published" when="1998-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Big Data: A revolution that will transform how we live, work, and think</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Mayer-Schönberger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Cukier</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<publisher>Houghton Mifflin Harcourt Publishing Company</publisher>
+			<pubPlace>New York, NY, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Combining cloud and sensors in a smart city environment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Mitton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Papavassiliou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Puliafito</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">S</forename><surname>Trivedi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">EURASIP Journal on Wireless Communications and Networking</title>
+		<imprint>
+			<date type="published" when="2012-08" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Systematic mapping studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Petersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Feldt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mujtaba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mattsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 12th International Conference on Evaluation and Assessment in Software Engineering</title>
+		<meeting>the 12th International Conference on Evaluation and Assessment in Software Engineering<address><addrLine>Swinton, England, United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<publisher>British Computer Society</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="68" to="77" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Visions and challenges for realising the Internet of Things</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Sundmaeker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Guillemin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Friess</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Woelfflé</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Cluster of European Research Projects on the Internet of Things / European Comission</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Service-oriented middleware for the Internet of Things: A perspective</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Teixeira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Hachem</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Issarny</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Georgantas</surname></persName>
+		</author>
+		<editor>W. Abramowicz, I. M</editor>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Llorente</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Surridge</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Zisman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Vayssì</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 4th European Conference on Towards a Service-Based Internet</title>
+		<meeting>the 4th European Conference on Towards a Service-Based Internet</meeting>
+		<imprint>
+			<biblScope unit="volume">6994</biblScope>
+			<biblScope unit="page" from="220" to="229" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Springer-Verlag</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<pubPlace>Berlin Heidelberg, Germany</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">REST in practice: Hypermedia and systems architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Webber</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Parastatidis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Robinson</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<pubPlace>O&apos;Reilly Media, Sebastopol, CA, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Experimentation in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wohlin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Runeson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Höst</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">C</forename><surname>Ohlsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Regnell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Wesslén</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<publisher>Springer-Verlag</publisher>
+			<pubPlace>Berlin Heidelberg; Germany</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Identifying relevant studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Babar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Tell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information and Software Technology</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="625" to="637" />
+			<date type="published" when="2011-06" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

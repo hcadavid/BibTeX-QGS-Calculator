@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">On the Characterization of Missions of Systems-of-Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Eduardo</forename><surname>Silva</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Everton</forename><surname>Cavalcante</surname></persName>
+							<email>evertonrsc@ppgsc.ufrn.br</email>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="laboratory">IRISA-UMR CNRS</orgName>
+								<orgName type="institution">Université de Bretagne-Sud</orgName>
+								<address>
+									<settlement>Vannes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thais</forename><surname>Batista</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">DIMAp</orgName>
+								<orgName type="institution">Federal University of Rio Grande do Norte</orgName>
+								<address>
+									<settlement>Natal</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavio</forename><surname>Oquendo</surname></persName>
+							<email>flavio.oquendo@irisa.fr</email>
+							<affiliation key="aff1">
+								<orgName type="laboratory">IRISA-UMR CNRS</orgName>
+								<orgName type="institution">Université de Bretagne-Sud</orgName>
+								<address>
+									<settlement>Vannes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavia</forename><forename type="middle">C</forename><surname>Delicato</surname></persName>
+							<email>fdelicato@gmail.com</email>
+							<affiliation key="aff2">
+								<orgName type="department">DCC/PPGI</orgName>
+								<orgName type="institution">Universidade Federal do Rio de Janeiro</orgName>
+								<address>
+									<settlement>Rio de Janeiro</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paulo</forename><forename type="middle">F</forename><surname>Pires</surname></persName>
+							<email>paulo.f.pires@gmail.com</email>
+							<affiliation key="aff2">
+								<orgName type="department">DCC/PPGI</orgName>
+								<orgName type="institution">Universidade Federal do Rio de Janeiro</orgName>
+								<address>
+									<settlement>Rio de Janeiro</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">On the Characterization of Missions of Systems-of-Systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1145/2642803.2642829</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>D211 [Software Engineering]: Software Architectures- domain specific architectures; A1 [General Literature]: Introductory and Survey Keywords Systems-of-systems</term>
+					<term>SoS</term>
+					<term>Missions</term>
+					<term>Systematic mapping</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>A system-of-systems (SoS) can be understood as a set of complex, independent, heterogeneous constituent systems, which are composed to form a larger and more complex system aiming at accomplishing a given mission. Each constituent system accomplishes its own individual mission and is able to collaboratively contribute to the accomplishment of the global mission of the SoS. Despite the importance and central role played by missions in SoS, the current literature lacks of studies focused on analyzing such missions and their specificities. The existing initiatives are domain-specific and are still in an initial stage of development. In this context, the main goal of this paper is to present a study about how missions of SoS can be defined, specified, represented, and implemented. Due to the limitations of the existing proposals for SoS, we have performed a systematic mapping on missions of systems, in a broader extent, aiming at identifying elements that can be brought to SoS. In this paper, we discuss such elements related to missions and other important issues that must be considered when shifting from single and monolithic systems to SoS.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>In the last years there has been a recent and growing interest in the research and development of large and comPermission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. ECSAW, <ref type="bibr">August 25-29, 2014</ref> plex systems resulted from the integration of several operationally independent systems, thus leading to a new class of systems, called systems-of-systems (SoS). A SoS can be understood as a widespread set of independent, heterogeneous constituent systems to form a larger system in order to accomplish a given mission <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b19">20]</ref>, which defines a functional goal assigned to a system <ref type="bibr" target="#b10">[11]</ref>. Each constituent system accomplishes its own individual mission and is able to contribute to the accomplishment of the global mission of the SoS. Therefore, the goals associated to the mission of the SoS are accomplished through the collaboration of the constituent systems, i.e., the constituent systems and their individual goals contribute to the realization of the goals established for the SoS. Furthermore, such a cooperation between the constituent systems in a SoS brings new and more complex functionalities (related to the holistic mission of the SoS itself) that cannot be provided by any of these systems if they are considered as separated building blocks <ref type="bibr" target="#b20">[21]</ref>. It is also important to explicitly consider such an information about missions throughout the SoS lifecycle, i.e., from its design to its deployment and evolution.</p><p>We have noticed in the current literature that a mission is typically viewed as a goal, a functionality, or a set of tasks to be performed by the constituent systems, which might be aware of the mission of the SoS and must cooperate and exchange information in order to accomplish it. The existing initiatives in terms of missions of SoS: (i) are still in an initial stage of development; (ii) lack of proper means for addressing the inherent features of a SoS, such as emergent behavior, and; (iii) are more focused on specific domains, such as military systems. To the best of our knowledge, there is no work dedicated to deal with missions of SoS in a general extent and their specificities 1 .</p><p>Due to the limitations of the existing proposals for missions of SoS, we have analyzed the literature about missions of systems in a broader context aiming at identifying elements that can be brought to the SoS context and other important issues that must be considered when shifting from single, monolithic systems to SoS. For this purpose, we have performed a systematic mapping (SM) <ref type="bibr" target="#b14">[15,</ref><ref type="bibr" target="#b22">23]</ref> to achieve a methodological, fair analysis about this research topic in the literature. In recent years, systematic mappings and sys-tematic literature reviews (SLRs) <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b16">17]</ref> have been used for presenting the state of the art regarding a research topic in a comprehensive, non-biased way, and for identifying interesting and important research opportunities for further investigations. This paper presents the results of this SM, which has lead to a preliminary conceptual model for missions of SoS.</p><p>The remainder of this paper is organized as follows. Section 2 presents the conducted SM. Section 3 presents a proposal of a conceptual model for missions of SoS that was built upon the elements identified in the analyzed studies. Finally, Section 4 summarizes the main contributions of this paper and discusses perspectives for further work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">SYSTEMATIC MAPPING</head><p>The Evidence-Based Software Engineering (EBSE) has attracted much attention of the Software Engineering community as it aims to provide knowledge about when, how and in what context technologies, processes, methods and/or tools are more appropriate for Software Engineering practices <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b16">17]</ref>. In this context, systematic studies such as SMs and SLRs are means of evaluating and interpreting available relevant research to particular research question(s), topic area or phenomenon of interest, thus aiming to present a fair evaluation of a research topic by using a rigorous methodology. This rigorous methodology can be viewed as the main point that differentiates a systematic procedure from a simple, traditional literature review as it seeks to avoid the maximum of bias throughout the process, thus providing scientific value for the obtained findings. SMs and SLRs have been recently viewed as an useful way for dealing with research evidences, thus making it possible to systematically identify, select, analyze, and aggregate them for providing knowledge about a given research topic. Furthermore, they have been commonly used for synthesizing existing work from the literature in a comprehensive and non-biased way, and for identifying research challenges and opportunities in the state of the art regarding the research topic.</p><p>According to <ref type="bibr">Kitchenham et al. [15]</ref>, a SM aims to investigate the literature with broader research questions in order to get an overview of the state of the art (or state of the practice) on a given topic. Although SMs and SLRs use the same basic methodology, SMs are mainly intended to identify gaps in the literature for commissioning further research. In contrast, a standard SLR is driven by very specific, precise research questions that can be answered by empirical research, e.g., best practices with respect to specific procedures, technologies, methods or tools <ref type="bibr" target="#b2">[3]</ref>. Therefore, a SM could be conducted first aiming at providing an overview of the investigated topic and identifying whether there are subtopics with sufficient primary studies to conduct a SLR. Moreover, due to its broader scope and varying type of studies, the collected data and the synthesis in a SM tend to be more qualitative than in SLRs <ref type="bibr" target="#b26">[27]</ref>.</p><p>Similarly to a SLR, a SM follows a systematic process typically divided in three basic steps <ref type="figure">(Fig. 1)</ref> [18]:</p><p>1. Planning, which defines the research questions to be answered and the search strategy, selection criteria, and data extraction and synthesis methods to be used, thus yielding a protocol that will guide the conduction of the whole process;</p><p>2. Conduction, in which the primary studies are identi-</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Step 1: Planning</head><p>Step 2: Conduction</p><p>Step 3: Reporting SM protocol relevant primary studies extracted data main report <ref type="figure">Figure 1</ref>: Systematic mapping process.</p><p>fied, selected, and evaluated according to the previously established protocol, and;</p><p>3. Reporting (or Analysis), which aggregates extracted information from the relevant primary studies considering the research questions and outlines conclusions from them.</p><p>The following subsections detail the application of each of these three steps to this SM, which was conducted on April and May 2014 (thus considering studies published so far) and involved two Software Engineering researchers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Planning</head><p>In this phase, the goals and protocol of the SM were defined. This protocol consists of a predetermined plan that describes the research questions, how the SM process itself will be conducted (i.e., the search strategy to be adopted), and establishes the selection criteria and the data extraction and synthesis methods. The research questions must have a clear and well-defined focus as they drive the whole process, so that the search procedure must identify the studies that help to answer the research questions and the data extraction and analysis processes must produce data and knowledge to answer them.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.1">Research Questions</head><p>Aiming at finding primary studies to understand and summarize evidences about the missions of systems, the following research questions (RQ) were proposed: RQ1: Which are important elements for defining missions of systems?</p><p>This RQ aims to identify the elements that compose a mission, thus enabling the characterization of the concept of mission.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RQ2</head><p>: Which are the representations, implementations, languages and/or ontologies for missions of systems?</p><p>This RQ aims to identify the mechanisms and models used for both mission representation and execution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.2">Search Strategy</head><p>In order to establish the search strategy based on the defined research questions, five main keywords were initially identified, namely mission, system, representation, language, and ontology. In addition, possible variations such as synonyms and singular/plural forms were considered, thus resulting in the following search string:</p><p>(mission OR missions) AND (system OR systems) AND (representation OR language OR ontology)</p><p>in which the main keywords were connected by using the AND logical operator and the possible variations and synonyms by using the OR logical operator.</p><p>In order to select the most proper databases for the search process, the following criteria discussed by Dieste et al. <ref type="bibr" target="#b5">[6]</ref> were considered: (i) content update, i.e., if the publications are regularly updated; (ii) availability, i.e., if the full text of the primary study is available, and; (iii) quality of results, which is related to the accuracy of the results obtained by the search. Five electronic databases were selected based on these criteria, as shown in <ref type="table" target="#tab_1">Table 1</ref>. They are also the most used databases in systematic reviews in the Software Engineering domain, as pointed out by <ref type="bibr">Kitchenham and Charters [17]</ref> and Dybå et al. <ref type="bibr" target="#b6">[7]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.3">Inclusion and Exclusion Criteria</head><p>The selection criteria are used to evaluate each primary study obtained by the search procedure according to the defined research questions, thus making it possible to include studies that are potentially relevant to answer the research questions and exclude studies that do not contribute to answer them.</p><p>The considered inclusion criteria (IC) were:</p><formula xml:id="formula_0">IC1:</formula><p>The study defines a set of elements or an ontology for representing missions of systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IC2:</head><p>The study presents a tool or a mechanism for defining missions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IC3:</head><p>The study presents a language for representing missions of systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IC4:</head><p>The study defines strategies for dealing with and/or implementing missions of systems.</p><p>The established exclusion criteria (EC) were:</p><formula xml:id="formula_1">EC1:</formula><p>The study is not publicly available in its complete form (full access).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC2:</head><p>The study makes use of missions, but out of the systems context.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC3:</head><p>The study is a previous version of a more complete paper about the same research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EC4:</head><p>The study is not written in English, which is the most common language in scientific papers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.4">Data Extraction and Synthesis Methods</head><p>In order to extract data from the selected primary studies, data extraction spreadsheets related to each research question were built in order to synthesize the results and facilitate the drawing of conclusions. During the data extraction process, data of each primary study were independently extracted by the two involved researchers when considering each research question. Conflicts found during the process were solved by discussions between the researchers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Conduction</head><p>In this phase, the primary studies were searched, selected and evaluated according to the established protocol, thus resulting in a set of possibly relevant studies for the SM. During the search process, the generic search string defined in the Planning phase (see Section 2.1) has undergone minor changes in order to make it compatible with the specificities of each electronic database engine. After that, the automated search of primary studies was performed over the selected electronic databases (see <ref type="table" target="#tab_1">Table 1</ref>) by searching for all primary studies that matched the adapted search string. <ref type="table" target="#tab_2">Table 2</ref> shows the results of the search procedure over the electronic databases. After removing studies indexed by two or more sources, 1469 studies were retrieved from the electronic databases and 42 of them were filtered based on title, abstract, and keywords to be fully read. The snowballing technique <ref type="bibr" target="#b11">[12]</ref> was applied over the read studies in order to find additional studies that were not retrieved in the search procedure. The reference lists of the read studies were then checked and three additional studies that were not retrieved in the search procedure were included. The inclusion/exclusion criteria were applied again when reading all studies and nine primary studies were selected as relevant for this SM. Finally, three studies were included as suggestions of a systems engineering expert, thus resulting in a final set of 12 primary studies that were selected for data extraction. <ref type="figure" target="#fig_0">Fig. 2</ref> depicts these steps for selecting the relevant primary studies. In this SM, a given primary study is considered relevant if it does not meet any exclusion criterion and it meets at least one inclusion criterion. <ref type="table" target="#tab_3">Table 3</ref> shows the list of studies that were considered as relevant for data extraction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Reporting</head><p>We have identified that each selected study proposes a different approach for addressing missions of systems, as summarized in <ref type="table">Table 4</ref>. In these studies, we have not found any proposal in terms of a specific ontology for missions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.1">Summary of the Selected Studies</head><p>The selected studies come from seven different contexts, namely systems-on-chip (SoC), artificial intelligence (AI), military mission-oriented systems, distributed systems, optimization algorithms, software architecture, and requirements engineering. Most of the studies (four) are inserted into the AI context, perhaps due to the role of missions for   driving decision-making processes in autonomous systems. Study S1 focuses on the implementation of SoC by using an hardware description language for this type of systems. Moreover, the missions of the systems are designed by using tasks (implemented in C++) that will be executed to implement these missions. <ref type="figure" target="#fig_1">Fig. 3</ref> shows an example of how tasks are defined in S1. In this example, three parameters <ref type="table">Table 4</ref>: Approaches proposed by the selected studies for describing missions of systems.</p><note type="other">S5 Mission-oriented autonomic configuration of pervasive systems [11] S6 Mission planning and specification in the Neptus framework [5] S7 Structure and content enhancement to military scenario definition language [28] S8 Distributed Component-Based Framework for Unmanned Air Vehicle Systems [9] S9 From missions to systems: Generating transparently distributable programs for sensor-oriented systems [24] S10 Goal-oriented Requirements Engineering: A guided tour [25] S11 Tropos: An agent-oriented software development methodology [2] S12 Stitch: A language for architecture-based self-adaptation [4</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Approaches Studies</head><p>Languages S1, S3, S5, S6, S7, S9, S11, S12 Formal notations S2 Tools or frameworks S4, S5, S8, S9, S10 Mission implementation S1, S12</p><p>are used, namely an input parameter (input, lines 1-4), an output parameter (output, lines 5-8), and an additional parameter (gain, lines 9-13) with a default value. Finally, the C++ code that implements this task is specified in line 15.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1:</head><p>input  In the AI context, studies S3 and S6 focus on defining languages for describing missions. In these studies, missions are specified and transmitted to physical entities (such as mobile robots and vehicles), which will accomplish them by executing commands or tasks related to such missions. Study S3 also consider two important elements, namely preconditions, which stand for conditions that must be satisfied prior executing the mission, and monitoring the execution of the mission. In a higher level of abstraction, study S11 considers other two elements related to missions, namely goals, which are major objectives to be accomplished by the system, and softgoals, which would be simpler objectives related to the goals. In a graph structure, goals and softgoals are represented as nodes, that are related to its actors, and the existing relationships among them are represented as edges. In addition, goals/softgoals can be refined into two or more goals/softgoals by using conjunctions or disjunctions, which also label the relationship edges. Therefore, in these three studies, missions can be represented as a set of goals, which in turn can be refined into fine-grained tasks or commands to be executed by entities of the system, thus aiming at accomplishing the established missions.</p><p>In military mission-oriented systems, study S7 proposes a language for defining missions in this context by instantiating a model proposed by study S2. Such a language encompasses a set of domain-specific terms and a mathematical model that includes a notation for tasks, which are represented as functions, and missions, which are composite functions based on the defined tasks. Moreover, S7 presents a notation to describe several elements of these systems, such as constituent parts, starting and ending conditions for the mission, and the mission itself.</p><p>In the distributed systems context, study S9 proposes a mission description language (MDL) to enable high-level mission specification based on natural language. In such a MDL, missions are mainly described through verbs and nouns, which can be mapped to the respective implementation components of the system; however, there is no detail about such a mapping procedure. Study S8 proposes a framework for unmanned aerial vehicles (UAVs) that includes a scripting language for mission programming. In study S13, missions are composed of tasks and conditions, so that a task is represented as a set of processes and a condition defines the circumstances in which each task will be executed.</p><p>Study S4 proposes a set of algorithms and representations for task decomposition. In this perspective, a mission is specified as a high-level task that can be decomposed in smaller tasks in a tree structure, so that an algorithm is used to calculate the cost-optimal task-path, i.e., the set of tasks (from the root node that represents the highest level mission/task to a leaf node associated to a task) that has the minimum execution cost.</p><p>In the software architecture context, study S12 proposes Stitch, a language for describing adaptation structures in the Rainbow architecture <ref type="bibr" target="#b9">[10]</ref> for self-adaptation of software systems. The main element of this language is the tactic, which can be interpreted as an implementation for a mission. Moreover, it is possible to specify the tasks to be executed by each tactic.</p><p>Finally, in the requirements engineering context, study S10 also proposes a tree-based notation for missions (as in study S4 ), which are referenced as tasks and can be textually described. An important contribution of this study is the separation among missions and other abstractions, e.g., architectures, tasks, etc., so that the isolation between the mission description and the architecture description foster modularity and reuse issues.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.2">Main Elements for Defining Missions</head><p>As we have mentioned, none of the selected studies proposes a specific ontology or set of elements for missions of systems. However, we have identified some elements that they have in common, although appearing with different forms and names, but with the same semantics. These elements are:</p><p>Task A task is an operation to be executed by the system. If a mission can be executed, it must be done through its decomposition into several tasks, which are organized in a specific execution order. <ref type="figure" target="#fig_2">Fig. 4</ref> shows a tree representation of tasks as presented in study S4 in which compound tasks are similar to missions and primitive tasks are similar to fine-grained tasks. Trigger (or Precondition) A trigger is a set of conditions (operational limitations or requirements) that must hold in order to enable the system to execute its mission. <ref type="figure" target="#fig_3">Fig. 5</ref> presents a mission description from study S3 for a movement mission of a robot, in which the precondition eq motors ON (line 2) defines that the mission can only be started if the motors of the robot are turned on. Executor An executor is a part of the system (e.g., a component) that is in charge of executing a task. For instance, in study S8 an executor is a component (or a set of components) responsible for executing a process that implements a task. As shown in <ref type="figure">Fig. 6</ref>, the task task_name is executed by the components comp_1 and 1: TASK task_name { 2: COMPONENT: comp_1 { 3:</p><p>PROCESS: process_1 4:</p><p>INPUT: source_of_data_1 5: } 6:</p><p>COMPONENT: comp_2 { 7:</p><p>PROCESS: process_2 8:</p><p>INPUT: source_of_data_2 9: } 10: } comp_2, whose interfaces are the relevant elements in this description.</p><p>Priority The priority is the commitment level of the system regarding the mission. The priority can be described through a numerical range or a discrete set (e.g., low, medium, high, etc.).</p><p>In addition, we have identified optional elements that might be useful in some situations:</p><p>Parameter Parameters are variables that can be inputs or outputs of a mission. They can be also used to detail relationships, constraints, or attributes regarding the missions. In <ref type="figure">Fig. 7</ref> (adapted from study S9 ), a tracking mission is defined. The first task (line 2) checks the time parameter and it sends an alert to A if it is later than 5 pm (line 3); in turn, the second task (lines 6 and 7) tracks when the location of B (parameter B.location) is within the set of disallowed locations and then it sends an alert to A (line 8).</p><p>Constraints Constraints are additional conditions to be verified throughout the execution of the system and they can be used to ensure some definitions, configurations, or mission states, so that a mission may fail if a given constraint is not satisfied. They can be classified as: (i) invariants, which are mandatory conditions that must hold, or; (ii) heuristics, which are non-mandatory conditions whose satisfaction is not ensured.</p><p>Final Condition A final condition is a set of conditions that, once satisfied, stops the execution of the mission. It can also be used to establish the mission accomplishment in the sense that a mission can be considered as accomplished if and only if such a final condition is satisfied. An example of final condition is shown on <ref type="figure">Fig. 7</ref>. The expression [B.location] ==</p><p>["B.house.location"] checks if the location of B (indicated by the location attribute) is equals to the saved house location of B, thus defining that the system will end the execution of the mission when the location of B is its house.</p><p>Relationship A relationship between missions can specify that a mission contributes or not to the accomplishment of another mission. <ref type="figure" target="#fig_2">In Fig. 4</ref>, the compound task D depends on the compound task E, thus implying that D can only be executed before E.</p><p>Types of missions can be also considered. A type defines the general behavior of the system regarding a given mission. Usual types are: (i) achievement, in which the system tries to accomplish a task or to reach a given state; (ii) maintenance, in which the system tries to maintain a given state or configuration, and; (iii) avoidance, in which the system tries to avoid some situation. Besides these typical types, new ones can be created depending on the system context. Since some mission types were found in a single study, it is not possible to assume that they are essential or even common.</p><p>Since no study was found in terms of proposing an ontology for missions, we have considered some of the eight aforementioned elements to compose such an ontology. Moreover, these elements are generic-purpose ones as they were retrieved from studies inserted into several domains, so that they can be applied to SoS, as discussed in Section 3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">TOWARDS A CONCEPTUAL MODEL FOR MISSIONS OF SOS</head><p>Dealing with missions in SoS is more complex when compared to their counterparts in traditional, monolithic systems mainly due to the need of handling different mission levels, as each constituent system has its own mission(s) and constraints. In this context, the mission model of a SoS must encompass not only its global missions, but also the missions of its constituent systems. Furthermore, such a mission model should indicate in which cases the constituent systems will not be able to interact with each other in order to accomplish a SoS mission, and how a mission of a given constituent system may interfere in the missions of the other ones. Additionally, since constituent systems often give higher priority towards meeting their individual missions <ref type="bibr" target="#b18">[19]</ref>, it is necessary to define some attribute related to the priority of such missions. For these reasons, it is not possible to directly use the existing mechanisms for tackling missions for traditional systems. However, we believe that their elements and notations can provide useful means for addressing missions in the SoS context, of course taking into account the specificities of such a scenario. In this perspective, we have taken advantage of the elements presented in Section 2.3.2 by adapting/extending them to missions in the SoS context.</p><p>As we have mentioned, one of the main elements that were found in several of the selected studies is task, which represents an operation or command to be executed by the system. A mission can be refined into sub-missions, which in turn can be depicted as an ordered set of tasks that can use some parameters related to such a mission. It is important to be aware that implementation details should not be included in mission levels, especially in the case of SoS in which the mission description is more complex as it must encompass missions of both SoS and constituent systems.</p><p>The relationships between missions are an important concern in the SoS context. The individual missions of the collaborating constituent systems contribute to the accomplishment of the global missions of a SoS as a whole. Moreover, a mission can contribute or negatively affect another mission, it might make the system unable to accomplish another one, or it may be a prerequisite for reaching a specific mission. Therefore, it is important to address such relationships when using any notation for describing missions.</p><p>The constituent systems of a SoS correspond to the executors (see Section 2.3.2), i.e., the elements responsible for executing the tasks that composes the missions, including the holistic mission of the SoS. An executor can be also a component, i.e., software and/or hardware elements that compose the system.</p><p>In the SoS context, a priority can identify and represent the major circumstances that makes a constituent system to choose performing its own missions instead of the SoS missions, so that low priority missions could be sacrificed in favor of accomplishing higher priority ones. Representing priorities can be also useful to detail them within conditions and parameters and to enable predicted priority changes.</p><p>Finally, a SoS encompasses an emergent behavior corresponding to functionalities yielded by the cooperation between the constituent systems, which must have the ability of connecting to each other, i.e., connectivity. Representing emergent behavior is not a trivial issue because it is essentially related to the interactions among the constituent systems. A natural solution would be to represent system parts and to describe their interactions and emergent behaviors, but this solution is better applied when such emergent behaviors are manageable, foreseen. Another solution would be to represent the emergent behavior through its related interactions, thus defining interaction patterns. In this case, an interaction pattern can be understood as a potential contract between constituent systems, so that the emergent behavior can be implemented with the agreement of such a contract. Therefore, it would be possible to separate the mission description from system models, thus allowing the description of emergent behaviors with no further knowledge of the constituent systems.</p><p>The knowledge of the aforementioned elements and their relationships can lead to the development of a conceptual model for missions of SoS, which is depicted in <ref type="figure" target="#fig_5">Fig. 8</ref>. Since this model is not the focus of this work, future work will detail it and its use. It is noteworthy that some elements identified in Section 2.3.2 can be directly inherited to the SoS context, such as parameters, constraints, and preconditions. These elements are not context-specific and might be useful to allow a more detailed description and the execution of verification processes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">FINAL REMARKS</head><p>A SoS can be understood as a widespread set of independent, heterogeneous constituent systems to form a larger system in order to accomplish a given mission, each constituent system accomplishing its own individual mission and being able to contribute to the accomplishment of the global mission of the SoS. In the current literature, a mission is typically viewed as a goal, a functionality, or a set of tasks to be performed by the constituent systems, which might be aware of the mission of the SoS and must cooperate and exchange information in order to accomplish it. However, there is a lack of studies dedicated to deal with missions in the SoS context and their specificities. Therefore, we have conducted a study about how missions can be defined, specified, represented, and implemented in SoS. For this purpose and due to the limitations of the existing proposals for missions of SoS, we have performed a SM aiming at analyzing the literature about missions of systems in a broader context. As the main result, we have identified some elements that can be brought to the SoS context and other important issues that should be considered when shifting from single, monolithic systems to SoS. These elements and associated knowledge were organized in a preliminary version of a conceptual model for missions of SoS, which will be further detailed in future works in conjunction with the proposal of a language for describing these missions. Moreover, we believe that this study about missions can open perspectives to other new, important issues to be addressed in the SoS context.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Procedure for selecting relevant primary studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Example of task definition in study S1 [1].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Tree representation of tasks in S4 [14].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 5 :</head><label>5</label><figDesc>Figure 5: Precondition of a mission in S3 [22].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 6 :Figure 7 :</head><label>67</label><figDesc>Figure 6: Description of a task and the components responsible for executing it in S8 [9]. 1: until [B.location] == ["B.house.location"] { 2: if [time] is after ["5pm"] { 3: send ["Alert"] to [A] 4: } 5: ... 6: when [B.location] is in 7: ["disallowed locations"] { 8: send ["Alert"] to [A] 9: } 10: } Figure 7: Description of a mission in S9 [24].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 8 :</head><label>8</label><figDesc>Figure 8: Conceptual model for missions of SoS.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table 1 :</head><label>1</label><figDesc></figDesc><table>Electronic databases selected as sources for 
+the search process in the SM. 
+
+Database 
+URL 
+
+IEEEXplore 
+http://ieeexplore.ieee.org 
+ACM Digital Library http://dl.acm.org 
+ScienceDirect.com 
+http://www.sciencedirect.com 
+Scopus 
+http://www.scopus.com 
+ISI Web of Science 
+http://www.webofknowledge.com 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table 2 :</head><label>2</label><figDesc></figDesc><table>Number of retrieved and filtered studies 
+after the search procedure. 
+
+Search mechanism 
+Number of studies 
+Retrieved 
+Filtered 
+
+IEEEXplore 
+833 
+21 
+ACM Digital Library 
+111 
+1 
+ScienceDirect.com 
+128 
+5 
+Scopus 
+815 
+47 
+ISI Web of Science 
+11 
+4 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>Table 3 :</head><label>3</label><figDesc></figDesc><table>Selected primary studies. 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>]potentially relevant 1898 search results 42 potentially relevantpotentially relevant 12 relevant (final set)</head><label></label><figDesc></figDesc><table>Automated Search 
+
+IEEEXplore 
+ACM Digital Library 
+ScienceDirect.com 
+Scopus 
+ISI Web of Science 
+
+1469 
+
+429 studies excluded 
+
+1427 studies excluded 
+
+Filtering 
+
+removal of studies indexed 
+by more than one source 
+
+9 
+
+Selection 
+
+application of selection 
+criteria on title, abstract, 
+and keywords 
+
+Snowballing 
+
+inclusion of referenced 
+studies not retrieved by 
+the search procedure 
+
+Expert suggestions 
+
+studies suggested 
+by experts 
+
+3 studies included 
+
+3 studies included 
+
+45 
+
+potentially relevant 
+
+Selection 
+
+application of 
+inclusion/exclusion criteria 
+on full paper 
+
+36 studies excluded 
+
+</table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">ACKNOWLEDGEMENTS</head><p>This work is partially supported by CNPq and the Brazilian National Agency of Petroleum, Natural Gas and Biofuels -PRH-22/ANP/MCTI program. Everton Cavalcante is partially supported by CAPES under grant 11097/2013-2. Thais Batista is partially supported by CNPq (PVE grant 400449/2013-7) and INES (grant 573964/2008-4). Flavia C. Delicato is partially supported by <ref type="bibr">CNPq and FAPERJ (grant E-26/102.961/2012</ref>).</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">A mission level design language based on AleC++</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Andelkovi´candelkovi´c</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Litovski</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Zerbe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 25th International Conference on Microelectronics (MIEL 2006)</title>
+		<meeting>the 25th International Conference on Microelectronics (MIEL 2006)<address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>EDS/IEEE</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="618" to="621" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Tropos: An agent-oriented software development methodology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Bresciani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Giorgini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Giunchiglia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mylopoulos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Perini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Autonomous Agents and Multi-Agent Systems</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="203" to="236" />
+			<date type="published" when="2003-05" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Using mapping studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 20th Annual Meeting of the Psychology of Programming Interest Group (PPIG 2008)</title>
+		<meeting>the 20th Annual Meeting of the Psychology of Programming Interest Group (PPIG 2008)<address><addrLine>Lancaster, England, United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="195" to="204" />
+		</imprint>
+		<respStmt>
+			<orgName>Lancaster University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Stitch: A language for architecture-based self-adaptation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S.-W</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Garlan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Systems and Software</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="2860" to="2875" />
+			<date type="published" when="2012-12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Mission planning and specification in the Neptus framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">S</forename><surname>Dias</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">M</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">M F</forename><surname>Gomes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Borges Sousa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pinto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">L</forename><surname>Pereira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2006 IEEE International Conference on Robotics and Automation (ICRA 2006)</title>
+		<meeting>the 2006 IEEE International Conference on Robotics and Automation (ICRA 2006)<address><addrLine>Piscataway, NJ, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="3220" to="3225" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Developing search strategies for detecting relevant experiments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Dieste</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Grimán</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Juristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Empirical Software Engineering</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="513" to="539" />
+			<date type="published" when="2009-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Applying systematic reviews to diverse study types: An experience report</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">K</forename><surname>Hanssen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)</title>
+		<meeting>the First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="225" to="234" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Evidence-Based Software Engineering for practitioners</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jørgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="58" to="65" />
+			<date type="published" when="2005-01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Distributed component-based framework for unmanned air vehicle systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>El-Sayed</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Elhelw</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2012 International Conference on Information and Automation (ICIA 2012)</title>
+		<meeting>the 2012 International Conference on Information and Automation (ICIA 2012)</meeting>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="45" to="50" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Rainbow: Architecture-based self adaptation with reusable infrastructure</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Garlan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S.-W</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A.-C</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schmerl</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Steenkiste</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="46" to="54" />
+			<date type="published" when="2004-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Mission-oriented autonomic configuration of pervasive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Grondin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Faure</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Urtado</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Vauttier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 7th International Conference on Software Engineering Advances</title>
+		<meeting>the 7th International Conference on Software Engineering Advances<address><addrLine>Wilmington, DE, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+	<note>ICSEA 2012. IARIA</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Systematic literature studies: Database searches vs. backward snowballing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Jalali</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wohlin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2012 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement</title>
+		<meeting>the 2012 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="29" to="38" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Systems of Systems Engineering: Innovations for the 21st Century</title>
+		<editor>M. Jamshidi</editor>
+		<imprint>
+			<date type="published" when="2009" />
+			<publisher>John Wiley &amp; Sons, Inc</publisher>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Mission impossible? Automatically assembling agents from high-level task descriptions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Jayaputera</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Loke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Zaslavsky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2003 IEEE/WIC International Conference on Intelligent Agent Technology (IAT&apos;03)</title>
+		<meeting>the 2003 IEEE/WIC International Conference on Intelligent Agent Technology (IAT&apos;03)<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2003" />
+			<biblScope unit="page" from="161" to="167" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Using mapping studies as the basis for further research: A participant-observer case study. Information and Software Technology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">P</forename><surname>Brereton</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011-06" />
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="638" to="651" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Procedures for performing systematic reviews</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University/National ICT Australia Ltd.</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University/University of Durham</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Evidence-Based Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jørgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 26th International Conference on Software Engineering (ICSE 2004)</title>
+		<meeting>the 26th International Conference on Software Engineering (ICSE 2004)<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="273" to="281" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Requirements engineering for systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">A</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Morris</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Place</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Simanta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">B</forename><surname>Smith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd Annual IEEE Systems Conference</title>
+		<meeting>the 3rd Annual IEEE Systems Conference<address><addrLine>Piscataway, NJ, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="247" to="252" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="267" to="284" />
+			<date type="published" when="1998-02" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">The state of the art and future perspectives in systems of systems software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">B R</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Workshop on Software Engineering for Systems-of-Systems</title>
+		<meeting>the First International Workshop on Software Engineering for Systems-of-Systems<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="13" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Control of mobile robot actions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">R</forename><surname>Norelis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">G</forename><surname>Chatila</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 1989 IEEE International Conference on Robotics and Automation</title>
+		<meeting>the 1989 IEEE International Conference on Robotics and Automation<address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="1989" />
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="701" to="707" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Systematic mapping studies in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Petersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Feldt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mujtaba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mattsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 12th International Conference on Evaluation and Assessment in Software Engineering (EASE&apos;08)</title>
+		<meeting>the 12th International Conference on Evaluation and Assessment in Software Engineering (EASE&apos;08)<address><addrLine>Swinton, England, United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<publisher>British Computer Society</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="68" to="77" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">From missions to systems: Generating transparently distributable programs for sensor-oriented systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Porter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Dearle</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Dobson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 7th International Workshop on Middleware Tools, Services and Run-Time Support for Sensor Networks (MidSens&apos;12)</title>
+		<meeting>the 7th International Workshop on Middleware Tools, Services and Run-Time Support for Sensor Networks (MidSens&apos;12)<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Goal-Oriented Requirements Engineering: A guided tour</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Van Lamsweerde</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 5th IEEE International Symposium on Requirements Engineering (RE&apos;01)</title>
+		<meeting>the 5th IEEE International Symposium on Requirements Engineering (RE&apos;01)<address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="249" to="262" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Analysis of mission-oriented systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><forename type="middle">S</forename><surname>Winokur</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">J</forename><surname>Goldstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Reliability, R</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="144" to="148" />
+			<date type="published" when="1969-11" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Experimentation in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wohlin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Runeson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Höst</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">C</forename><surname>Ohlsson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Regnell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Wesslén</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<publisher>Springer-Verlag</publisher>
+			<pubPlace>Berlin Heidelberg; Germany</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Structure and content enhancement to military scenario definition language</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Xinye</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Mei</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Kedi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2012 IEEE Symposium on Robotics and Applications (ISRA 2012)</title>
+		<meeting>the 2012 IEEE Symposium on Robotics and Applications (ISRA 2012)<address><addrLine>Piscataway, NJ, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="379" to="382" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

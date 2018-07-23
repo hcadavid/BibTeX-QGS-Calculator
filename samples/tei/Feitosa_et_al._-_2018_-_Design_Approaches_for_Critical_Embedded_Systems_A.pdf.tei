@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Design Approaches for Critical Embedded Systems: A Systematic Mapping Study</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2017">2017. 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Daniel</forename><surname>Feitosa</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics and Computer Science</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<settlement>Groningen</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Apostolos</forename><surname>Ampatzoglou</surname></persName>
+							<email>a.ampatzoglou@rug.nl</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics and Computer Science</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<settlement>Groningen</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paris</forename><surname>Avgeriou</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics and Computer Science</orgName>
+								<orgName type="institution">University of Groningen</orgName>
+								<address>
+									<settlement>Groningen</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Frank</forename><forename type="middle">J</forename><surname>Affonso</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Statistics</orgName>
+								<orgName type="laboratory">Applied Mathematics and Computation, São Paulo State University (UNESP)</orgName>
+								<address>
+									<settlement>Rio Claro</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hugo</forename><surname>Andrade</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Computer Science and Engineering</orgName>
+								<orgName type="institution">Chalmers University of Technology</orgName>
+								<address>
+									<settlement>Göteborg</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Katia</forename><forename type="middle">R</forename><surname>Felizardo</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Computing</orgName>
+								<orgName type="institution">Federal Technological University of Paraná</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Elisa</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Design Approaches for Critical Embedded Systems: A Systematic Mapping Study</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">CCIS</title>
+						<imprint>
+							<biblScope unit="volume">866</biblScope>
+							<biblScope unit="page" from="243" to="274"/>
+							<date type="published" when="2017">2017. 2018</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1007/978-3-319-94135-6_12</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Systematic mapping study Á Critical embedded system Design</keywords>
+			</textClass>
+			<abstract>
+				<p>Critical Embedded Systems (CES) are systems in which failures are potentially catastrophic and, therefore, hard constraints are imposed on them. In the last years the amount of software accommodated within CES has considerably changed. For example, in smart cars the amount of software has grown about 100 times compared to previous years. This change means that software design for these systems is also bounded to hard constraints (e.g., high security and performance). Along the evolution of CES, the approaches for designing them are also changing rapidly, so as to fit the specialized needs of CES. Thus, a broad understanding of such approaches is missing. Therefore, this study aims to establish a fair overview on CESs design approaches. For that, we conducted a Systematic Mapping Study (SMS), in which we collected 1,673 papers from five digital libraries, filtered 269 primary studies, and analyzed five facets: design approaches, applications domains, critical quality attributes, tools, and type of evidence. Our findings show that the body of knowledge is vast and overlaps with other types of systems (e.g., real-time or cyber-physical systems). In addition, we have observed that some critical quality attributes are common among various application domains, as well as approaches and tools are oftentimes generic to CES.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Critical Embedded Systems (CESs) are among the most significant types of softwareintensive systems, since they are extremely pervasive in modern society, being used from cars to power plants <ref type="bibr" target="#b0">[1]</ref>. CESs are embedded systems in which runtime errors can potentially be catastrophic <ref type="bibr" target="#b1">[2]</ref>, causing serious damage to the environment or to human lives, or non-recoverable material and financial losses <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b3">4]</ref>. Due to the criticality of such systems, the satisfaction of multiple quality constraints must be guaranteed. This is far from trivial, as it entails complex trade-offs, which to a large extent concern safeguarding the levels of critical against other non-critical qualities <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b5">6]</ref>. As critical quality attributes (CQAs), we characterize qualities that, when not satisfied, may lead to catastrophic failures, as the aforementioned ones; typical examples are performance, security and reliability.</p><p>Engineering CES is particularly challenging, since it needs to guarantee the satisfaction of various critical qualities. One of the key solutions to alleviate this challenge is to design a sound architecture and validate it against the critical quality attributes. To this end, multiple approaches have been proposed, solving a variety of specific design problems. However, the plethora and diversity of available solutions has led to a difficulty on understanding, applying or even extending and combining such approaches. Thus, in order to support researchers and practitioners on CES design, it is important to have a comprehensive understanding of this field. To contribute towards a better understanding of design approaches for CES, we have conducted a systematic mapping study; this is a commonly used approach for assessing and describing the state of the art in a specific domain or problem (see Sect. 3 for more details). The contributions of this study are the following: (a) a classification of the existing approaches to design CES; (b) a list of tools for supporting existing approaches; (c) a list of domains for which approaches have been developed and used; (d) a list of the most commonly identified CQAs in the CES design; and (e) a classification of these approaches, based on the level of their empirical evidence.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Related Work</head><p>This section describes related Systematic Literature Reviews (SLRs) or Systematic Mapping Studies (SMSs), also known as secondary studies. To the best of our knowledge, there are no studies that focus on exactly the same topic as ours, i.e., designing of CESs. Thus, we searched for related work such as SMSs and SLRs that cover the entire software development process of CES, or a specific phase.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Development Processes</head><p>We identified two studies that discuss software development processes and are related to CESs <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. Although such processes do not focus or limit themselves to the design phase, they do have impact on the design phase. Cawley et al. <ref type="bibr" target="#b6">[7]</ref> investigated Lean/Agile development processes on safety-critical systems, focusing on medical devices. For this purpose, an SLR based on the guidelines of Kitchenham and Charters <ref type="bibr" target="#b8">[9]</ref> was performed. The results of the SLR suggest that Lean/Agile methodologies are appropriate for the development of safety-critical systems, as they support several practices for regulated safety-critical domains (e.g., traceability and testing). However, the results also suggest a lack of adoption of Lean/Agile methods in these domains. This is not surprising as regulated environments typically involve activities that are not commonly used in these processes. Eklund and Bosch <ref type="bibr" target="#b7">[8]</ref> investigated a holistic model for aligning software development processes with the architecture of embedded software. As part of this study, an SMS on development approaches for embedded systems was performed (based on the guidelines of Kitchenham and Charters <ref type="bibr" target="#b8">[9]</ref>). The results of the study suggest that there is no single most common approach (or set of approaches) but, approaches are tailored for specific domains or products and may have different characteristics (e.g., incorporating agile practices). Despite the high customization of processes, the authors have been able to identify some similarities, e.g. activities are often executed sequentially and follow a V-model - <ref type="bibr" target="#b9">[10]</ref> or stage-gate-like <ref type="bibr" target="#b10">[11]</ref> process. In addition, the architectures created from these processes are often focused on supporting specific quality attributes, which are typically domain-specific (e.g., dependability for the space domain). Based on the identified approaches, the authors derived five archetypical developments processes, with their respective characteristics, aiming to support selection or migration between concrete archetypal development approaches.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Verification and Validation</head><p>Not all activities in the verification and validation of critical embedded software (V&amp;V) are related to its design. However, a significant part concerns the verification and validation of design and are, therefore, relevant to the design phase. We identified two secondary studies that discuss aspects of V&amp;V and are related to CES <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b12">13]</ref>. <ref type="bibr">Barbosa et al. [12]</ref> investigated software testing of CESs, checking the compliance level with the standard DO-178B, for the aviation industry. The aim was to identify primary studies that could be used to create a methodology for testing of CES. For this purpose, a SLR, based on Dybå and Dingsøyr <ref type="bibr" target="#b13">[14]</ref>, was performed to identify studies that implemented or applied V&amp;V techniques in the context of CES. The results suggest that four techniques (functional, structural, mutation and model-based testing) are widely applied for testing of CES, from which the most recurrent technique is functional testing. In addition, all testing requirements of DO-178B have been investigated, with "structural coverage analysis" (e.g., dead code and deactivated code) being the most addressed requirement, likely due to its inherent complexity. Elberzhager et al.</p><p>[13] investigated quality assurance techniques (i.e., analysis or test approaches) applied to Matlab Simulink models. These models are used in embedded software design, especially in critical domains. The aim was to develop an approach able to integrate different quality assurance techniques. For this purpose, an SMS was performed based on the guidelines of Petersen et al. <ref type="bibr" target="#b14">[15]</ref>, which presented different analysis and test techniques as well as some combined approaches. The results of the study suggest that formal methods, properties checking (e.g., rule-based analysis) and automatic test generation are the most common approaches for performing quality assurance for embedded systems. The results also suggest a lack of research on combining analysis techniques with testing techniques for such models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Software Architecture</head><p>The activity of architecture design for embedded systems was investigated by Antonio et al. <ref type="bibr" target="#b15">[16]</ref>, which aimed at establishing the state of the art on the topic by analyzing proposed architectures, available on the literature. For that, a SMS based on the guidelines of Petersen et al. <ref type="bibr" target="#b14">[15]</ref> was performed. To understand the activity, various characteristics were collected from the architectures, and used for classifying them. Firstly, the architectures were grouped according to the type of modeling technique used to design them, namely formal, semi-formal and informal. Next, further classes were identified based on recurrent characteristics, e.g., level of abstraction and whether it is domain-specific. The results of the SMS suggest that the Architecture Analysis and Design Language (AADL) is the most used formal modeling approach, whereas UML stands out among the semi-formal and informal approaches. In addition, the most recurrent characteristic of these architectures is that they are designed to specific application domains.</p><p>Similar to the previous study, Guessi et al. <ref type="bibr" target="#b16">[17]</ref> investigate the modeling of software architectures for embedded systems. However, this study focuses on architecture description languages (ADLs), as well as the concerns (e.g., quality attributes) being addressed and information (e.g., components, events) being represented in the designed architectures. The investigation was performed via a SLR based on the guidelines of Kitchenham and Charters <ref type="bibr" target="#b8">[9]</ref>. The results suggest that UML is the most common language, while safety is the concern that is more often addressed. Despite the variety of approaches that currently exist, the results also suggest that more attention should be placed on the description of embedded system architectures. Among the reasons, <ref type="bibr">Guessi et al.</ref> argue that there is a lack of consensus about the most adequate approach (es) for describing architecture, as well as whether existing approaches are sufficient for representing the variety of embedded systems.</p><p>Nakagawa et al. <ref type="bibr" target="#b17">[18]</ref> present the state of the art on architecting approaches for systems of systems 1 (SoS), of which CES are among the most common examples. For that, an SLR based on the guidelines of Kitchenham and Charters <ref type="bibr" target="#b8">[9]</ref> was performed, investigating the creation, representation, evaluation and evolution of these architectures. The results suggest the existence of several approaches, although most of them lack maturity and are neither adequately adapted nor widely adopted. In addition, several application domains (e.g., avionics and space) and quality attributes (e.g., security, reliability and performance) are common between SoS and CES.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Comparative Analysis</head><p>After presenting related work, it is important to highlight the differences between these studies and our work. To illustrate these differences, we compare them w.r.t. six characteristics <ref type="table" target="#tab_0">(Table 1)</ref>: review type; number of included primary studies; whether the study focuses on CES or is only indirectly related (i.e., with partial applicability to CES); whether it considered quality attributes (QA) in the investigation; whether it considered application domains in the investigation; and the main topic of the investigation. The review type is an indication of whether the study presents an overview or a detailed analysis over the main topic (SMS) or it examines more in-depth research questions (SLR). As presented in <ref type="table" target="#tab_0">Table 1</ref>, three other SMSs were performed, although they were focused in different, yet related, topics. However, these three studies were not focused on CESs, which reinforces the purpose of our study, as it complements existing knowledge. Other important aspects of our study include the larger body of knowledge that has been investigated (due to the broader topic of research), as well as the consideration of quality attributes and application domains in the investigation. CESs are used in a variety of application domains and multiple factors affect the decision-making to select or reuse a design approach. Quality constraints are among the most relevant factors, as also suggested by related work <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b17">18]</ref>. Application domains may also play an important role, as each domain groups a set of common requirements, that are in turn related to specific quality attributes <ref type="bibr" target="#b7">[8]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Review Methodology</head><p>Systematic Mapping Studies (SMSs) and Systematic Literature Reviews (SLRs) have been broadly adopted as systematic research methods to aggregate knowledge. As this study aims to outline the state-of-the-art on design approaches for CES in a broad sense, we decided to perform an SMS <ref type="bibr" target="#b14">[15]</ref>. The rest of this section describes the protocol of our SMS, based on the guidelines of Petersen et al. <ref type="bibr" target="#b14">[15]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Research Scope</head><p>The goal of this SMS is described using the Goal-Question-Metrics (GQM) approach <ref type="bibr" target="#b18">[19]</ref>, as follows: "analyze existing software engineering literature for the purpose of characterizing the state of the art with respect to approaches (e.g., processes, methods and tools) for designing critical embedded systems from the point of view of researchers and practitioners in the context of software-intensive systems engineering". Based on the goal we defined the following research questions (RQs): To achieve the aforementioned goal, we must analyze and present the existing body of knowledge from different perspectives. The most important outcome of this SMS is the identification and characterization of the approaches that were created and/or used to design CES (RQ 1 ). As a first step in characterizing the approaches, we consider their nature and purpose. Next, we look at the application domain (RQ 2 ) which influences CES design as it often imposes a number of constraints. For example, several application domains are bounded by international standards (e.g., DO-178B for aviation). In addition, these constraints commonly aim at defining critical quality values (e.g., safety); thus, design approaches are often targeting those values (e.g., fault tree analysis). Therefore, investigating the addressed quality attributes (RQ 3 ) is of paramount importance. Furthermore, multiple tools have been proposed or tailored to support the design of CES. As the number of CES grows, it is interesting to investigate how this reflects on the tooling (RQ 4 ), e.g., leading to news tools and adaptation of existing ones. Finally, it is important to not only classify the approaches, but also assess their maturity level to inform researchers and practitioners. For that, we analyze the types of evidence provided within the literature (RQ 5 ).</p><formula xml:id="formula_0">RQ 1 -What</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Search Strategy</head><p>Considering the research questions, we defined the search strategy, which comprises the selection of sources for collecting primary studies, as well as the definition of the scope for the collection.</p><p>Sources Selection. We decided to perform an automated search, as a manual search would be very time-consuming, thus not allowing us to search as many venues. In addition, by considering digital libraries (through an automated search) we might also include venues that otherwise we would not be aware of. The following criteria were adopted to select search sources (i.e., digital libraries): content update (publications are regularly updated); availability (full text of the papers is available); quality of results (accuracy of the results returned by the search); and versatility export (since a lot of information is returned through the search, a mechanism to export the results is required). These criteria are also discussed by Dieste et al. <ref type="bibr" target="#b19">[20]</ref>. The selected sources for our SMS are: ACM Digital Library, IEEE Xplore, Science Direct, Springer Link and Scopus. According to <ref type="bibr">Dybå et al. [21]</ref>, the first four digital libraries are sufficient to conduct SMSs in the context of software engineering. Furthermore, Scopus was added, since it is considered to be the largest database of abstracts and citations <ref type="bibr" target="#b8">[9]</ref>.</p><p>Search Scope. As CESs have been the subject of research for a long time, we decided to not limit the start of the search period based on date of publication. However, we limit the end date of the search period in order to measure influence of the primary studies (see Sect. 3.5), considering primary studies published up to two years before the date of collection. We performed the data collection on March of 2015 and, thus, collected primary studies published up to March of 2013. Moreover, only primary studies written in English will be processed in this SMS. Due to automated search, we also defined a search string for filtering the studies to those that can be potentially included in the SMS. As we are interested in approaches for CES design, we selected two main keywords, "Critical Embedded System" and "Approach", with the respective related terms. The keywords were chosen to be simple enough to yield a large number of results and, at the same time, rigorous to cover only the desired research topic. The final search string is: ("Critical Embedded System" OR "Critical Embedded Systems" OR "Critical Embedded Software") AND ("Approach" OR "Approaches" OR "Method" OR "Methods" OR "Framework" OR "Frameworks" OR "Technique" OR "Techniques" OR "Process" OR "Processes" OR "Tool" OR "Tooling" OR "Guideline" OR "Guidelines").</p><p>We clarify that we do not include terms such as "real-time", "hard real-time" or "cyber-physical systems", as they describe a broader range of systems, which extrapolates the scope of this SMS, and would make the paper selection process impractical. To validate the search string and, consequently, the papers collected by the automated search, we performed a manual search in a small number of venues, similarly to determining a quasi-gold standard as proposed by Zhang and Babar <ref type="bibr" target="#b21">[22]</ref>. We selected the venues for the manual search based on their likelihood to publish studies on CES design: Real-time Systems journal, Digital Avionics Systems Conference (DASC), and International Conference on Computer Safety, Reliability, and Security (SAFECOMP). To filter the primary studies for the quasi-gold standard, we considered the metadata (i.e., title, keywords and abstract) and full text (when necessary), resulting in the collection of 23 primary studies. Based on the quasi-gold standard, we adapted the search string to ensure that all 23 primary studies were included.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Study Selection</head><p>Based on the previously mentioned search strategy, we defined the procedure for filtering the results of the automated search, selecting the primary studies to be analyzed in the SMS. The study selection comprises the definition of the criteria for filtering the papers, both inclusion and exclusion criteria, as well as steps for applying them. We include a primary study if it: (a) proposes an approach to design CESs; (b) reports on the use of an approach to design CESs; (c) evaluates an approach to design CESs; or (d) discusses approach(es) to design CESs. A primary study is excluded if it is an editorial, position paper, keynote, opinion paper, tutorial, poster or panel. To promote a common understanding of the selection criteria among the three involved researchers, we performed a pilot selection on a small subset (50) of the papers collected from the sources. In this pilot, during a first review round, all researchers analyzed title, keywords and abstract of all papers and Cohen's Kappa was calculated between every pair of researchers (see <ref type="figure" target="#fig_0">Fig. 1</ref>). We clarify that no previous discussion was performed in order to evaluate the inclusion and exclusion criteria. Next, all researchers and authors discussed the criteria and their interpretation. Main points of this discussion included the boundaries of the design phase, hardware design and the inclusion of papers that do not propose approaches (e.g., use or discussion). Finally, in a second review round, the papers are analyzed again, but this time also considering introduction and conclusion sections (if necessary), and a new calculation of Cohen's Kappa was performed (see <ref type="figure" target="#fig_0">Fig. 1</ref>).</p><p>To select the primary studies, we defined a three-step procedure. In every step, the papers were divided into three sets and three researchers were responsible for reviewing the papers of two sets. By doing this, we guarantee that every paper was reviewed by two different people while avoiding all three having to read all papers. When an inclusion/exclusion decision was conflicting or dubious (e.g., one or both reviewers were not confident), the case was discussed among all authors. The selection steps were the following: (1) Initial selection: the search string was customized and applied to each publication source listed in Sect. 3.2. The string terms were searched in the title, abstract and keywords of all primary studies available in each database and search engine. As a result, a set of primary studies possibly related to the research topic was obtained. Based on this set, the title and the abstract of each primary study were read and evaluated based on the inclusion and exclusion criteria. The introduction and the conclusion may also be considered when necessary; (2) Second selection: each of the previously selected primary studies were read in full-text and analyzed according to inclusion and exclusion criteria. This step also included the data extraction, which is discussed in Sect. 3.5; and (3) Snowballing: the references of the studies selected in step 2 were used to identify extra literature, for which steps 1 and 2 are repeated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Keywording</head><p>During the first two steps of the selection procedure (see Sect. 3.3), a set of keywords was collected from each primary study. As proposed by Petersen et al. <ref type="bibr" target="#b14">[15]</ref>, the keywording process occurs in two steps:</p><p>(1) Identification of Context: While reading the paper, the reviewer identifies any keywords and concepts that are relevant to describe that particular study. For example, words that describe the purpose of the approach, code of standards and names of quality attributes or tools were collected. During this step, reviewers share topics of keywords (e.g., code of standards) to maintain consistency and optimize the collection. Differently from Petersen et al. <ref type="bibr" target="#b14">[15]</ref>, we extended the searching of keywords to the whole paper, as some relevant keywords have been identified within the full text at early stages of the study. (2) Summarization: The keywords are combined in order to create abstractions that support understanding the body of knowledge under investigation. Examples of such abstractions are the topics mentioned in the previous step (e.g., standards). The abstractions also support identifying categories and create a classification scheme for the primary studies.</p><p>We applied keywording not only to classify the primary studies but also to identify relevant concepts for all research questions, e.g., purpose of tools, application domains standards and safety integrity levels (SILs).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">Data Extraction and Mapping</head><p>During the second selection procedure (see Sect. 3.3), a set of variables were collected from each primary study to answer the research questions. Similar to selection procedure, the data collection of every paper involved two researchers and conflicts were discussed among all authors. The extracted variables are described in <ref type="table" target="#tab_2">Table 2</ref>.</p><p>The mapping between variables and research questions is provided in <ref type="table" target="#tab_3">Table 3</ref>, accompanied by the analysis method used on the data. The type of evidence (V14) evaluates the level of evidence of the proposed approach. For that, we adopted the classification proposed by Alves et al. <ref type="bibr" target="#b22">[23]</ref> in order to make the assessment more  practical. From weakest to strongest, the classes are: (i) no evidence; (ii) evidence obtained from demonstration or working out toy examples; (iii) evidence obtained from expert opinions or observations; (iv) evidence obtained from academic studies (e.g., controlled lab experiments); (v) evidence obtained from industrial studies (i.e., studies are done in industrial environments, e.g., causal case studies); and (vi) evidence obtained from industrial application (i.e., actual use in industry).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Results</head><p>In this section, we present the results of the mapping study, highlighting the most important observations. We note that the complete information from data extraction is publicly available as part of the supplementary material for this paper <ref type="bibr" target="#b23">[24]</ref>. We clarify that, when necessary, we cite specific primary studies using an "S" (e.g., <ref type="bibr">[S134]</ref>). Due to space limitations, we do not provide the list the primary studies in this manuscript, but we have made it available as a supplementary material <ref type="bibr" target="#b23">[24]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Demographic Overview</head><p>The distribution of studies, per year, among the different types of publication (conference, journal and book) is depicted in <ref type="figure" target="#fig_1">Fig. 2</ref>. We clarify that we collected studies published up to March of 2013 (see Sect. 3.2), resulting on the observed smaller number in that year. We notice a linear growth in the number of conference papers. The number of journal articles experiences a growth as well, but not as high. We note that conference proceedings published as books were counted as conferences, explaining the small number of book chapters in the chart.</p><p>To investigate further potential reasons for the aforementioned growth, we looked at the venues and checked whether they focus on CES alone, or have a broader scope (e.g., embedded systems) and only include CES as one of the topics of interest. We observed that, although a few venues do focus on CES (e.g., Brazilian symposium on CES), most of the studies were published in other venues, suggesting a shift or growing interest of the respective (broad) communities towards CES. In addition, we can try to Design Approaches for Critical Embedded Systemsidentify the most relevant venues, by looking at their distribution according to two metrics: number of included studies <ref type="figure" target="#fig_2">(Fig. 3a)</ref>, and number of citations <ref type="figure" target="#fig_2">(Fig. 3b)</ref>. We chose these metrics, because they reflect distinct features that may draw the attention of researchers to venues: the size of the CES community within the venue, and the potential visibility of the study. To investigate the venues, we analyzed how they are distributed statistically, identifying the high outliers, which in this case indicate popular venues for CES. We used the software IBM SPSS Statistics to create the box-plots as well as to identify the outliers, using the stem-and-leaf diagram.</p><p>On the one hand, <ref type="figure" target="#fig_2">Fig. 3a</ref> shows that the vast majority of venues contributed with one or two papers only, respectively 111 (approx. 70%) and 28 (17.5%). The analysis suggests that venues that contributed with four papers or more (nine venues) are exceptional in our dataset. On the other hand, <ref type="figure" target="#fig_2">Fig. 3b</ref> shows that most venues (85%) exhibit a maximum average of four citations per paper per year. The analysis of this metric suggests that venues with an average citation rate of 6.2 or more (15 venues in total) are also exceptional. Thus, we identified a set of 22 exceptional venues, which, due to space limitations, is presented in the supplementary material <ref type="bibr" target="#b23">[24]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Design Approaches</head><p>As shown in the previous section we were able to collect a large number of studies. Therefore, it is infeasible to present all collected approaches here. For that reason, we decided to present the results as a summary based on the types of approaches that were found, which are based on a classification scheme (presented below). In addition, we present some details on the most relevant approaches, i.e., those with the most citations, identified by using the number of citations according to Google Scholar. To avoid omitting relatively new papers (i.e. those that did not have enough time to receive citations), we considered the number of citations per year. In the next subsections, we elaborate on this classification scheme and results.</p><p>Classification Scheme. The design phase in a development lifecycle is often elusive, in the sense that it is typically hard to determine the boundaries of design with respect to the other lifecycle phases. In embedded systems development, including systems with harder constraints such as CES, this is no exception. However, in order to classify the design approaches, it is necessary to identify the parts of the development lifecycle that approaches belong to, i.e., their purpose. It is widely accepted that the design phase includes activities that translate requirements into software/hardware elements, with their respective responsibilities, excluding the actual implementation of these elements (source code) <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b25">26]</ref>. To initialize our classification scheme, we collected the keywords obtained from the keywording process (see Sect. 3.4) and filtered those that regard the purpose of approaches. Next, we grouped the keywords by similarity, trying to organize them in a hierarchical fashion, also creating a generic design flow 2 . However, it was not possible to derive such hierarchical organization, as we were not able to identify or define a flow that was sufficiently generic to accommodate the extracted approaches. This is due to the high heterogeneity of domains, requirements, and platforms for which CES are designed <ref type="bibr" target="#b0">[1]</ref>. Therefore, we decided to organize our keywords based on a simplified design flow proposed by Marwedel <ref type="bibr" target="#b0">[1]</ref>, which is meant to generically represent the design activities of an ES.</p><p>To create our classification scheme, we successfully mapped the identified keywords into some elements of the design flow proposed by Marwedel <ref type="bibr" target="#b0">[1]</ref>, and assessed whether or not the relationship between the keywords were consistent with the description of the simplified design flow. By the end of the keyword mapping, we were able to derive five types of activity representing general purposes, as well as scope them and their relationships. The final classification scheme is presented in <ref type="figure" target="#fig_3">Fig. 4</ref>, in which rectangles represent each general purpose, and arrows show the flow of design artifacts. Moreover, smaller rectangles (i.e., Optimization and Test) represent auxiliary purposes that are special for the design of embedded systems. The approaches are grouped according to how they modify the system's design, rather than based on a logical sequence of activities. In addition, common activities in embedded system design are also clearly placed within the classification (e.g., scheduling is placed within Application mapping). The main characteristic of this kind of classification is that it is artifact-centric, i.e., the artifacts dictate what activities may be performed (i.e., what purposes they serve), rather than the other way around <ref type="bibr" target="#b0">[1]</ref>. The five general purposes are described as follows:</p><p>• Specification: these activities formalize constraints (e.g., safety requirements) in the design. They define the scope/boundaries of the design. To draw a parallel, this type of activity is similar to the analysis in a software architecture design flow <ref type="bibr" target="#b26">[27]</ref>. Common examples are formal specification languages, such as Z.</p><p>• Application Mapping: these activities generate new (partial) design information.</p><p>A series of mappings are applied in order to refine the design from a more abstract representation to platform-specific design. In a software architecture design flow, this type of activity is similar to architecture synthesis <ref type="bibr" target="#b26">[27]</ref>. Common approaches encompass: mapping of operations to concurrent tasks; mapping of operations to HW/SW; compilation; or scheduling.</p><p>• Evaluation &amp; Validation: similarly to the evaluation in a software architecture design flow <ref type="bibr" target="#b26">[27]</ref>, these activities evaluate design elements w.r.t. the objectives (e.g. provide a proper scheduling of tasks) and validate a design description against other descriptions. Examples of approaches are algorithms or analysis frameworks for comparing models that tackle different quality attributes, as well as simulations.</p><p>• Optimization: these activities perform design tuning according to stated objectives.</p><p>Examples of approaches are HL transformation and energy optimizations.</p><p>• Test: these activities include test generation and testability evaluation. They are included in design iterations if testability issues are already considered during the design steps. Tests are run after the design phase.</p><p>This classification is sufficiently robust for expressing different software, hardware and SW/HW design flows, including prominent ones such as the V-Model <ref type="bibr" target="#b27">[28]</ref> and the design flow provided with SpecC <ref type="bibr" target="#b28">[29]</ref>. Finally, it is important to clarify that approaches may serve several purposes. For example, some architecture modeling languages are able to perform both application mapping and specification.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Summary of Design Approaches.</head><p>To analyze the extracted approaches, we classified each of them into one or more of the aforementioned general purposes. In addition, some studies presented entire design flows and, therefore, we also considered it as a category for the classification. <ref type="figure" target="#fig_4">Figure 5</ref> depicts a heat map that shows the number of studies, per year, discussing approaches from each category. In this heat map, darker shades of grey represent bigger numbers, which are presented as well. For example, in 2011, 23 studies that contain approaches for application mapping were published. One can notice that most attention has been given to approaches for Application Mapping and Evaluation &amp; Validation, which is understandable because approaches that serve this purpose encompass most of the design flow of an embedded system. Approaches for Specification of CES design were also presented in a considerable number of studies. Such interest is explained by the necessity of unambiguously representing the different aspects of CES (e.g., safety, components, security) in a variety of platforms (e.g., time/event-triggered and mixed architectures, and communication protocols). <ref type="table" target="#tab_4">Table 4</ref> presents the number of studies in each category, grouped by nature (i.e., academic, industrial or mixed). The table also presents the number of citations per year, for the entire set of studies. By exploring this table, one can notice that most of the studies were performed in an academic setting, followed by mixed and industrial settings, respectively; this is understandable as the included venues are more academic than industrial. In addition, solutions are normally proposed and explored in academic studies before they are applied in industry. However, there is one interesting observation to highlight. The mixed setting does not follow the same trend of the academic and industrial settings (which are in accordance to <ref type="figure" target="#fig_4">Fig. 5</ref>): studies performed in collaboration between academia and industry were mostly focused on Evaluation &amp; Validation approaches, rather than Application Mapping, suggesting that the main interest of academic-industrial collaborations may be for evaluation &amp; validation approaches. This finding may be partially explained by analyzing the number of citations per year. This number tends to follow the number of studies in the categories (i.e., more studies would result in more citations). However, there is one exception to that: industrial studies have more citations than mixed studies, w.r.t. approaches for Application Mapping, possibly due to increased industrial interest. By investigating the approaches we observed that: (a) almost all studies propose or consider formal approaches; (b) model-driven and component-based approaches are preferred for tackling CES problems, specially due to the facilitation of (semi-) automatic verification and code generation; and (c) one of the most prominent challenges in designing CES, is the design of systems with mixed-criticality (i.e., critical and noncritical elements co-existing within the same system). In the following, we present the most important observations regarding each of the categories. Multiple design flows have been proposed so far, which is in accordance to the high heterogeneity of CES. Each design flow aims at tackling specific problems, such as multi-tasking in multi-periodic synchronization <ref type="bibr">[S206]</ref> or reliability-driven design in CES with mixed criticality <ref type="bibr">[S257]</ref>. The most important observation is that the majority of the design flows didn't provide a complete lifecycle. They rather described how to tackle the specific issue within the system design. These incomplete flows are not surprising because every single CES entails a rather unique set of requirements that are tackled by combining different approaches. The most relevant studies are a generic design flow (from 1997) that served as inspiration to other flows [S16] and a safetyoriented and component-based design flow for vehicular systems <ref type="bibr">[S102]</ref>. Approaches for design specification consist mostly of (semi-)formal languages or notations for representing different types of problems, such as specific forms of scheduling <ref type="bibr">[S117, S225]</ref>, or classes of constraints (commonly related to quality attributes such as safety or reliability) <ref type="bibr">[S87, S244]</ref>. We highlight that most studies presenting specification approaches (approx. 80%) also presented approaches with other purposes (e.g., application mapping or evaluation &amp; validation). The most relevant studies include the specification of time constraints in systems with mixed criticality <ref type="bibr">[S225]</ref> and formal specification of safety constraints on higher-level design <ref type="bibr">[S180]</ref>.</p><p>The majority of the studies involve a variety of approaches for Application Mapping. Among these studies, approx. 30% proposed architectural approaches, i.e., architectures [S35, S94] or approaches for designing architectures (e.g., styles or patterns) <ref type="bibr">[S121, S166]</ref>. We highlight that in the context of CES, communication architecture (e.g., time-triggered architecture <ref type="bibr">[S35]</ref>) is a more relevant kind of architecture, due to its relevance on evaluating the hard constraints CES are subject to. In fact, this relevance is also evident by another common topic: scheduling of tasks/components, which corresponds to approx. 21% of the studies. Scheduling poses several challenges, from guaranteeing of time allocation to specific components, to integration with other models (e.g., fault-tolerance) to provide more accurate scheduling. Another common topic is software patterns, corresponding to approx. 9% of the studies, among which, design patterns were the most investigated [S105, S106, S137, S160, S259], followed by architectural [S121, S201], fault-tolerance [S191] and process patterns <ref type="bibr">[S240]</ref>. As for the remainder of the studies, other scattered topics can be observed, from which the most recent/recurrent encompass approaches for modeling components w.r.t. various critical constraints (e.g., safety) and integration of models. The most relevant studies include the time-triggered architecture <ref type="bibr">[S35]</ref>, remote agent architecture [S13], a component-based approach for modeling safety <ref type="bibr">[S102]</ref> and an approach for scheduling of mixed-criticality workload <ref type="bibr">[S164]</ref>.</p><p>Approaches for Evaluation &amp; Validation comprise mostly formal methods for evaluating specific aspects of the design, such as scheduling of tasks [S51, S140, S225], fault-tolerance [S151, S192] and safety requirements <ref type="bibr">[S74, S102]</ref>. In addition, there is a growing interest on model-driven approaches and object-oriented design.</p><p>Classical approaches for verifying safety and reliability (e.g., fault-tree analysis -FTA -and failure mode and effects analysis) have been adapted to new design paradigms. For example, a component-based FTA was proposed in <ref type="bibr">[S128]</ref> aiming at facilitating the certification of systems by reusing certified components. In addition, exploratorybased evaluation approaches (e.g., prototyping and simulation) are also broadly explored in order to evaluate designs [S21, S102, S168, and S216]. The most relevant studies present formal approaches for evaluating reliability and safety <ref type="bibr">[S8, S225]</ref>, as well as safety evaluation based on simulation <ref type="bibr">[S102]</ref>.</p><p>Finally, regarding Optimization and Testing approaches, the approaches are used for the same reason: improving the evaluation &amp; validation of the designed systems [S51, S186, and S261]. Most of the approaches, including the most relevant approaches, tackle time constraints <ref type="bibr">[S51, S248]</ref> and fault-tolerance issues [S48, S151].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Application Domains</head><p>The results on application domains suggest that the most studies (approx. 57%) report generic approaches, from which approx. 9% showed examples on specific application domains, e.g., automotive [S149, S257] and avionics <ref type="bibr">[S225, S166]</ref>. <ref type="figure" target="#fig_5">Figure 6</ref> presents the distribution of the studies, per year, according to the application domains. For comparison purposes, we plot the amount of studies reporting generic approaches. We note that studies that report approaches for specific domains often refer to more than one domain, e.g., support the design of avionic and space systems <ref type="bibr">[S161]</ref>.</p><p>By observing <ref type="figure" target="#fig_5">Fig. 6</ref>, we notice that, besides constituting the majority, the number of studies reporting generic approaches is growing more than for any specific domain. This may suggest a trend or intention to work on unified technologies for developing CES. However, we also notice that the combined number of studies that focus on specific domains comprise almost half (approx. 48%) of the papers. Among the specific domains: avionics and automotive present the biggest growth. On the one hand, avionics is historically among the first application domains of CES and contains special regulations, which make the interchange of approaches more difficult. On the other hand, the automotive industry has been going through a series of technological innovations to provide several new features such as autonomous driving. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Design Approaches for Critical Embedded Systems</head><p>To further analyze the influence of application domains on design approaches, we classified the primary studies according to their purpose. <ref type="table" target="#tab_5">Table 5</ref> presents the distribution of studies in each application domain among the five general purposes. We note that approaches serving more than one general purpose are counted for each of them. Based on <ref type="table" target="#tab_5">Table 5</ref>, we observe that the distribution of studies on the application domains tend to be similar to the general distribution <ref type="table" target="#tab_4">(Table 4)</ref>. However, there is an exception for the medical and defense domains, as most studies report approaches for evaluation &amp; validation rather than for application mapping. This may be either related to the low number of studies, or suggests a focus on this type of activity, perhaps motivated by specific industry standards or requirements of these domains. Another exception is that in the robotics domain the number of approaches for application mapping is quite higher (almost double) compared to evaluation &amp; validation. Such disparity may be related to a larger variety of potential systems designs (large design space), which could result in more possibilities for mapping elements of the system. The disparity may also be related to a less regulated application domain that could in turn facilitate new design ideas to be implemented or experimented with.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">Quality Attributes</head><p>CES are subject to constraints on critical quality attributes (CQA). In this section, we report on the CQAs that are tackled within each primary study, using the original terms of CQAs that are used in the studies (i.e. those terms used by the authors). Even though some qualities are similar (e.g. dependability, fault-tolerance and reliability) we have not tried to merge them. Our goal is not to create a new quality model, but to simply present how authors express the hard-constraints of CES. However, we checked whether each term has the same or similar definition among the authors (e.g., if security is always used to convey the same concerns). We further discuss the relationship between CQAs and their definition in Sect. 5.1. We note that each study may tackle one or more CQAs. In <ref type="figure" target="#fig_6">Fig. 7</ref>, we present the number of studies, per year, tackling each critical quality attribute. We excluded two CQAs from this chart (power constraints and correctness) due to low number of papers (6 and 7, respectively). By observing <ref type="figure" target="#fig_6">Fig. 7</ref>, one can notice that the interest in the different CQAs has grown in a similar fashion, except for safety, which shows higher growth. Such interest is not surprising, as safety is a very common and challenging concern among CQAs. In addition, the emergence and/or growth of application domains such as automotive, home automation, unmanned vehicles (e.g., drones) that are intrinsically centered on safety, have likely contributed to the observed growth. It is also relevant to point out that, although less intense, the interest in timeliness and reliability has also grown more than the remaining CQAs. The aforementioned arguments regarding safety, may also explain this observation. For example, the interest in multi-core platforms, as well as systems with mixed-criticality requires careful scheduling of tasks, and assurance that no interference between system parts with different criticality.</p><p>To further characterize the primary studies, we investigate them with respect to purpose and application domain. In <ref type="figure" target="#fig_7">Fig. 8</ref>, we present a bubble chart that depicts the distribution of the studies, based on CQAs (Y axis), with regards to the general purpose Timeliness includes timing, and time-behavior Fault-tolerance includes error-tolerance  Design Approaches for Critical Embedded Systems(X axis-left side) and the application domain (X axis-right side). The size of the bubble represents the number of studies, which is shown inside the bubble. On the one hand, the distribution of studies among purposes, for each CQA, is similar compared to each other as well as compared to the general data (see <ref type="bibr">Sect. 4.2)</ref>. To confirm that, we calculated the spearman correlation between every pair of CQA and against the general data. All results were statistically significant and showed strong correlation (minimum coefficient of 0.899). This suggests that the distribution of research effort among different purposes is independent of CQAs. On the other hand, it is possible to observe a variation in the distribution of studies among application domains. For example, we notice that dependability displays a higher interest on the automotive domain (i.e., approx. 20% of the papers tackle this CQA), when compared against the average number of papers on dependability across domains (9%). We further investigated this observation by calculating the correlation between every pair of CQA, which showed that dependability has a weaker correlation with other CQAs (e.g., 0.667 with performance). This may suggest that these application domains are characterized by different constraints for the respective CQAs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5">Tools</head><p>During the data extraction, we observed that approx. 53% of the papers either proposed or explicitly mentioned the use of specific tools. We also identified several Reference Technology Platforms (RTPs) <ref type="bibr" target="#b29">[30]</ref>, which consist of a set of approaches (e.g., methods, workflows) and tools providing a generic solution that can be tailored to various applications. The RTPs extracted in our study are all part of large projects involving multiple partners from both academia and industry. In total, we identified 147 tools of different kinds (e.g., CAD, model checkers, tool suites, etc.) and with various purposes (e.g., specification, application mapping, etc.). In addition, we noticed that some specification and/or modeling languages are an important part for many of these tools, e.g., serving as input format and base of the tool, or as exchange format between different tools. Therefore, we considered it relevant to include these languages in the results. Due to the number of identified tools, we summarized the results based on the general purposes presented in Sect. 4.2. <ref type="table" target="#tab_6">Table 6</ref> shows the number of tools identified for each category (i.e., purpose). Within each category, we were able to define certain subcategories of tools representing specific purposes. We note that we include RTPs and IDEs (Integrated Development Environment), into the Design Flow category, as they support entire sets of activities. We also note that similar to approaches every tool may be classified in more than one category, e.g., a modeling tool that can import and export different models (i.e., Application Mapping category) as well as analyze them (i.e., Evaluation &amp; Verification category). Furthermore, we note that the number of tools for subcategories do not necessarily add up to the number of the parent category. On the one hand, we only present subcategories with at least 3 tools (i.e. there were more subcategories with only 1 or 2 tools). On the other hand, tools may serve more than one purpose, which also affects subcategories. For example, SPIN is a verification tool with model checking and simulation capabilities, thus, counting for two subcategories. In the following we provide a brief description and the purpose of some relevant tools/languages, which we identified based on the number of studies referring to the tool/language, as well as on the amount of citations these studies have. Due to space limitations a detailed discussion of tools and languages is omitted from this manuscript, but discussed in detail, in the supplementary material <ref type="bibr" target="#b23">[24]</ref>.</p><p>Summary of Languages. In <ref type="table" target="#tab_7">Table 7</ref>, we list the top five recurrent languages within the primary studies, i.e., those discussed by three or more papers. We consider these languages relevant also due to the amount of citations obtained by the studies that refer to them. We observed that most languages are mentioned indirectly, i.e. not being the focus of the paper. For example, the Promela language is recurrent because researchers are interested in the SPIN verification tool, which defines models in Promela. In addition, most languages are also not specific to CES, although they are heavily used for this class of systems. Languages (e.g., Z) were created to enable representation of formal/mathematical constraints, which are common to CES.</p><p>Summary of Tools. The top five tools according to the number of studies and citations are presented in <ref type="table" target="#tab_8">Table 8</ref>. We observe that most tools are not specific to designing CES. We believe this is related to the fact that most tools in this list have Evaluation &amp; Validation purposes. Tools from this category, are mainly focused on ensuring the hard  constrains imposed w.r.t. meeting critical quality attributes; such CQAs are not particular to CES only. Finally, we notice that the tools focused on CES are mostly (a) from the Application Mapping category (e.g., modelling tools and schedulers), which are specialized for one or a group of application domains; and (b) RTPs and IDEs, which are tailored for this class of systems, and normally include some tools that are not specific to CES (e.g., verification tools).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.6">Evidence Type</head><p>To investigate the maturity of the primary studies, we considered the type of evidence they provide. For that, we use the classification proposed by Alves et al. <ref type="bibr" target="#b22">[23]</ref>, as mentioned in Sect. 3.5. At the lowest level, the primary study does not provide any evidence, whereas at the highest level, the study provides evidence from actual use of the approach within an industrial application. In <ref type="figure" target="#fig_8">Fig. 9</ref>, we present the distribution of the primary studies, per year, according to the evidence type. By observing <ref type="figure" target="#fig_8">Fig. 9</ref>, one can notice that the amount of studies that provide evidence from academic studies has been growing considerably, exhibiting the highest growth among the six types of evidence. This also reflects the fact that most primary studies (approx. 55%) are supported by such type of evidence. This result is understandable, as studies performed in academic settings usually have a lower threshold to conduct than those performed in industrial settings. In addition, considering the hard constraints of CES, multiple studies may need to take place before a mature technology emerges and industrial studies can be performed. Interestingly, the second most common type of evidence is industrial studies (approx. 20%), which is one step further according to the classification of Alves et al. <ref type="bibr" target="#b22">[23]</ref>, and may suggest successful transition of a fair number of technologies to industrial maturity level.  Another interesting observation is that most studies are distributed among higher levels of evidence (academic studies, industrial studies and industrial applications). This may be, again, a consequence of the hard constraints imposed to CES, as tackling them would require stronger evidence to support the reported results. Another complimentary reason may be that embedded systems have been extensively investigated already, and management of hard constraints is not a new research topic for this class of system. Therefore, much of the exploratory research that has been done for embedded systems is now reused to investigate CES. To further investigate the evidence type, we classified the studies according to the purpose that their approaches serve, as well as the application domain. Similar to <ref type="figure" target="#fig_0">Figs. 8, Fig. 10</ref> depicts the distribution of the studies, based on evidence type (Y axis), with respect to the purpose (X axis-left side) and the application domain (X axis-right side).</p><p>When verifying the distribution according to purpose, we observe that it follows a similar trend to that of the general data (presented in Sect. 4.2). We checked this hypothesis by calculating the correlation between each pair of evidence type, which showed a minimum correlation coefficient of 0.900. Conversely, while a visual inspection of the distribution according to domain suggests similarities between evidence types, the statistical correlation reveals minor differences between types of evidence, with coefficients varying from 0.500 to 0.927. These minor differences suggest that the application domain may affect what kind of research is performed. <ref type="figure" target="#fig_0">Fig. 10</ref>. Classification of studies based on evidence type, purpose, and application domain.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Design Approaches for Critical Embedded Systems</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Discussion</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Relationship Between Quality Attributes</head><p>The approaches investigated in this mapping study tackle various CQAs, as presented in Sect. 4.4. While investigating this research question (RQ 3 ), we recorded the CQAs as used by the authors, i.e., we neither grouped nor merged any quality attributes, based on the definition used or implied in the primary studies. However, it is undeniable that some CQAs are related and, therefore, the identified quality attributes should be further investigated/synthesized. In this subsection, we group CQAs that have a similar or related meaning and map them to a quality model. For this purpose, we consider: (a) the SQuaRE quality model <ref type="bibr" target="#b30">[31]</ref> which is a well-known quality model adopted by both researchers and practitioners; and (b) the ISO/IEC/IEEE vocabulary for system and software engineering <ref type="bibr" target="#b31">[32]</ref>, which is used within SQuaRE and provides additional definitions. We note that other quality models could be used to map the CQAs and that we do not assume that SQuaRE is the best model. We selected this model due to our experience with it and the possibility to fit all our recorded CQAs and observed terminologies. In <ref type="table" target="#tab_9">Table 9</ref> we present the CQAs identified in this study (presented in Sect. 4.4) on the right, and the characteristic (i.e., quality attribute) from SQuaRE to which they are mapped on the left. We note that SQuaRE presents a set of characteristics (left column of <ref type="table" target="#tab_9">Table 9</ref>) and sub-characteristics (e.g. sub-characteristics of Performance Efficiency are Time Behavior, Resource Utilization and Capacity), which were both used to map CQAs. In addition, a CQA can be directly related if the terms are equivalent (e.g., safety maps to freedom from risk), or indirectly related if it is one of the aspects of the main quality attribute (e.g., correctness is a sub-characteristic of Functional suitability) or if it is related to one of them (e.g., energy efficiency regards Resource utilization, i.e., sub-characteristic of performance).</p><p>Correctness and security are directly mapped, since they similarly referred in the primary studies. However, the grouping of the remainder CQAs is not as straightforward. Performance efficiency is defined as the degree to which functionalities are delivered within given constraints <ref type="bibr" target="#b30">[31]</ref>, i.e., how well the system uses its resources to accomplish the designed functions. This definition encompasses the interpretations of performance, energy efficiency, and timeliness among the primary studies. Fault tolerance is a well-known aspect of reliability and the interpretations of the authors meet the definition of the sub-characteristic in SQuaRE (also named Fault tolerance).</p><p>Although dependability is commonly addressed as a separate quality attribute, we decided to map it to Reliability. Dependability is not part of SQuaRE but it is explained within the description of reliability. It comprises a more subjective definition, which is not easily quantifiable, and reflects whether or not a system can be trusted <ref type="bibr" target="#b31">[32]</ref>. Due to its subjective definition, dependability is commonly improved through addressing other, more objective, quality attributes that can contribute to the trustworthiness of the system, in particular, reliability, maintainability, and availability. By observing the primary studies of our mapping, it is also clear that dependability is commonly used as proxy to other quality attributes, in particular, aspects of reliability, such as fault tolerance. Therefore, since the primary studies exploit dependability mostly as a proxy to reliability, we decided to group them together. Safety is another subjective CQAs, which is mentioned within SQuaRE's model for quality in use, i.e., how well the product can be used by specific users <ref type="bibr" target="#b30">[31]</ref>. Similar to dependability, safety is commonly used as a proxy to other quality attributes, although not always the same ones. Particularly, safety is related to the avoidance of hazardous situations (i.e., that lead to endangerment of humans, environment or properties), which can originate from various sources, depending on the system. In our study, we identified connections between safety and various aspects: security [S215], performance, correctness [S50, S198] and fault-tolerance <ref type="bibr">[S50, S84]</ref>. For example, when using a Time-Triggered Architecture (TTA) for communication (instead of an event-triggered one), timeliness become a safety threat. In summary, CQAs as defined in primary studies are uniformly understood (i.e. their definitions are the same or similar across the studies) and that some can be grouped based on similarity. This culminated into the identification of five attributes: Functional Suitability, Security, Performance efficiency, Reliability, and Safety (Freedom from risk). We acknowledge that other CQAs may exist in individual cases depending on application-specific constraints. However, these five QA are by far the most recurrent ones. We also noticed that Safety is more abstract, since it depends on other CQAs. Therefore, is achieved by meeting requirements related to other CQAs. Furthermore, we note that identifying these CQAs is not always a trivial task as different components in the same systems may pose different constraints, i.e., may be subject to different kinds of hazards. A common approach to handle this mixed criticality is the use of integrity levels <ref type="bibr" target="#b32">[33]</ref>, which reflect the degree of compliance within a certain characteristic. Components with different integrity levels will be subject to different safety checks, which may also reflect the different concerns of that level. For example, the drive-by-wire feature is subject to hard reliability checks, while GPS navigation should only be assured to not interfere with the critical components. Therefore, it is important to identify and monitor the CQAs that are tightly related to safety.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Domain-Specific Research for CES</head><p>In Sect. 4.3 through Sect. 4.6, we presented an overview of the primary studies with respect to application domains, as well as how other facets (e.g., evidence type) related to domains. In summary, we did not notice major differences across application domains regarding which CQAs are the most relevant. This observation might be an indication that CQA-related challenges in CES are common to all application domains and have similar relevance. The only difference we observed was that studies focused on the automotive domain seem more concerned about dependability rather than reliability. However, these two fall under the umbrella quality of reliability in the SQuaRE model (see Sect. 5.1). Furthermore, we also notice that domains may influence the kind of research that is performed; for example, most studies on medical and defense domains focused on approaches for evaluation &amp; validation rather than application mapping (as the general trend).</p><p>The difference between domains becomes clearer when looking at the type of evidence that studies provide (see Sect. 4.6). We separated the studies into three groups and verified their distribution among the different types of evidence (see <ref type="figure" target="#fig_0">Fig. 11</ref>). The three groups consist of studies that: (a) focus on a specific domain; (b) do not focus on any domain but present an example of application on a specific domain; and (c) neither focus nor present an example on specific domains. We notice that application domains become more relevant when a technology is being transferred to industry, as the two rightmost types of evidence (Industrial Study and Industrial Application) account mostly for studies that focus on application domains.</p><p>It is understandable that studies conducted with industrial partners or in an industrial setting are focused on specific domains, as companies are by and large interested into applying approaches on certain products, which in turn fall under specific domains. As expected, generic approaches that solve domain-independent problems are first validated in academic settings, and subsequently find applications in industry that in turn customize and validate them in specific application domains. The opposite is also possible: there are also technologies that initially emerge as domainspecific solutions and are later applied to other domains. For example, the Architecture Analysis and Design Language (AADL) was standardized by the Society of Automotive Engineers (SAE) with focus on the avionics domain 3 and is currently being applied in other CES domains.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Relationships Among Approaches, Tools, and Languages</head><p>The data analysis in this SMS resulted in the identification of many concepts related to the research questions, namely approaches, tools, languages, critical quality attributes, and application domains, as well as relationships between them. While we were able to present and discuss all CQAs and application domains found in the primary studies (see Sects. 4.3, 4.4, 5.1 and 5.2), the amounts of approaches, tools and languages was too large to present and discuss all concepts and relationships. To tackle this issue, we created a concept map to help us visualize these approaches, tools, and languages and identify relevant findings.</p><p>The concept map was created as a webpage that features an interactive interface, which is available 4 . To avoid loss of information, we also created a text version of the concept map. The text version and source code of the web version are available within the supplementary material <ref type="bibr" target="#b23">[24]</ref>. In <ref type="figure" target="#fig_0">Fig. 12</ref>, we show a screenshot of the concept map and its interface. The concept map consists of a network in which nodes represent concepts and edges relationships. Each type of concept (i.e., approach, tool or language) is represented by an icon for easy identification. Upon clicking on a concept, an information panel is prompted on the right side, showing: (a) name of the concept, which is a link if a URL (Uniform Resource Locator) is available (shown by the chain icon next to the name); (b) a brief description of the concept; (c) the list of purposes, according to our classification scheme; and (d) a list of relationships (i.e., links) attributed to the concept. The relationship between concepts can be of two types: "use/is used" (e.g., "Polychrony uses Sigale to provide specification … of discrete controllers"), or "is kind of" (e.g., "SystemC is a subset of C++").</p><p>The interface also provides a feature to filter concepts based on name, type of concepts, or purpose. Upon typing on the name field or selecting type of concept or purpose, the filtered items are highlighted in red (see <ref type="figure" target="#fig_0">Fig. 12</ref>). For example, in the screenshot we typed "sigali" and the tool "Sigali" was automatically highlighted (the search looks for partial matches and is not case sensitive). After that, we clicked on the node, which prompted the information panel on the right. Finally, the interface is responsive, i.e., it adapts to different screen sizes (e.g., smartphones), which improves the usability of the concepts map.</p><p>Based on the concept map, we can make several observations. However, due to space limitations, we provide only one of them, also explaining how we identified it. We note that the main purpose of the concept map is to support the investigation of its concepts by third-parties and, therefore, we encourage the reader to further analyze it. The Architecture Analysis and Design Language (AADL) appears to be a rather mature technology. The results of the study showed that AADL is cited in multiple papers (see Sect. 4.5). In addition, by looking at the concept map we notice a fair number of related concepts (see <ref type="figure" target="#fig_0">Fig. 13</ref>) when compared against the average of 2.13 edges per node, and we notice that there are related concepts that serve different purposes: (a) specification, (b) application mapping, and (c) evaluation &amp; validation. In particular, there is a toolset that is able to read AADL models, tools to evaluate AADL models and a language (EAST-ADL) that is partially derived from AADL.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">Implications to Researchers and Practitioners</head><p>The results and discussion presented in this SMS have potential value for both researchers and practitioners. The information compiled in this study may support readers that want to get acquainted with the design process of CES or may be interested in specific outcomes, e.g., identified CQAs and how they are tackled by primary studies. Researchers can use the information in this SMS to identify work that is related or that can contribute to theirs, as well as identify opportunities for future work. For example, researchers interested in a specific application domain have access pointers to the existing literature, as well as how studies are distributed within the domain. We envisage similar learning opportunities to practitioners, through a more practical perspective. For example, practitioners can investigate a tool that is being considered for the designing of a new system or investigate the ecosystem around an approach, i.e., tools and related approaches.</p><p>In addition, we specifically aimed at the reuse of the information collected during our SMS when we created the concept map, which contains the complete set of approaches, tools and languages. Based on the information and features provided by the user interface, we believe that the concept map is valuable to both practitioners and researchers. Regarding practitioners, it can be used to support the exploration of problem and solution spaces while designing CESs. For example, using filters, one is able to search for approaches and or tools that fit the requirements of the systems (e.g., model-checking of models specified in SIGNAL). Also, if one has decided for a specific approach or tool, she can also explore related concepts and identify alternatives or tools that support the approach (e.g., tools that evaluate Binary Decision Diagrams). Regarding researchers, the concept map helps identifying potential links between different research results. For example, researchers interested into investigating a certain approach can use the concept map to easily visualize some of the involved approaches and tools that support it. We note that despite our great effort on collecting and analyzing the selected studies, the concepts and relationships presented in this map do not present the entire set of approaches, tools and languages available to design CES. Therefore, we hope that by providing access to the concept map, we can support others on developing it even further.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Threats to Validity</head><p>Concerning studies identification, the main threat is that the automatic search may not have been able to collect all relevant primary studies, i.e., the search string was not as inclusive as necessary or the considered digital libraries did not include all relevant venues. To mitigate this risk, we defined a gold standard and ensured that the automatic search returned all papers in the gold standard. In addition, we included digital libraries of the main publishers in the topic, and Scopus, which indexes papers from additional venues. Another potential threat is that the inclusion and exclusion criteria may have left relevant studies out of the final set of primary studies. This was mitigated not only by the usage of the gold standard but also by having key points of our protocol (e.g., inclusion and exclusion criteria) inspected by other external researchers with experience in CES. To mitigate risks related to data collection and analysis, we considered several strategies. The filtering of papers and data extraction involved at least two researchers on every step, while there were extensive discussions on topics such as selection criteria and understanding of CES terminology. In addition, the alignment of researchers involved in these steps where verified by calculating the Cohen's kappa coefficient between them. For data analysis, we applied frequency analysis, crosstabulation and statistical tests, which are less prone to researcher bias. However, we acknowledge that our results are limited to the set of design approaches, CQAs, and application domains that were discussed in the collected primary studies. Although considering non-peer-reviewed literature was out of the scope of our SMS, we argue that the digital libraries we considered, do catalog most of the work relevant to the research of CES design.</p><p>Finally, to mitigate replicability threats, the steps of our study were clearly stated in our protocol and can be reproduced by other researchers. However, we acknowledge that the reproduction of the SMS by other researchers may lead to slight different sets of primary studies due to biases, e.g., when applying the inclusion and exclusion criteria. We mitigated this threat to some extent by comprehensively documenting faced challenges and decisions made upon them. Thus, despite some potential minor differences, we believe that the results and observations would be predominantly similar in replication studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Conclusions</head><p>In this paper, we presented a Systematic Mapping Study (SMS) on designing Critical Embedded Systems (CES) that investigated five facets: (a) approaches for designing CES; (b) application domains for which these approaches are developed; (c) Critical Quality Attributes (CQAs) considered on these approaches; (d) tools used for designing CES; and (e) type of evidence provided by these approaches. We considered five digital libraries and collected an initial amount of 1673 primary studies, which were then filtered, resulting in 269 selected primary studies. Subsequently, we extracted and analyzed all data necessary to answer our research questions.</p><p>The results of our SMS show that the body of knowledge on designing CES is vast, and this is partially due to the overlap of knowledge with other classes of systems such as hard real-time systems. Results also suggest that the CQAs that are relevant to the design of CES, are common for this whole class of systems, i.e. they are mostly independent of application domain. The main contributions of our work are the classification scheme for approaches and tooling, the provided collection of CQAs and approaches (with associated tools), as well as the webpage that supports exploring this information. We believe that both researchers and practitioners can benefit from these contributions, taking advantage of our provided overview of this vast body of knowledge; they can thus focus on more relevant tasks such as identification of related and future work, and exploration of problem and solution spaces. Based on our results and observations we envisage several opportunities for future work. Among them, we highlight the possibility of investigating approaches that might be potentially beneficial to CES and have not being thoroughly explored yet, like using design patterns to improve levels of CQAs. The body of knowledge presented in this SMS has considerable overlap with other classes of system, thus we find it relevant to continue exploring such related classes (e.g., hard-real time systems) and seek approaches that can be applied to the designing of CES.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Study selection.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Number of filtered studies per year, per type of paper.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Box-plot of venues based on (a) number of studies and (b) citations per paper per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Classification scheme.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Number of studies, per year, containing approaches from each category.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Number of studies per application domain, per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Number of studies tackling quality attributes, per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. Classification of studies based on quality attribute, purpose, and application domain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9. Number of studies per type of evidence, per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 11 .</head><label>11</label><figDesc>Fig. 11. Distribution of studies according to type of evidence and application domain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 12 .</head><label>12</label><figDesc>Fig. 12. Screenshot of the concept map interactive interface. (Color figure online)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig. 13 .</head><label>13</label><figDesc>Fig. 13. Part of the concept map surrounding AADL.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="true"><head>Table 1 . Comparison between related work and our study.</head><label>1</label><figDesc></figDesc><table>Study 
+Review 
+type 
+
+Number 
+of studies 
+
+Focus 
+on 
+CES? 
+
+Investigated 
+QAs? 
+
+Focus on 
+domains 
+
+Main topic 
+
+[7] 
+SLR 
+19 
+Yes 
+No 
+No 
+Development 
+process 
+[8] 
+SMS 
+23 
+No 
+Yes 
+Yes 
+Development 
+process 
+[12] 
+SLR 
+97 
+Yes 
+No 
+No 
+Verification 
+and validation 
+[13] 
+SMS 
+44 
+No 
+No 
+No 
+Verification 
+and validation 
+[16] 
+SMS 
+104 
+No 
+No 
+No 
+Software 
+architecture 
+[17] 
+SLR 
+24 
+No 
+Yes 
+No 
+Software 
+architecture 
+[18] 
+SLR 
+60 
+No 
+Yes 
+Yes 
+Software 
+architecture 
+Ours 
+SMS 
+258 
+Yes 
+Yes 
+Yes 
+Design </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="true"><head>Table 2 . Extracted variables.</head><label>2</label><figDesc></figDesc><table>Variable 
+Description 
+Variable 
+Description 
+V1 
+Author(s) 
+V8 
+Type of paper (conference/journal/book) 
+V2 
+Year 
+V9 
+SMS keywords 
+V3 
+Title 
+V10 
+Approaches to design CES 
+V4 
+Source 
+V11 
+Application domain(s) 
+V5 
+Venue 
+V12 
+Critical quality attributes 
+V6 
+Author(s) keywords 
+V13 
+Nature of the approaches 
+(industrial/academic/mixed) 
+V7 
+Number of citations 
+per year 
+
+V14 
+Tools to support the approaches 
+V15 
+Type of evidence used to develop the 
+approach 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="true"><head>Table 3 . Mapping of variables to RQs.</head><label>3</label><figDesc></figDesc><table>Research 
+question 
+
+Variables 
+used 
+
+Analysis method 
+
+RQ 1 
+(Approaches) 
+
+V1-V3, V6, 
+V7, V9-V10 
+
+Descriptive Statistics (sum, average, frequency 
+analyses, etc.) 
+Classification based on keywording 
+Heatmap based on classification and year 
+Crosstabs on classification vs. nature 
+RQ 2 (Application 
+domains) 
+
+V1-V3, V10, 
+V11 
+
+Descriptive Statistics (sum, average, frequency 
+analyses, etc.) 
+Heatmap based on application domain and year 
+Crosstabs on application domain vs. approaches 
+(classification) 
+RQ 3 (Critical 
+quality attributes) 
+
+V1-V3, 
+V9-V12 
+
+Descriptive Statistics (sum, average, frequency 
+analyses, etc.) 
+Heatmap based on critical quality attribute and year 
+Bubble chart on critical quality attribute vs. approaches 
+(classification) vs. application domain 
+Spearman correlation between critical quality attribute 
+and approaches (classification), and application 
+domain 
+RQ 4 (Tools) 
+V1-V3, V9, 
+V10, V14 
+
+Descriptive Statistics (sum, average, frequency 
+analyses, etc.) 
+Classification based on keywording 
+RQ 5 (Evidence 
+type) 
+
+V1-V3, V9, 
+V10, V15 
+
+Descriptive Statistics (sum, average, frequency 
+analyses, etc.) 
+Heatmap based on type of evidence and year 
+Bubble chart on type of evidence vs. approaches 
+(classification) vs. application domain 
+Spearman correlation between type of evidence and 
+approaches (classification), and application domain </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="true"><head>Table 4 . Classification of included studies by type of activity and nature.</head><label>4</label><figDesc></figDesc><table>Type of activity 
+Metric 
+Nature 
+Total 
+Academic Industrial Mixed 
+Design flow 
+Number of studies 16 
+6 
+6 
+28 
+Citations/year 
+65,05 
+8,71 
+18,48 92,25 
+Specification 
+Number of studies 44 
+11 
+16 
+71 
+Citations/year 
+181,84 
+31,30 
+39,50 252,64 
+Application mapping 
+Number of studies 97 
+21 
+32 
+150 
+Citations/year 
+298,42 
+85,97 
+72,33 456,72 
+Evaluation &amp; validation Number of studies 74 
+17 
+36 
+127 
+Citations/year 
+232,66 
+22,33 
+73,50 328,49 
+Optimization 
+Number of studies 11 
+1 
+2 
+14 
+Citations/year 
+28,81 
+0,12 
+3,19 
+32,11 
+Testing 
+Number of studies 7 
+2 
+4 
+13 
+Citations/year 
+31,96 
+2,40 
+6,83 
+41,19 </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="true"><head>Table 5 . Classification of primary studies by domain and purpose.</head><label>5</label><figDesc></figDesc><table>Domain 
+Purpose 
+Design 
+flow 
+
+Specification Application 
+mapping 
+
+Evaluation &amp; 
+validation 
+
+Optimization Test 
+
+Automotive 7 
+11 
+31 
+22 
+2 
+2 
+Avionics 
+7 
+20 
+32 
+30 
+0 
+4 
+Defense 
+0 
+1 
+1 
+4 
+0 
+1 
+Medical 
+0 
+1 
+1 
+3 
+0 
+0 
+Railway 
+3 
+5 
+7 
+7 
+0 
+2 
+Robotics 
+2 
+3 
+13 
+6 
+0 
+1 
+Space 
+5 
+8 
+13 
+12 
+0 
+3 
+Generic 
+13 
+36 
+77 
+61 
+13 
+5 </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" validated="true"><head>Table 6 . Summary of identified tools.</head><label>6</label><figDesc></figDesc><table>Purpose 
+Number of tools 
+Design flow 
+12 
+IDE 
+6 
+RTP 
+6 
+Specification 
+15 
+Notation/specification language 12 
+Programming language 
+3 
+Application mapping 
+35 
+Cad 
+14 
+Model transformation 
+5 
+Evaluation &amp; validation 
+32 
+Simulation 
+9 
+Model checking 
+9 
+Optimization 
+1 
+Testing 
+2 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7" validated="true"><head>Table 7 . Highlighted languages.</head><label>7</label><figDesc></figDesc><table>Language 
+Number of studies Number of citations CES specific 
+AADL 
+20 
+294 
+Yes 
+Promela 
+7 
+162 
+No 
+SystemC 
+7 
+51 
+No 
+Z 
+5 
+153 
+No 
+EAST-ADL 3 
+19 
+Yes 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8" validated="true"><head>Table 8 . Highlighted tools.</head><label>8</label><figDesc></figDesc><table>Tool 
+Number of studies Number of citations CES specific 
+Simulink 15 
+132 
+No 
+UPPAAL 8 
+79 
+No 
+DECOS 
+7 
+164 
+Yes 
+SPIN 
+7 
+162 
+No 
+NuSMV 
+4 
+112 
+No 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9" validated="true"><head>Table 9 . Grouping and mapping of critical quality attributes.</head><label>9</label><figDesc></figDesc><table>CQA from SQuaRE 
+Identified CQA 
+Functional suitability Correctness 
+Security 
+Security 
+Performance efficiency Performance 
+Energy efficiency 
+Timeliness 
+Reliability 
+Reliability 
+Fault tolerance 
+Dependability 
+Freedom from risk 
+Safety </table></figure>
+
+			<note place="foot" n="1"> SoS are integrated solutions comprising operationally independent (non-trivial) systems, which are orchestrated in order to provide a more complex functionality.</note>
+
+			<note place="foot" n="2"> A design flow is the sequence of specific activities (with respective approaches) to design a system.</note>
+
+			<note place="foot">Design Approaches for Critical Embedded Systems</note>
+
+			<note place="foot" n="3"> Note that SAE does not limit itself to the automotive domain. 4 http://feitosa-daniel.github.io/sms-ces-design.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Embedded System Design: Embedded Systems Foundations of CyberPhysical Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Marwedel</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-94-007-0257-8</idno>
+		<ptr target="https://doi.org/10.1007/978-94-007-0257-8" />
+		<imprint>
+			<date type="published" when="2010" />
+			<publisher>Springer</publisher>
+			<pubPlace>Dordrecht</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Systematic approaches to understanding and evaluating design trade-offs</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Bate</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Softw</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="1253" to="1271" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">A framework for software safety in safety-critical systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">S</forename><surname>Medikonda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">R</forename><surname>Panchumarthy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM SIGSOFT Softw. Eng. Notes</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Hellfire: a design framework for critical embedded systems&apos; applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Aguiar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">J</forename><surname>Filho</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">G</forename><surname>Magalhães</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">D</forename><surname>Casagrande</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Hessel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">11th International Symposium on Quality Electronic Design</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="730" to="737" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">An embedded multiplecase study on OSS design quality assessment across domains</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ampatzoglou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gkortzis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charalampidou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Avgeriou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Seventh ACM/IEEE International Symposium on Empirical Software Engineering and Measurement</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="255" to="258" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Domain matters: bringing further evidence of the relationships among anti-patterns, application domains, and quality-related metrics in Java mobile apps</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Linares-Vásquez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Klock</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Mcmillan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Sabané</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Poshyvanyk</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y.-G</forename><surname>Guéhéneuc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">22nd International Conference on Program Comprehension</title>
+		<imprint>
+			<publisher>ACM Press</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="232" to="243" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Lean/agile software development methodologies in regulated environments -state of the art</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Cawley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Richardson</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-3-642-16416-3_4</idno>
+		<ptr target="https://doi.org/10.1007/978-3-642-16416-3_4" />
+	</analytic>
+	<monogr>
+		<title level="m">LESS 2010. LNBIP</title>
+		<editor>Abrahamsson, P., Oza, N.</editor>
+		<meeting><address><addrLine>Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="31" to="36" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Archetypical approaches of fast software development and slow embedded projects</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Eklund</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bosch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">39th Euromicro Conference Series on Software Engineering and Advanced Applications</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="276" to="283" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Engineering</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">1051</biblScope>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Integrating agile software development into stage-gate managed product development</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Karlström</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Runeson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Empir. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="203" to="225" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Model transformations for migrating legacy models: an industrial case study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">M K</forename><surname>Selim</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">James</forename><forename type="middle">R</forename><surname>Cordy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Dingel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vallecillo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J.-P</forename><surname>Tolvanen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kindler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Störrle</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-3-642-31491-9_9</idno>
+		<ptr target="https://doi.org/10.1007/978-3-642-31491-9_9" />
+	</analytic>
+	<monogr>
+		<title level="m">ECMFA 2012</title>
+		<editor>Kolovos, D.</editor>
+		<meeting><address><addrLine>Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="volume">7349</biblScope>
+			<biblScope unit="page" from="90" to="101" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Software testing in critical embedded systems: a systematic review of adherence to the DO-178B standard</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Barbosa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">E</forename><surname>Delamaro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Maldonado</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M R</forename><surname>Vincenzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Third International Conference on Advances in System Testing and Validation Lifecycle</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="126" to="130" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Analysis and testing of matlab simulink models: a systematic mapping study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Elberzhager</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Rosbach</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Bauer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2013 International Workshop on Joining AcadeMiA and Industry Contributions to testing Automation</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="29" to="34" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Empirical studies of agile software development: a systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="833" to="859" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Petersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Feldt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mujtaba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mattsson</surname></persName>
+		</author>
+		<title level="m">Systematic mapping studies in software engineering. In: 12th international conference on Evaluation and Assessment in Software Engineering</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="68" to="77" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A systematic mapping of architectures for embedded software</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">A</forename><surname>Antonio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">C</forename><surname>Ferrari</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">C P</forename><surname>Ferraz Fabbri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Second Brazilian Conference on Critical Embedded Systems</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="18" to="23" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Architectural description of embedded systems: a systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Maldonado</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Third International ACM SIGSOFT Symposium on Architecting Critical Systems</title>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="31" to="40" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">The state of the art and future perspectives in systems of systems software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">B R</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">1st International Workshop on Software Engineering for Systems-of-Systems</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="13" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Goal question metric paradigm</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">R</forename><surname>Basili</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Caldiera</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><forename type="middle">D</forename><surname>Rombach</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Encyclopedia of Software Engineering</title>
+		<editor>Marciniak, J. J.</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley</publisher>
+			<date type="published" when="1994" />
+			<biblScope unit="page" from="528" to="532" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Developing search strategies for detecting relevant experiments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Dieste</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Grimán</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Juristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Empir. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="513" to="539" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Applying systematic reviews to diverse study types: an experience report</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">K</forename><surname>Hanssen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">First International Symposium on Empirical Software Engineering and Measurement</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="225" to="234" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">On searching relevant studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Babar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">14th International Conference on Evaluation and Assessment in Software Engineering</title>
+		<meeting><address><addrLine>Keele</addrLine></address></meeting>
+		<imprint>
+			<publisher>British Computer Society</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="111" to="120" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Requirements engineering for software product lines: a systematic literature review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Alves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Alves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Valença</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="806" to="820" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Supplementary Material: &quot;Design Approaches for Critical Embedded System: A Systematic Mapping Study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Feitosa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ampatzoglou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Avgeriou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">J</forename><surname>Affonso</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Andrade</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">R</forename><surname>Felizardo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<idno type="doi">10.5281/zenodo.996480</idno>
+		<ptr target="https://doi.org/10.5281/zenodo.996480" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Software Architecture in Practice</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bass</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Clements</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kazman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<publisher>Addison-Wesley Professional</publisher>
+			<pubPlace>Upper Saddle River</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Sommerville</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000" />
+			<publisher>Addison Wesley</publisher>
+			<pubPlace>Boston</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">A general model of software architecture design derived from five industrial approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Hofmeister</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Kruchten</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">L</forename><surname>Nord</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Obbink</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ran</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>America</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Softw</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="106" to="126" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Bartelt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Beneken</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Bergner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Birowicz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Bliß</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Cordes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Cruz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Dohrmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Friedrich</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gnatz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Hammerschall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Hidvegi-Barstorfer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Hummel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Israel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Klingenberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Klugseder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Küffer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Kuhrmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Kranz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Kranz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H.-J</forename><surname>Meinhardt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Meisinger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mittrach</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H.-J</forename><surname>Neußer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Niebuhr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Plögert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Rauh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Rausch</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Rittel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Rösch</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Saas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Schramm</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sihling</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Ternité</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Vogel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wittmann</surname></persName>
+		</author>
+		<idno>V-Modell XT Gesamt 1.3</idno>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">D</forename><surname>Gajski</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Dömer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gerstlauer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Zhao</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-1-4615-4515-6</idno>
+		<ptr target="https://doi.org/10.1007/978-1-4615-4515-6" />
+		<title level="m">SPECC: Specification Language and Methodology</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Creating a reference technology platformperforming model-based safety analysis in a heterogeneous development environment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Kacimi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ellen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Oertel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Sojka</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Second International Conference on Model-Driven Engineering and Software Development</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="645" to="652" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+				<title level="m">ISO/IEC: ISO/IEC 25010:2011 -Systems and software engineering -Systems and software Quality Requirements and Evaluation (SQuaRE) -System and software quality models</title>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Iso/Iec/</forename><surname>Ieee</surname></persName>
+		</author>
+		<title level="m">ISO/IEC/IEEE 24765-2010 -Systems and software engineering -Vocabulary</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Iso/Iec</surname></persName>
+		</author>
+		<title level="m">ISO/IEC 15026-3:2015 Systems and software engineering -Systems and software assurance -Part 3: System integrity levels</title>
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

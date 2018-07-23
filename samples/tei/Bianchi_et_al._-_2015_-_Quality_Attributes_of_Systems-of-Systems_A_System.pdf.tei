@@ -1,0 +1,1778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:26+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Quality Attributes of Systems-of-Systems: A Systematic Literature Review</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thiago</forename><surname>Bianchi</surname></persName>
+							<email>tbianchi@br.ibm.com</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">IBM -International Business Machines Brazil Software Laboratory</orgName>
+								<orgName type="department" key="dep2">Department of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Paulo, São Carlos</settlement>
+									<region>SP, SP</region>
+									<country>Brazil, Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Daniel</forename><forename type="middle">Soares</forename><surname>Santos</surname></persName>
+							<email>danielss@usp.br</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">IBM -International Business Machines Brazil Software Laboratory</orgName>
+								<orgName type="department" key="dep2">Department of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Paulo, São Carlos</settlement>
+									<region>SP, SP</region>
+									<country>Brazil, Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Katia</forename><forename type="middle">Romero</forename><surname>Felizardo</surname></persName>
+							<email>katiarf@icmc.usp.br</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">IBM -International Business Machines Brazil Software Laboratory</orgName>
+								<orgName type="department" key="dep2">Department of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Paulo, São Carlos</settlement>
+									<region>SP, SP</region>
+									<country>Brazil, Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Quality Attributes of Systems-of-Systems: A Systematic Literature Review</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1109/SESoS.2015.12</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>System-of-Systems (SoS) have been considered the new trend of software systems for several reasons, such as the advancement of computer technology and the increasing complexity and size of the systems. The concept of SoS has the central idea of a set of operationally independent software systems that collaborate together to compose a larger and more complex system. For SoS, several quality attributes are critical due to its characteristics and domain constraints. However, the existent quality models were not conceived to address SoS. Therefore, the identification of quality models that can address the quality attributes for SoS needs to be investigated. So, the purpose of this work is to identify the most common quality attributes in SoS context and analyze their coverage by the well established ISO/IEC 25010 quality model. As a result, we have identified that the current quality models cannot address the complex interdependencies between SoS quality attributes due its dynamic nature.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. Introduction</head><p>Software-intensive systems have become increasingly large and complex and also are becoming important and even essential to the whole society. These systems are sometimes the outcome from the interoperability of constituent systems that work together in order to provide more complex missions that could not be completed by any of these systems separately <ref type="bibr" target="#b45">[46]</ref>, <ref type="bibr" target="#b49">[50]</ref>. This class of software systems has been referred as System-of-Systems (SoS) and can be identified in different domains, in particular, cyberphysical systems, such as medical systems, airport systems, robotic and automotive <ref type="bibr" target="#b41">[42]</ref>, <ref type="bibr" target="#b49">[50]</ref>.</p><p>For SoS, besides interoperability, several other quality attributes are critical (e.g., performance, reliability, and security) and, therefore, should be carefully considered to satisfy the SoS mission <ref type="bibr" target="#b0">[1]</ref>. However, to achieve these goals is very difficult, since the constituent systems are developed and maintained by different organizations, with their own stakeholders, development teams, processes and resources <ref type="bibr" target="#b27">[28]</ref>, <ref type="bibr" target="#b56">[57]</ref>. In addition, the development of a SoS often happens in an unknown environment and surrounded by uncertainties. Thus, these systems must be prepared to support a dynamic and evolving development environment in which it is possible to incorporate new features and even reorganize the existent ones at run-time <ref type="bibr" target="#b10">[11]</ref>.</p><p>On the other hand, a well-accepted way to support quality control is to adopt software quality models that have been over the last three decades an area widely researched in Sofware Engeneering <ref type="bibr" target="#b68">[69]</ref>. A quality model intends to make the software quality better understandable and manageable. In this context, the ISO/IEC 25010 quality model has become the standard for evaluating the quality of modern computer-intensive systems and it is being also used to measure the quality of U.S. Departament of Defense (DoD) systems <ref type="bibr" target="#b5">[6]</ref>. It is based on the fact that the software product quality can be specified and evaluated using a hierarchical structure of quality attributes <ref type="bibr" target="#b35">[36]</ref>.</p><p>However, the research on SoS applications are migrating from traditional military domains to other domains such as smart home, integrated health systems and crisis management systems. So, the quality attributes must be properly addressed by the quality models considering this variety of domains. In addition, there isn't a clearly decomposition criteria that determines how the complex concept "quality" should be handled for SoS leading to redundancy and overlaps considering the existent quality models <ref type="bibr" target="#b68">[69]</ref>. In summary, the quality management of a SoS is a challenge that has not yet been overcome by the classical software engineering <ref type="bibr" target="#b20">[21]</ref>.</p><p>The main contribution of this study is to present a panorama about the current state-of-the-art on quality attributes in the SoS context, considering different application domains. In addition, we analyzed the coverage of a well-established quality model, namely the ISO/IEC 25010, on the SoS quality attributes identified in this study. To build such panorama, we performed a Systematic Literature Review (SLR) <ref type="bibr" target="#b40">[41]</ref>, an approach for finding and summarizing available evidences on a particular research topic.</p><p>The remainder of this paper is organized as follows. In Section II, a background about SLR, system of systems and quality models, as well as related work are presented. Section III the conducted SLR and its results are detailed. In Section IV, discussion of the results, lessons learned, and limitations of this research are presented. Finally, conclusions are described in Section V.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. Background</head><p>SoS started to gain their popularity mainly on military systems as a strategy to reach goals or deliver unique capabilities wherein a collaborative work of already existing and complex systems is needed <ref type="bibr" target="#b18">[19]</ref>, <ref type="bibr" target="#b45">[46]</ref>. Currently, considering the required interconnection among software systems, as well as the growing presence of software in systems engineering, SoS has also become focus of interest in Software Engineering <ref type="bibr" target="#b11">[12]</ref>. Considering this, it is possible to say that evolution of computational systems points out that more and more software systems could be characterized as SoS. As previously mentioned, there is no universally accepted definition for SoS, and their characterization often depends on the viewpoint and its application. However, a practical definition is that a System of Systems is a "supersystem" composed by complex systems and operationally independent systems to achieve higher goal <ref type="bibr" target="#b36">[37]</ref>. These characteristics can be observed in various application domains. Nowadays, diverse application domains have presented SoS, such as, office <ref type="bibr" target="#b14">[15]</ref>, telemedicine <ref type="bibr" target="#b52">[53]</ref>, and e-business <ref type="bibr" target="#b73">[74]</ref>. It is also important to mention that SoS has been also applied in critical domains <ref type="bibr" target="#b4">[5]</ref>, <ref type="bibr" target="#b24">[25]</ref>. For instance, <ref type="bibr" target="#b24">[25]</ref> presents a complex softwareintensive SoS for automotive and avionics. <ref type="bibr" target="#b4">[5]</ref> also presents an SoS for automotive embedded systems and reports that it is a new perspective to a more effective architecture than conventional functional component-and-connector model.</p><p>Regarding software quality, a quality model is a model with the objective to describe, assess and/or predict quality, usually through hierarchical decomposition of the general product quality into sub-qualities to make them better understandable and manageable <ref type="bibr" target="#b68">[69]</ref>. The quality models can be used by developers, acquirers, quality assurance and control staff and independent evaluators, particularly those responsible for specifying and evaluating software product quality <ref type="bibr" target="#b35">[36]</ref>. Thereafter, several variations of these quality models have appeared over the time in order to mitigate the shortcoming of the previous quality models. This motivated the world-wide standardization and consensus for software quality model <ref type="bibr" target="#b1">[2]</ref>. In this context, ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) developed the ISO 9126 -quality model which is part of the ISO 9000 standard, which is the most important standard for quality assurance. In 2011, the ISO 9126 was technically revised and replaced by ISO/IEC 25010 -System and software quality models.</p><p>Another subject closely related to this work is SLR. It is noticed that when a research area is mature, there is almost always an increase in the number of reports and results made available. Thus, it is important to have mechanisms to summarize and provide an overview about an area or topic of interest. For this, Evidence-Based Software Engineering (EBSE) has investigated and proposed the use of SLR technique <ref type="bibr" target="#b40">[41]</ref>. In this context, an individual evidence that contributes to a SLR is called primary study. In short, SLR is conducted by planning, conduction of search, and screening of primary studies using inclusion and exclusion criteria <ref type="bibr" target="#b40">[41]</ref>. Besides that, SLR also conducts data extraction and qualitative analysis through the primary studies. Thus, the conduction of a SLR seems to be quite interesting in the context of this work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. SLR Application</head><p>In order to conduct this SLR, this work followed the process proposed by <ref type="bibr" target="#b40">[41]</ref>. In short, this process presents three main phases: (i) Phase 1 -Planning: In this phase, the research objectives and the SLR protocol are defined. The protocol constitutes a pre-determined plan that describes research questions and how the SLR will be conducted; (ii) Phase 2 -Conduction: During this phase, primary studies are identified, selected, and evaluated according to the inclusion and exclusion criteria previously established. For each selected study, data are extracted and synthesized; and (iii) Phase 3 -Reporting: In this phase, a final report is organized and presented. The next sections present these three phases in details.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Phase 1 -Planning</head><p>The objective of our SLR is to understand and summarize evidences on quality attributes for SoS considering its software domains. Therefore, the following research questions (RQ) were established: (i) RQ1: Which are the most common quality attributes for SoS?; (ii) RQ2: Which are the most common application domains considered for SoS?; and RQ3: Which are the QA established for each SoS domains?</p><p>In order to establish the search strategy, which aims finding possibly all primary studies to answer our RQs, there were defined the following five elements:</p><p>(i) Sources selection criteria: Three types of sources were considered in this SLR: (a) Publication databases: Aiming at establishing which publication database would be used to find the primary studies, it was adopted the following criteria <ref type="bibr" target="#b19">[20]</ref>: content update (publications are regularly updated); availability (full text of the papers are available); quality of results (accuracy of the results obtained by the search); and versatility export (a mechanism to export the results of the search is available); (b) Related works: it was also considered those studies cited as related works in the relevant primary studies found in the publication databases; and (c) Specialist: it was also considered studies suggested by specialists of the areas of system of systems and software quality.</p><p>Although the indication of studies by specialists can be considered as bias, it was adopted this source aiming to not lose any important evidence.</p><p>(ii) Sources list: Regarding the search sources (i.e., publication databases), the most effective ones were chosen for SLR in Software Engineering area, namely ACM Digital Library 1 , IEEEXplore 2 , ISI Web of Science <ref type="bibr" target="#b2">3</ref> and Scopus 4 (that itself indexes Springer 5 ). According to <ref type="bibr" target="#b21">[22]</ref>, these databases are efficient to conduct SLRs in the context of Software Engineering. Furthermore, Scopus has been added, since it is considered the largest database of abstracts and citations <ref type="bibr" target="#b40">[41]</ref>; (iii) Studies language: Only primary studies written in English were considered in this SLR. English was adopted because most of research in Computer Science have been reported in this language; (iv) Keywords: The main keywords were "System of Systems" and "Quality Attributes", with the following related terms: (a) System of Systems: system-ofsystems, systems of systems, and systems-of-systems; and (b) Quality Attributes: quality attribute, quality attributes, non functional requirement, nonfunctional requirement, nonfunctional requirement, non functional requirements, non-functional requirements, nonfunctional requirements, quality requirement, quality requirements, quality characteristic, quality characteristics, quality criteria, quality criterion OR non functional property, non-functional property, nonfunctional property, non functional properties, non-functional properties, nonfunctional properties, non functional characteristic, non-functional characteristic, nonfunctional characteristic, non functional characteristics, non-functional characteristics, nonfunctional characteristics, quality models, and quality model. (v) Search string: Finally, the keywords were combined with the boolean operators OR and AND to link the main terms and their related terms. Thus, the final search string used was:</p><p>("system of systems" OR "system-of-systems" OR "systems of systems" OR "systems-of-systems") AND ("quality attribute" OR "quality attributes" OR "non functional requirement" OR "non-functional requirement" OR "nonfunctional requirement" OR "non functional requirements" OR "non-functional requirements" OR "nonfunctional requirements" OR "quality requirement" OR "quality requirements" OR "quality characteristic" OR "quality characteristics" OR "quality criteria" OR "quality criterion" OR "non functional property" OR "non-functional property" OR "nonfunctional property" OR "non functional properties" OR "non-functional properties" OR "nonfunctional properties" OR "non functional characteristic" OR "non-functional characteristic" OR "nonfunctional characteristic" OR "non functional characteristics" OR "non-functional characteristics" OR "nonfunctional characteristics" OR "quality models" OR "quality model")</p><p>Another important activity of the SLR planning is to define the Inclusion Criteria (IC) and Exclusion Criteria (EC). These criteria make possible to include primary studies that are relevant to answer the research questions and exclude studies that do not answer them. Thus, the inclusion criteria are:</p><p>(i) IC1: The study addresses one quality attribute for SoS; (ii) IC2: The study addresses more than one QA for SoS; (iii) IC3: The study addresses QA for SoS in one application domain; and (iv)</p><note type="other">IC4: The study addresses QA for SoS in more than one application domain. The exclusion criteria are: (i) EC1: The study does not address SoS; (ii) EC2: The study does not propose QA for SoS; (iii) EC3: The study is an editorial, keynote, opinion, tutorial, poster or panel; (iv) EC4: The study is a previous version of a more complete study about the same research; (v) EC5: The paper language is different from English; (vi) EC6: The paper is duplicated; and (vii) EC6: The full paper is not available.</note><p>In this SLR, the selection and evaluation of primary studies was be performed in three steps:</p><p>(i) First selection: Initially, the search string will be customized and applied to each publication databases. For this, the title, abstract, and keywords of all primary studies available will be considered. As a result, a set of primary studies possibly related to the research topic will be obtained. Based on this set, the title and the abstract of each primary study will be read and the inclusion and exclusion criteria will be applied. Thus, studies will be selected as relevant or not. The introduction and the conclusion sections of each primary study might also be considered when necessary. After this analysis, if a study has been selected, it will be read in full; (ii) Second selection: In this step, each primary study selected will be read in full and analyzed again according to inclusion and exclusion criteria. In addition, the related works cited by these studies will be evaluated intending to cover the whole research area. This additional selection might be a great source of evidence, since an included study often presents related works in the same research area. If the decision about the inclusion or exclusion of a study is not clear, this study will be analyzed by two reviewers. When a disagreement occurs, discussions will be conducted; and (iii) Data Extraction and Synthesis Method: In order to extract data, it was planned to build data extraction tables related to each research question. These tables should synthesize results to facilitate the drawing of conclusions. To summarize and describe the set of data, statistical synthesis method and metaanalysis was applied.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Phase 2 -Conduction</head><p>This SLR was conducted by three people: a software engineering researcher, a senior software developer/architect from the industry, and a SLR specialist. The work started in October/2014 and was finalized in December/2014. In this section, the details of the procedures to select the studies are described.</p><p>The primary studies were firstly identified on the selected databases, according to the SLR planning previously established. As a result, 116 studies were identified. Next, the primary studies were selected by reading of title and abstract and by the application of the inclusion and exclusion criteria. The <ref type="table" target="#tab_0">Table I</ref> summarizes the number of studies obtained on each database, the number of included studies, and the precision rate 6 . ACM, IEEE Xplore, Scopus, and ISI Web of Science showed precision rates of 0.173, 0.181, 0.073, and 0.875, respectively. It is important to highlight that mainly Scopus stores studies from other databases, such as IEEE Xplore and ACM. After that, repeated studies were also excluded and a total of 50 studies were selected. Then, the inclusion and exclusion criteria were again applied after full reading of the selected studies. Finally, 40 studies were selected as the most relevant to this SLR. At the end, 12 studies were included by the reviewers that were not returned originally by the selected databases due to another SLR performed by the authors of this work <ref type="bibr" target="#b56">[57]</ref> accounting a total of 52 studies included.  <ref type="table" target="#tab_0">Table II</ref> shows the 52 primary studies included on this SLR organized by the inclusion criteria.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Phase 3 -Analysis</head><p>In this last phase, it is presented analytical results of this SLR. They are based on the data extraction performed in the previous phase.</p><p>First of all, this work indicates that research on quality attributes for SoS is in increasing during the last years as can be see on <ref type="figure" target="#fig_0">Figure 1</ref>. Moreover, this research is been performed by small groups as can be seen on <ref type="figure" target="#fig_1">Figure  2</ref>. Finally, the maturity analyzes of the included studies indicates that research on this subject is overall on a early stage since most studies were classified as "case study" and "without validation" as can be seen on <ref type="figure" target="#fig_2">Figure 3</ref>.</p><p>Considering the RQ1, this work points that the five most relevant quality on SoS research are: security, interoperability, performance, relialibity and safety. The complete ranked list of quality attributes is shown on <ref type="figure" target="#fig_3">Figure 4</ref> that also reveals that research on SoS.</p><p>6 Ratio between the total of included studies of a database and the total of primary studies obtained by this database    Considering the RQ2, the military domain is the target of most studies. This is understandable since SoS started to gain their popularity in military domain. However, new application scenarios of SoS have been considered as it is presented on <ref type="figure" target="#fig_4">Figure 5</ref> that highlights the domains "IT Systems", "Smart Grids" and "Automotive". On the IT Systems domain, studies S10, S27, S44 state that this systems have increasingly incorporated SoS characteristics due to their integration requirements with third party systems. More specically, study S27 indicates that this is a tendency due to popularization of cloud computing on the industry. According to studies S42, S47 and S50, Smart Grids domain is been investigated in the context of energy management systems that have as main priority the integration with communication services in order to detect and address incidents before they compromise the power offering. Finally, the Automotive domain is addressed by studies S4, S14 and S17 which state that a modern automotive industry is typically driven by the integration of more than 50 embedded computers, also known as ECUs (Electronic Control Units). More specifically, study S17 investigates vehicles and roadside units that can communicate in ad hoc way to exchange information, such as safety warnings and traffic information, in order to avoid accidents and traffic congestion. Considering the RQ3, this work indicates that the domains addressed on RQ2 are concerned with a similar set of quality attributes as can be seen on Figures 6, 7 and 8.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Threats to Validity</head><p>The main threats identified to the validity of this SLR are described as follows:</p><p>• Missing of important primary studies: The publication databases used in this SLR are considered the most relevant available ones <ref type="bibr" target="#b21">[22]</ref>, <ref type="bibr" target="#b40">[41]</ref>. In addition, no limit was placed on the publication date of primary studies. However, some studies may have been missed; • Data extraction: As not all information was clearly available in the primary studies, these information had to be interpreted. In order to ensure the validity of our SLR, discussions among reviewers were conducted whenever a doubt occurred; and • Quality assessment: Since the goal of this SLR was to identify studies related to SoS quality attributes, no quality assessment was performed, as it might restrict the number of primary studies included. It is an agreement that a quality assessment can provide more insights and explanations to the conclusion of this review. Thus, it will be included in a future version of this work. As it can be observed, the authors of this work are concerned with the validity of this SLR results. In particular, they have dedicated special effort to completely cover this research area as impartial as possible.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. Discussion</head><p>This section presents a discussion about the five most relevant quality attributes for SoS found by this SLR: security, interoperability, performance, relialibity and safety. The focus of this analysis is to address how the known quality models, specificly ISO/IEC 25010, can support the specification and the evaluation of these attributes considering the characteristics and challenges of SoS.</p><p>In this context, this work suggests that besides military domain, new application scenarios of SoS have emerged. Some of these scenarios are related with safety-critical systems in which failure may cause death or injury to people, harm to the environment, or substantial finantial losses <ref type="bibr" target="#b12">[13]</ref>. In these situations, the SoS must be able to react appropriately to dynamic changes in order to assure its behavior and quality <ref type="bibr" target="#b57">[58]</ref>. Therefore, still according to <ref type="bibr" target="#b57">[58]</ref> it is very difficult to assure quality properties like safety, reliability, performance and security for the whole SoS since it is hard to guarantee such properties for all constituent systems. Thus, dependencies, trade-offs and relationships among the quality attributes should become more complex for SoS.</p><p>Regarding the quality attributes definitions, this work has found that some well established quality attributes definitions, such as reliability, can not be fully applied in the SoS context. <ref type="bibr" target="#b28">[29]</ref> highlights that this problem happens because in SoS, the concept of mission failure is not so easily identifiable in comparison with monolithic systems in which failure scenarios and their effects can be clearly identified. <ref type="bibr" target="#b28">[29]</ref> also exemplifies: consider a military system operation in a rescue mission of a man overboard, if a helicopter fails due to an unexpected breakdown, the SoS is still able to perform its mission once it can contact a ship to perform the same activity even with degraded overall performance. However, only when the performance achieves a unacceptable level it can be faced as a SoS failure. Thus, the SoS reliability is a wider and more flexible concept that should be taken into account considering the flexible and dynamic nature of SoS <ref type="bibr" target="#b28">[29]</ref>.</p><p>Considering the "safety" quality attribute, this study indicates that this attribute is an essential quality characteristic or even the main goal of most SoS. According to <ref type="bibr" target="#b35">[36]</ref>, safety is the degree to which a product or system mitigates the potential risk to people in the intended context of its usage. In SoS, these potential risks can become hazardous situations due to failures in any of the constituent systems which shows that availability, reliability, performance and security attributes must be properly addressed for each constituent system <ref type="bibr" target="#b57">[58]</ref>. It is important to note that these quality attributes dependences and relationships are not properly considered in the hierarchical structure found in ISO/IEC 25010 and other quality models.</p><p>Considering the "interoperability" quality attribute, it is noticed that it can be handled as cross-cutting concern that has a unique and crucial coordination role relative to the others quality concerns <ref type="bibr" target="#b55">[56]</ref>. However, it is important to say that a SoS is usually conceived without consider the interoperability of its constituent systems on the early stages of development <ref type="bibr" target="#b44">[45]</ref>. In addition, the metrics established by the current quality models to measure interoperability can not directly deal with the SoS characteristics <ref type="bibr" target="#b32">[33]</ref>. This is explained by the emergent behavior of SoS that makes difficult to capture and evaluate interoperability at the level of constituent systems <ref type="bibr" target="#b46">[47]</ref>.</p><p>From that, it is important to consider the interdependence between quality attributes in scenarios that cascading failures and bottlenecks could result in a complete SoS blackout <ref type="bibr" target="#b16">[17]</ref>. To do that, the quality attributes needs to be measured and controlled for each constituent system in order to address the impact on SoS quality <ref type="bibr" target="#b16">[17]</ref>, <ref type="bibr" target="#b30">[31]</ref>, <ref type="bibr" target="#b69">[70]</ref>.</p><p>Therefore, a first analysis about the ISO/IEC 25010 coverage of SoS quality attributes indicates that 48% of the quality attributes commonly considered in SoS are not addressed by this quality model as can be seen on Table III that shows the coverage of SoS quality attributes by the ISO/IEC 25010 and in parentheses their occurrences among the studies included in this SLR. So, nowadays, SoS have been developed without considering some important criteria on quality attributes evaluation that were not been properly addressed by a standardized quality model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. Conclusion and Future Work</head><p>This study aimed, through a SLR, to identify the most common quality attributes in SoS context, considering different application domains. As a result, 56 quality  <ref type="formula">(14)</ref>, reliability(13), safety(10), availability(8), maintainability(6), flexibility(4), adaptability(4), reusability(3), portability(3), operability(2), integrity(2), scalability(2), testability(2), confidentiality(2), usability(2), capacity(2), fault tolerance(1), confort(1), sustainability(1), effectiveness(1), energy efficiency(1), accountability(1), accuracy(1), recoverability(1), modifiability(1), modularity(1) No complexity(5), dependability(5), robustness(4), survivability(4), agility(3), stability(3), evolvability(3), changeability(2), lethality(2), controllability(2), composability(2), capability(2), variability(2), resilience(2), maneuverability <ref type="formula">(2)</ref>, open-endedness(1), susceptibility(1), extensibility(1), networkability(1), behavioral conformance(1), vulnerability(1), technology neutrality(1), component abstraction(1), affordability(1), traceability(1), managebility(1), compositionality <ref type="formula">(1)</ref> attributes were identified. Besides that, it is possible to confirm a migration trend from traditional military domain research to new application domains, such as automotive, IT systems, and smart grids. Moreover, from analysis of the five most relevant quality attributes, this work points out limitations of the current quality models, specifically, the well-established and widely used ISO/IEC 25010. SoS quality attributes have also complex interdependencies that can not be translated by a hierarchical structure. Besides that, some well-established definitions for each quality attribute can not be fully applied in the SoS context due to the flexible, dynamic nature of these systems. As future work, we aim to perform a detailed analysis about the concepts and definitions of the quality attributes found in this work in order to propose a suitable quality model for SoS. With that, we intend that issues related to quality attributes interdependencies can be properly addressed during development, maintainance, and even evolution of SoS.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Studies included per year.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Authorship relationship between the studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Maturity of the included studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Quality Attributes identified in the included studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Application Domains identified on the included studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Quality attributes identified on the Information Technology domain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Quality attributes identified on the Military domain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. Quality attributes identified on the Smart Grid domain.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="false"><head>Table I Research</head><label>I</label><figDesc>sources and primary studies selected and included.</figDesc><table>Source 
+Selected 
+Included 
+Precision 
+ACM Digital Library 
+5 
+5 
+1 
+IEEE Xplore 
+14 
+9 
+0.643 
+Scopus 
+89 
+42 
+0.472 
+ISI Web of Science 
+8 
+7 
+0.875 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table II Included Primary Studies. Inclusion Criteria Studies IC1 S11[16], S16[26], S19[29], S23[34], S24[35], S25[38], S30[45], S32[49], S34[52], S36[55], S38[60], S44[65]</head><label>II</label><figDesc></figDesc><table>, 
+S50[73], S52[75] 
+IC2 
+S1[1], S2[3], S3[4], S4[5], S5[6], S6[7], S7[8], S8[9], 
+S9[10], S10[14], S12[17], S13[18], S14[23], S15[24], 
+S17[27], S18[28], S20[30], S21[32], S22[33], S26[39], 
+S27[40], S28[43], S29[44], S31[48], S33[51], S35[54], 
+S37[58], S39[59], S40[61], S41[62], S42[63], S43[64], 
+S45[66], S46[67], S47[68], S48[71], S49[72], S51[74] 
+IC3 
+S2[3], S3[4], S4[5], S5[6], S6[7], S10[14], S11[16], 
+S13[18], S14[23], S15[24], S16[26], S17[27], S18[28], 
+S20[30], S21[32], S23[34], S24[35], S25[38], S26[39], 
+S27[40], S28[43], S29[44], S30[45], S32[49], S33[51], 
+S35[54], S37[58], S38[60], S39[59], S41[62], S42[63], 
+S43[64], S44[65], S45[66], S46[67], S49[72], S50[73] 
+IC4 
+S1[1], S7[8], S8[9], S9[10], S12[17], S19S19[29], 
+S22[33], S31[48], S34[52], S36[55], S40[61], S47[68], 
+S48[71], S51[74], S52[75] 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table III ISO/IEC 25010 Quality Attributes Coverage.</head><label>III</label><figDesc></figDesc><table>Covered 
+by ISO 
+
+Quality Attributes 
+
+Yes 
+performance(14), security(14), interoperability</table></figure>
+
+			<note place="foot" n="1"> http://dl.acm.org/ 2 http://ieeexplore.ieee.org 3 http://apps.isiknowledge.com/ 4 http://www.scopus.com/ 5 http://www.springerlink.com/</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgment</head><p>The authors thank Elisa Yumi Nakagawa (ICMC-USP, Brazil) and Flavio Oquendo (IRISA, France) for their advice and guidance to improve this work. This work is also supported by CNPq and FAPESP (São Paulo Research Foundation), Grant N.: 2014/02244-7.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Towards behavioral reflexion models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ackermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lindvall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Cleaveland</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="175" to="184" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Software quality models: A comparative study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Al-Badareen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Selamat</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Jabar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Din</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Turaev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Communications in Computer and Information Science</title>
+		<editor>J. Mohamad Zain, W. Wan Mohd, and E. El-Qawasmeh</editor>
+		<imprint>
+			<biblScope unit="page" from="46" to="55" />
+			<date type="published" when="2011" />
+			<publisher>Springer</publisher>
+		</imprint>
+		<respStmt>
+			<orgName>Software Engineering and Computer Systems</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Enhancing c4i security using threat modeling</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Alghamdi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Hussain</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Khan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">UKSim 2010</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="131" to="136" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">From substandard to successful software</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Allen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CrossTalk</title>
+		<imprint>
+			<biblScope unit="page" from="29" to="32" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A design methodology for realtime distributed software architecture based on the behavioral properties and its application to advanced automotive software</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Aoyama</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Tanabe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">APSEC 2013, APSEC &apos;11</title>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="211" to="218" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A framework for evaluating technology readiness, system quality, and program performance of u.s. dod acquisitions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Azizian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Mazzuchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sarkani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Rico</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="410" to="426" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A tale of migration to cloud computing for sharing experiences and observations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Babar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Chauhan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SECLOUD 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="50" to="56" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Achieving reusability and composability with a simulation conceptual model</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Balci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">D</forename><surname>Arthur</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">F</forename><surname>Ormsby</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Simulation</title>
+		<imprint>
+			<biblScope unit="page" from="157" to="165" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Challenges for sos architecture description</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Batista</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SESoS 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="35" to="37" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Using relax operators into an mde security requirement elicitation process for systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Belloir</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Chiprianov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Munier</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Gallon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J.-M</forename><surname>Bruel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ECSAW 2014</title>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">System of systems -the meaning of of</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Boardman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauser</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Boehm</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Lane</surname></persName>
+		</author>
+		<title level="m">21st Century Processes for Acquiring 21st Century Software-Intensive Systems of Systems. Crosstalk: Journal of Defence Software Engineering</title>
+		<imprint>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="4" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Design and Safety Assessment of Critical Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bozzano</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Villafiorita</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010" />
+			<pubPlace>Taylor &amp; Francis</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Compositional reverification of probabilistic safety properties for large-scale complex it systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Calinescu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Kikuchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="303" to="329" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A Method for Collaborative Development of Systems of Systems in the Office Domain</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Carbon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Johann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Muthig</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Naab</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">EDOC 2008</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="339" to="345" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Architecting ultra-large-scale green information systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H.-M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kazman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">GREENS 2012</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="69" to="75" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Towards modelling and analysing non-functional properties of systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Chiprianov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Falkner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Gallon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Munier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SOSE 2014</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="289" to="294" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A scenario-based architecture evaluation framework for network enabled capability</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Colin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Duncan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Zongyang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>David</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Jie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">COMPSAC 2009</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="9" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Dodaf architecture framework version 2.02</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Department Of Defense</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">World Wide Web</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>On-line</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Developing search strategies for detecting relevant experiments</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Dieste</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Grimán</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Juristo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Empirical Software Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="513" to="539" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Systems engineering guide for system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Dod</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+		<respStmt>
+			<orgName>Department of Defense</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Evidence-Based Software Engineering for Practitioners</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dyba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jorgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="page" from="58" to="65" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Architecture for embedded open software ecosystems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><forename type="middle">C</forename><surname>Eklund</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bosch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Systems and Software</title>
+		<imprint>
+			<biblScope unit="page" from="128" to="142" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">An approach to facilitate decision making on architecture evolution strategies</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Delaurentis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Davendralingam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="275" to="282" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Addressing the Integration Challenge for Avionics and Automotive Systems: From Components to Rich Services</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Farcas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Farcas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Menarini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE</title>
+		<meeting>the IEEE</meeting>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="562" to="583" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">An application security framework for soa-based mission data systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sarkarati</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Spada</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Michelbach</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Urban</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Tueffers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SMC-IT 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="53" to="60" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Identification of security requirements in systems of systems by functional security analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Fuchs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rieke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="74" to="96" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A uniform approach for system of systems architecture evaluation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gagliardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Wood</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Morley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CrossTalk</title>
+		<imprint>
+			<biblScope unit="page" from="12" to="15" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">On the reliability analysis of systems and sos: The ramsas method and related extensions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Garro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Tundis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">A data-centric capability-focused approach for system-of-systems architecture modeling and analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Ge</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">W</forename><surname>Hipel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="363" to="377" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">System of systems management: A network management approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gorod</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Gove</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Boardman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="1" to="5" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Communications, information, and cyber security in systems-of-systems: Assessing the impact of attacks through interdependency analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Guariniello</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Delaurentis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="720" to="727" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Integrated analysis of functional and developmental interdependencies to quantify and trade-off ilities for system-of-systems design, architecture, and evolution</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Guariniello</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Delaurentis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="728" to="735" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Quantitative measurement of interoperability by using petri net</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computational Information Systems</title>
+		<imprint>
+			<biblScope unit="page" from="3245" to="3252" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">A method for the generation and evaluation of architecture alternatives on the cloud</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Iacobucci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Mavris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="137" to="142" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Iso/Iec</surname></persName>
+		</author>
+		<title level="m">Iso/iec 25010 system and software quality models</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Systems of Systems Engineering: Principles and Applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jamshidi</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<publisher>Taylor &amp; Francis</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">A systems assurance perspective towards generic systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Joyce</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Hin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Seng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Chan</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="742" to="761" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Scaling up software architecture analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">B</forename><surname>Kazman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gagliardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Wood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Systems and Software</title>
+		<imprint>
+			<biblScope unit="page" from="1511" to="1519" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Evaluation of it systems considering characteristics as system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Kimura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Osaki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Yanoo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Izukura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Sakaki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Kobayashi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">In SoSE</title>
+		<imprint>
+			<biblScope unit="page" from="43" to="48" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">Guidelines for Performing Systematic Literature Reviews in Software Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">A</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University and Durham University Joint</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title level="m" type="main">What is a system of systems and why should i care?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Lane</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Assessment of the integration capability of system architectures from a complex and distributed software systems perspective</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Leuchter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Reinert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Müller</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Adaptive flight control design for quadrotor uav based on dynamic inversion and neural networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Q</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IMCCC 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1461" to="1466" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">System of systems integration: Key considerations and challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Madni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sievers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="330" to="347" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="267" to="284" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">System of systems (sos) engineering amp; architecture challenges in a net centric environment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Meilich</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006" />
+			<biblScope unit="page">5</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">The verification and validation of software architecture for systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Riehle</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M.-T</forename><surname>Shing</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title level="m" type="main">An extended systematic literature review on provision of evidence for safety certification. Information and Software Technology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Nair</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>De La</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Vara</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Sabetzadeh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Briand</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="689" to="717" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">The state of the art and future perspectives in systems of systems software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">B R</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SESoS</title>
+		<imprint>
+			<biblScope unit="page" from="13" to="20" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Extensible virtual environment systems using system of systems engineering approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pereira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICAT 2007</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="89" to="96" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Connections in system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Osmundson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Langford</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">INCOSE 2012</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="831" to="869" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Systems of systems applications for telemedicine</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Petcu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Petrescu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">RoEduNet 2010</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="208" to="211" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Formal models for cognitive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">B</forename><surname>Ramaswamy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Monsuez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Tapus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICAR 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">An interoperability model for ultra large scale systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rezaei</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Chiew</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Engineering Software</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="22" to="46" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<monogr>
+		<title level="m" type="main">Interoperability as a cross-cutting concern</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Rothenberg</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+			<pubPlace>RAND Corporation</pubPlace>
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Towards the evaluation od system of systems softaware architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">S</forename><surname>Santos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Delamaro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">WDES 2014</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Approaching runtime trust assurance in open adaptive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Schneider</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Becker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Trapp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SEAMS 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="196" to="201" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Runtime safety models in open systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Schneider</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Trapp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">DASC 2009</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="455" to="460" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">A safety engineering framework for open adaptive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Schneider</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Trapp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SASO 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="89" to="98" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">A quality perspective of software evolvability using semantic analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Schugerl</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Rilling</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Witte</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Charland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICSC 2009</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="420" to="427" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Considering emergency and disaster management systems from a software architecture perspective</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shukla</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Asundi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of System of Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="129" to="141" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Multi-objective stochastic heuristic methodology for tradespace exploration of a network centric system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">H</forename><surname>Dagli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Systems Conference</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="218" to="223" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Developing an approach for analyzing and verifying system communication</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Stratton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Sibol</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lindvall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ackermann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Godfrey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Aerospace Conference</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="1" to="13" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<monogr>
+		<title level="m" type="main">Integrating simulation capabilities into sysml for enterprise information system design</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Tsadimas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G.-D</forename><surname>Kapos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Dalakas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Nikolaidou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Anagnostopoulos</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="272" to="277" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Design of experiments as a means of lean value delivery to the flight test enterprise</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Tucker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Dagli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="201" to="217" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Scenario-based design and evaluation for capability</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Urwin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Venters</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Russell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Webster</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Henshaw</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE 2010</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">A model-driven development framework for non-functional aspects in service oriented architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Wada</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Suzuki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Oba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Web Services Research</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="31" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<monogr>
+		<title level="m" type="main">Software Product Quality Control</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Wagner</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013" />
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<title level="m" type="main">Managing runtime re-engineering of a system-of-systems for cyber security</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Waller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Craddock</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="13" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Dynamic composition of cross-organizational features in distributed software systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Walraven</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Lagaisse</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Truyen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Joosen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">DAIS 2010</title>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="183" to="197" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">A model-driven approach for evaluating system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICECCS 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="56" to="64" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">System security requirements analysis: A smart grid case study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Zafar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Arnautovic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Diabat</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Svetinovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="77" to="88" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Scaling up software architecture evaluation processes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Staples</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Jeffery</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="112" to="122" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Report: Modular safeguards to create holistic security requirement specifications for system of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">B</forename><surname>Zuccato</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Daniels</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Jampathom</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Nilson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science</title>
+		<imprint>
+			<biblScope unit="page" from="218" to="230" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

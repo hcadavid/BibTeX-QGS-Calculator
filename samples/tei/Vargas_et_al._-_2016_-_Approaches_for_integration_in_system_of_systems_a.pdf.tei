@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Approaches for Integration in System of Systems: A Systematic Review</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Iohan</forename><surname>Gonçalves Vargas</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">ICMC-University of São Paulo São Carlos São Paulo</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thiago</forename><surname>Gottardi</surname></persName>
+							<email>gottardi@icmc.usp.br</email>
+							<affiliation key="aff1">
+								<orgName type="institution">ICMC-University of São</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rosana</forename><surname>Teresinha</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">System of Systems Integration; Systematic Review; Interop-erability; Integration</orgName>
+								<orgName type="institution">ICMC-University of São</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Vaccare</forename><surname>Braga</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="laboratory">System of Systems Integration; Systematic Review; Interop-erability; Integration</orgName>
+								<orgName type="institution">ICMC-University of São</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Approaches for Integration in System of Systems: A Systematic Review</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1145/2897829.2897835</idno>
+					<note>SESoS&apos;16, May 14-22, 2016, Austin, TX, USA c 2016 ACM. ISBN 978-1-4503-4172-1/16/05. . . $15.00 Keywords</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Software systems have become increasingly complex, and they are often formed by integrating independent systems, resulting in a new class of systems referenced as System of Systems (SoS). The System of Systems Integration (SoSI) emerges as a new challenge and aims to create a new feature by integrating constituent systems that contribute to the overall goal of the SoS. Often the constituent systems tend to be from different sources and behaviors and, as such, tend to employ different terminology and concepts. Also, when SoSI involves the integration of legacy systems, cases where the documentation and the necessary skills for the harmonious integration are readily available are very rare. However , it is observed that there is a lack of studies that are comprehensive and, at the same time, contain a detailed view of how the constituent systems are integrated in order to collectively achieve a common goal. Based on this scenario , the main contribution of this systematic review (SR) is to investigate the state of the art of SoSI and the software engineering methods that assist in the integration between constituent systems of a SoS. The SR has found 1398 studies and, at the end of the selection process, we selected 29 studies for data extraction. Most studies describe individuals and teams who have worked in isolation to develop solutions to certain problems without widespread adoption of a form of integration. Thus, there is a growing concern of researchers in the SoS context. However, it still lacks research and greater dissemination of concepts among researchers in the field. CCS Concepts •Software and its engineering → Software as a service orchestration system; Integrated and visual development environments; Reusability; Software libraries and repositories; Software creation and management; Publish-subscribe / event-based architectures; •Information systems → Distributed retrieval;</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>System of Systems (SoS) is an open study area, more specifically System of Systems Integration (SoSI) has many gaps in research to be deepened and broadened to many other application areas, such as software engineering. A SoS has at least one more order of complexity than its constituent systems (CS's) <ref type="bibr" target="#b20">[21]</ref>.</p><p>One of the main features of large systems is that they can be formed from a variety of constituent systems and may be in different geographic locations, under the control of different organizations <ref type="bibr" target="#b4">[5]</ref>. The heterogeneity and distribution are inherent to a SoS, which makes the communication extremely challenging. In addition, external influences need to be understood and taken into account when referring to the general behavior of the SoS <ref type="bibr" target="#b12">[13]</ref>. The main challenge for stakeholders in the SoS context is to understand or to learn about other CS's and their influences. A large part of this knowledge may be obtained by studying the documents and specifications of others systems such as: guidelines, test reports, user manuals and operational procedures <ref type="bibr" target="#b7">[8]</ref>. Especially during the integration process, these documents need to be analyzed in order to find conflicts and also optimization opportunities <ref type="bibr" target="#b3">[4]</ref>.</p><p>A SoS is usually described as a composition of systems, in which systems are designed separately, discovered, selected and integrated to form a bigger system (more complex). Therefore, emerging behavior that is not available in any individual system that composes the SoS can appear <ref type="bibr" target="#b14">[15]</ref>.</p><p>Another more comprehensive definition of SoS, given by <ref type="bibr" target="#b0">[1]</ref>, was used as the basis for the development of the systematic review presented in this paper: "SoS is a collection of independent entities and their assembled relationships to form a whole, greater than the sum of the parts. So our attention is directed to the parties (entities), relationships (between the parties) and the whole itself, which we understand in some sense be better than a collection of parts and relationships".</p><p>As the complexity of the SoS increases, SoSI assumes a new meaning and comes with a series of new challenges. When SoSI involves the integration of legacy systems, it is uncommon that the documentation and the necessary skills for the successful integration are readily available <ref type="bibr" target="#b7">[8]</ref>. To this end, a SoS needs a common language with its CS's.</p><p>Without having a common language, the CS's cannot be fully functional and the SoS cannot achieve adaptivity and necessary goals. Consequently, it can make it impossible for new emergent behaviors to be achieved without great effort, because the complexity of the CS's becomes high <ref type="bibr" target="#b19">[20]</ref>.</p><p>The main motivation of this work was to investigate how the integration of CS's in SoS is achieved, as we did not find related works presenting literature reviews about this topic. The remainder of this paper is organized as follows. Section 2 presents background involving the main topics related to SoS and SoSI. Section 3 presents an overview about the SR conducted in this work. Section 4 presents all the steps performed to gather the studies of the SR. Section 5 presents the results about the state of the art of research that has been conducted about SoSI. Finally, Section 6 presents conclusions and future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">BACKGROUND</head><p>An important point to be emphasized is that in the same way that a SoS is composed of separate and distinct systems, these systems must be able to operate in isolation and continue to perform their functions individually. The need for a System of Systems arises in the presence of the following characteristics: operational independence and management, geographic distribution, emergent behavior and evolutionary development <ref type="bibr" target="#b14">[15]</ref>, defined as follows: (i) Operational independence: the CS's must be able to operate independently and in a useful way; (ii) Managerial independence: the CS's can also be managed independently and keep their independent managerial independence of the SoS; (iii) Evolutionary development: functions and purposes may be added, removed and/or modified according to the stakeholders' needs; (iv) Emergent behavior: The SoS can provide features/behaviors that are not present in the CS's and may not be located in any other separately; and (v) Geographic distribution: the geographic location of the CS's can be in different areas and distances.</p><p>A SoS can be classified according to the way it is managed. The difference is in the managerial and operational independence levels that it presents. Maier <ref type="bibr" target="#b14">[15]</ref> divides SoS in four types: (i) Virtual: this type of SoS has no centralized administrative authority over the CS's, the emergent behavior arises and may be desirable. For example, stock market and national economy system; (ii) Collaborative: in this type of SoS, the CS's interact relatively voluntarily to meet a common goal, they are collaborators and collectively decide how to provide or deny a particular service. The global financial system is an example of collaborative SoS; (iii) Acknowledged: this type of SoS has recognized goals, a management team and designated resources for the SoS, for example, Ballistic Missile Defense System; and (iv) Directed: this type of SoS is composed of systems built and managed for a specific purpose. The CS's are centrally managed and when integrated with other systems they are subordinated to a central coordinator. For example, most air defense networks are centrally managed to defend a certain region against attacks.</p><p>The lack of strategies and techniques that support the evolution of complex systems is one of the main motivations for the SoS research <ref type="bibr" target="#b1">[2]</ref>. According to <ref type="bibr" target="#b6">[7]</ref>, there are three distinct situations of system evolution in the SoS context: (i) Self evolution: re-design, and to re-develop or improve an existing system; (ii) Joint evolution: integration of two or more systems. Requirements include interoperability between systems, data sharing, improved system functions and workflow between the CS's; and (iii) Emergent evolution: design and development of a new system based on existing systems. <ref type="bibr" target="#b5">[6]</ref> summarizes some common causes of failures within the SoS development process: (i) the misalignment of goals between CS's; (ii) limited control of the systems that make up the SoS; (iii) evolution of the SoS; (iv) design inflexibility of CS's; (v) emergent behavior, in some cases reveals hidden dependencies within the system; (vi) system complexity, and finally (vii) the challenges to representation of the system. Interoperability is the ability of different systems to share information semantically compatible and, then process or manage this information, allowing users to perform desired tasks <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b21">22]</ref>. This concept implies that it is necessary to do much more than enabling the systems to communicate with each other, i.e., interoperating requires that the systems involved employ some degree of consistent semantics and common interpretations of the information exchanged.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">SYSTEMATIC REVIEW</head><p>In order to gather primary studies that propose techniques/approaches/tools of systems integration the SoS context, we performed a systematic literature review. A systematic review (SR) aims to present a thorough evaluation on a particular research topic, using a revised methodology that is reliable, accurate and enables auditing <ref type="bibr" target="#b9">[10]</ref>.</p><p>According to SRs presented by <ref type="bibr" target="#b17">[18]</ref> and <ref type="bibr" target="#b10">[11]</ref>, we can notice some application areas where SoS are being employed: military, aerospace, avionics, automotive, and trade. However, the studies mentioned above, are meant for Software Architecture in the context of SoS and, therefore, do not focus on the integration of the constituent systems. Thus, this systematic review was based on the premise of discovering software engineering methods that assist in the integration among CS's of a SoS. The conduction of this SR was divided into three main stages, namely: (1) Planning, (2) Execution and (3) Data Summarizing, explained in the following subsections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Planning</head><p>In the Planning step, we have defined the RQ's -Research Questions. The SR was conducted in order to answer the following questions: RQ1. How has the integration between CS's of a SoS been investigated? and RQ2. In this type of study, which kind of tool has been used to aid in the integration of the constituent systems?. To better answer the research questions, we used the following data extraction form, composed of eight fields.</p><p>F1-What is the purpose of the study regarding the integration of SoS? For example, it can be an ontology integration, modeling, approach, or framework. F1.1-What SoS integration contribution was addressed? Characterize how and which aspects related to software engineering have been used to achieve integration of the CS's of a SoS.</p><p>F2-What is the application domain that has been targeted on the integration of SoS? Find out in which contexts integration of SoS has been employed. F2.1-What kind of SoS was used? Characterize the type of SoS used in the integration of CS's. F2.1.1-Which features of the SoS were detailed? Identify the main features used in the integration of the SoS CS's. F2.2-Which problems related to the integration of SoS were addressed? Highlight the problems pointed out by studies when performing system integration in the SoS context. F2.3-What are the advantages of using the concepts of SoS to integrate systems? Highlight the advantages and potential challenges of integration.</p><p>F3-Does the study mention any integration tool? Specify the tools that have been used to achieve integration.</p><p>Relevant terms that correspond to the two topics of interest of this SR have been extracted from the studies we have considered as control, i.e., previously known studies that should be retrieved by the searches. Boolean operators AND and OR were used to construct the search string, as described below: (({system of systems} OR {systems of systems} OR {System-of-systems} OR {systems-of-systems} OR {SoS}) AND (integration OR collaboration OR composition OR interoperability)). After defining the protocol of the SR, the search was conducted in major automatic research publication databases (ACM Digital Library, IEEE Xplore, ISI Web of Science, Science Direct, Scopus e SpringerLink).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">EXECUTION</head><p>The SR was conducted from November 2014 to January 2015. A few months later, we found necessary to introduce the term "interoperability" in the search string. So, from September 2015 to November 2015 we have updated the review. The procedures for selecting studies were: (i) Analysis by title and summary, which were analyzed in parallel; and (ii) Reading the included papers in its entirety. We included 53 primary studies of a total of 1398 returned by six databases. In <ref type="figure" target="#fig_0">Figure 1</ref> it is shown the amount of studies obtained when the search string was executed in the databases mentioned above.</p><p>We have found 552 repeated papers or papers that have been indexed by more than one database. After analysing the remaining 846 papers, 53 of them were selected for the full reading stage. Of this amount, the full version of five papers were not available for download. We contacted the authors of these studies, but without response. Thus, 44 papers were left for full reading, among which 29 were selected for data extraction. The complete list of the 29 selected studies, as well as detailed information about the strings used in each search engine and inclusion/exclusion criteria, are available elsewhere 1 .</p><p>It was observed that most of the studies were excluded because they presented approaches related only to the concept of SoS. This happened because the search string allowed the return of papers depicting the concept of SoS in general, not necessarily having the focus on the integration of the CS's. We chose to use the string that way because a higher level of restriction would leave many relevant studies outside of the research, which has been tested and observed in previous runs of the search string. In the final step, we selected 29 studies for data extraction. In <ref type="figure" target="#fig_1">Figure 2</ref>, it is shown the amount of papers published per year and type of publication (conference or journal).</p><p>We have also created a word cloud, based on keywords of the papers, to illustrate the frequency of keywords of the 29 studies selected for data extraction. In <ref type="figure" target="#fig_2">Figure 3</ref>, it is 1 http://www.icmc.usp.br/˜rtvb/AddInfoSESoS2016.pdf  shown the occurrence of these words. Therefore, it was observed that integration, interoperability, system of systems and the acronym SoSI are some of the most outstanding, which matches the goals of this SR.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Quality Evaluation</head><p>Based on the data extraction form, a score for each data extraction field was established. We assigned values for CQ (Coverage of Questions) and SC (Study Coverage), in order to classify the studies according to their total score and also identify the most relevant studies. The rules for scoring the form were based on what was proposed by <ref type="bibr" target="#b22">[23]</ref>, in which each criteria of CC and SC could be answered with "Yes", "Partial" or "No". The score was converted to numerical values, such as: 1 to "Yes", 0.5 to "Partial" or 0 to "No". Therefore, they can give a valuable contribution to the research topic addressed and in parallel to demonstrate the reliability of the extracted results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Data Mapping</head><p>The data mapping is used to represent a set of methods to summarize, integrate, combine and compare the results of different studies related to a specific topic <ref type="bibr" target="#b2">[3]</ref>. The studies with response "Yes" are those with relevant information and have been marked in bold in order to highlight those studies that are best suited to the scope of this review. Studies denoted as "Partly" are those that have inferred responses, obtained by means of subjective evaluations such as studies that showed no direct information about integration solutions but discussed integration problems. Studies with response "No" are those who did not answer the question. In <ref type="table" target="#tab_0">Table 1</ref>, it is shown the mapping for each data extraction form field, based on the extracted responses.</p><p>Related to the System of Systems Integration, focus of this SR, several studies did not present significant contributions regarding the research questions. However, they were included because they provided answers to a few fields of the data extraction form defined in Section 3.1. Even without examining in detail by looking at the number of responses "Yes", we can conclude that little research has been developed to SoSI.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">RESULTS -SYSTEMATIC REVIEW OF SOSI</head><p>As a basis for data extraction and analysis of the results, we have considered the SoS concepts defined in Section 2, such as definition, characteristics and type of SoS. Thus, the data extraction form was filled in after identifying, whenever possible, the common points of each article with the concepts previously presented. Following, we present the responses obtained for each data extraction form field and, in the end, the answer to each research question.</p><p>5.1 Answer to F1 -What is the purpose of the study regarding the integration of SoS? <ref type="table" target="#tab_1">Table 2</ref> presents the identified types and their studies, classified into five categories: modeling, framework, ontology, approach and architectural pattern.</p><p>Out off a total of 29 studies, 13 depict some sort of modeling. Although not dealt directly with the integration problem of the SoS CS's, they described integration modeling as an important part of the overall development process. Three papers portrayed frameworks for SoS. A paper portrays a type of integration ontology, aiming to standardize No S2, S3, S4, S5, S6, S7, S8, S10, S11, S12, S13, S14, S15, S17, S18, S19, S20, S21, S22, S23, S25, S26, S27, S28, S29</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>25</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F3</head><p>Yes S3, S4, S8, S10, S12, S15, S21 7 Partly 0 No S1, S2, S5, S6, S7, S9, S11, S13, S14, S16, S17, S18, S19, S20, S22, S23, S24 " S25, S26, S27, S28, S29 terminology of SoSI while proposing clear definitions about SoS concepts. Ten papers portrayed approaches, presenting a set of theories and knowledge on the topic and investigating how to get to the goal of integration. Finally, two papers portrayed some kind of architectural pattern for integration.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>22</head><p>5.2 Answer to F1.1 -What SoS integration contribution was addressed?</p><p>S4: <ref type="bibr" target="#b18">[19]</ref> show the importance of learning about the CS's and external influences that each one of them can present, for example: we can have a CS that uses a particular protocol to achieve a goal. The central coordinator may not be able to change restricted aspects of this protocol that are convenient for the purposes of the SoS. To achieve a successful integration, it is necessary to have knowledge about the features that the CS offers, and this depth knowledge assists the integration process. S16: <ref type="bibr" target="#b8">[9]</ref> proposed an architectural pattern to support the software architects in the integration process. Three development contexts have been classified within the established architectural pattern: (i) Greenfield -there are no restrictions for deployment; (ii) Brownfield -changes/adjustments can be made to the CS's to achieve the goal of integration; and (iii) Closed Source -there is no access to the CS's, it is necessary to use external adapters to achieve the goal of integration. The next step is to set up the purpose of integration, which needs to be clear among the CS's and is generally divided into two levels: (i) the purpose of integration of the target SoS; and (ii) the individual purpose of each interface.</p><p>S24: <ref type="bibr" target="#b12">[13]</ref> presented a number of important concepts for the integration of SoS, such as interoperability, systems integration, type and characteristics of SoS, SOA, SoSI and reuse of CS's. Integration should be part of the overall SoS development lifecycle. In general, when there are legacy systems that need to be integrated, the documentation about it is not readily available. There are other important considerations that must be made when a system is integrated into a SoS, for example, it is likely that a certain degree of autonomy has to be sacrificed when a system participates in a SoS. The form and rigor of SoSI is directly related to the type of SoS, for example, the unmanaged (Virtual) is inherently more difficult to integrate than a managed SoS (Directed).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Answer to F2</head><p>-What is the application domain that has been targeted in the SoS integration context?</p><p>As shown in <ref type="table" target="#tab_0">Table 1</ref>, 11 papers completely answered this question, corresponding to 37.93% of the studies. In <ref type="table" target="#tab_2">Table  3</ref>, it is presented the main application areas identified in this RS. It was observed that 54.13% of the studies have not defined the application domain in which the proposal is located.</p><p>During the complete reading of each paper, there are examples of SoS in different application fields than those listed in <ref type="table" target="#tab_2">Table 3</ref>. However, these examples were not counted because they were not directly related to the integration problem. The areas previously specified were uniquely identified on the System of Systems Integration.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">Answer to F2.1 -What kind of SoS was used?</head><p>Of the 29 papers selected for data extraction, only one defined the type of SoS to be used for system integration. According to <ref type="bibr" target="#b12">[13]</ref>, Directed or Acknowledge SoS are prespecified, which makes them predictable and consistent with traditional validation and verification methods. On the other hand, Virtual or Collaborative SoS are not pre-specified. This means that there can be no prior expectation paths and/or information content consistent in the SoS.  <ref type="table" target="#tab_0">No Specific Application  Domain  16   S6, S8, S10, S11, S13,  S15, S16, S17, S18, S19,  S21, S22, S23, S26, S27,  S29  Defence and National  Security  4</ref> S3, S4, S14, S20, S28</p><note type="other">Military 1 S2 Industrial Automation 1 S5 Aerospace 1 S9 Quality Management 1 S1, S25 Earth Observation System 1 S24 Simulation 1 S7 Auto Adaptation 1 S12 Total 29</note><p>5.5 Answer to F2.1.1 -Which features of the SoS were detailed?</p><p>We analyzed whether the integration process ensures the essential characteristics of a SoS, such as: operational and managerial independence, evolutionary development, emergent behavior and geographic distribution. However, by systematically analyzing the 29 papers selected for data extraction, it was noted that only four of them signaled such evaluation, which corresponds to only 13.79% of the studies.</p><p>Specifically, the papers S5, S6, S19, S24 demonstrated greater caution in relation to the characteristics to propose any integration solution. However, these studies also failed to show clearly such features in the final SoS. However, these papers were classified in <ref type="table" target="#tab_0">Table 1</ref>, as "Yes" (they responded fully) because in addition to detailing the basic characteristics proposed by Maier <ref type="bibr" target="#b14">[15]</ref>, they portray some other characteristics that have not been mentioned by others, such as: adaptive development, connectivity, autonomy, diversity, reconfiguration, and principles of modularity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.6">Answer to F2.2 -Which problems related</head><p>to the integration of SoS were addressed?</p><p>The objective was to identify the main difficulties in the integration process of the CS's of a SoS. It was observed that 58.33% of the papers cited some problem/difficulty of integration. Those that detailed more than one problem were considered as papers that fully answer this question. As shown in <ref type="table" target="#tab_0">Table 1</ref>, seven papers responded completely, which corresponds to 24.13%. The following problems/difficulties pointed out by studies are presented:</p><p>(i) Management: The project manager must be certain about the concept of systems and system management to successfully integrate individual systems; (ii) Single Modeling: trying to develop a single model representing the SoS as a whole is a complicated task, because hardly a single model can represent all the complexities of the SoS; (iii) Complexity of interactions: in SoSI, one of the most challenging problems is to deal with the complexity of interactions between the resulting SoS entities, due to the diversity and heterogeneity of the CS's; (iv) Complexity of the constituent systems: the CS's in a SoS are often complex and integration problems can arise because of the inability to fully grasp which are the features of the CS's; (v) Collab-oration: The heterogeneity of the CS's has contributed to a low collaboration and the misalignment of goals between systems; (vi) Incompatibility of Interfaces: during the evolution of the CS's, the protocols and interfaces that define the systems are often not significant for communication, collaboration and evolution itself; (vii) Evolution: it is difficult to evolve the system as a whole, in order to contribute to the SoS. Generally, there is a well-defined integration process and the first responsibility is to optimize system performance individually; (viii) Frequent updates: the CS's are constantly changing software or hardware, such as updates or new features addition, increasing the complexity; (ix) Documentation: the documentation of legacy systems is not always available, comprehensive, consistent or complete; (x) Script: lack of scripts and tutorials that help software engineers to practice the systems integration in the context of SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.7">Answer to F2.3 -What are the advantages of using the concepts of SoS to integrate systems?</head><p>In this question we aimed to highlight what are the main advantages that arise when using SoS for systems integration. It was observed that 16.66% of the papers cited one advantage when using SoS to integrate. Those that detailed more than one advantage were considered as studies that fully answer this question. As shown in <ref type="table" target="#tab_0">Table 1</ref>, two articles responded completely, which corresponds to 6.89% of articles (S1, S4). Reduced use of multiple resources. 3</p><p>Development of coherent systems. 4</p><p>Unified harmonized standard to solve problems. 5</p><p>Improving the cost benefit. 6</p><p>It increases flexibility and possibility to include other systems. 7</p><p>Improved operational performance together. 8</p><p>Increased motivation of staff. 9</p><p>Cost reduction and reengineering more efficient. 10 Maintaining the original characteristics of the constituent system. 11</p><p>Operational and managerial independence. 12 better scalability. 13 better interoperability. 14 Serviceability.</p><p>5.8 Answer to F3 -Does the study mention any integration tool?</p><p>The objective was to specify if the study addresses a tool that has been used to achieve integration. It was observed that 29.16% of the papers cited a tool to integrate CS's of SoS. As shown in <ref type="table" target="#tab_0">Table 1</ref>, seven articles responded completely, which corresponds to 24.13%. (i) FireScrum: To guide the integration effort, development process based on Scrum are adopted <ref type="bibr" target="#b11">[12]</ref>; (ii) Mind mapping tool: to create an intermediate representation of the business process carried out by the architecture of the analysis process, iterative refinements of mind maps are done. They helped find inconsistencies in business process documents <ref type="bibr" target="#b11">[12]</ref>; (iii) RDL -Requirements Description Language: Natural language can be used for analyzing dependencies and for specifying compositions or constraints that are considered to resolve inconsistencies. For this, tool support such as RDL, VMatriz NLP have been used, which makes it possible to extract relevant information from a text document <ref type="bibr" target="#b18">[19]</ref>; (iv) Tool chain: divided into stages covering the entire development lifecycle: requirements elicitation, Service Specification and Architectural Design, Implementation and Verification. The SODA tool enables tracking system requirements and service-oriented architecture, and generates documents and requirements. The M2Code tool facilitates graphical modeling of services <ref type="bibr" target="#b3">[4]</ref>; (v) SENSE: provides architectural support for evolution of SoS, in particular this tool uses XML <ref type="bibr" target="#b6">[7]</ref>; (vi) UPPAAL: tool that facilitates formal modeling, simulation and model verification of behavioral properties <ref type="bibr" target="#b15">[16]</ref>; (vii) DEVS: Discrete Event System Specification is a tool that specifies the components of a system in a simulation event, specifying basic models and how they are interconnected <ref type="bibr" target="#b19">[20]</ref>; and (vii) M-Model: It is the tool (at the modeling level) used by system engineers to integrate complex systems with other systems <ref type="bibr" target="#b16">[17]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.9">Conclusion on Research Questions</head><p>• RQ1: According to the systematic analysis of 29 articles selected for data extraction, it was observed that SoSI has a high demand and still is an area of research that requires greater contributions. In recent years, there have been significant contributions that provided relevant information to the SoS state of the art. For example, in the Systematic Review of the Literature about SoS architectural perspective proposed by <ref type="bibr" target="#b17">[18]</ref>, it can be seen that research has increased significantly from the year 2003 on. In parallel, the Systematic Review of the Literature about SoS architectures proposed by <ref type="bibr" target="#b10">[11]</ref>, it can be seen that the research increased significantly from 2006. Various papers, for example (S2, S3, S4, S8), raised the following sentences: "System of systems integration is a difficult engineering challenge or System of systems integration is a fundamental engineering challenge to Software Engineering". Thus, there is a growing concern in the SoS integration context. However, it still lacks research and greater dissemination of concepts among researchers. It is also interesting to note that the integration between CS's of a SoS has been investigated through the use of SOA -Service-Oriented Architecture. A considerable number of publications, approximately 51.72%, have explored the use of SOA for integration of constituent systems in the SoS context. For example, in <ref type="bibr" target="#b12">[13]</ref>, the authors developed a detailed discussion of the use of SOA in SoS and its advantages in software reuse.</p><p>• RQ2: According to the systematic analysis of 29 studies selected for data extraction, it could be noted that there were no system integration tools in the SoS context. The tools found, detailed in Section 5.8, supported some stage of development, such as: Architecture modeling, inconsistencies analysis in requirements documents, among others. Thus, it can be seen that there is a lack of tools to assist in the integration of systems in the context of SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">CONCLUSION AND FUTURE WORK</head><p>A SoSI is a design context where scale, complexity, and certain non-technical constraints require the use of different methods and approaches that are different from those used for traditional systems. This paper reports the results of a systematic review of the research in the information system aspects of system of systems integration. We found that this field is maturing more slowly than other software engineering fields, and there is a need for additional research to understand and address this slow maturation.</p><p>Our systematic review found that most reported research reflects individuals and teams working in apparent isolation to develop techniques to solve particular system of systems integration problems. Research is needed to develop more general procedures, techniques and tools for design, analysis, evaluation, and evolution of SoSI.</p><p>Finally, we noted in this review that there are domains, such as reuse environments, that are poorly explored in the research community of SoS, so it is being explored in an ongoing work. Further research is needed to understand how fields such as development process relate to system of systems integration. We hope that this systematic review contributes to the Software Engineering community that needs to adequately develop and integrate software in the SoS context.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.">ACKNOWLEDGMENTS</head><p>Our thanks to Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) for financial support.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Summary of the SR process and studies returned in each stage.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Amount of papers published per year and type of publication.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Word cloud for the relevant studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="true"><head>Table 1 : Overview of mapping for data extraction</head><label>1</label><figDesc></figDesc><table>CQ 
+Answers 
+ID Papers 
+Total 
+
+F1 
+
+Yes 
+
+S1, S2, S3, S4, S5, S6, S7, S8, 
+S9, S10, S11, S12, S13, S14, 
+S15, S16, S17, S18, S19, S20, 
+S21, S22, S23, S24, S25, S26, 
+S27, S28, S29 
+
+29 
+
+Partly 
+0 
+No 
+0 
+
+F1.1 
+
+Yes 
+
+S2, S3, S4, S6, S7, S8, S10, 
+S12, S14, S15, S16, S20, S21, 
+S23, S24, S26 
+
+16 
+
+Partly 
+S11, S13, S22, S25, S27, S28, S29 
+7 
+No 
+S1, S5, S9, S17, S18, S19 
+6 
+
+F2 
+
+Yes 
+S1, S2, S3, S4, S5, S7, S9, 
+S12, S14, S20, S24 
+11 
+
+Partly 
+0 
+
+No 
+
+S6, S8, S10, S11, S13, S15, S16, 
+S17, S18, S19, S21, S22, S23, S25, 
+S26, S27, S28, S29 
+
+18 
+
+F2.1 
+
+Yes 
+S24 
+1 
+Partly 
+0 
+
+No 
+
+S1, S2, S3, S4, S5, S6, S7, S8, S9, 
+S10, S11, S12, S13, S14, S15, S16, 
+S17, S18, S19, S20, S21, S22, S23, 
+S25, S26, S27, S28, S29 
+
+28 
+
+F2.1.1 
+
+Yes 
+S5, S6, S19, S24 
+4 
+Partly 
+S7, S18, 
+2 
+
+No 
+
+S1, S2, S3, S4, S8, S9, S10, S11, 
+S12, S13, S14, S15, S16, S17, S20, 
+S21, S22, S23, S25, S26, S27, S28, 
+S29 
+
+23 
+
+F2.2 
+
+Yes 
+S4, S9, S12, S14, S17, S20, S24 
+7 
+Partly 
+S1, S2, S3, S10, S13, S15, S21 
+7 
+
+No 
+S5, S6, S7, S8, S11, S16, S18, S19, 
+S22, S23, S25, S26, S27, S28, S29 
+15 
+
+F2.3 
+
+Yes 
+S1, S24 
+2 
+Partly 
+S9, S16 
+2 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="true"><head>Table 2 : Answers to F1 classified in five categories</head><label>2</label><figDesc></figDesc><table>Study proposal 
+
+Modeling 
+Frame-
+work 
+Ontology 
+Approach 
+
+Architec-
+tural 
+pattern 
+Total 
+13 
+3 
+1 
+10 
+2 
+
+ID 
+Paper 
+
+S1, S2, S6, 
+S7, S8, S11, 
+S12, S14, 
+S15, S18, 
+S21, S22, 
+S29 
+
+S20, S23, 
+S26 
+S24 
+
+S4, S5, S9, 
+S10, S13, S17, 
+S19, S25, S27, 
+S28 
+
+S3, S16 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table 3 : Application Domain of 29 papers</head><label>3</label><figDesc></figDesc><table>Application Domain 
+
+Number 
+of 
+Studies 
+
+ID Paper 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>Table 4 : Advantages pointed out by studies.</head><label>4</label><figDesc></figDesc><table>ID 
+Advantage 
+1 
+Broader involvement of all stakeholders. 
+2 
+</table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">System of systems -the meaning of of</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Boardman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE/SMC Int. Conf. on System of Systems Engineering</title>
+		<imprint>
+			<date type="published" when="2006-04" />
+			<biblScope unit="volume">6</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Variability and evolution in systems of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Botterweck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">1st Workshop on Advances in Systems of Systems -AISOS&apos; 13</title>
+		<meeting><address><addrLine>Roma, Italy</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="8" to="23" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">The handbook of research synthesis and meta-analysis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Cooper</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">V</forename><surname>Hedges</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Valentine</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+	<note>Russell Sage Foundation</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A rich services approach to cocome</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Demchak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Ermagan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Farcas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">H</forename><surname>Krüger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Menarini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Common Component Modeling Example</title>
+		<meeting><address><addrLine>Berlin, Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="85" to="115" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Feiler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Sullivan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Wallnau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Gabriel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Goodenough</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Linger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Longstaff</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kazman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Northrop</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Schmidt</surname></persName>
+		</author>
+		<title level="m">The Software Challenge of the Future</title>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+		<respStmt>
+			<orgName>Ultra-Large-Scale Systems</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Development of an exploratory computer model for acquisition management of system-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ghose</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Delaurentis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">INCOSE International Symposium</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="36" to="51" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Engineering and Deployment of Cooperative Information Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lecture Notes in Computer Science</title>
+		<editor>Y. Han, S. Tai, and D. Wikarski</editor>
+		<imprint>
+			<biblScope unit="volume">2480</biblScope>
+			<biblScope unit="page" from="332" to="346" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+	<note>Architecture support for system-of-systems evolution</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Impact of identified causal factors to &quot;system of systems&quot; integration complexity from a defense industry perspective</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jovel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Jain</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Journal of Flexible Systems Management GIFT</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">45</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Understanding patterns for system of systems integration</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kazman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Schmid</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Klein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">8th Int. Conf. on System of Systems Engineering (SoSE)</title>
+		<meeting><address><addrLine>Muai, Hawaii</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013-06" />
+			<biblScope unit="page" from="141" to="146" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Procedures for performing systematic reviews</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1" to="26" />
+			<pubPlace>Keele, UK</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A systematic review of system-of-systems architecture research</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Van Vliet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th International ACM Sigsoft Conference on Quality of Software Architectures</title>
+		<meeting>the 9th International ACM Sigsoft Conference on Quality of Software Architectures</meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="13" to="22" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Rapid systems of systems integration -combining an architecture-centric approach with enterprise service bus infrastructure</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Meisinger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Menarini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Pasco</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE Int. Conf. on Information Reuse and Integration</title>
+		<imprint>
+			<date type="published" when="2006-09" />
+			<biblScope unit="page" from="51" to="56" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">System of systems integration: Key considerations and challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Madni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sievers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="330" to="347" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Systems integration: Key perspectives, experiences, and challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Madni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sievers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="37" to="51" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-of-systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">INCOSE International Symposium</title>
+		<imprint>
+			<publisher>John Wiley &amp; Sons, Inc</publisher>
+			<date type="published" when="1998" />
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="565" to="573" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Detecting emergent interference in integration of multiple self-adaptive systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Malakuti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 2014 European Conference on Software Architecture</title>
+		<meeting>2014 European Conference on Software Architecture<address><addrLine>7, N. Y., USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="1" to="24" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">System of systems engineering facilitates integration of large scale complex systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Mazzuchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Albakri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">INCOSE</title>
+		<imprint>
+			<biblScope unit="page" from="811" to="855" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">The state of the art and future perspectives in systems of systems software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">B R</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the First International Workshop on Software Engineering for Systems-of-Systems</title>
+		<meeting>the First International Workshop on Software Engineering for Systems-of-Systems</meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="13" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Cross-document dependency analysis for system-of-system integration</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">A</forename><surname>Naqvi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Chitchyan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Zschaler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Rashid</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Südholt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 15th Monterey Conference on Foundations of Computer Software: Future Trends and Techniques for Development, Monterey&apos;08</title>
+		<meeting>the 15th Monterey Conference on Foundations of Computer Software: Future Trends and Techniques for Development, Monterey&apos;08</meeting>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="201" to="226" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A discrete event xml based system of systems simulation for robust threat detection and integration</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Parisi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Sahin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jamshidi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE Int. Conf. on System of Systems Engineering. SoSE &apos;08</title>
+		<meeting><address><addrLine>Singapore, Malaysia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008-06" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">On the systems engineering and management of systems of systems and federations of systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">P</forename><surname>Sage</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">D</forename><surname>Cuppan</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001-12" />
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="325" to="345" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Implementation of a formal standard for interoperability in m&amp;s/systems of systems integration with devs/soa</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">P</forename><surname>Zeigler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mittal</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Reflections on 10 years of software process simulation modeling: A systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Pfahl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Int. Conf. on Making Globally Distributed Software Development a Success Story</title>
+		<meeting><address><addrLine>Berlin, Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="345" to="356" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

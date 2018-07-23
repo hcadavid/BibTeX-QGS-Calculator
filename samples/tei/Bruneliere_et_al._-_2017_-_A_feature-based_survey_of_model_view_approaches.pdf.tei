@@ -1,0 +1,2093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:26+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A feature-based survey of model view approaches</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hugo</forename><surname>Bruneliere</surname></persName>
+							<email>hugo.bruneliere@imt-atlantique.fr</email>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Erik</forename><surname>Burger</surname></persName>
+							<email>burger@kit.edu</email>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Institute for Program Structures and Data Organization</orgName>
+								<orgName type="department" key="dep2">Institute of Technology (KIT)</orgName>
+								<address>
+									<settlement>Karlsruhe, Karlsruhe</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">·</forename><forename type="middle">Jordi</forename><surname>Cabot</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution" key="instit1">ICREA</orgName>
+								<orgName type="institution" key="instit2">Open University of Catalonia</orgName>
+								<address>
+									<settlement>Barcelona</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">·</forename><forename type="middle">Manuel</forename><surname>Wimmer</surname></persName>
+							<email>wimmer@big.tuwien.ac.at</email>
+							<affiliation key="aff3">
+								<orgName type="department">CDL-MINT, TU Wien</orgName>
+								<address>
+									<settlement>Vienna</settlement>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Erik</forename><surname>Burger</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jordi</forename><surname>Cabot</surname></persName>
+							<email>jordi.cabot@icrea.cat</email>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Manuel</forename><surname>Wimmer</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Hugo Bruneliere</orgName>
+								<orgName type="institution" key="instit2">la Loire</orgName>
+								<address>
+									<settlement>Nantes</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A feature-based survey of model view approaches</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1007/s10270-017-0622-9</idno>
+					<note type="submission">Received: 16 January 2017 / Revised: 16 May 2017 / Accepted: 2 September 2017</note>
+					<note>Softw Syst Model REGULAR PAPER Communicated by Dr. Robert Pettit. This work has been partially funded by the MoNoGe national collaborative project (French FUI #15), the Electronic Component Systems for European Leadership (ECSEL) Joint Undertaking &amp; the European Union&apos;s Horizon 2020 research/innovation program under grant agreement No. 737494 (MegaM@Rt2 project), the Spanish government (TIN2016-75944-R project), the Austrian Federal Ministry of Science, Research and Economy (BMWFW) and National Foundation for Research, Technology and Development. We also would like to thank the various academics and industrials that provided valuable feedback to us on our descriptions of their respective solutions. 1 AtlanModels Team (IMT Atlantique, Inria &amp; LS2N), IMT Atlantique Bretagne-Pays de</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Modeling · Viewpoint · View · Model · Survey</keywords>
+			</textClass>
+			<abstract>
+				<p>When dealing with complex systems, information is very often fragmented across many different models expressed within a variety of (modeling) languages. To provide the relevant information in an appropriate way to different kinds of stakeholders, (parts of) such models have to be combined and potentially revamped by focusing on concerns of particular interest for them. Thus, mechanisms to define and compute views over models are highly needed. Several approaches have already been proposed to provide (semi)automated support for dealing with such model views. This paper provides a detailed overview of the current state of the art in this area. To achieve this, we relied on our own experiences of designing and applying such solutions in order to conduct a literature review on this topic. As a result, we discuss the main capabilities of existing approaches and propose a corresponding research agenda. We notably contribute a feature model describing what we believe to be the most important characteristics of the support for views on models. We expect this work to be helpful to both current and potential future users and developers of model view techniques, as well as to any person generally interested in model-based software and systems engineering.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>When developing modern software systems, models that conform to different modeling languages (i.e., metamodels) are used by engineers and architects to describe the system under development from various perspectives. This often leads to scattering of information across (possibly many) heterogeneous models, and to overlappings/redundancies that can create inconsistencies in the system description <ref type="bibr" target="#b28">[29]</ref>. Thus, engineers may have difficulties to understand efficiently the complete system description by looking at all these models in full detail. This is even a major concern when dealing with systems of systems or cyber-physical systems <ref type="bibr" target="#b24">[24,</ref><ref type="bibr" target="#b66">67]</ref>, e.g., especially in an industrial context where multi-disciplinary engineering takes place <ref type="bibr" target="#b27">[28]</ref>. In such cases, models actually need to cover hardware infrastructure, deployment, usage scenarios as well as non-functional properties of the system (e.g., performance, reliability, and maintainability). They also need to deal with the involved physical entities such as energy grids, networks, production plants and/or various kinds of IoT devices. All these models have strong dependencies and interconnections to the software models we are familiar with. They are generally combined altogether in order to better monitor and analyze these systems at runtime.</p><p>View-based approaches in software engineering have been proposed to tackle these issues <ref type="bibr" target="#b28">[29]</ref>. They mostly follow a strategy of proposing a fixed set of predefined viewpoints to be used in different application domains or scenarios. This happens for instance with most architectural frameworks such as Zachman <ref type="bibr" target="#b69">[70]</ref> or RM-ODP <ref type="bibr" target="#b46">[47]</ref>, each viewpoint targeting particular perspectives of the system to be considered. It offers several advantages such as improved understanding and more integrated and comprehensive tool support. However, these approaches lack the flexibility required in many scenarios where the useful model views go beyond a limited set of viewpoints, and may change over time as the development process moves on.</p><p>Recent advances in model-based engineering have fostered the possibility of having more flexible view-based approaches, based on metamodeling and model transformation techniques notably. The notion of ad hoc views computed via queries has been studied intensively in past decades. While the metaphor helps developers and modelers to understand these concepts, similar problems such as (incremental) view updates arise. These model view approaches usually allow creating custom (semi)automatically generated views over possibly heterogeneous models. Such a capability can notably help to reduce accidental complexity in software and systems development, deployment and usage.</p><p>There are many real-world use cases in which the direct support for such model views is actually required. In addition, there are also a lot of scenarios in which the use of model views can be beneficial as part of a larger model-based solution to a given complex problem. From our own practical experiences within various collaborative industrial projects in the past years, we have already observed relevant applications in areas such as (meta-)model federation/integration (e.g., in an enterprise architecture (EA) context, cf. also Sect. 2.2), reverse engineering <ref type="bibr" target="#b63">[64]</ref>, language maintenance and evolution <ref type="bibr" target="#b13">[14]</ref> or security <ref type="bibr" target="#b49">[50]</ref>, to mention just a few. However, each scenario requires a different trade-off in terms of model view capabilities. For instance, a good expressivity of the view definition and an efficient data synchronization support are fundamental to EA model federation or language evolution cases. In the context of reverse engineering or security, scalability in the computation appears to be more important due to the potential handling of very large models. Given the plethora of existing approachesmost of them only providing partial solutions, it is difficult to know how each approach compares to the others. From such scattered information, it is also complicated to identify which one(s) may be better suited for given needs. Thus, our intent with this paper is to provide orientation by proposing a detailed study of the state of the art in this domain. Hoping to stimulate further discussions, we contribute to the modeling community a summary of what we believe to be the main characteristics of model view approaches and their current/future challenges.</p><p>The rest of the paper is organized as follows. We have first synthesized a common terminology and selected an illustrative example which we present in Sect. 2. In Sect. 3, we describe the method we have used for searching, identifying and selecting relevant approaches. We contribute in Sect. 4 a feature model summarizing the main characteristics of approaches for views on models. Then, we further use the proposed terminology and feature model to describe and compare the selected approaches in Sect. 5. Based on this, we identify open research areas and interesting challenges related to the development or use of model views in Sect. 6. The paper closes with further discussion on the related work in Sect. 7 and a general conclusion in Sect. 8.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Terminology and illustrative example</head><p>In the modeling domain, the terms view, viewpoint or viewtype are used in several different ways. From the very early viewpoint approaches <ref type="bibr" target="#b28">[29,</ref><ref type="bibr" target="#b68">69]</ref> up to the ISO standard 42010 <ref type="bibr" target="#b0">[1]</ref>, various definitions for these terms have been given. In this present paper, we have decided to follow the definitions of Goldschmidt et al. <ref type="bibr" target="#b29">[30]</ref>.</p><p>In our understanding, a view is usually a special kind of model. A view contains information that is related to and coming from other models, which can also be themselves other views. A view is always a view on something. Thus, in an engineering context, the set of physical and/or logical entities that a view represents is called a system. Such a system can be observed from different viewpoints, each of them providing different perspectives over it. The relation between views and other models is specified by various means such as transformations, rules, queries, or other formalisms. As any model, a view conforms to a metamodel, which is usually called viewtype. This viewtype can be defined a priori or can be sometimes deduced from the specification of the view itself. This is, however, not the case in general, as viewtype and view specifications are usually clearly separated. Such a situation can be practically observed in many of the approaches that we will evaluate later on in this paper. The goal of this section is to clarify all these concepts and illustrate them, before we go deeper into the selection and study of model views approaches. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">General definitions</head><p>We propose some general definitions for the most frequently encountered terms while searching for and studying solutions for views/viewpoints on models. These main terms are graphically summarized in <ref type="figure" target="#fig_0">Fig. 1</ref> and textually explained in what follows:</p><p>-A system is a unit consisting of multiple interdependent components, which are designed and implemented by engineers. A system encompasses software, hardware, requirements, as well as all other artefacts created during its development process. -A viewpoint is the description of a combination, partitioning and/or restriction of concerns from which systems can be observed. In our modeling context, it consists of a set of concepts coming from one or more metamodels, eventually complemented with some new interconnections between them and newly added features (cf. viewtype definition). -A viewtype is a metamodel that describes the types of elements that can appear in a view, i.e., the formalism/language actually used. An element in a viewtype may be part of one of the base metamodels or may be specifically defined for the viewtype. A given viewtype can be relevant for several viewpoints, and a viewpoint usually defines several viewtypes. -A view is a representation of a specific system from the perspective of a given viewpoint. In our modeling context, it is an instance of a particular viewtype and consists of a set of elements coming from one or more base models. It is eventually complemented with some new interconnections between them and additional data, that are manually entered and/or computed automatically (usually via one or more model transformations). -A base metamodel is a metamodel that is used in and referenced from a given viewtype definition. Depending on the approaches, a viewtype specification can possibly have one or several different base metamodels. -A base model is a model that is used in and referenced from a given view. Depending on approaches and on the corresponding defined viewpoint (and related viewtypes), a view can possibly gather elements coming from one or more base models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">An illustrative example: modeling enterprise architectures</head><p>To concretely illustrate the previously presented terminology, and also to further motivate on the actual need for model views, in this subsection we describe an industrial case for model views.</p><p>The TOGAF Enterprise Architecture Platform (TEAP) project 1 was a joint collaboration between the companies Capgemini (IT consulting), DCNS (Naval defense and energy), Obeo (software company specialized in MDE) and the AtlanMod research team. The main objective of the project was to provide an enhanced support for the improved governance of enterprise architectures (EAs).</p><p>Obeo is an EA solution provider with its SmartEA tool 2 supporting TOGAF. <ref type="bibr" target="#b2">3</ref> In the context of the project, DCNS identified the need for specializing the SmartEA standard toolkit according to the particular type of systems of systems they are dealing with. They wanted to extend TOGAF to include both business process information defined using the BPMN 4 standard and requirement specifications defined with the ReqIf 5 standard. Besides the need for integrating BPMN and ReqIf models as part of their overall EA solution, DCNS wanted to be able to interconnect these models with the TOGAF models to provide partial views on these combined base models depending on some DCNS member profiles (e.g., for security constraints, access to sensible parts of the base models needed to be filtered out in the views for people without proper privileges). In order to do so, they needed to specify several viewtypes notably linking these TOGAF, ReqIF, and BPMN base metamodels altogether. <ref type="figure" target="#fig_2">Fig- ure 2</ref> shows a partial realization of that.</p><p>In the TOGAF implementation within SmartEA, business processes and requirements are modeled at a high level of abstraction as part of the business and strategic architectures, respectively. In the ReqIF standard, requirements (called SpecObject) are modeled in more detail. The BPMN standard also allows describing detailed business 1 http://www.teap-project.org.  processes (called Process). Thanks to the specified viewtype, these two types of model elements can be directly connected to their TOGAF equivalents (Requirement and Process, respectively) by using the new detailedRequirement and detailedProcess relations. By following the general idea of select-project-join queries: (1) via select, we are only getting Processes which have the isAutomated attribute set to false, as shown in the corresponding note; (2) via project, we are only keeping some attributes and references from the metamodels (those that are shown in <ref type="figure" target="#fig_2">Fig. 2)</ref>; and (3) via join, the three metamodels are now linked through the new detailedRequirement and detailedProcess references. <ref type="figure" target="#fig_3">Figure 3</ref> presents a given view on a given Travel Agency example. This example plays the role of the system to be observed from a particular EA viewpoint in our present case. The presented view has been obtained using the previously specified viewtype that relies on the TOGAF, ReqIF and BPMN base metamodels. In this view, the (TOGAF) EA base model has been connected to both a (ReqIF) requirement base model and a (BPMN) business process base model. The StrategicArchitecture element has an enriched catalog of strategicElements composed of requirements that are now associated with their extended definitions using the ReqIF standard (via the detailedRequirement view association with elements from the requirement model). Similarly, the BusinessArchitecture element enumerates processes that are now directly connected to their equivalents from the business process model (via the detailedProcess view association). Moreover, only the attributes selected in the viewtype definition are being shown, such as processCriticality and isAutomated of class Process from the TOGAF metamodel.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Survey method</head><p>This section explains the method we followed for realizing this survey. In particular, we describe how we extracted the required data in order to be able to build a relevant selection of approaches for views/viewpoints on models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Approach selection process</head><p>The approach selection process was conducted in three main steps. First, we started selecting approaches based on our own experience about working on model view approaches during the last past years, e.g., <ref type="bibr" target="#b15">[15,</ref><ref type="bibr" target="#b17">17]</ref>. This very first selection contained 10 distinct approaches we were personally aware of. Second, in order to validate and potentially com- plement our knowledge of the field, we decided to explore bibliographic data sources. To this intent, we followed the guidelines by <ref type="bibr">Kitchenham and Charters [40]</ref> concerning literature search and selection strategy. Finally, we performed snowballing by double-checking the references used within the finally selected publications as well as papers citing the selected papers. The overall selection process is summarized in <ref type="figure">Fig. 4</ref> and detailed further in the following subsections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.1">Data source and search strategy</head><p>We used DBLP 6 as our core electronic database to search for primary studies on model view approaches. To avoid missing possibly relevant approaches, we decided not to put a specific period constraint for the search. Based on the topic of this survey, we defined the terms of the search query (according to the recommendations of Kitchenham and Charters <ref type="bibr" target="#b39">[40]</ref>). Thus, we considered the terms "model" and "view" as the main constituents of our search query. We could have also included more search terms but most of them are already covered by the general term "view" (for instance the related term "viewpoint"). As we used a very general search query, we expected a huge result set requiring special treatment to <ref type="bibr" target="#b5">6</ref> http://www.dblp.org/search. select the most appropriate studies. This is explained later on as the pruning process. For automating the search process described here, we used the database dump of DBLP 7 along with SQL database query capabilities.</p><p>When executing the search query on this DBLP dump, we received a complete result set consisting of 1544 references. Based on this initial set of records, we then determined the set of relevant publication sources by a semiautomated pruning process.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.2">Pruning process</head><p>In what follows (and as proposed by <ref type="bibr">Kitchenham and Char- ters [40]</ref>), we describe the used inclusion and exclusion criteria. We also present the different pruning phases applied to select the final set of relevant papers, as found from the search results introduced before.</p><p>The selection of the primary studies was carried out based on the initial set of records we obtained from executing the search query against the DBLP data sources. To extract the studies relevant for this survey from the total number of studies, we passed through several pruning stages. In each one of these stages, the number of studies was significantly reduced  <ref type="figure">Fig. 4</ref> Overview of the used selection process compared to the result of the previous stage. At each stage, the following criteria were used to determine which approaches would move on to the next phase (and which ones would be ignored). Inclusion and exclusion criteria Studies relevant for this survey must propose a view/viewpoint approach dedicated to models. Thus, they have to support viewtype definitions which interact with base metamodels as well as view definitions which interact with base models (cf. Sect. 2 for more details on the terminology used in this paper). From this overall principle, the inclusion and exclusion criteria that have been applied in this pruning process are the following ones: Inclusion criteria</p><p>1. Proposed approaches that allow to define viewtypes and compute views conforming to them. 2. Proposed approaches that are suitable to work with models of arbitrary modeling languages. 3. Proposed approaches that are usable inside the modelware technical space, i.e., based on MOF or on any related metamodeling infrastructure (e.g., EMF/Ecore). 4. Proposed approaches that allow for user-defined viewtypes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Exclusion criteria</head><p>1. Proposed approaches that are bound to a particular modeling language. 8 2. Proposed approaches that are not residing in the modelware technical space. 3. Proposed approaches that only offer a limited and fixed set of predefined viewtypes.</p><p>Pruning stage 1: Blacklist-based keyword search After the whitelist-based keyword search determining the initial set of studies, we conducted a blacklist-based keyword search. This stage was needed as we found out that many papers which were part of the initial selection actually reside in the "computer vision" area. Thus, we have excluded papers having titles containing the following keywords: 3D, image, network, motion, video, multi-agent, face, spatial, computation, 3-D, multimedia, point, Markov, recognition, detection, Gauss, Bayes. Finally, we have also manually filtered conferences/journals related to the computer vision domain. This resulted in a set of 339 papers to be investigated during the pruning stage 2. Please note that the reduction to a human manageable number of studies at this stage was important. Indeed, the two remaining stages are hardly achievable automatically, and thus, were conducted manually.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pruning stage 2: Manual selection based on title and abstract</head><p>It is often rather difficult to determine the relevance of a study by considering its title only. Thus, we decided to evaluate in this stage both the title and abstract of each study against our inclusion and exclusion criteria. Generally, we acted in a conservative manner in this stage. In some cases, more information than the title and abstract is actually required to determine whether a study is relevant for this review. In particular, we filtered out approaches not directly applicable to models, i.e., approaches from different technical spaces than modelware (e.g., view approaches for XML data and ontologies). This gave us a reduced set of 45 papers to be investigated further in the final pruning stage.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pruning stage 3: Manual selection based on detailed content</head><p>In our final pruning stage, we carefully read the remaining papers considering both the survey's objective and the defined inclusion/exclusion criteria. After all, we selected 6 relevant approaches (actually corresponding to 7 different papers). Interestingly, the approaches finally selected after the whole pruning phase were all included in our initial list of known approaches. As a consequence, we are confident that this initial set of approaches already covers a large portion of published approaches for views/viewpoints on models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.3">Snowballing</head><p>Following the application of our methodology, we wanted to double-check that we did not miss any potentially relevant approaches. Indeed, some papers could have been missed during the search process for different reasons. For instance, some workshop papers are only indexed by ACM and some other papers have not yet been indexed by DBLP. Furthermore, some papers are not actually using the term view or similar in the title (e.g., if they present so-called composition or extension approaches). Finally, some existing solutions are tools and thus do not necessarily have indexed publications on DBLP.</p><p>As a consequence, based on the 7 selected relevant studies from our literature search, we performed backward and for- VUML <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b55">56]</ref> ward snowballing <ref type="bibr" target="#b67">[68]</ref> by investigating the references they do cite as well as using Google Scholar 9 to search for papers citing the already found papers, respectively. This way, we have been able to identify some more approaches by applying the aforementioned inclusion/exclusion criteria to these extra-references as well.</p><p>The final result of the overall process (including this last snowballing stage) is presented in <ref type="table" target="#tab_1">Table 1</ref>. This table provides, in addition to a representative name for each selected approach, the main publication(s) from which the data have been extracted out for this survey. At the end, we considered 16 different approaches as relevant for this survey.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Data extraction process</head><p>In order to study the selected approaches and to write down this paper accordingly, the data extraction process itself has been divided in different stages. It mainly concerns the terminology, feature model and the evaluation of the selected approaches for views on models.</p><p>First, initial results have been achieved by having a 2-day face-to-face meeting in Vienna (Austria) between the four authors of this article. The objective was to:</p><p>1. Determine the initial set of approaches as well as the initial set of corresponding publications. 2. Agree on an overall terminology to be used all along the work.</p><p>9 http://scholar.google.com.</p><p>3. Produce a first draft version of the feature model to be presented in this study.</p><p>During the following weeks, we also worked on establishing and applying the methodology described in this section. Second, relying on this baseline, we distributed the selected approaches (i.e., both the ones from the initial set and from our systematic literature search) among us in order to individually evaluate them. After having performed all evaluations, we cross-checked several times the obtained results. This way, we also progressively revisited the terminology definition as well as the feature model in an iterative process.</p><p>Finally, we contacted the research community by sending the internally consolidated results to the actual authors of the investigated approaches. Thanks to this, we collected their direct feedback concerning the terminology, our proposed feature model and the evaluation of their respective approaches. This feedback, which we integrated in the final result of our survey, gives us more confidence on the relevance of the study we present in this paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">A feature model for characterizing model view approaches</head><p>Based on our own experiences working on/with model views in the past years, and on a deep study of the related state of the art (cf. Sect. 3 for the used method), we propose in this paper a feature model (see <ref type="figure">Fig. 5</ref>) describing what we consider to be the main characteristics of a model view mechanism. This feature model will be used in Sect. 5 to better describe and compare the model view approaches we have identified and selected. We have identified three main categories of features that model view mechanisms can potentially cover. The first one gathers capabilities which concern the general type structure of the mechanism. The two others distinguish between design time and runtime aspects of the view/viewtype specification, computation and handling. We describe each one of these categories and the sub-features they contain in the following subsections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Type structure</head><p>-Metamodel/model arity A fundamental aspect of a model view mechanism is its arity at both metamodel and model level. Some mechanisms allow specifying viewpoints/viewtypes over a single metamodel only, while others also allow combining several metamodels together in a same viewpoint/viewtype specification. Similarly, depending on the considered mechanism, corresponding views can be computed over a single model and/or combining several distinct ones. In the latter case, the involved models can potentially conform to different metamodels (as used in the related viewpoint/viewtype specification). -Closedness In addition to arity, we can differentiate two main families of mechanisms regarding their closedness. The first one limits the definition of views as subsets of the base model(s). The second one allows for views in which the content coming from the base model(s) can be augmented, e.g., with newly computed or manually entered data. Thus, the closedness is also related to the operations supported by the used viewtype and query languages (cf. the corresponding descriptions of these features). For instance, a viewtype language can provide (or not) add operations, and a query language can come with some aggregate functions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Design time features</head><p>As far as design time is concerned, we explicitly distinguish between two main kinds of languages (though they quite frequently appear mixed together in practice). The first kind of language is used to specify the viewpoints and build corresponding viewtypes, i.e., to specify the metamodel for a new viewtype. We call it the View Type Language. The second kind of language is used for corresponding computation at view level, i.e., to populate the view with the expected data. We call it the Query Language. We describe the properties of these language kinds in the following.</p><p>-Viewtype language It has an abstract syntax that can be either based on an already existing standard and/or general-purpose modeling language (e.g., UML), or be implemented as a domain-specific modeling language (e.g., addressing more particularly a given set of concepts). As usual, its concrete syntax can be textual, graphical or eventually a mix of both. As said before, the viewtype definition itself can be directly connected to the used Query Language (cf. the explanation of this particular feature) or somehow independent from it. Any given viewtype language globally follows a particular paradigm for expressing viewpoints: definitions can be made either extensionally or intensionally (and explicitly or implicitly in the latter case). A definition is considered extensional when the actual element types to be part of the corresponding view are listed exhaustively. On the contrary, it is intensional when it rather provides the properties/conditions needed for inferring the corresponding view (elements). When the viewtype definition is intensional and explicit, it typically uses a combination of core add/modify/filter operations to be applied on the base metamodels. In the case of an intensional and implicit definition, some underlying operations or conditions can be applied by default/systematically.</p><p>-Query language This same extensional versus intentional distinction also applies to the Query Language. Indeed, queries can be defined (extensionally) by providing a fixed set of expected values or elements. They can also use (intentionally) more complex expressions, explicitly stated or implicitly called, implying further computations in order to retrieve the targeted elements. In addition to that, and similarly to the viewtype language, a given query language can be based on a standard query language or equivalent (e.g., Structured Query Language (SQL) or Object Constraint Language (OCL)) or be a domain-specific query language targeting a particular domain or range of applications. The main capabilities of a given query language are provided by the operations it actually supports. Differently from the viewtype language, its operations focus on how the model level data are selected and manipulated to be integrated into the resulting view (in a way that conform to the viewtype definition). Therefore, a first set of operations consists in reducing the scope of the original metamodel(s) by selecting and/or projecting only some of the model elements in the produced view. A second set of operations is about complementing the view data by adding extrainformation that can be derived from corresponding model elements (by join or aggregation) and/or manually added by a user (rename). -Static checks Finally, different kinds of static checks can be performed at design time on the specified viewtypes and related queries. In some cases, they may concern the application of a given viewtype specification on the concerned base metamodel(s). In others, the pre-execution or parsing of the corresponding defined queries may be of interest. Two key properties of viewtypes arise here:</p><p>(1) applicability (will the view computation ever return a non-empty set?) and (2) executability (will the resulting view be ever consistent with the possible constraints defined at the viewtype level?).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Runtime features</head><p>From a runtime perspective, there are also different interesting aspects to consider for a model view mechanism. We describe them in the following.</p><p>-Runtime consistency There are several important consistency features to be considered when views are actually computed and handled. On the one hand, synchronization can be supported in two main directions: from the model(s) to the view and from the view to the model(s).</p><p>On the other hand, consistency verification can be more or less automated, following check or enforce strategies notably.</p><p>The way the recomputation is performed can also vary. It can be made incrementally by updating only the concerned elements in the view, e.g., when some elements from the base model(s) have been changed. It can also be realized in batch mode at given moment(s) in time, systematically recomputing the full content of the view in this case. The point in time when the recomputation is performed is described by the Frequency feature. Immediate recomputation means that the synchronization is triggered directly after each change to a view (or to one of its base models). Deferred computation means that synchronization is performed at defined points in time, but can span several editing steps. -View/viewtype manifestation There are two manifestation dimensions to be possibly taken into account: a given mechanism can provide support at viewtype level (i.e., metamodel level), at view level (i.e., model level), or at both levels of course. In all cases, the results can be actually realized differently. They can be concretely materialized, e.g., with the creation/duplication of actually new (meta)model elements, or virtual in the sense of only relying on proxies to already existing (meta)model elements. The used type of manifestation can have a direct impact on the way the viewpoints/viewtypes and views are computed (cf. the description of the Runtime Consistency feature). For instance, synchronization can be made easier when using a virtualization approach instead of a duplication-based approach. -Intrusiveness Finally, a model view mechanism can also have different intrusiveness strategies, depending on whether or not it actually allows the alteration of the concerned base metamodels and models. Indeed some approaches do not modify the original (meta)models that can thus continue to have their own living, while some others do and directly impact the actual (meta)models content.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Description of selected model view approaches</head><p>As previously explained in Sect. 3, we selected a number of model view approaches which are particularly relevant in the context of our study. They are used as our basis for presenting the current state of the art in this area. We describe each one of these approaches and summarize their main characteristics in what follows. To realize this, we notably relied on the terminology and feature model we already introduced in this paper. <ref type="table" target="#tab_2">Table 2</ref> summarizes the overall results of our detailed study. Cicchetti The hybrid multi-view modeling approach by Cicchetti et al. <ref type="bibr" target="#b20">[20]</ref> can be used to create sub-metamodels of existing Ecore metamodels and use them as customized view types. It is a hybrid approach in the sense that it uses the base models for the synchronization of the views (i.e., a projective approach <ref type="bibr" target="#b0">[1]</ref>) and offers the creation of stand-alone models as views (i.e., a synthetic approach <ref type="bibr" target="#b0">[1]</ref>). The sub-metamodels, which are to be used as view types, are defined using a wizard in the Eclipse development platform. These view types have to be consistent with the base metamodel in such a way that instances of the view types, i.e., the views, are also valid instances of the original metamodel. Thus, the approach is strictly closed. Synchronization mechanisms for maintaining consistency among the views are then generated automatically using a combination of Eclipse-based technologies, such as ATL, Acceleo, Epsilon, and QVT-O. The mechanisms are based on model differencing. A difference metamodel is created automatically from the base metamodel and the viewtype metamodel. From these difference metamodels, model transformations are generated that synchronize the views with the models.</p><p>Finally, an Eclipse plug-in is generated automatically, which provides an editor for the creation and manipulation of the views. EMF Facet EMF Facet <ref type="bibr" target="#b25">[25]</ref> is an open source Eclipse/EMF-/based tool, initially developed in the context of MoDisco <ref type="bibr" target="#b12">[13]</ref> and then externalized. It provides a generic lightweight extension mechanism for existing EMF models. In particular, it allows to define so-called facets on given metamodels (i.e., Ecore models) in order to complement them with new computed types (concepts), attributes and references (properties). Modification and filtering of existing elements are not possible in the current version. The definition of a facet is stored in a specific and separate Facet model. If available for a given metamodel, a facet can then be applied on its corresponding models (e.g., within a model browser) in order to dynamically extend them at runtime. A facet can thus be seen as a view type that is specified over a single metamodel with the objective to extend it with newly computed information. When applied to given models, it allows to obtain corresponding views on them (i.e., extended models).</p><p>A core aspect of the approach is that it relies on a query abstraction framework that gives the possibility to plug any type of query (e.g., Java, OCL) to the facet so that the newly added elements can be computed automatically. In addition, another specificity of the approach is that everything is performed at runtime, meaning that the "extended" model (i.e., a view) is dynamically computed when the facet is applied on. The original model is not modified, and the elements added in the view are only stored "virtually" in memory until the facet is unloaded or the model is closed. EMF Profiles EMF Profiles <ref type="bibr" target="#b43">[44]</ref> is an approach and corresponding Eclipse/EMF-based prototype that provides another generic lightweight extension mechanism for EMF models.</p><p>Directly inspired from what is already widely used in the UML world, it basically generalizes the concept of profiles      to be used with all possible (meta)models. Thus, instead of allowing to extend only the UML metamodel, profiles can be defined on top of any Ecore model (i.e., any metamodel) and then applied on any corresponding instance (i.e., any corresponding model). A profile specifies a set of named stereotypes applicable only to selected types of elements and that come with their own additional properties. A profile can thus be seen as a viewpoint that is specified over a single metamodel with the objective to extend it with annotations on existing elements. When applied to given models, it allows to obtain corresponding views on them (i.e., extended models). A core aspect of the approach is that it is intended to be used in a semiautomatic manner: a profile application is not computed automatically by default, instead the user triggers the application of stereotypes and many times the additional information stored in the view is added directly by the user. A given profile application is persisted as a separate model in addition to the base model (in contrast to UML profiles). Thus, it can also be potentially computed by a model transformation if required and/or relevant in particular cases. Another interesting aspect of the approach is its capacity to define meta-profiles, i.e., profiles that are defined at metametamodel level. Thus, they are applicable on all models (independently from the metamodel they conform to) and allow to represent viewpoints which are directly reusable for different modeling languages. EMF Views EMF Views <ref type="bibr" target="#b15">[15]</ref> is an approach and corresponding Eclipse/EMF-based prototype that provides capabilities for specifying and obtaining views on top of models which potentially conform to different metamodels. Inspired from views in databases and the well-known SELECT-PROJECT-JOIN operators in relational algebra, it comes with an SQL-like DSL for defining viewpoints at metamodel level (i.e., on one or several metamodels). Such viewpoints are then used to generate automatically corresponding views at model level (i.e., on one or several models). Like views in databases, the obtained model views are mainly read-only in the current version, as only a limited set of modifications can be propagated back to the underlying models.</p><p>The core aspect of the approach is that it relies on a same generic model virtualization framework for realizing both viewpoints and views. Thus, a viewpoint is actually a virtual metamodel that only contains proxies to elements from the original metamodels. Similarly, a view is a virtual model that only contains proxies to elements from the original models. Additional links between/to elements from different metamodels/models are stored in a separate weaving model. This offers interesting properties to EMF Views in terms of transparency (a view is seen and handled as a regular model), synchronization (a view always reflects the content of the base models), non-intrusiveness (a view is not altering the base models) and scalability (a view does not duplicate any actual model element). In addition, this also allows EMF Views and its model virtualization back-end to be reused in different contexts, such as lightweight metamodel extension for instance <ref type="bibr" target="#b13">[14]</ref>. Epsilon Merge There is a first Epsilon-based approach <ref type="bibr" target="#b40">[41]</ref> which provides a hybrid rule-based language (i.e., declarative rules with imperative bodies) for combining both homogeneous and heterogeneous models. As a merging approach, it allows to produce a new (merged) model out of several original models. Such a merged model can be considered as a view gathering elements coming from several different models, the merge specification in the Epsilon Merging Language (a socalled EML Module) thus acting as the viewpoint definition (of the merged metamodel) in this case. The overall merge process and its four consecutive steps (comparison, conformance checking, merging, reconciliation/restructuring) are actually realized thanks to the combined used of several Epsilon languages (respectively the Epsilon Comparison Language (ECL), the Epsilon Validation Language (EVL) and EML for the last two steps).</p><p>A core aspect of this approach according to our present study is that it is merge-based. Thus, it covers only partially the set of capabilities generally expected when dealing with model views. For instance, basic synchronization between the original models and the generated merged model (i.e., the view) is not provided by default (even if some support can be implemented based on the merge trace model produced during the merge process). Epsilon Decoration There is a second Epsilon-based approach <ref type="bibr" target="#b41">[42]</ref> that introduces a model decoration support enabling the annotation of models with additional information that is not necessarily supported by existing metamodel(s). A decorated model can be considered as a view on the original model complemented with some new manually added information. In the proposed solution, which differs from most other approaches, there is no explicit viewpoint definition and decorations are simply represented in a generic way, namely as tag/value pairs. Interestingly, the approach also proposes a bidirectional support for covering both automated decoration extraction from a previously annotated model (via its diagram) and decoration injection (or application) to a non-annotated model. This model decoration approach is implemented on top of the Epsilon framework, notably by reusing its Epsilon Model Connectivity (EMC) layer. The idea of having such a layer providing generic model loading, storing, querying and updating capabilities has been be directly inspired by existing relational database connectivity layers.</p><p>A core aspect of the approach is that it has the following two main characteristics: (1) non-intrusive as the original model is not modified and decorations are stored in a separate decorator model, and (2) transparent from a usage perspective as decorations can be handled manually and programmati-cally as if they were parts of the original model. However, the trade-off is that specific decoration injection and/or extraction transformations have to be specified for each decoration alternative (i.e., expressing a particular viewpoint). FacadeMetamodel The FacadeMetamodel <ref type="bibr" target="#b56">[57]</ref> benefits from the realization that most domain-specific languages are often just subsets of UML itself. It presents an approach to build new DSMLs by generating a kind of "facade" that looks like a pure DSL to the modeler. However, it is in reality using UML in the back, thus allowing full reuse of the UML infrastructure.</p><p>Given the extensibility and ease of use of this approach, the FacadeMetamodel may be used to build views on top of UML models by aliasing (renaming), refining, pruning and extending (using the UML profile mechanism) the UML language. The approach takes this customization model and generates an Ecore metamodel representing the new language/viewtype that can then be used to generate a custom user interface (e.g., in Papyrus 10 ).</p><p>The new language appears as a complete pure DSL to endusers. Therefore, all modeling tools can use it transparently and it is automatically populated from the base UML models. Updates on the DSL level are propagated back to UML and stored as normal UML models. Updating those same models with standard UML tools is not recommended due to the possibility of inconsistent modifications. Kitalpha In the context of the PolarSys project, 11 Kitalpha 12 is proposed as a framework to define model views inspired from the use of viewpoints in architectural modeling. Thus, the notion of view is very general in Kitalpha and covers the following points: abstract syntax, notations (such as icons), concrete syntax (textual and graphical), rules (e.g., check, transformation), services and tools. Furthermore, Kitalpha focuses also on reusing views by providing inheritance and aggregation for viewpoints.</p><p>A textual domain-specific language is provided to define these general building blocks of a viewpoint in Kitalpha. In addition, dedicated DSLs are provided to define the internals of the different building blocks. For instance, a language for defining the abstract syntax of viewpoints is available. With this language, metaclasses from base metamodels may be extended with more specific classes, new classes may be introduced, and additional references may be added as well. ModelJoin ModelJoin <ref type="bibr" target="#b16">[16,</ref><ref type="bibr" target="#b17">17]</ref> is a domain-specific language and tool for the creation of views on heterogeneous models (i.e., models that are instances of different metamodels). ModelJoin is a declarative language with a human-readable textual concrete syntax that bears similarities to that of SQL. The language is used to describe the desired properties of a 10 https://eclipse.org/papyrus. In relational databases, the table schema of the result of a query is dependent on the columns chosen by the projection operators. Transferred to the modeling, this means that such a query not only defines the elements in a view, but also the kinds of elements which can be in a view, i.e., the metamodel of a view (called view type according to the terminology of <ref type="bibr" target="#b29">[30]</ref>). Thus, the implementation of ModelJoin generates both a target metamodel and transformations that create target models from the input (base) models.</p><p>ModelJoin has recently been extended to support editability inside the views <ref type="bibr" target="#b18">[18]</ref>. For this purpose, OCL constraints that limit view editability are generated together with the views. These constraints define the possible edit operations for which the resulting views can be translated back to a valid base model. If no such translation is possible, the view may be adapted automatically with an automatic fix so that the resulting view is translatable. The prototypical implementation is based on Eclipse technologies such as Xtext and Xtend, and uses QVT-O as the target language into which the transformations for the synchronization between base models and view are generated. OpenFlexo OpenFlexo <ref type="bibr" target="#b30">[31]</ref> is a generic solution allowing to assemble and relate, without duplication, data coming from various kinds of data sources. Its main goal is to support the federation of data from heterogenous technical spaces (EMF, XML, OWL, Excel, etc.) into the same conceptual space realized as a kind of virtual view. It comes with several components, including notably the Viewpoint Modeler and ViewEditor. The former is for specifying viewpoints that indicate how to mix together the different types of data. The latter intends to provide regular view visualization and editing capabilities, depending on previously specified viewpoints. To integrate these components, the solution also comes with an underlying model federation framework. This allows for homogeneous handling of data as models.</p><p>A core aspect of the approach is that it also provides the ability to define synchronized views on models, e.g., stored as EMF models. As soon as a virtual view is computed (from potentially multiple different models), the view is connected with the different base models. The other way round, there is a mechanism for indirectly connecting the different base models to the view. For instance, this allows propagating changes from one base model to other base model(s) via the common view. Furthermore, changes on the view elements can be propagated back to the corresponding base models. OSM The Orthographic Software Modeling (OSM) approach <ref type="bibr" target="#b6">[7]</ref> aims at establishing views as first-class entities of the software engineering process. In the envisioned viewcentric development process, all information about a system is represented in a single underlying model (SUM). Even source code is treated as a special textual view. The OSM concept is based on three main principles: dynamic view generation, dimension-based view navigation, and view-oriented methods.</p><p>User-specific custom views are generated dynamically based on transformations from and to the SUM. These views are organized in independent (orthogonal) dimensions. Technically, a view is a model of its own, which also has a metamodel. Model-to-model transformations allow to create the views dynamically from the SUM. However, this requires that bidirectional transformations exist for every view type. Such transformations can provide the synchronization of the views with the SUM. In addition, edit operations can be propagated back to the SUM likewise. The complexity of a hub-and-spoke architecture like OSM is linear in terms of the number of transformations that have to be written and maintained. This notably contrasts with the quadratic number of transformations in a peer-to-peer synchronization scenario for views.</p><p>OSM also encompasses a development process with a developer role, who uses the generated views, and a role called methodologist, who creates the different view types along the orthogonal dimensions. Atkinson et al. <ref type="bibr" target="#b5">[6]</ref> have developed a prototypical implementation of the OSM approach based on KobrA. It relies on UML and OCL and offers the dimensions abstraction (defined by notions of model-driven development), variability (defined by notions of product line engineering), compositionality (defined by notions of component-based development), encapsulation (e.g., public/private) and projection (structural/operational/ behavioral). Sirius Sirius <ref type="bibr" target="#b62">[63]</ref> is an open source Eclipse/EMF-based tool that is intended to facilitate and speed up the construction of industrial graphical modeling solutions. Considering the domain metamodels which are key assets inside companies, and thus, cannot be changed or modified easily, it allows to specify different concrete representations on top of them expressing different viewpoints (for different stakeholders). Within Sirius, a given Viewpoint Specification Model (VSM) is defining a set of logically organized representations which are graphical constructions to represent the actual data (i.e., the original model). Such representations can be diagrams, tables, matrices or trees. A viewpoint specification also describes how the different elements from the original metamodel(s) should be actually mapped to the various representations. These mappings can go from basic ones (e.g., one concept/one box in a diagram) to complex ones (resulting from complex query computations, e.g., defined in the Acceleo Query Language (AQL)). Thus, applying such a viewpoint, different graphical views on the same model(s) can be provided to different types of users/stakeholders.</p><p>A core aspect of the approach is the clear separation between the metamodel that is conceptual and the viewpoint that is considered as a purely representation asset (mostly in the sense of graphical representation). Another aspect is that the provided views can be made completely editable if needed, the required editing capabilities being also specified within the Viewpoint Specification Model. In this respect, Obeo Designer Team (as a commercial extension of Sirius) comes with more powerful additional features dealing with collaborative editing of such views and the management of related conflicts. TGG-based approaches Triple Graph Grammars (TGGs) <ref type="bibr" target="#b60">[61]</ref> have been proposed as a means of specifying a consistency relation between two graph languages. TGGs are a wellstudied formalism to define bidirectional transformations including not only the back and forth translation of models, but also the comparison of models and their synchronization. Thus, they are also applicable as a base mechanism to solve model view problems. In particular, two TGG-based approaches have been presented in the past for defining views. Both TGGvv (virtualized view) and TGGmv (materialized view) are supported by the EMF-based, bootstrapped eMoflon model synchronization tool <ref type="bibr" target="#b45">[46]</ref>. In the following, we summarize both approaches.</p><p>The first approach of using TGGs for model views (TGGvv) has been presented by Jakob et al. <ref type="bibr" target="#b35">[36,</ref><ref type="bibr" target="#b36">37]</ref>. In this approach, the base metamodel is aligned with the viewtype by defining a correspondence model between them. Based on these three models, models conforming to the base metamodel can be filtered to yield virtual views conforming to the viewtype. The advantage of this approach is that the views are virtual in the sense that elements of the base model are simply interpreted as elements of a view. This simplifies synchronization tasks in many cases. The approach, however, requires non-trivial changes to the base metamodels and has not been fully formalized for complex metamodels or multiple views on the same base metamodel. TGGvv has been complemented by a recent TGG-based approach for materialized views (TGGmv) <ref type="bibr" target="#b3">[4]</ref>. It notably allows for separate view models without requiring any changes to the base metamodels. This approach provides a formalization of View TGGs, as a restriction of existing TGG theory to the special asymmetric case of view specification (as TGGs are symmetric in general). It shows that the chosen restrictions can be suitably exploited to enable highly efficient view synchronization. VIATRA Viewers The VIATRA Viewers 13 approach emerged from EMF IncQuery <ref type="bibr" target="#b64">[65]</ref> which is a framework for performing incremental model querying based on the RETE algorithm. The main advantage of EMF IncQuery, compared to many other model query approaches, is that queries do not have to be entirely evaluated in case model changes happen (but only queries which are actually concerned by the changes). Of course, this capability plays also an important role for model view approaches. Thus, EMF IncQuery can be extended for dealing with model views <ref type="bibr" target="#b23">[23]</ref>. In particular, the EMF IncQuery language is extended by so-called derivation rules which are defined with annotations to EMF IncQuery query patterns. Via the annotation of derivation rules, the viewtypes are defined and the query patterns are used to populate the views by simply reusing the EMF IncQuery support.</p><p>In addition to the views, trace models are computed between the views and the base models. These trace models are used to reason about changes of query pattern matches which allows to build synchronization support. In particular, if changes to the base models are performed, the query pattern matches are changed. This stimulates incremental updates in the view models. In recent work, the propagation of view change to the base models is also considered <ref type="bibr" target="#b61">[62]</ref>. Finally, it has to be mentioned that VIATRA Viewers allows to build chain views, i.e., to build views on views. VUML VUML <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b55">56]</ref> is a UML profile that supports viewbased modeling for the UML family of modeling languages. The proposed methodology includes the definition of actors, which all possess a unique viewpoint, and a design process that supports the actor concept. The design process is aligned with the OMG MDA process <ref type="bibr" target="#b51">[52]</ref>. The viewpoint models which are tied to these viewpoints are UML class diagrams. They are composed into a VUML system model. The composition algorithms have been implemented in a composition metamodel and transformations in ATL.</p><p>The application of a viewpoint on a specific system is called a view. VUML provides the concept of MultiView Components, which consist of both default base views (that can be used by all actors) and actor-specific views (that are connected to the base view via an extension relation). The actor concept can be used to structure the views and to implement access control. The semantics of VUML are described by a metamodel and textual descriptions. The views of a MultiView Component can have dependencies between each other, which are expressed with OCL constraints.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Research agenda</head><p>Several interesting findings can be made from the aggregated <ref type="table" target="#tab_2">Table 2</ref> resulting from our previous evaluation of different model view solutions. There are some commonly shared aspects: for instance, all evaluated approaches require an explicit definition of the viewtype and do not offer the possibility of deriving it on the fly when computing the view. Also, for each feature there is at least one approach covering it, showing the variety of existing solutions. Still, most of these solutions focus on a reduced set of features. We are still missing more general solutions that can be applicable in a broad number of scenarios. By looking at <ref type="table" target="#tab_2">Table 2</ref>, we can also see some features that seem to be more challenging since very few approaches provide some support from them. A typical missing feature is the verification support for viewpoint/view definitions. Most approaches do not support designers in the specification of the viewpoints and underlying viewtypes. For instance, they do not alert the users regarding the applicability or executability of these definitions to build actual views. The few that somehow ensure these properties are doing it more as a side-effect, because the underlying view mechanism itself is strict enough to prevent from some possible issues. Moreover, graphical languages to express queries are hardly used, while they could be useful to allow less technical users defining their own viewpoints/views (as tools like graphical query builders for databases have proven to be).</p><p>Beyond these mentioned features, we would like to highlight a few more research challenges worth to be investigated in the coming years. Some of them are actually well-known recurring problems in any technical space where views are used in practice (e.g., in the database domain). Some others are more specifically related to our modeling context and have been identified by studying deeper the content of <ref type="table" target="#tab_2">Table 2.</ref> -Terminology inconsistencies A different vocabulary is employed within papers from the literature we studied for this review. For instance, Melnik et al.</p><p>[53] define model composition as the combination of two successive mappings into one. For Chechik et al. <ref type="bibr" target="#b19">[19]</ref> and others, model composition refers to a specific model integration scenario where models with running interacting features are assembled. This also causes comparisons and building on top of existing approaches to become more difficult. This is especially evident if we look at papers targeting different modeling levels in the four-layer modeling infrastructure of OMG. Even papers that use the same type of techniques and share a similar conceptual goal may use a very different terminology (e.g., DSL combination vs model merging). This makes them quite often ignorant of each other. The present paper is an initial step in the direction of trying to solve this problem as far as views/viewpoints on models are concerned. -View updating problem In the general case, fully updating a view is not always possible <ref type="bibr" target="#b50">[51]</ref>. This will notably depend on the kind of modifications applied, and on the operators used to compute the view. Indeed, some combinations may not result in a deterministic translation of the view update into a set of modifications on the base model elements. As a simple example, imagine a model view that displays the average value of a certain attribute from a given class. An update of this average value does not have a single way to be propagated back to the individual values from the base models: Should we proportionally increase all of them? Or rather assign the whole increment to a single one? A pragmatic solution would be to provide a uniform way to support several different model view update strategies. For instance, a listener on the model view could capture the update events and deals with them according to the instructions provided by the designer (e.g., similarly to the concept of INSTEAD-OF triggers as available in SQL). As we have observed, current solutions follow a more conservative approach where they basically restrict the changes as soon as they become complex to handle. -Incremental view maintenance For those approaches where (some of) the model view elements are automatically computed, a major problem is to incrementally update them after changes on the base models. As seen in <ref type="table" target="#tab_2">Table 2</ref>, current solutions typically ignore or provide very limited support to this feature. Always completely recomputing the whole view may be too costly and/or trigger undesirable side-effects in some cases. As introduced in the previous item, specific view update strategies could be implemented to provide the needed incremental support to deal with such scenarios. As a possible technical solution, they could rely on incremental model transformation techniques <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b38">39]</ref>. However, there are some existing limitations depending on the complexity of the model view. For instance, non-distributive aggregate functions are very difficult to deal with <ref type="bibr" target="#b57">[58]</ref>. -Concrete syntax generation The (direct or indirect) definition of the abstract syntax of the view type is a key element in most approaches. Nevertheless, most of them do not offer explicit support to specify the concrete syntax part (as seen from <ref type="table" target="#tab_2">Table 2</ref>). To make model views more easily usable by end-users, we should be able to display the view content graphically (and not just show it using default tree-like browsers). In order to achieve this, we could generate a default concrete syntax based on the concrete syntax(es) associated with the base metamodels/languages. We could also manually build one explicitly for a given viewtype. The graphical-oriented approaches proposed by solutions such as Sirius or Kitalpha are good examples to follow regarding these aspects. -Security aspects Views are typically used as a security mechanism to prevent people from accessing data they are not authorized to see and/or modify. This requires the availability of an access-control mechanism that enables designers to give read/write permissions (on specific model views) to particular categories of persons. Such a mechanism notably allows preventing them from accessing directly to the base models when not appropriate. As observed during our study, this is in general a green area for the modeling community. However, it makes sense to tackle related challenges once the specification of views/viewpoints on models comes into play. For instance, many approaches provide profiles or DSLs to annotate models with security characteristics of the system being modeled. Until now, they do not allow assigning explicit permissions to the model access itself. This could be possibly addressed by the use of model views in such contexts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Related work</head><p>In this paper, we focus on surveying approaches for views on models as described in Sect. 2 by following a feature-based categorization methodology. Besides this kind of solutions, several other related lines of research exist as well. They are related to views in the very general sense (as technical prerequisites), or propose a different interpretation of views for models. In the following, we first outline some of these research directions. Then, we enumerate and discuss other (feature-based) surveys in the field of model-driven engineering. Finally, we overview related surveys on the topic of views in technical spaces different from modelware. The problem of view modeling is related to several other model management tasks in the modeling area. In some works <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b52">53]</ref>, the following core model management operators are defined: match, compose, merge, extract and diff. Of course, some of these operators may be built-in and combined into more general solutions for view modeling and view generation. Other additional operators have been subsequently defined, such as for the union and subsetting of models <ref type="bibr" target="#b1">[2]</ref>.</p><p>There are multi-viewpoint modeling solutions that provide model view capabilities such as ODP <ref type="bibr" target="#b47">[48]</ref>, UML <ref type="bibr" target="#b11">[12]</ref> and Model Driven Web Engineering (MDWE) <ref type="bibr" target="#b54">[55]</ref> approaches. They have in common that they all base themselves on a fixed number of viewpoints to decompose the systems they are representing. For many of the proposed languages, view modeling approaches have also been introduced. However, they are usually tailored language-specific solutions and cannot be applied on other languages.</p><p>The ISO 42010 standard [1] defines a conceptual model for software architectures. It gives a broad definition of the terms architecture view and architecture viewpoint, which deviate from the definition used in this paper. It distinguishes between two fundamental approaches to view-based modeling: A synthetic approach is when architects create views of a system and integrate them using model correspondences. A projective approach is when architects derive views from one or several base models using a (possibly automated) procedure. Several architectural standards claim conformance to ISO 42010, but many of them share different notions of the concepts defined in it <ref type="bibr" target="#b33">[34]</ref>.</p><p>Several papers focus on the problem of composing/ combining domain-specific modeling languages (DSMLs).</p><p>One of their main objectives is to achieve a global and unified modeling language to express system models from a set of fixed viewpoints. In this case, each one of these viewpoints is specified using a different DSML. In general, these approaches do not focus on the migration of the individual model views. In case they do, models are typically juxtaposed to conform to the abstract syntax of the composed DSML. Among the works focusing on this topic from a variety of backgrounds, we refer the interested reader to the areas of unification (also includes a review of previous works on the topic) <ref type="bibr" target="#b65">[66]</ref>, globalization of modeling languages <ref type="bibr" target="#b21">[21]</ref>, grammar-based composition <ref type="bibr" target="#b42">[43]</ref>, metamodel weaving <ref type="bibr" target="#b10">[11]</ref>, metamodel merging <ref type="bibr" target="#b70">[71]</ref> and language embedding <ref type="bibr" target="#b34">[35]</ref>.</p><p>Other works deal with similar issues, but at model level. Thus, the view merging problem is typically applied to the challenge of building a single consistent and unified model view over a system. This is realized from a set of views specified independently by different groups of people. Many times, individual views are quite homogeneous and conform to the same language. However, their union is not trivial as it may induce (many) possible inconsistencies in the global view. Depending on the complexity of the involved views, dedicated algorithms may be required, e.g., for state machines <ref type="bibr" target="#b19">[19]</ref> or block-based modeling languages <ref type="bibr" target="#b48">[49]</ref>. More general approaches allow to express desirable properties on such a unified view <ref type="bibr" target="#b58">[59]</ref>, and even to merge views that may be inconsistent themselves in the first place <ref type="bibr" target="#b59">[60]</ref>. In this respect, Engels et al. <ref type="bibr">[26]</ref> present an approach which considers also the operations (expressed as graph transformations) to be used in single views as well as during their integration.</p><p>Incremental model query and transformation approaches <ref type="bibr" target="#b26">[27]</ref> are also related to model views, at least in the sense that they can act as a prerequisite for realizing efficient implementations of model view approaches. This is also reflected in our feature model (cf. recomputation feature). Incremental techniques, as the name suggests, do not transform the complete input model to a new result each time. Instead, they only consider the differences between the current input model and the input model used in the last execution run to minimize the changes to be applied on the existing result. Several incremental approaches have been proposed in the last past years <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b37">38,</ref><ref type="bibr" target="#b64">65]</ref>, but there are also other approaches published earlier <ref type="bibr" target="#b26">[27]</ref>.</p><p>Concerning our feature-based methodology for discussing different model view approaches, we follow a best practice in publishing in the model-driven engineering domain. In previous works, several feature-based surveys have been already published <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b22">22,</ref><ref type="bibr" target="#b31">32]</ref>. In addition, related surveys are available which discuss prerequisites of model view approaches such as model transformations in general <ref type="bibr" target="#b53">[54]</ref> or particular model transformation approaches <ref type="bibr" target="#b32">[33]</ref>. However, to the best of our knowledge, we are not aware of any survey about model view approaches (except a preliminary work on a tooloriented taxonomy for combining domain-specific languages with view-based modeling approaches <ref type="bibr" target="#b29">[30]</ref>). In particular, current language workbenches have been evaluated regarding the specification of views for domain-specific models <ref type="bibr" target="#b29">[30]</ref>. Our work is orthogonal in the sense that we are interested in dedicated model view approaches which may build on language workbenches (such as EMF). However, we do share small parts of definitions between our feature model and the taxonomy presented in this evaluation <ref type="bibr" target="#b29">[30]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8">Conclusions</head><p>All along this paper, we have presented a recollection of both research and industrial development dealing with the important problem of views/viewpoints on models and the corresponding technological support. We do believe this research line is becoming more and more crucial for the modeling community, and also from a general software engineering perspective. This is especially true given the increasing complexity of industrial systems that need to be modeled, e.g., consider emerging cyber-physical systems and large-scale IoT systems.</p><p>We have motivated why we think many future applications of modeling will depend, one way or the other, on some kind of mechanism for dealing with views/viewpoints on models. We have also described what are the solutions available nowadays and how they currently compare to each other. To this intent, we categorized them according to a detailed feature model that aims to shed more light on this topic. This collaborative work has notably required to face terminology problems that quite often hamper the combination and reuse of existing initiatives.</p><p>As further work, we plan to tackle some of the issues described in the proposed research agenda. This is expected to be performed mostly in relation with some of our ongoing and future collaborative projects on model-based technologies and their application in different industrial domains. We also hope this paper triggers a broader discussion within the community. This should allow enriching our current feature model and extending the approach comparison in the future. But, more than anything, this should raise the awareness on the research challenges around views/viewpoints on models and their practical usages.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 View terminology</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>2</head><label></label><figDesc>http://www.obeosmartea.com. 3 https://www.opengroup.org/togaf. 4 http://www.bpmn.org. 5 http://www.omg.org/spec/ReqIF.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 Example of a viewtype combining the TOGAF base metamodel with the ReqIF and BPMN ones (excerpt)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Example of a view combining a TOGAF base model with ReqIF and BPMN ones, according to the viewtype definition from Fig. 2 (excerpt)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>11 http://www.polarsys.org. 12 http://www.eclipse.org/proposals/polarsys.kitalpha. view. It abstracts from the technical details of how views are created.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="true"><head>Table 1 Selected approaches</head><label>1</label><figDesc></figDesc><table>Approach 
+References 
+
+Cicchetti 
+[20] 
+
+EMF Facet 
+[25] 
+
+EMF Profiles 
+[44] 
+
+EMF Views 
+[14,15] 
+
+Epsilon Decoration 
+[42] 
+
+Epsilon Merge 
+[41] 
+
+FacadeMetamodel 
+[57] 
+
+Kitalpha 
+[45] 
+
+ModelJoin 
+[16,17] 
+
+OpenFlexo 
+[31] 
+
+OSM 
+[7] 
+
+Sirius 
+[63] 
+
+TGGvv 
+[36,37] 
+
+TGGmv 
+[4] 
+
+VIATRA Viewers 
+[23] 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table 2 A comparison of existing model view approaches (✓ = feature supported,</head><label>2</label><figDesc></figDesc><table>∅ = not applicable, w = Wizard) 
+
+Cicc 
+hetti 
+EMF Facet EMF 
+
+Profiles 
+
+EMF 
+Views 
+
+Epsilon 
+merge 
+
+Epsilon 
+Decora-
+
+tion 
+
+Facade-
+Metamodel 
+Kitalpha Model-
+
+Join 
+
+Open-
+Flexo 
+OSM Sirius TGGmv TGGvv VIATRA 
+
+viewers 
+
+VUML 
+
+Type structure 
+Model arity 
+Single model 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>Table 2 continued</head><label>2</label><figDesc></figDesc><table>Cicc 
+hetti 
+EMF Facet EMF 
+
+Profiles 
+
+EMF 
+Views 
+
+Epsilon 
+merge 
+
+Epsilon 
+Decora-
+
+tion 
+
+Facade-
+Metamodel 
+Kitalpha Model-
+
+Join 
+
+Open-
+Flexo 
+OSM Sirius TGGmv TGGvv VIATRA 
+
+viewers 
+
+VUML 
+
+VT language 
+VTL operations 
+Add 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table 2</head><label>2</label><figDesc></figDesc><table>continued 
+Cicc 
+hetti 
+EMF Facet EMF 
+
+Profiles 
+
+EMF 
+Views 
+
+Epsilon 
+merge 
+
+Epsilon 
+Decora-
+
+tion 
+
+Facade-
+Metamodel 
+Kitalpha Model-
+
+Join 
+
+Open-
+Flexo 
+OSM Sirius TGGmv TGGvv VIATRA 
+
+viewers 
+
+VUML 
+
+VT Manifest 
+Materialized 
+
+</table></figure>
+
+			<note place="foot" n="7"> http://dblp.l3s.de/dblp++.php.</note>
+
+			<note place="foot" n="8"> Note that comprehensive general-purpose modeling languages, such as UML, can be regarded as a composition of several domain-specific languages.</note>
+
+			<note place="foot" n="13"> https://wiki.eclipse.org/VIATRA/Addon/VIATRA_Viewers.</note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Erik Burger is a researcher</head></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Iso/Iec/Ieee</forename><surname>Std</surname></persName>
+		</author>
+		<title level="m">Systems and Software Engineering: Architecture Description. IEEE</title>
+		<meeting><address><addrLine>Los Alamitos</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A metamodeling language supporting subset and union properties</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Alanen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Porres</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Softw. Syst. Model</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="103" to="124" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">A survey on model versioning approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Altmanninger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Seidl</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Web Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="271" to="304" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Efficient model synchronization with view triple graph grammars</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Anjorin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Rose</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Deckwerth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schürr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 10th European Conference on Modelling Foundations and Applications (ECMFA)</title>
+		<meeting>the 10th European Conference on Modelling Foundations and Applications (ECMFA)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="1" to="17" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A rule-driven approach for composing viewpoint-oriented models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Anwar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ebersold</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Coulette</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Nassar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Kriouile</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Object Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="89" to="114" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Modeling components and component-based systems in KobrA</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Atkinson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Bostan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Brenner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Falcone</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gutheil</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Hummel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Juhasz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Stoll</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Common Component Modeling Example</title>
+		<editor>Rausch, A., Reussner, R., Mirandola, R., Plášil, F.</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="54" to="84" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Orthographic software modeling: a practical approach to view-based development</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Atkinson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Stoll</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Bostan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 4th International Conference on Evaluation of Novel Approaches to Software Engineering (ENASE)</title>
+		<meeting>the 4th International Conference on Evaluation of Novel Approaches to Software Engineering (ENASE)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="206" to="219" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Change-driven model transformations: change (in) the rule to rule the change</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Bergmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Ráth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Varró</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Varró</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Softw. Syst. Model</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="431" to="461" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Model management 2.0: manipulating richer mappings</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">A</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Melnik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2007 ACM SIGMOD International Conference on Management of Data (SIGMOD)</title>
+		<meeting>the 2007 ACM SIGMOD International Conference on Management of Data (SIGMOD)<address><addrLine>London</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="1" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">On the operationalization of graph queries with generalized discrimination networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Beyhl</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Blouin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Giese</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Lambers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th International Conference on Graph Transformation (ICGT)</title>
+		<meeting>the 9th International Conference on Graph Transformation (ICGT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="170" to="186" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A canonical scheme for model composition</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bézivin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Bouzitouna</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">D</forename><surname>Del Fabro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">P</forename><surname>Gervais</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Jouault</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Kolovos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Kurtev</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">F</forename><surname>Paige</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Second European Conference on Model Driven Architecture: Foundations and Applications (ECMDA-FA)</title>
+		<meeting>the Second European Conference on Model Driven Architecture: Foundations and Applications (ECMDA-FA)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="346" to="360" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Systems, views and models of UML</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Breu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Grosu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Rumpe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Schwerin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">UML Workshop</title>
+		<imprint>
+			<date type="published" when="1997" />
+			<biblScope unit="page" from="93" to="108" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">MoDisco: a model driven reverse engineering framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Bruneliere</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cabot</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Dupé</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Madiot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1012" to="1032" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">On lightweight metamodel extension to support modeling tools agility</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Bruneliere</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Desfray</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">E</forename><surname>Khelladi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Hebig</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Bendraou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cabot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 11th</title>
+		<meeting>the 11th</meeting>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+				<title level="m">European Conference on Modelling Foundations and Applications (ECMFA)</title>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="62" to="74" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">EMF views: a view mechanism for integrating heterogeneous models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Bruneliere</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Perez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cabot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 34th International Conference on Conceptual Modeling (ER)</title>
+		<meeting>the 34th International Conference on Conceptual Modeling (ER)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="317" to="325" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">ModelJoin. A textual domain-specific language for the combination of heterogeneous models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Burger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Henß</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Kruse</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Küster</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Rentschler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Happe</surname></persName>
+		</author>
+		<ptr target="http://digbib.ubka.uni-karlsruhe.de/volltexte/1000037908" />
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+		<respStmt>
+			<orgName>Karlsruhe Institute of Technology, Faculty of Informatics</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Tech. Rep. 1</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">View-based model-driven software development with ModelJoin</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Burger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Henß</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Küster</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Kruse</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Happe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Softw. Syst. Model</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="472" to="496" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Translatability and Translation of Updated Views in ModelJoin</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Burger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Schneider</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th International Conference on the Theory and Practice of Model Transformations (ICMT)</title>
+		<editor>P. van Gorp, G. Engels</editor>
+		<meeting>the 9th International Conference on the Theory and Practice of Model Transformations (ICMT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="55" to="69" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A relationship-based approach to model integration</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Chechik</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Nejati</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sabetzadeh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Innov. Syst. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="18" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">A hybrid approach for multi-view modeling</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Cicchetti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Ciccozzi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Leveque</surname></persName>
+		</author>
+		<idno type="doi">doi:10.14279/tuj.eceasst.50.738</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ECEASST</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Globalizing modeling languages</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Combemale</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Deantoni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Baudry</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">B</forename><surname>France</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jézéquel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gray</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Comput</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="68" to="71" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Feature-based survey of model transformation approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Czarnecki</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Helsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IBM Syst. J</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="621" to="646" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Query-driven incremental synchronization of view models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Debreceni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Horváth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Hegedüs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Ujhelyi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Ráth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Varró</surname></persName>
+		</author>
+		<idno>pp. 31:31-31:38. ACM</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2nd Workshop on View-Based, Aspect-Oriented and Orthographic Software Modelling (VAO)</title>
+		<meeting>the 2nd Workshop on View-Based, Aspect-Oriented and Orthographic Software Modelling (VAO)<address><addrLine>London</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Modeling cyber-physical systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Derler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">A</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">S</forename><surname>Vincentelli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. IEEE</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="13" to="28" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">A combined reference model-and view-based approach to system specification</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Eclipse</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Engels</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Heckel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Taentzer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Ehrig</surname></persName>
+		</author>
+		<ptr target="http://www.eclipse.org/facet/26" />
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Softw. Eng. Knowl. Eng</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="457" to="477" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">A survey on incremental model transformation approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Etzlstorfer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Kusel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kapsammer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Langer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Retschitzegger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Schoenboeck</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Schwinger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Workshop on Models and Evolution (ME) Co-located with MoDELS</title>
+		<meeting>the Workshop on Models and Evolution (ME) Co-located with MoDELS</meeting>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="4" to="13" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A comprehensive approach for managing inter-model inconsistencies in automated production systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Feldmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Kernschmidt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Vogel-Heuser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE International Conference on Automation Science and Engineering (CASE)</title>
+		<meeting>the IEEE International Conference on Automation Science and Engineering (CASE)</meeting>
+		<imprint>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="1120" to="1127" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Viewpoints: a framework for integrating multiple perspectives in system development</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Finkelstein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kramer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Nuseibeh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Finkelstein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Goedicke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Softw. Eng. Knowl. Eng</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="31" to="57" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Towards a tool-oriented taxonomy of view-based modelling</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Goldschmidt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Becker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Burger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Modellierung 2012</title>
+		<meeting>the Modellierung 2012</meeting>
+		<imprint>
+			<publisher>GI</publisher>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Addressing modularity for heterogeneous multi-model systems using model federation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">R</forename><surname>Golra</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Beugnard</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Dagnat</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Guérin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Guychard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Companion Proceedings of the 15th International Conference on Modularity</title>
+		<meeting><address><addrLine>London</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="206" to="211" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Feature-based classification of bidirectional transformation approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Hidaka</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Tisi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cabot</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Softw. Syst. Model</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="907" to="928" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A survey of triple graph grammar tools</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Hildebrandt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Lambers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Holger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Rieke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Greenyer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Schäfer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lauder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Anjorin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schürr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2nd International Workshop on Bidirectional Transformations (BX)</title>
+		<meeting>the 2nd International Workshop on Bidirectional Transformations (BX)</meeting>
+		<imprint>
+			<publisher>EC-EASST</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="1" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">On metamodels in</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Hilliard</surname></persName>
+		</author>
+		<ptr target="http://www.iso-architecture.org/ieee-1471/docs/Hilliard-On-Metamodels-in-42010.pdf" />
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page">42010</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Building domain-specific embedded languages</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Hudak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Comput. Surv</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">196</biblScope>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Non-materialized model view specification with triple graph grammars</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jakob</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Königs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schürr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd International Conference on Graph Transformations (ICGT)</title>
+		<meeting>the 3rd International Conference on Graph Transformations (ICGT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="321" to="335" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">View creation of meta models by using modified triple graph grammars</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Jakob</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schürr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electr. Notes Theor. Comput. Sci</title>
+		<imprint>
+			<biblScope unit="volume">211</biblScope>
+			<biblScope unit="page" from="181" to="190" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Incremental pattern matching for regular expressions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Jalali</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A H</forename><surname>Ghamarian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Rensink</surname></persName>
+		</author>
+		<idno>pp. 736:1-736:12. EC-EASST</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 11th International Workshop on Graph Transformation and Visual Modeling Techniques (GTVMT)</title>
+		<editor>Fish, A., Lambers, L.</editor>
+		<meeting>the 11th International Workshop on Graph Transformation and Visual Modeling Techniques (GTVMT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Towards incremental execution of ATL transformations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Jouault</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Tisi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd International Conference on the Theory and Practice of Model Transformations (ICMT)</title>
+		<meeting>the 3rd International Conference on the Theory and Practice of Model Transformations (ICMT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="123" to="137" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University and Durham University Joint Report</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Tech. Rep. EBSE 2007-001</note>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Merging models with the epsilon merging language (EML)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">S</forename><surname>Kolovos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">F</forename><surname>Paige</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">A</forename><surname>Polack</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th International Conference on Model Driven Engineering Languages and Systems (MoDELS)</title>
+		<meeting>the 9th International Conference on Model Driven Engineering Languages and Systems (MoDELS)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="215" to="229" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Constructing and navigating non-invasive model decorations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">S</forename><surname>Kolovos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">M</forename><surname>Rose</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">D</forename><surname>Matragkas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">F</forename><surname>Paige</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">A</forename><surname>Polack</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">J</forename><surname>Fernandes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd International Conference on Theory and Practice of Model Transformations (ICMT)</title>
+		<meeting>the 3rd International Conference on Theory and Practice of Model Transformations (ICMT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="138" to="152" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">MontiCore: a framework for compositional development of domain specific languages</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Krahn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Rumpe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Völkel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Softw. Tools Technol. Transf</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="353" to="372" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">EMF profiles: a lightweight extension approach for EMF models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Langer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Wieland</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cabot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Object Technol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="29" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Development of modelling frameworks and viewpoints with Kitalpha</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Langlois</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Exertier</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Zendagui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 14th Workshop on Domain-Specific Modeling (DSM)</title>
+		<meeting>the 14th Workshop on Domain-Specific Modeling (DSM)<address><addrLine>London</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="19" to="22" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Developing eMoflon with eMoflon</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Leblebici</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Anjorin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schürr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 7th International Conference on the Theory and Practice of Model Transformations (ICMT)</title>
+		<meeting>the 7th International Conference on the Theory and Practice of Model Transformations (ICMT)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="138" to="145" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">RM-ODP: the architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">F</forename><surname>Linington</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Open Distributed Processing</title>
+		<editor>Raymond, K., Armstrong, L.</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1995" />
+			<biblScope unit="page" from="15" to="33" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">Building Enterprise Systems with ODP: An Introduction to Open Distributed Processing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Linnington</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Milosevic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Tanaka</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vallecillo</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+			<publisher>CRC Press</publisher>
+			<pubPlace>Boca Raton</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Synthesis of Component and Connector Models from Crosscutting Structural Views</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Maoz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">O</forename><surname>Ringert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Rumpe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Joint Meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering (ESEC/FSE)</title>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="444" to="454" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Model-driven extraction and analysis of network security policies</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Martinez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Garcia-Alfaro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Cuppens</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Cuppens-Boulahia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cabot</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 16th International Conference on Model Driven Engineering Languages and Systems (MoDELS)</title>
+		<meeting>the 16th International Conference on Model Driven Engineering Languages and Systems (MoDELS)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="52" to="68" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">A survey of current methods for integrity constraint maintenance and view updating</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Mayol</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Teniente</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Advances in Conceptual Modeling (ER&apos;99): Workshops on Evolution and Change in Data Management, Reverse Engineering in Information Systems, and the World Wide Web and Conceptual Modeling</title>
+		<meeting>Advances in Conceptual Modeling (ER&apos;99): Workshops on Evolution and Change in Data Management, Reverse Engineering in Information Systems, and the World Wide Web and Conceptual Modeling<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1999" />
+			<biblScope unit="page" from="62" to="73" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<ptr target="http://www.omg.org/mda/" />
+	</analytic>
+	<monogr>
+		<title level="j">OMG Model Driven Architecture</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Supporting executable mappings in model management</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Melnik</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">A</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Halevy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Rahm</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the ACM SIGMOD International Conference on Management of Data (SIGMOD)</title>
+		<meeting>the ACM SIGMOD International Conference on Management of Data (SIGMOD)<address><addrLine>London</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="167" to="178" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">A taxonomy of model transformation. Electronic Notes in</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Mens</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Van Gorp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theoretical Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">152</biblScope>
+			<biblScope unit="page" from="125" to="142" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">An overview of modeldriven web engineering and the MDA</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Moreno</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Romero</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vallecillo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Web Engineering: Modelling and Implementing Web Applications, Human-Computer Interaction Series</title>
+		<editor>Rossi, G., Pastor, O., Schwabe, D., Olsina, L.</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="353" to="382" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">VUML: a viewpoint oriented UML extension</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Nassar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 18th IEEE International Conference on Automated Software Engineering (ASE)</title>
+		<meeting>the 18th IEEE International Conference on Automated Software Engineering (ASE)</meeting>
+		<imprint>
+			<date type="published" when="2003" />
+			<biblScope unit="page" from="373" to="376" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">FacadeMetamodel: Masking UML</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Noyrit</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Gérard</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Selic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 15th International Conference on Model Driven Engineering Languages and Systems (MoDELS)</title>
+		<meeting>the 15th International Conference on Model Driven Engineering Languages and Systems (MoDELS)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="20" to="35" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Incremental maintenance for non-distributive aggregate functions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Palpanas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Sidle</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Cochrane</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Pirahesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 28th International Conference on Very Large Data Bases (VLDB)</title>
+		<meeting>28th International Conference on Very Large Data Bases (VLDB)</meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="802" to="813" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Declarative approach for model composition</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Rubin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Chechik</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">M</forename><surname>Easterbrook</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2008 International Workshop on Models in Software Engineering (MiSE)</title>
+		<meeting>the 2008 International Workshop on Models in Software Engineering (MiSE)<address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="7" to="14" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">View merging in the presence of incompleteness and inconsistency</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sabetzadeh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Easterbrook</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Requir. Eng</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="174" to="193" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Specification of graph translators with triple graph grammars</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schürr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 20th International Workshop on Graph-Theoretic Concepts in Computer Science (WG)</title>
+		<meeting>the 20th International Workshop on Graph-Theoretic Concepts in Computer Science (WG)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1994" />
+			<biblScope unit="page" from="151" to="163" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Incremental backward change propagation of view models by logic solvers</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Semeráth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Debreceni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Á</forename><surname>Horváth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Varró</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the ACM/IEEE 19th International Conference on Model Driven Engineering Languages and Systems</title>
+		<meeting>the ACM/IEEE 19th International Conference on Model Driven Engineering Languages and Systems<address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="306" to="316" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<monogr>
+		<title level="m" type="main">Eclipse Sirius project</title>
+		<ptr target="https://eclipse.org/sirius/" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">ARTIST: model-based stairway to the cloud</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Troya</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Brunelière</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Fleck</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Orue-Echevarria</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gorroñogoitia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Projects Showcase, part of the Software Technologies: Applications and Foundations 2015 Federation of Conferences (STAF)</title>
+		<meeting>the Projects Showcase, part of the Software Technologies: Applications and Foundations 2015 Federation of Conferences (STAF)</meeting>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">EMF-IncQuery: an integrated development environment for live model queries</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Ujhelyi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Bergmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Á</forename><surname>Hegedüs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Á</forename><surname>Horváth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Izsó</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Ráth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Szatmári</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Varró</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Comput. Program</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="80" to="99" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">On the combination of domain specific modeling languages</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vallecillo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 6th European Conference on Modelling Foundations and Applications (ECMFA)</title>
+		<meeting>the 6th European Conference on Modelling Foundations and Applications (ECMFA)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="305" to="320" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">MPM4CPS: Multi-paradigm modelling for cyberphysical systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Vangheluwe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Amaral</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Giese</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Broenink</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schätz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Norta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Carreira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Lukovic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Mayerhofer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vallecillo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Joint Proceedings of the Doctoral Symposium and Projects Showcase Held as Part of STAF 2016 Co-located with Software Technologies: Applications and Foundations (STAF 2016)</title>
+		<imprint>
+			<date type="published" when="2016" />
+			<biblScope unit="page" from="40" to="47" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Guidelines for snowballing in systematic literature studies and a replication in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Wohlin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering (EASE)</title>
+		<meeting>the 18th International Conference on Evaluation and Assessment in Software Engineering (EASE)<address><addrLine>London</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="1" to="38" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Information Systems Definition: The Multiview Approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Wood-Harper</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Antill</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Avison</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Science Texts. Blackwell Scientific</title>
+		<imprint>
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">A framework for information systems architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Zachman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IBM Syst. J</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="276" to="292" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Package merge in UML 2: practice vs. theory?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Zito</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Diskin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Dingel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">In: Proceedings of the 9th International Conference on Model Driven Engineering Languages and Systems (MoDELS)</title>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2006" />
+			<biblScope unit="page" from="185" to="199" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

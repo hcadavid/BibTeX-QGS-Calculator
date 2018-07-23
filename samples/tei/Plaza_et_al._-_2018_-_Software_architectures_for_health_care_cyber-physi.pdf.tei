@@ -1,0 +1,1623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Software architectures for health care cyber-physical systems: A systematic literature review</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2018">2018. e1930</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrea</forename><forename type="middle">M</forename><surname>Plaza</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Universidad Politécnica de Madrid</orgName>
+								<address>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="institution">Universidad Politécnica Salesiana</orgName>
+								<address>
+									<settlement>Cuenca</settlement>
+									<country key="EC">Ecuador</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jessica</forename><surname>Díaz</surname></persName>
+							<email>yesica.diaz@upm.es</email>
+							<affiliation key="aff3">
+								<orgName type="department">Correspondence Jessica Díaz</orgName>
+								<orgName type="institution">Universidad Politécnica de Madrid-CITSEM</orgName>
+								<address>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="institution">Universidad Politécnica de Madrid-CITSEM</orgName>
+								<address>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">|</forename><forename type="middle">Jennifer</forename><surname>Pérez</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Correspondence Jessica Díaz</orgName>
+								<orgName type="institution">Universidad Politécnica de Madrid-CITSEM</orgName>
+								<address>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="institution">Universidad Politécnica de Madrid-CITSEM</orgName>
+								<address>
+									<settlement>Madrid</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution">S P E C I A L I S S U E -S E C H</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Software architectures for health care cyber-physical systems: A systematic literature review</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">J Softw Evol Proc</title>
+						<imprint>
+							<date type="published" when="2018">2018. e1930</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1002/smr.1930</idno>
+					<note type="submission">Received: 23 December 2016 Revised: 1 November 2017 Accepted: 15 November 2017</note>
+					<note>1 of 23</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Cyber-physical systems (CPS) refer to the next generation of Information and Communication Technology systems that mainly integrate sensing, computing, and communication to monitor, control, and interact with a physical process to provide citizens and businesses with smart applications and services: health care, smart homes, smart cities, and so on. In recent years, health care has become one of the most important services due to the continuous increases in its costs. This has motivated extensive research on health care CPS, and some of that research has focused on describing the software architecture behind these systems. However, there is no secondary study to consolidate the research. This paper aims to identify and compare existing research on software architectures for health care CPS in order to determine successful solutions that could guide other architects and practitioners in their health care projects. We conducted a systematic literature review and compared the selected studies based on a characterization schema. The research synthesis results in a knowledge base of software architectures for health care CPS, describing their stakeholders, functional and non-functional features, quality attributes architectural views and styles, components, and implementation technologies. This systematic literature review also identifies research gaps, such as the lack of open common platforms, as well as directions for future research. KEYWORDS cyber-physical systems, health care, Internet of Things, software architecture, systematic literature review 1 | INTRODUCTION Health care is becoming one the most important concerns for governments as the World Health Organization warns of increasing care costs, 1 for example, in Europe, given the aging population. Cardiovascular or chronic obstructive pulmonary diseases are the main causes of death in the European Union. 1 Nowadays, a wide range of informatics solutions are applied to health care-from clinical information systems (including electronic health records, electronic prescribing, and eHealth in general) and administrative and management systems to clinical research informat-ics and bioinformatics. Among these solutions, health-monitoring systems might play a key role in preventing the diseases mentioned above. Monitoring systems have expanded their capabilities in what are known as Cyber-Physical Systems (CPS). CPS integrate sensing, computing, storage, and communication capabilities to control and interact with a physical process. Embedded computers monitor and control physical processes in real time or quasi real time, usually with feedback loops, where physical processes affect computations and vice versa. 2 The consolidation of CPS, partly promoted by the boom in the Internet of Things (IoT), 3 * big data, and the development of wireless sensor-actuator networks (WSAN), is generating new business models in a broad range of domains, including health care. Hence, health care CPS could not only prevent diseases but also proactively deal with diseases. On the one hand, health care CPS enable the monitoring of biosignals through miniature wearable sensors (aka biosensors and bodysensors), which could automatically detect a disorder or problem and generate an alarm that a patient or a doctor receives on his/her mobile phone or computer without human intervention. CPS are usually characterized by the implementation of feedback loops with cognitive and learning capabilities 4 such that these systems can act autonomously and rapidly without human intervention. On the other hand, health care CPS may facilitate immediate access for physicians and other health care professionals to patient information and medical records,</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">| Software architecture</head><p>Software architectures describe the structure of software systems by hiding the low-level details and abstracting the high-level important features, <ref type="bibr" target="#b12">13</ref> accommodating both functional and non-functional requirements. The design, specification, and analysis of the structure of software-intensive systems have become critical issues in software development, <ref type="bibr" target="#b13">14</ref> emerging as a solution for the design and development of large and complex software systems. In fact, it has long been recognized that architecture has a strong influence over the lifecycle of a system and as a critical element in successful development as well as successful evolution of software-intensive systems. <ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b15">16</ref> Due to the importance of the architecture level of systems development, a reliable consensus with a precise definition of a system's architecture was required. <ref type="bibr">The IEEE 1471</ref><ref type="bibr">-2000</ref> standard <ref type="bibr" target="#b16">17</ref> and the subsequent ISO/IEC/IEEE 42010 (2011) standard provide a basis for the architectures of software-intensive systems in terms of standardization of elements and practices for architectural description. A set of concepts related to software architectures defined by the IEEE 1471-2000 standard are used in this SLR as follows. A system encompasses individual applications, systems, subsystems, systems of systems, product lines, or ecosystems. A system has 1 or more stakeholders. A system stakeholder is an individual, team, or organization with interests in a system. <ref type="bibr" target="#b16">17</ref> The fundamental organization of a system is manifested through its architecture: the system's components, their relationships to each other and to the environment, and the principles guiding the system's design and evolution. A component is considered as a black box showing a high level of encapsulation and abstraction as well as the interactions with which it is restricted through its interfaces. The description of architectures is usually organized into 1 or more views-for example, Kruchten's 4 + 1 view model. <ref type="bibr" target="#b17">18</ref> A view is a representation of a whole system from the perspective of a related set of concerns of the system stakeholders. <ref type="bibr" target="#b16">17</ref> Finally, an architectural style entails high level patterns and principles commonly used for applications, that is, reusable solutions to commonly occurring problems in software architecture within a given context. Therefore, a style describes component types together with a set of constraints on how they can be combined. According to, <ref type="bibr" target="#b18">19</ref> architectural styles can be categorized into communication (eg, SOA, message bus), deployment (eg, client/server, <ref type="bibr">FIGURE 1</ref> Identification of the field of study N-Tier, multitenant cloud), and structure (eg, component-based, layered architecture). Next, common architecture styles, which were extracted during the SLR, are described to facilitate understanding the SLR reporting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.1">| Service-oriented architecture (SOA)</head><p>Service-oriented architecture offers the benefits of the loose coupling of a service and its provider, adaptability through service composition, and orchestration and encapsulation for integration in a highly distributed system. <ref type="bibr" target="#b19">20</ref> SOA prescribes how computing entities interact in such a way that (1) a requestor only knows what the service's job is and how to request it, and (2) the service is the only one that knows its implementation.</p><p>Many companies are finding that making their applications highly available, scalable, modifiable, and agile is still challenging. Microservices is an emerging architectural style for the development of distributed systems that intends to deal with these issues. "A microservices application is decomposed into independent components called microservices, that work in concert to deliver the application's overall functionality". 21 This is known as componentization via services. <ref type="bibr" target="#b21">22</ref> The principle of the microservices architecture is akin to the Unix principle: Do one thing and do it well. <ref type="bibr" target="#b21">22</ref> Each microservice has well-defined contracts (typically RESTful) for other microservices to communicate and share data with it. As microservices can be deployed independently of one another and are loosely coupled, they can scale independently and are easily replaceable and upgradeable. This supports the rapid/agile and reliable evolution of an application.</p><p>Finally, REST is a software architectural style of the World Wide Web that provides a coordinated set of constraints to the design of web services in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. <ref type="bibr" target="#b22">23</ref> Hence, REST is the architecture more frequently used to create web service application programming interface (APIs) that can be used by any device or client that implements hypertext transfer protocol (HTTP). This makes REST simpler than previous alternatives such as Simple Object Access Protocol and XML-RPC (remote procedure call).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.2">| Message bus</head><p>The message bus architecture prescribes the use of a message oriented middleware approach to centralizing communication between software systems or subsystems in such a way that some systems generate messages and many other systems consume these messages. The message-oriented middleware can implement message queues, publish/subscribe, or relay patterns.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.3">| N-Tier</head><p>N-Tier segregates functionality into separate segments being a tier located on a physically separate computer. Client/Server architectures, or 2-Tier architectures, segregates the system into 2 applications, where the client makes requests to the server. In many cases, the server is a database with application logic represented as stored procedures. <ref type="bibr" target="#b18">19</ref> Tiers usually are monolith, as they implement diverse functions that are combined into a single package deployed onto hardware pre-scaled for peak loads. <ref type="bibr" target="#b20">21</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.4">| Cloud computing-multi-tenant SaaS architecture</head><p>Cloud computing is a new model for enabling convenient, on-demand network access to a shared pool of configurable computing resources (eg, networks, servers, storage, applications, platforms, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. Cloud computing providers, such as Microsoft, Amazon, and Google, offer a variety of computing services built on top of their own infrastructure, which are managed in dedicated globally distributed data centers that offer high availability, resilience, and scalability. Cloud perceives of all tasks accomplished as a "service": Infrastructure as a Service (IaaS); Platform as a Service (PaaS); and Software as a Service (SaaS). <ref type="bibr" target="#b23">24</ref> Multi-tenant SaaS is an architectural style based on a modular design to in which a single instance of an application serves multiple users (tenants). Tenants may be allowed to customize some parts of the application to realize their individual and diverse requirements. <ref type="bibr" target="#b24">25</ref> 3 | SYSTEMATIC LITERATURE REVIEW: THE METHOD A review of the state of the art on software architecture for health care CPS was conducted by following the guidelines proposed by Kitchenham, <ref type="bibr" target="#b7">8</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.1">| Review objective and research questions</head><p>The review objective is to identify and compare current software architectures for health care CPS, paying special attention to the architecture needs in this domain and the characterization of software architectures-for example, architectural views, architecture styles, main components, implementation technologies, case studies where architectures were evaluated and current challenges from the point of view of the architecture.</p><p>The research questions that were identified to achieve the outlined objective are as follows: RQ1: Why are CPS necessary in health care? RQ2: What architecturally significant requirements should be met? RQ3: What are the existing software architectures for health care CPS and their main characteristics? RQ4: In which case studies were these software architectures evaluated?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.2">| Search strategy</head><p>A formal search strategy was required to find the entire population of scientific papers that might be relevant to the identified research questions.</p><p>The formal definition of this search strategy allowed us to carry out a replicable and open review of external assessments. The search strategy consisted of defining the search space. In this study, the search was performed in 6 electronic databases (ACM Digital Library, IEEE Xplore, Science Direct, Springer, Web of Science, and PubMed). The searches in this space retrieved a list of primary studies.</p><p>Once the search space had been defined, it was necessary to define the search terms to be introduced into the search inquiry forms of electronic databases. The search terms were software architecture, telemedicine, eHealth, CPSs, and IOT. Acronyms for each of these terms were also added in the search inquiry. Therefore, the research string pattern was the following:</p><p>("SOFTWARE ARCHITECTURE") AND (TELEMEDICINE OR EHEALTH OR HEALTH CARE) AND (CPS OR "CYBER PHYSICAL SYSTEM" OR "CYBER-PHYSICAL SYSTEM" OR IoT OR "INTERNET OF THINGS")</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.3">| Inclusion and exclusion criteria</head><p>The review protocol also specifies inclusion criteria (IC) and exclusion criteria (EC) that determine whether each potential study should be considered for the SLR. The lists of IC and EC for the present SLR are shown below:</p><p>• Inclusion Criteria (IC) -IC1. Type of studies: scientific material written in English, according to the research string pattern defined in the previous section -IC2. Documents in the area of software architecture for health care CPS -IC3. Documents in the area of software architecture for cross-domain CPS that present a detailed case study of the application of those architectures in health care systems -IC4. The scientific material that has been published up to March 2017</p><p>• Exclusion Criteria (EC) -EC1. Scientific material is a general term. This SLR excluded short papers, experience reports, summaries of workshops, and papers in the form of abstracts, tutorials, or talks that do not provide enough of the detail required in a systematic literature review -EC2. Documents in the area of software architecture that do not provide an architectural solution -EC3. Documents in the area of CPS/IoT that mention eHealth as an example but do not present an architecture -EC4. False positives: documents that do not match the search string -EC5. Poor arguments: studies with low relevance to the research -EC6. Reduction ad absurdum: studies that do not fulfill the IC</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.4">| Quality, rigor, and relevance assessment</head><p>To guide the interpretation of findings in the included studies, and to determine the strength of inferences, we evaluated the scientific quality criteria of the selected studies in order to determine the relevance of the results obtained in the review. These criteria indicate the credibility of an individual study when synthesizing results. The results of the quality assessment of the included studies can reveal potential limitations of the current search and guide future research in the field. <ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b26">27</ref> Kitchenham's guidelines suggest performing a quality assessment of each study; the assessment complements the IC and EC defined above.</p><p>However, there is no universal agreed definition of "quality." The Critical Appraisal Skills Programme (CASP) † defines criteria for assessing the quality of qualitative research. The present systematic review used the quality criteria defined for CASP and those proposed by Dybå et al. <ref type="bibr" target="#b5">6</ref> The criteria cover 3 main issues: rigor, credibility, and relevance. We summarize the quality assessment in <ref type="table">Table 1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.5">| Data extraction and synthesis strategies</head><p>The data extraction step of the SLR allows the identification of relevant information and required data that should be extracted from each of the primary studies in order to answer the research questions. Therefore, in this SLR, the process was carried out by reading each paper thoroughly and extracting relevant data, which were subject to bibliographical management in a set of forms for storing key concepts regarding the aims, findings, and conclusions of each of the studies included. The synthesis process consists of organizing the key concepts to enable comparisons across studies and the reciprocal translation of findings into higher-order interpretations. To that end, we defined the characterization schema shown in <ref type="figure" target="#fig_3">Figure 2</ref>. This figure shows the items that have guided the data extraction and synthesis strategies. As mentioned before, the architecture characterization is based on the key concepts defined by IEEE 1471-2000. These concepts are stakeholders, core functional and non-functional features, quality attributes, architectural views, architecture styles, component types, and implementation technologies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">| Second phase: Conducting the review</head><p>The second phase of the SLR consists of the following sequence of steps: (1) search for primary studies; (2) selection of primary studies by applying inclusion/exclusion criteria; (3) quality, rigor, and relevance assessment; (4) data extraction and data synthesis. These steps are described in the following sections:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.1">| Search for primary studies</head><p>Following the guidelines described in Section 3.1.2, a search for primary studies was carried out, using the automatic search functions in the electronic databases identified in the search strategy. We searched documents in the electronic databases according to the defined research string pattern and used a form to classify and write each document's title. The results of the search were also recorded using Electronic Sheet, Mendeley, and EverNote.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.2">| Selection of primary studies</head><p>The search retrieved 73 results. After retrieving the unduplicated population of scientific papers relevant to the research questions, we obtained 71 unduplicated results. Then, we selected the publications relevant to the review objective according to the inclusion and exclusion criteria defined in Section 3.1.3. In a first round, we evaluated the title, abstract, and conclusions of the 71 unduplicated results. In a second round, we read the full text of each paper and retrieved 5 further papers from the citations of the previous publications. On evaluating these items and applying IC1-4 and TABLE 1 Quality criteria. Adapted from Dybå and Dingsøyr 6 EC1-6, 50 studies were rejected. Hence, a total of 21 relevant studies (see <ref type="table" target="#tab_0">Table 2</ref>) were entered into a spreadsheet. The inclusion and exclusion decision for each paper was recorded for further discussion and reassessment. The SLR retrieved 21 primary studies, which have been identified from P1 to P21 (see <ref type="table" target="#tab_1">Table 3</ref>). <ref type="figure">Figure 3</ref> shows descriptive data for primary studies. The topic is new; hence, the number of primary studies is relatively low.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.3">| Quality rigor and relevance assessment</head><p>Each study selected was assessed on the basis of the quality criteria defined in Section 3.1.4; 100% of the studies (21 scientific papers) passed the defined quality criteria.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.4">| Data extraction and data synthesis</head><p>The data extraction and synthesis were carried out by reading the 21 primary studies and extracting relevant data as set out in Section 3.1.5. In order to keep the information consistent, the data extraction for the studies was managed using a form shown in <ref type="table" target="#tab_2">Table 4</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">| THIRD PHASE: REPORTING THE REVIEW</head><p>The systematic review retrieved 21 scientific papers. They constitute the primary studies that were used to answer the 4 RQs proposed in Section 3.1.1. Next, we present the reporting of each one of these questions.  The World Health Organization indicates that approximately 2 billion people will be 60 or older by 2050 and 80% will be in underdeveloped countries. <ref type="bibr" target="#b46">49</ref> [P3] highlights that, according to the World Health Organization, chronic obstructive pulmonary disease will be the third most common cause of death in 2030. Additionally, the European Union reveals that the main chronic pathologies are cardiovascular disease (CVD), which, together with respiratory disease, is the leading cause of death in Europe. Thus, the main motivation of eHealth systems is the monitoring of patients, especially those with chronic diseases, by doctors and health centers to provide timely remote assistance <ref type="bibr">[P1]</ref>. Furthermore, the greater the amount of patient information, the greater the accuracy of decision-making in diagnosis and prescribing of treatments. The applications are extensive, including heart attack control, diabetes control, asthma, Parkinson's, obesity, detection of accidents, rehabilitation after interventions, treatment reminders (pills), emotional and cognitive recognition to facilitate social interactions, location of people with orientation disorders, and medical assistance in case of natural disaster such as earthquake. A particular type of eHealth systems such as telemedicine systems are becoming more important for a variety of reasons, such as caring for an aging population <ref type="bibr">[P2]</ref>, providing timely diagnosis, and adjusting rehabilitation therapies <ref type="bibr">[P4]</ref>. "Vital signs are indicators that reflect the physiological state of vital organs (brain, heart, lungs). They express immediately the functional changes that occur in the body, changes that otherwise could not be qualified or quantified" 50 and are fundamental for determining the state of a patient.</p><p>As the number of vital signs to be monitored increases, these signs are more complex, and it is necessary to control a complex physical process (eg, a diseases and its treatment), novel solutions emerge. Some primary studies describe their solutions in terms of Cyber-Physical Systems [P6]</p><formula xml:id="formula_0">[P13][P18], Internet of Things [P1][P3][P15][P16][P17][P19][P21]</formula><p>, and others in terms of Future Internet (FI) <ref type="bibr">[P7]</ref>. Similar to the concepts of CPS and IoT, FI is envisioned as a system in which heterogeneous resources are communicated to each other to provide services to the real world.</p><p>In fact, all these terms emphasize the heterogeneity issue. In the CPS/IoT domain, communication occurs between heterogeneous devices (eg, bodysensors), where the wide variety of manufacturers has generated a need for software platforms and middlewares that support the integration of such devices.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">| RQ2: What architecturally significant requirements should be met?</head><p>Software platform and middleware health care CPS should meet the architectural requirements described by primary studies:</p><p>• Heterogeneity and dynamic discovery of sensor. Health care CPS requires the ability to utilize a large variety of body sensors through platforms that support high-level interfaces to access the sensors in a transparent way, hiding specifications and protocols to the users and the applica-</p><formula xml:id="formula_1">tions that make use of them [P1][P4][P5][P7][P13][P15]</formula><p>. In addition to heterogeneity support, sensor discovery is also important for dynamically</p><formula xml:id="formula_2">integrating new devices into health care CPS [P4][P5][P11][P15].</formula><p>• Scalability. The huge amount of data that is expected to be generated by the sensors of eHealth systems requires scalable storage and process-</p><formula xml:id="formula_3">ing capabilities [P3][P4][P10][P13][P18][P19][P21]</formula><p>. Real-time data streams from bodysensor networks (BSN) may trigger contextual and situational events. Managing and processing these events (aka big data analytics) can be useful for decision-making</p><formula xml:id="formula_4">[P2][P13][P18][P19]</formula><p>[P21] and may, in turn, trigger services as a response to these events.</p><p>• Interoperability. Data transmission to cloud storage and processing services often requires improved data quality and involves data conversion into standard formats (for example, HL7 ‡ ) to deal with interoperability issues, data cleaning, redundancy reduction, and aggregation <ref type="bibr">[P13]</ref>[P18].</p><p>• Dynamic reconfiguration. Criticality of the health care domain requires reconfiguring systems to adapt software to changes in system environments at runtime, ie, without disturbing the operation of those parts of the system unaffected by the change. This means that a system is aware of its environment and can self-adapt its behavior to the environmental conditions <ref type="bibr">[P1]</ref>. The paper <ref type="bibr">[P5]</ref> contributes to the building of new context-aware applications that interpret the state of the physical world in realtime in order to allocate computing resources efficiently.</p><p>• Security and privacy. Authenticity and integrity are key given the need for confidentiality of data</p><formula xml:id="formula_5">[P16][P18]. Papers [P4][P5][P10][P13] include</formula><p>in their solutions specific layers for security (confidentiality and authenticity), data integrity, and data encryption.  <ref type="figure" target="#fig_3">Figure 2</ref> Evaluation method and validity analysis Case study, controlled experiment, survey, etc.</p><p>4.3 | RQ3: What are the existing software architectures for health care CPS and their main characteristics?</p><p>To answer RQ3, we used the characterization schema defined in <ref type="figure" target="#fig_3">Figure 2</ref>. Therefore, our description and comparison of existing software architectures for health care CPS are based on the following categories: stakeholders, core functional features, architectural styles and views, components, implementation technologies, interoperability issues, and other core non-functional features and quality attributes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.1">| Stakeholders</head><p>The EcoHealth (Ecosystem of Health Care Devices) platform [P1] defines a set of stakeholders who participate in the system: (1) device manufacturers, who develop device drivers compliant with the EcoHealth API in order to make possible the connection between devices and the platform;</p><p>(2) doctors/clinicians, who continuously monitor the data collected from patients via the EcoHealth platform and use this information to improve diagnosis and response in emergencies; (3) patients, who provide information to the platform via attached body sensors; and <ref type="formula">(4)</ref>  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.2">| Core functional features</head><p>The EcoHealth platform <ref type="bibr">[P1]</ref> provides doctors with management of all information about their patients as well as data coming from bodysensors attached to them, medical records, and notifications about problems, symptoms, or anomalies in the vital signs measured through the sensors.</p><p>EcoHealth supports heterogeneity of sensors, and therefore heterogeneity of the data that are managed, as long as (EcoHealth-compliant) drivers exist for those sensors.</p><p>The system presented in [P2] supports the monitoring of Parkinsonian patients by means of a mobile app able to automatically detect a motor disorder called freezing of gait (FoG § ) by means of a set of sensors on smartphones and to generate an alarm when an FoG is detected. This system manages very specific types of data, such as step length, step frequency, and freeze index, through a specific type of sensors onboard smartphones.</p><p>The system also supports clinicians by providing a web app that allows them to consult all the information about their patients' FoG episodes as well as to update patients' pharmacological and rehabilitation therapies. Patients can also see their pharmacological and rehabilitation therapies, and they receive alerts as soon as a change involving any therapy has happened.</p><p>Similar to [P2], the system for monitoring chronic patients described in [P3] supports early diagnosis by means of a smart mobile device able to process data from Bluetooth sensors, such as pulse oximeters, accelerometers, and body temperature sensors. The device is also able to activate alarms to be sent to the chronic patient's caregivers and medical personnel. Therefore, both <ref type="bibr">[P2]</ref> and [P3], unlike <ref type="bibr">[P1]</ref>, support inhouse and outdoor monitoring. The system [P3] also supports social workers and family caregivers by providing a web app for consulting the associated patient information. Finally, the system provides a utility for (natural language-based) searching of health information in medical sources.</p><p>The BodyCloud platform [P4] supports the management and storage of large amounts of data streams coming from BSN that monitor patients'</p><p>health status (eg, heart attacks, diabetes, and asthma), as well as the processing and online and offline analysis of these data to support physicians in decision-making. The data are shared in real time with doctors who are responsible for a particular patient, and they can provide instructions to patients through alarms. The novelty resides in the fact that this platform offers developers workflow-based programming abstraction of data analysis-that is, developers can configure and customize how data have to be processed and analyzed. Similarly to <ref type="bibr">[P4]</ref>, the Health-CPS proposed in <ref type="bibr">[P18]</ref> manages large amounts of data. The system supports collection of data through a set of data nodes, and these data are sent to the cloud through the adapters, real-time and off-line analysis, processing data mining algorithms, and automatic learning.</p><p>The Knowledge-Aware Service-Oriented (KASO) Middleware [P5] has been deployed with 2 core functions in a health care scenario: tracking patients and medical staff through a virtual perimeter around sanatoriums by using a bracelet node, and monitoring biosignals through 2 biomedical sensors, a heart-monitor sensor and a body temperature sensor. Additionally, a set of intermediate nodes were deployed all around the sanatorium area to monitor the temperature, humidity, and light of the environment in order to make inferences from both the data provided by biomedical sensors and environmental sensors. The middleware offers (1) discovery mechanisms for dynamically integrating new devices into the health care scenario, (2) context-awareness for dynamic and efficient allocation of resources, and (3) programming abstractions for rapid prototyping of scenarios based on sensors and actuators.</p><p>[P6] aims to automate the readings of vital signs using biosensors for existing EMR systems. To that end, [P6] designs and implements a cyberphysical interface that captures vital signs for a type of encounter through a set of custom vital signs forms that collect specific medical data.</p><p>The e-SURAKSHAK system [P8] is capable of real-time, continuous, and autonomous monitoring of patients' vital signs. These vital signs come from "wireless embedded Internet devices" (WEIDs) and are stored periodically in an electronic database and a flash memory. Furthermore, this system implements a web-based GUI to visualize measurements in real time, it being possible to configure a WEID to make periodic measurements.</p><p>It also includes an alarm to notify medical staff about network connectivity problems.</p><p>The Patient Monitoring System (PMS) [P9] supports patient health monitoring, video streaming, and audio communication through VoIP from an ambulance on an emergency call. The authors propose an application to monitor the patient's vital signs without delay in data transmission, thereby allowing the doctor to begin the analysis and treatment while the patient is still in the ambulance. These services are available through 2 GUIs, one</p><p>for the doctor at the hospital showing real-time data acquisition from medical instruments and voice and live camera feed, and one for ambulance personnel that shows navigation information.</p><p>The ECG Android App [P10] provides patients with a visualization of their ECG waves. A patient uses ECG electrodes, and the data measured are sent to mobile devices and stored in the patient's private cloud or a specific medical cloud.</p><p>The iSenior system [P11] supports monitoring, alerting, and requesting assistance. An elderly patient carries a personal monitoring device (Elderly Monitoring Device or EMD) that enables caregivers to monitor the patient's biosignals in real time, to analyze historic data, to locate people in case they need assistance, and to receive alerts. The system has these 2 functions: (1) data collection and storage: the EMD generates information that is stored in the database and can be viewed through a web-based user interface; and (2) alarm management: the system allows doctors to set up alarms over the deployed sensors by means of rules on the parameters under observation. When the threshold defined by a doctor is met, the alarm sends an SMS message or an email to a predefined group of cell phones and email addresses and shows the alarm in the web interface. The system is configured to send an alert in the event of low battery; (3) localization: the system allows users to be located and their trajectories to be followed on Google Maps; (4) remote access: the system implements authentication and access to the functionalities of the system; (5) user profiles:</p><p>the system implements 3 profiles: caregivers who have permission to verify and analyze data, a system administrator with access to all information, and end-users (the patients); (6) auto-configuration: the system allows EMD devices to be registered by adding them to the database when they are powered on.</p><p>The Activity as a Service framework <ref type="bibr">[P13]</ref> is built on the BodyCloud platform <ref type="bibr">[P4]</ref>, thus enabling the collection, computing, and storing of sensor data, workflow-based programming of data analysis, and visualization of results. The authors of this framework define Activity as a</p><p>Service as "a full-fledged cyber-physical framework to support community, online and off-line human activity recognition and monitoring in mobility." [P13.] The novelty of this service is that the high-level BodyCloud abstractions are specialized by defining 3 models depending on the (pre)processing carried out locally or in the cloud. Thus, the 3 models are full cloud (raw data are sent to the cloud, which performs all the necessary processing), mix cloud (there is some pre-processing on the body-side before the data are sent to the cloud), and full local (data are collected and processed in full on the body-side and then sent to the cloud for long-term storage and historical visualization only).</p><p>In <ref type="bibr">[P13]</ref>, the authors apply the programming abstractions to human monitoring applications for posture and activities monitoring and step counting (including authentication, geolocation, and computation of the time percentage spent for each performed activity), physical energy estimation (a kcal estimator), automatic fall detection (including an alarm system that connects to Facebook and sends a notification to predefined friends as relatives or caregivers), and smart wheelchair support (wheelchair overturn detection body posture recognition).</p><p>[P14] incorporates humanoid robots to support emergencies in the treatment of diabetes. The platform provides the following features: (1) the application access interface, which provides unified access to disease management hub applications when it receives a request; (2) validation of incoming requests; (3) authentication using HTTPS session, cookies, or access keys, which-if correct-forwards the request to service resolution;</p><p>(4) service resolution, which generates an instance of the service; (5) authorization, in which the authorization unit verifies that the object has permission to access the service; and (6) service execution.</p><p>[P15] presents a system called CardioNet, which includes a monitoring system that facilitates remote supervision of patients with CVDs through certain portable devices. This system defines an ontology to semantically interpret acquired medical data as well as to exchange data seamlessly between autonomous entities (general practitioner cabinets, hospitals, laboratories, emergency units, medical personnel, and patients). The ontology can be adapted for the treatment of other diseases. CardioNet allows patients and doctors to interact in 3 ways: (1) online (patients and doctors interact through a web interface), (2) off-line (the system provides asynchronous communication between these actors), and <ref type="formula">(3)</ref> face-to-face. Additionally, the system allows remote consultation and administration of patients' records.</p><p>Unlike the other proposals in which monitoring is more focused on vital signs, VIRTUS [P16] proposes to monitor the patient's movements, that is, to count the number of steps and to identify postures during the day. With this information, it is possible to analyze (1) the time lapse between activities, and (2) a patient's reaction after the administration of a drug.</p><p>[P19] proposes telemonitoring of health-related parameters-speed and direction of movement, pulse, and blood oxygen saturation-allowing users to access processed data from any device with Internet access (including PCs and tablets). Finally, the project [P21], unlike the others, implements "Intelligent Building" for the processing of the large amounts of data obtained from sensors connected to the body (eg, wrist, ankle, heart, and chest).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.3">| Architectural styles and views; components</head><p>Most of the primary studies under review describe software architectures for health care CPS using <ref type="formula">(1)</ref>  Middleware services). The devices connection module integrates physical devices (wireless bodysensors) to the platform through the drivers that different manufacturers develop according to a defined API (the EcoHealth API). These drivers can access data by continuous polling or under request after a notification. They are built upon REST principles and are based on the protocol HTTP (compliant with the web of things paradigm).</p><p>In this way, bodysensors are viewed as web resources accessed, controlled, and monitored via the Internet. The data manipulation module registers data sent to EcoHealth via HTTP PUT requests from drivers. The storage module includes a relational database and a file system for storing all data used in EcoHealth that can take advantage of storage cloud-based infrastructures. The common services module consists of a set of general services such as security and notifications (eg, event-based notification mechanisms that report problems, symptoms, or anomalies in the measured vital signs). Finally, the visualization and management module provides a web interface for giving stakeholders (doctors, patients, and system administrators) access to core functional features. that, in addition to capturing vital signs from sensors and sending this information to the medical platform, implements a rule-generation system able to process intermediate data and generate alarm messages to be sent to the patient's caregivers or medical personnel; data storage and processing modules that are able to manage massive amounts of data; an interoperability and messaging platform for the delivery of information to all stakeholders via SMS, voice, and PUSH technology; a website platform that allows patient information to be consulted; and a health-related information searcher in various medical sources.</p><p>The BodyCloud platform <ref type="bibr">[P4]</ref> is a multi-tier architecture. To the best of our knowledge, it is a 4-tier architecture. The lower-level layer is the perception tier constituted by the BSN, which is composed, in turn, by a set of sensor nodes that measure bio-signals and send raw or pre-processed data to a coordinator. Sensor nodes provide features that are more advanced than previous work, such as a standard interface to the diverse sensor drivers, and the customization and extension of the platform to support new physical sensors and signal processing services. The gateway tier is for the coordinator; it manages the sensor nodes (eg, the coordinator can notify the discovery of new sensors), collects, stores and analyzes the data received from sensors, and act as a gateway to connect the BSN with a clinical remote server. These 2 tiers are called the body-side. The application tier supports a distributed real-time system for the monitoring and analysis of BSNs data streams as well as a system for visualizing the output of the data analysis through advanced graphical reporting. The former is deployed on Cloud through an SaaS model and is called the cloudside, whereas the latter is deployed as an HTML/Android client application and is called the viewer-side. Finally, it is possible to consider a new tier, the programming abstraction tier, which provides developers with programming abstractions for rapid prototyping of BSN applications and is called analyst-side. To that end, the authors have defined a set of programing abstractions as follows: group to formalize a BSN data source; workflows to define actions to be realized on the input data-for example, storage, processing, analysis-; views to formalize outputs for viewers; and modality to formalize the interaction between the input data, the actions, and the output data. This last layer is a novel contribution in the domain of health care systems.</p><p>KASO Middleware [P5] is also a 3-tier architecture, although the tiers are described as layers (see <ref type="figure" target="#fig_4">Figure 4)</ref>. KASO Middleware is designed from an agent paradigm called Perceptual Reasoning Agents (PRAs). The lowest layer corresponds to the multifunctional embedded layer (where the hardware platform is located), the real-time operating system to hide the hardware heterogeneity from higher layers, and the network protocol layer that transmits packets in a multi-hop communication. The intermediate layer is the middleware layer, which is made up of 3 subsystems:</p><p>(1) framework services composed of query services, through which information can be consulted on specific parameters, a runtime manager service in charge of load/unload and start/stop components and PRAs, a security service to manage the access permissions and encryption of the information, and a configuration service to set up parameters at low level; (2) communication services formed of 3 modules enabling low-level resource discovery, service exposure and discovery, and internet-working communications; and (3) knowledge management services implemented by a broker and an orchestrator of services that implement an API offered to developers of PRAs. The top layer is the agent layer, where PRAs are defined.</p><p>The paper <ref type="bibr">[P6]</ref> proposes the design of a cyber-physical interface for automating biosignal readings in EMR systems, by describing a 3-tier architecture. It is necessary to highlight that the authors refer to tiers as layers (see <ref type="figure">Figure 5</ref>). Hence, they describe the following architecture decomposition. The interface layer includes (1) the vital signs reading station (an application that reads the biosensors and stores the information in the internal memory of the device where it is deployed), and (2) the custom vital signs form (which supports the automatic reading of biosignals from the reading station). The application logic layer is responsible for collecting data from the reading station, displaying them in the form, and sending them to the data layer. The data layer denotes the existing EMR system.  sensors; the application layer implements the Model/View/Controller of the Android App for the interaction with users, retrieves the bio signal data from the hardware layer, stores the data in a buffer and a binary file, and transfers the file from the android device to an FTP server on the cloud layer.</p><p>The iSenior system [P11] implements the following modules: (1) portal: this module deploys the interface that allows authentication and access to iSenior. The portal displays information on vital signs from EMD through records and alerts, provides history analysis, and tracks patients using Google Maps, alarm configuration, and monitoring functions; (2) kernel: this module manages communication between the remote medical server and EMDs; (3) alarm processing: this module is responsible for activating alerts by detecting abnormal conditions, sending SMS alerts, and implementing raw data processing algorithms.</p><p>[P15] also proposes a 3-tier architecture, which is composed of a modular portable device prototype (the perception tier), which includes the module processing unit (responsible for signal conditioning and processing), the data acquisition module, which measures the parameters, and the data communication module, which is responsible for sending the data obtained to the gateway or access point. The gateway manages communication; this proposal developed 2 communication protocols-device to gateway and gateway to server. The modules for activity recognition and complex patient monitoring both implement health services (the application tier). The former identifies the activity that is being realized by patients (eg, walking or running), while the latter monitors a set of 8 parameters (eg, ECG, blood pressure, airflow, and oxygen level).</p><p>VIRTUS <ref type="bibr">[P16]</ref> proposes a layered architecture based on SOA, which is composed of: wearable devices, which collect the data related to the activity of the patient; middleware, which allows the connection between the modules of the system; SmartDevice, which is the interface between the user, the system, and the remote center; and the central unit or project manager software in charge of classifying the data and generating daily reports and feedback to the patient. objective is to provide functionalities so that the designers and developers of services can design, develop, and deploy smart spaces; and the resource composition and orchestration layer, which is responsible for deploying the necessary components so that services and functionalities can be offered.</p><p>[P19] proposes a decentralized cloud architecture with 3 tiers: sensors and actuators (the perception tier), the gateway tier in charge of the communication between resource management and Remote Telemetry Units, and presentation and application services (the application tier).</p><p>Finally, [P21] also proposes a layered architecture: the data collection layer is responsible for obtaining and processing the data; the communication layer provides end-to-end connectivity, aggregation of measured data from other devices, and transformation into the format; the processing layer performs statistical calculations; the management layer consists of a medical expert system that suggests actions based on the data generated by the processing layer; and the service layer provides access to the end user (hospitals, emergency services, ambulances, and police stations), as well as providing an analysis based on the patient's medical history.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.4">| Implementation details</head><p>The EcoHealth platform <ref type="bibr">[P1]</ref> is implemented in the Java programming language and it is deployed on a JBoss application server. Data is stored in a</p><p>MySQL relational database using the Java Persistence API specifications implemented in the Hibernate framework. The data to be managed are described as follows: medical records, historical data from bodysensors, notifications, patient-related information, and information about emergency services. The web interface provided is implemented with the JavaServer Faces technology. According to the authors' specifications, drivers should implement a RESTful interface for clients (humans or applications), specifically the RESTEasy implementation for the REST architectural style and the Java API for RESTfulWeb services (JAX-RS). Finally, the authors use the Java Authentication and Authorization Service specifications implemented in the JBoss server to provide user authenticity, confidentiality, and integrity.</p><p>In the architecture described in <ref type="bibr">[P2]</ref>, the novelty and complexity of the contribution are the fuzzy logic algorithm and the fuzzy inference system-implemented through a smartphone app-to determine a FoG episode based on a set of gait parameters: step length, step frequency, freeze index, and energy. The smartphone app was developed for iOS and Android operating systems. Data are stored in a MySQL relational database in the clinical remote server. The information to be stored is as follows: web app users' personal details, patient monitoring data from the smartphone app, and pharmacological and rehabilitation therapies assigned by clinicians to patients. (The reader can refer to <ref type="bibr">[P2]</ref> for further details about the entity-relationship model).</p><p>The novelty of <ref type="bibr">[P3]</ref> resides in the use of a distributed non-relational database to store very large amounts of data, in the following way. A smart mobile device implements continuous polling of sensors. The data are stored using files whose records have a format of a tuple of 3 elements (sensor_id, time_stamp, value), and each record occupies 10 bytes of memory. When the file size reaches 500 KB, it is closed, and another file is created to save the most recent data. The data files saved in the smart device are synchronized on a server on the Internet-that is, the data are transmitted to the server via a secure, distributed P2P file synchronization mechanism (BitTorrent Sync protocol). Due to the large amount of data to be processed on the server side, [P3] uses a RIAK # database, which is a distributed, scalable, open-source key/value non-relational database.</p><p>In RIAK, the only unit of data storage are objects, which can be isolated through virtual key spaces (buckets). Therefore, data are organized as follows: (1) a bucket for users where the key value is an identifier and the value is an object containing the user data and a list of sensors identifiers associated with this user, and (2) a bucket for sensors where the key value is formed by the user and device identifiers and the value is an object containing the necessary data to identify the most recent data transmitted by 1 sensor.</p><p>[P4] integrates Cloud Computing and BSNs. The cloud-side has been developed using Google App Engine (GAE). Specifically, the BodyCloud uses (1) the GAE Datastore API for the persistence of data streams, (2) the GAE Task Queue API for complex event processing to implement ad hoc data analysis applications and integrate third-party data mining workflows (eg, WEKA 51 ), and (3) OAuth 2.0 52 for the authorization system. The interaction between the components of this solution-body and cloud (data acquisition), cloud and viewer (data visualization), and cloud and analyst (definition of new data analysis services)-is supported through a RESTful web service, implemented using the Restlet Framework. [P6] implemented a cyber-physical interface to automate the readings of biosignals in EMR systems. The implementation of this interface focused on a proprietary and licensed ERM: Centricity Practice Solution®, which is deployed on a Citrix server. This work implemented a wrapper (or adapter) to extend the functionality of the ERM, that is, to automate the population of EMRs from the sensors and store the data into the databases.</p><p>The core features of the PMS [P9] are service-orientation and service-aggregation using an Eclipse OSGi framework and the Java class loader architecture for deploying the services at runtime. The PMS includes a GPS navigation system accessed via the internet through TCP/IP using an ad hoc network. It supports <ref type="formula">(1)</ref>  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.5">| Interoperability</head><p>In [P1] the authors define 3 levels of interoperability: (1) "in the lower level it is necessary to seamlessly integrate a myriad of heterogeneous physical devices with each other", (2) "at an intermediate level, data provided by the devices need to be easily made available on the Internet", and (3) "at a higher level, a standardized programming model can provide transparency assembling and transforming information from sensing devices without requiring any specific knowledge regarding the specificities of these physical devices and the networking environment." Environments Markup Language ∥ to address data interoperability issues between body sensors from different manufacturers. Extended Environments Markup Language is an XML-based language for describing sensor data collected from a device, building, system or space in a structured form (in this case, human body vital signs collected from body sensors). However, none of these platforms addresses standardization for medical records, nor are relational models for historical data described in detail.</p><p>[P2] and <ref type="bibr">[P8]</ref> only contemplate interoperability at the lower and intermediate levels.</p><p>In <ref type="bibr">[P2]</ref>, the integration of sensors is encapsulated by smartphones-as this approach is based on sensors onboard smartphones-and sensor data can be accessed via HTTP. In <ref type="bibr">[P8]</ref>, the authors define the interoperability in the environmental and service tiers. In the former, they define Edge Routers and WEIDs associated with patients, whereas in the latter, they establish services independent of the context or the state of the other services.</p><p>[P3] and <ref type="bibr">[P10]</ref>, by contrast, implement a microcontroller-based smart mobile device with a Bluetooth module, and thus do not focus on supporting heterogeneity of sensors.</p><p>The proposed solution in <ref type="bibr">[P6]</ref> is based on the Spot Vital Signs LXi® reading station, which allows the reading of vital signs from a reduced set of compatible sensors.</p><p>To preserve interoperability with other solutions, mechanisms have been developed to allow VIRTUS to exchange data with modules of platforms that use different communication protocols than eXtensible Messaging Presence Protocol, such as web services for SOA. The proposed system [P19] integrates a home gateway into a cloud middleware, thereby allowing heterogeneous devices to integrate data from other health care platforms.</p><p>The system <ref type="bibr">[P20]</ref> proposes integration using the HL7's Clinical Document Architecture standard, because this is the world's leading medical ICT standard that is envisaged as providing the umbrella for medical data semantic interoperability.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.6">| Core non-functional features and quality attributes</head><p>The EcoHealth platform described in <ref type="bibr">[P1]</ref> promises <ref type="formula">(1)</ref>  (1) rapid prototyping through a set of web-based programming abstractions that enable the formalization of BSN applications, (2) extensibility and customizability, making the changes with minimal disruption to the users already using the system, (3) flexibility, enabling the discovery of new sensors, and (4) scalability, which relies on platforms as a service.</p><p>One of the non-functional features that the e-SURAKSHAK <ref type="bibr">[P8]</ref> offers is the improvement of system reliability through redundant edge routers. The PMS <ref type="bibr">[P9]</ref> protects the transmission of sensitive information and prevents access by unauthorized personnel through the security functions of an OSGi framework. The OSGi framework also provides access and reuse for independence between components and supports dynamism and interoperability to promote system scalability.</p><p>The proposed ECG Android App [P10] addresses non-functional features such as performance, privacy/security, portability, scalability, flexibility, and cost. The proposed solution is able to monitor the ECG at low cost. The data storage on the secure digital card of the mobile phone allows improvements in performance and scalability. In addition, the binary file format is optimized for fast and compact analysis. ECG sampling is performed at regular intervals, which provides energy efficiency and prolongs the life of the sensors and the mobile device.</p><p>The paper <ref type="bibr">[P13]</ref> highlights the robustness of the designed algorithm for monitoring physical activity. The authors highlight the minimal maintenance of the battery and the speed of the Android smartphone and the accelerometer sensor node. The processing module for smart wheelchairs is based on Arduino; it provides low energy consumption, a high sampling rate, and high processing capabilities.</p><p>The eHealth platform <ref type="bibr">[P14]</ref> provides secure, accurate, and seamless data exchange. In addition, the authors mention that they have demonstrated the capacity of the disease management hub to feed patients when their health goals are not met. Another factor to mention is the emotional support provided to patients through patient-robot dialogs. Furthermore, the platform includes data quality assessment through the following dimensions: accuracy, completeness, consistency, timeline, and usability.</p><p>A distinctive feature of VIRTUS [P16] is its reliable, scalable, and secure communication channel, which avoids the loss of data and takes advantage of the characteristics of the publish/subscribe paradigm when the subscriber is off-line.</p><p>Health-CPS [P18] includes data format transformation and encryption. Preprocessed data is encrypted so that only authorized devices can decrypt the data.</p><p>4.3.7 | RQ4: In which case studies were these software architectures evaluated?</p><p>Nine of the papers (approx. 42.8%, specifically</p><formula xml:id="formula_6">[P1][P4][P6][P7][P8][P9][P10][P11]</formula><p>and <ref type="bibr">[P15]</ref>) evaluate their respective approaches in case studies that focus on monitoring heart rate using ECG sensors. They were selected for 2 reasons: (1) the case study has become an exemplar in this area, and (2) the case study has a wide range of potential benefits for patients, because heartbeats are used to diagnose a multitude of diseases such as heart problems, pulmonary pathologies, CVDs, and even stress.</p><p>Specifically, [P1] briefly describes the elements that make up the case study: (1) an ECG sensor and a blood pressure oscillometric sensor over the e-Health Sensor Platform V2.0 (a biometric shield for Arduino available from Cooking Hacks); (2) a driver developed for Arduino Uno; and (3) the EcoHealth platform, that is, the main component. The driver implements continuous polling of sensors regarding the measured heart rate and blood pressure, and then collects and sends the data measured by these sensors to the EcoHealth platform for historical data storage. Finally, the use case defines the possibility of defining triggers associated with these feeds in order to send alert messages to doctors when the measured heart rate is greater than 160 beats per minute (bpm) and/or the measured blood pressure is greater than 160/100 mmHg. This case study is useful for characterizing the platform, but empirical data regarding the performance, scalability, reliability, or availability of the EcoHealth platform are not provided.</p><p>[P6][P7] and [P8] also monitored blood pressure, because asymptomatic hypertension usually goes unnoticed, causing serious diseases such as heart disease and stroke, and it can lead to heart attacks even for hypertensive people. Monitoring allows prevention through medical diagnosis, generating timely responses and therefore effective treatment, because the data obtained can be shown as a graph that highlights conditions considered as serious. Response time is key in these systems.</p><p>[P4] carried out a performance evaluation by emulating a set of clients that send sensor data streams simultaneously. The evaluation consisted in a sensor, which generated 6000 data values a minute, and 10 clients, each one making 10 requests with a 60-second interval between each one, each one sending a dataset with 6000 samples. Five tests were run with 10, 20, 30, 40, and 50 clients. The tests show that the response time increases linearly between 10 and 40 clients, but the increase is not linear when there are 50 clients or more-the authors identified a bottleneck at 50 clients. Finally, [P9] defined a case study for emergency calls in cases of cardiac arrest.</p><p>The proposal <ref type="bibr">[P15]</ref> includes the monitoring of 8 parameters (ECG, blood pressure, airflow, oxygen level, temperature, transpiration, muscle activity, and body position) to identify the activities performed by patients, such as sitting, standing, walking, running, and an "undefined" activity.</p><p>The experiments demonstrate that automatic recognition of activities is possible through wearable sensors, but the success rate depends on the position of the sensor on the body and the number of training sessions of the neural network capable of identifying the activity. The authors mention that the inclusion of the "undefined" activity category significantly increased the recognition of the other categories.</p><p>[P2] proposes monitoring motor disorders applied to Parkinsonian patients suffering from freezing of gait. Patients experience episodes where they cannot walk, and this results in injuries caused by falls. The smartphone app showed a high performance in real-time FoG detection (with a mean sensitivity of 93.08% and a mean specificity of 90.98%) due to the fuzzy logic-based detection algorithm. The tests were performed on 6</p><p>Parkinsonian patients with a total of 81 FoG episodes. It is important to take into account the complexity of the identification of FoG episodes:</p><p>because the episodes are not constant, the patients do not know what the paralysis really is.</p><p>[P9] and [P13] executed performance tests. In the case of the PMS [P9], the authors used the VisualVM profiling tool to record the performance of the system and the Windows Task Manager tool to corroborate the results. The authors mention that after approximately 4 minutes of execution of the PSM, the CPU usage increased by a significantly low percentage (7%) and the live process count rose by only 6%. The amount of memory used was also low, at approximately 18 MB. Therefore, they demonstrated a low consumption of resources.</p><p>In the proposal <ref type="bibr">[P13]</ref>, tests were performed on 3 commercial smartphones and 1 tablet (a Samsung Galaxy Next Turbo, a Samsung Galaxy Tab 2, a Samsung Galaxy S4, and a Xiaomi MI2S, which we will refer to as devices 1, 2, 3, and 4, respectively). Regarding CPU load, device 4 suffered a consistent CPU load, device 1 showed a high overload, and there was no significant overload with the other devices. Another factor evaluated was processing time. The authors mention that device 3 gave poor results in comparison to the others but was faster in executing the classifier algorithm after being updated to Android 5. No devices other than 1 used computation drifts. With regard to the RAM, a maximum allocation of 50 MB was not considered as critical parameter. A relevant factor not evaluated in the proposal <ref type="bibr">[P9]</ref> is the discharge of the battery. All the devices presented similar behaviors, showing the implementation of low power. Finally, the authors evaluated the transmission time required to stream activity data to our cloud platform. They invoked the data transmission function once per second and used a stable Wi-Fi connection. The results indicated that high-performance devices are not required for proper cloud transmission.</p><p>Finally, it is necessary to highlight that [P16] to <ref type="bibr">[P21]</ref> do not present any case studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">| KEY FINDINGS</head><p>This SLR has retrieved a set of existing solutions for health care CPS/IoT. These solutions provide users and businesses with a wide range of smart services and features for health and emergency applications and also for sports and wellness. From this SLR, we have identified the following set of services: patient information management; real-time analysis of data collected from bodysensors attached to patients and real-time feedback to users; complex analysis and detection of problems or anomalies in the data measured in real time; notifications for reporting those problems or anomalies; assistance for the decision-making process in determining a diagnosis and associated treatment; online consultations; and integration with external systems for medical records management and administration of hospital activity. , which represents 33.3%) and others do not specify layers and tiers. It is necessary to highlight the difference between the terms layer and tier, although they are frequently used interchangeably.** Both terms partition the concerns of an application into stacked groups or segments, but a tier is located on a physically separate computer. It is clear that perception, gateway, and application tiers are physically distributed. In the same way, it is possible to identify, as [P4] does, different layers inside a tier-for example, the presentation, security, and persistence layers. As each tier is independent of the other tiers, this architectural style makes these systems easier to maintain and scale out.</p><p>As layers enable clearly defined functional segments, this architectural style improves cohesion, loose coupling, and reusability. Most of the papers highlight these quality attributes, but they lack evidence to support these general assumptions. We can therefore conclude from the analysis of the primary studies that both architectural styles are extensively used, but further evaluation is desirable.</p><p>One of the limitations of the solutions under review was the fact that the existing biosensors, and medical wearable sensing devices in general, work only with the software provided by the device supplier. This limitation was mainly emphasized by <ref type="bibr">[P15]</ref>, which mentions that "any attempt to re-use and integrate such devices in different applications fails because communication protocols are not openly available, or the device interfaces are proprietary solutions". The lack of standardization is a well-known problem that most governments include in their research agendas. Other domains, such as automotive and energy grids, have achieved standardization in 2 respects: (1) limiting the number of industrial network protocols, and <ref type="formula">(2)</ref> adapting Ethernet interfaces to ensure compatibility between devices and upper tiers. Although such an approach is possible from a hardware point of view, it is difficult to implement in software due to the limited memory capacity of microcontrollers <ref type="bibr">[P15]</ref>. For example, in health care CPS, where most biosensors are wearables with restrictive processing and memory capacity, it is quite difficult to implement complex data acquisition procedures together with HTTP support. In those health care CPS where it is possible, Arduino boards can transform microcontrollers into complex monitoring systems, as <ref type="bibr">[P15]</ref> demonstrates in an experiment.</p><p>Approximately Bluetooth to communicate with smartphones, so smartphones act as gateways that send the information to upper tiers. Efforts were also made to build advanced middleware platforms. In this regard, it is remarkable that some of the primary studies of this SLR call their solutions "middleware platforms." This is the case for EcoHealth <ref type="bibr">[P1]</ref> and KASO [P5], among others. The motivation is to emphasize their role as abstraction layers that hide the details of WSANs from the upper applications layers to which these middleware provide services. The middleware aims to deal seamlessly with a myriad of heterogeneous sensors and smart devices (eg, concentrators and sinks) from different manufacturers, each one providing a different interface, thus creating operational barriers in order to use them in a holistic way <ref type="bibr">[P1]</ref>. Therefore, the proposed middleware-according</p><p>to the primary studies that we reviewed-aims to enable (1) interoperability among heterogeneous sensors and smart devices to communicate with</p><p>Internet services and users, and <ref type="formula">(2)</ref> integration with other systems (eg, medical applications). From this point of view, these solutions focus on the middle tier (the gateway tier) but also offer advanced features for data processing, analysis, and visualization. solutions mainly to deal with scalability issues (see <ref type="figure" target="#fig_15">Figure 8)</ref>; however, the massive amounts of data that can be collected from BSN could result <ref type="bibr">FIGURE 6</ref> Use of architectural styles in latency in networks. To deal with these issues, other approaches have emerged, such as fog computing. Fog computing could minimize latency in networks by analyzing data close to the devices that collected the data before these data are sent to the cloud-in other words, by means of data pre-processing or filtering.</p><p>[P13] does not use the term fog computing, but the authors propose a similar approach by defining different modes of operation-full cloud, mix cloud, and full local. In this regard, we identify a need for more research into which biosignals could be pre-processed close to patients and how much latency can be reduced, which could be of great value to the eHealth community. The authors of <ref type="bibr">[P13]</ref> demonstrate the effectiveness of their cloud-based framework for monitoring human activity as well as for performance evaluation. However, most of the primary papers lack evidence that supports these general assumptions.</p><p>In addition to cloud storage, the management of large amounts of data collected from WSN, or more specifically from BSN, requires new approaches, such as big data. The term big data is sometimes used to refer to the storage of large amounts of non-structured data on NoSQL databases, as in <ref type="bibr">[P3]</ref>. That work makes reference to big data, but only reports an experience using the NoSQL RIAK database. However, big data entails much more. Big data is storage but also analytics, such as real-time stream analytics and predictive analysis through machine learning algorithms. Additionally, it is necessary to deal with the 4 dimensions of big data: volume, velocity, variety, and veracity. In health care CPS/IoT, veracity and accuracy of readings and analysis of vital signs are especially important for correct assessment and treatment of patients. The work <ref type="bibr">[P2]</ref> is the only one that evaluates the accuracy and effectiveness of the algorithm it defines.</p><p>In the field of health care, and where large-scale analytics are concerned-for example, discovering patterns in diseases-2 key challenges are how to preserve privacy and security.</p><formula xml:id="formula_7">Papers [P4][P5][P10]</formula><p>[P13] include in their solutions specific layers for security (confidentiality and authenticity), data integrity, and data encryption (see <ref type="figure">Figure 7</ref>). In fact, security issues are identified as a key challenge by most of the papers (notably <ref type="bibr">[P16]</ref> and <ref type="bibr">[P18]</ref>). ). In the latter case, runtime reconfiguration is limited to dynamic and efficient allocation of resources (aka self-optimization).</p><p>As a result of completing the SLR, we have obtained the architectural knowledge to address building a reference architecture for health care CPS/IoT. Reference architectures capture the high-level architectural design for many software applications. As such, they describe common architectural elements that can be used in the design of a concrete architecture of an application domain. 53 <ref type="figure" target="#fig_15">Figure 8</ref> shows an initial proposal for a reference architecture for health care CPS from the primary studies under review. This architecture is 4-tier architecture: perception tier, middleware/gateway tier, application tier, and programming abstraction tier. Following a bottom-up description, the figure shows a gateway that supports several communication protocols-specifically, body area networks (BAN) and wireless personal area network-as well as an advanced middleware platform. This middleware is composed by a set of modules that provide: REST device connection, device dynamic discovery, historical and real-time data access, expert system-eg, engines for big data processing and machine learning-, data handler adapters, and cloud file storage and parallel computing. A service layer uses these modules to provide users high-level services, such as real-time monitoring, alarm and actuation, decision support, and reporting, possibly interacting with other systems, such as medical servers. By last, the programming abstraction tier provides data analysts with the capacity of customizing data analysis workflows.</p><p>This section ends with the <ref type="table" target="#tab_3">Table 5</ref> that shows the projects that provided financial support for the primary studies, as detailed in the acknowledgements sections and in other references in the papers. We observed that most of these publications were not the results of large projects focused on applying CPS/IoT to the health care domain. We assumed that this was due to the novelty of this research area, and we confirmed this   To guarantee the interoperability between heterogeneous devices from different manufacturers that compose the perception tier, the reference architecture enforces to have a gateway that hides the details of WSANs-specifications and protocols-to upper layers. The middleware tier also offers advanced services, such as, real-time data acquisition, big data real-time processing, machine learning, (distributed) parallel computing, and (distributed) storage, to upper application tiers that make use of them. Security encryption is a key component for real-time data acquisition, whereas expert systems are supported by using machine learning techniques, supported in turn by non-SQL databases for big data requirements of storage and processing. Several of these services could be distributed in cloud infrastructures. This decision involves legal and compliance issues and implies loss of control when moving to the cloud. As proposed by several primary studies, several advanced services of the middleware tier could be implemented following a SOA style through an OSGi-compliant technology. Being OSGi-compliant implies high modularization through self-describing components called bundles that communicate each other through OSGi services in a container that manages their life-cycle. This facilitates deploying new bundles at runtime, ie, dynamism, as well as interoperability and scalability.</p><p>All these advanced services are used by uppers applications that range from patient information management, diagnosis and treatment assistance, and real-time feedback to patients, to integration with external systems for medical records management and administration of hospital activity.</p><p>As conclusion, this architecture proposes a SOA, built on a multi-tier infrastructure, and integrated with distributed cloud services. When this architecture is going to be instantiated, architects should consider trade-offs between using an OSGi-compliant container vs. a conventional service-oriented bus, a centralized middleware architecture vs. a distributed architecture, on-premise vs. cloud, etc. Therefore, the proposed reference architecture should be validated in several scenarios and case studies, especially to analyze and compare these critical trade-offs, evaluating its strengths and weaknesses in terms of interoperability, scalability, availability, and performance, among others. From this empirical analysis, it would be feasible to provide a set of recommendation guidelines about an implementation of this reference architecture based on the quality attributes.</p><p>Finally, we have identified 2 issues that the primary studies have not addressed and that a reference architecture for health care CPS/IoT should take into account:</p><p>• The first one is the multi-tenancy as key technology to leveraging the economics of scale for. 54 Native multi-tenancy supports all tenants by a single shared application instance over various hosting resources. <ref type="bibr" target="#b51">54</ref> An aspect to evaluate are pros/cons of multi-tenancy approach in eHealth.</p><p>• The second one is microservices and nanoservices. Microservices is an emerging architectural style for the development of distributed systems that intends to deal with high availability, scalability, modifiability, and agility. "A microservices application is decomposed into independent components called microservices, that work in concert to deliver the application's overall functionality". 21 This is known as componentization via services. <ref type="bibr" target="#b21">22</ref> The principle of the microservices architecture is akin to the Unix principle: Do one thing and do it well. <ref type="bibr" target="#b21">22</ref> Each microservice has well-defined contracts (typically RESTful) for other microservices to communicate and share data with it. Nanoservices (aka. Serverless) takes to the extreme the concept of microservices by focusing on Functions as a Service (FaaS). Cloud providers such as AWS Lambda, Google's Cloud Functions and Azure's Functions offers a variety of programming languages and tools to support these architecture styles.</p><p>Both multi-tenancy and microservices have demonstrated their benefits in other domains. <ref type="bibr" target="#b52">55</ref> The use of big data in health care is, along with security, one of the most challenging issues. This is partly because it necessarily involves a form of knowledge that is very specialized, namely data science, which results, as <ref type="figure" target="#fig_17">Figure 9</ref> shows, from the union of knowledge in a particular domain of application (mathematics and computer science).</p><p>Within computer science, it is necessary to pay special attention to software architectures, especially to new approaches such as lambda architectures, which are data-processing architectures composed of 3 layers: batch processing, speed (real-time) processing, and a serving layer that responds to queries from the outputs given by the batch and speed layers. There is a myriad of technologies around big data. In other domains, there are examples of lambda architectures for analytics of IoT data with technologies such as Apache Spark, Cassandara, Kafka, and Akka.</p><p>Therefore, the application of big data to health care CPS presents numerous issues to be resolved.</p><p>Regarding the data that are managed in health care CPS, it is also necessary to keep in mind the requirements of data interoperability. From our knowledge in other CPS/IoT domains-eg, smart grids 56 -we know of the existence of specific layers for translation between data formats to guarantee the interoperability and communication of devices based on different electrical standards. In the same way, American and European EMR show considerable differences, and none of the primary studies addressed this interoperability issue.</p><p>In general, these gaps identified in the section have still not reached a mature development state. This requires additional research efforts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">| THREATS TO VALIDITY</head><p>This section addresses potential biases and the actions taken to minimize their effects. Trico et al 57 define 3 kinds of biases: identifying articles, selecting studies, and obtaining accurate data. This work addresses these issues in the following ways: several factors can affect the identification of articles, such as, the criteria of the reviewers and editors of journals and conferences, industry-sponsored research in some areas, the place of publication, biased indexing studies in literature databases, inadequate or incomplete searches, articles that are cited more often than others are, and studies that generate multiple publications. In this SLR, we used different electronic literature databases to include the maximum number of sources and to minimize the impact of the above-mentioned biases.</p><p>For selecting studies, the inclusion and exclusion of studies was completed by 2 of the authors of the present study, and those with discrepancies were resolved by taking a decision among all the authors. Finally, to improve data accuracy, we selected papers that were published in journals, conference proceedings, or workshop proceedings according to a peer-review process. Additionally, the extraction and analysis of the papers were performed by the 3 authors to constrat the analysis conclusions and avoid personal bias.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8">| CONCLUSIONS AND FUTURE WORK</head><p>This paper presents the results of a SLR on software architectures for health care CPS. The results show the proposals of different architectures, most of them, 3-tier architectures: the perception tier, the gateway/middleware tier, and the application tier. These architectures focus on supporting important features in any domain but especially relevant to health care. These features are interoperability to support the heterogeneity of BSNs, automatic discovery of new devices in this networks, dynamic reconfiguration according to changes in systems' environments, security and privacy, scalability of storage and processing, and big data analytics. Quality attributes also play a fundamental role, such as robustness, reliability, availability and performance. Cloud computing, SOA, and REST architectures are the most widely used architecture styles.</p><p>Most of the architectures have been evaluated on real or simulated case studies. However, we observe a lack of metrics that provide evidence of the goodness of the proposed architecture's solutions.</p><p>As future work, we plan working on offering smart health services on top of the already existing middlewares, to try to cover the gaps that this SLR has identified. These new services can be integrated adopting new architecture styles, such as microservices and serverless, and should cover the analysis of large volume of data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGEMENT</head><p>This work is supported by the Spanish fund MESC (DPI2013-47450-C2-2-R) and CROWDSAVING (TIN2016-79726-C2-1-R), H2020 CPSELabs (644400), and in part by the Salesian Polytechnic University (http://www.ups.edu.ec/).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ENDNOTES</head><p>* The term "IoT" was coined back in 1999 by Kevin Ashton, although the technology advanced later, in 2011, when IPv6 protocol made it possible to connect "340 billion, billion, billion, billion unique IPv6 addresses".  </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>system adminis- trators of users and hospital activity. The architecture proposed in [P2][P15] and [P17] simplifies this stakeholders' definition by focusing only on patients and doctors. In this paper, device manufacturers are not considered as the approach is based on the use of the sensors on board smartphones, and therefore, drivers are already embedded. In addition to patients, doctors, and administrators, [P3] also identifies social workers and family caregivers who have full access to patient information anytime and anywhere. In line with [P2], device manufacturers are not considered, because the architecture described in [P3] only supports the exchange of data between biosensors and a mobile device through the Bluetooth wireless technology standard. The BodyCloud platform [P4] 13 includes new stakeholders in addition to patients and doctors: cloud providers and developers. This platform provides developers with web-based programming abstractions for rapid development and deployment of body sensor network (BSN) applications in a broad range of domains, including health care monitoring, emergency management, fitness monitoring, and behavior surveillance. In contrast to the previous papers, [P6] only focuses on an interface to automatize the reading of vital signs in electronic medical records (EMR) systems; thus, the only client is a health center, and the end user is the medical staff. Similar to [P4], [P6] includes a new stakeholder: the developer/ maintainer as the intended recipient of the readability, adaptability, and well-definedness of the interface. [P8] considers doctors, pathologists, pharmacists, nurses, and relatives as stakeholders of the system. [P9] includes the nurses who provide aid servive in the ambulance, and the doctors who supervise the vital signs and analyze the case remotely. [P10], which presents an electro cardiogram mobile application for athletes, includes doctors, physicians, and sports coaches. The iSenior system [P11] proposes a solution for the monitoring of the elderly, inside or outside the nursing home; thus, the stakeholders that this work describes are caregivers, system administrators, and patients. Finally, [P14] focuses on the implemen- tation of humanoid robots for the care of diabetics, offering caregivers a set of services for monitoring their patients.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>the deployment view (aka. Physical view) through the architectural styles N-tier, client/server, and cloud computing; (2) the structure view (aka. Implementation view) through the architec- tural styles component-based architecture and layered architecture; and (3) the communication view (aka. Process view) through the architectural styles SOA, message bus, event-driven architecture, and REST architecture. The architecture described in [P1] is a 3-tier architecture: a network of wireless body sensors (the perception tier) communicates with a set of components referred as drivers (commonly referred as the gateway tier) that subsequently communicate via the Internet with the EcoHealth platform (the application tier). The architecture's implementation view of the EcoHealth platform [P1] is composed of a set of modules (aka.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>The architecture described in [</head><label></label><figDesc>P2] is also a 3-tier architecture: there are sensors onboard smartphones, and the smartphones act as gateways that send data to the core component, that is, the clinical remote server. The implementation view of the architecture is composed of the following components: a smartphone app, a database, and a web app. The smartphone app monitors gait parameters, detects FoG episodes, generates alarms in response to them, saves these data in a local database, and periodically uploads these data to a central database of the clinical remote server. The architecture described in [P3], like [P1] and [P2], presents 3 tiers: vital sign sensors and their connectivity constitute the perception tier; a smart mobile device constitutes the gateway tier, which captures vital signs from sensors and sends data to the medical platform; and finally this medical platform constitutes the application tier. The implementation view of the application tier has the following modules: a smart mobile device</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>PRIME [P7] proposes a 2 -</head><label>2</label><figDesc>FIGURE 5 Architectural system for automating biosignal readings in electronic medical record (EMR) systems [P6]</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIGURE 4</head><label>4</label><figDesc>FIGURE 4 Architectural system for KASO middleware [P5]</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Health</head><label></label><figDesc>-CPS [P18] proposes similar architecture to VIRTUS [P16] with the following layers: the data collection layer, which consists of data nodes, adapters, and an interface for multisource heterogeneous data; the data management layer, which contains a distributed file storage module and a distributed parallel computing module; and the application service layer, which provides the visual presentation of results and an open unified API for developers. μWoTOP [P17] implements a layered architecture: the IoT ecosystem layer, which is responsible for adapters identifying the potential resources (sensors and actuators), classifying them based on their topology, and announcing them to the upper layers; the Web of Things middleware layer, whose</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>The</head><label></label><figDesc>novelty of KASO Middleware [P5] resides in the possibility of dynamic reconfiguration of resources (eg, sensors) depending on the environmental conditions. To that end, this approach defines a set of Knowledge Management services that depend on an Information Model of the system that describes low-level and high-level resources. The data is stored in KB-Mote Knowledge Base, Contextual Knowledge Base, and System Knowledge Base-which are deployed on sensor and actuator nodes (SA nodes), contextual nodes (C nodes), and gateways, respec- tively. The KB are structured through an ontology over an RDF/OWL 2, and the services are mapped over standardized REST web services.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>video streaming through IP cameras with filtering and a transmission ratio of 1:1 (the authors are not using any pro- prietary software), (2) patient health monitoring by preconfiguring the OSGi framework so that any medical monitoring device sends its data over the ad hoc network and displays the results in the form of a graph, and (3) audio communication through VoIP. The ECG Android App [P10] uses Filestream and Filetable technologies for storing unstructured data. It implements a microcontroller, which obtains the biosignals of a patient and sends them to the mobile device wirelessly using Bluetooth technology. The data are stored in a binary file encrypted on the device's secure digital card, after which the patient can upload the binary files to a centralized private cloud using an FTPES secure server (via FTP). As a novelty, the [P15] presents a neural network to determine a type of activity to be realized by patients, such as sitting, standing, walking, running, or an undefined activity. The distinctive features of VIRTUS middleware [P16] are (1) the use of Java programming language, (2) the use of eXtensible Messaging and Presence Protocol instant messaging, and (3) the use of an OSGi framework. Finally, [P21] uses real-time processing and MapReduce technologies (Apache Spark and Hadoop) to process data and to analyze and calculate statistical parameters.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>The</head><label></label><figDesc>EcoHealth [P1], the BodyCloud [P4], the KASO [P5], and the Activity-aaService [P13] platforms deal with the 3 levels by (1) encapsulating the heterogeneity of devices into drivers to be complaint with an EcoHealth API, (2) making the data (feeds) provided by the devices available to the Internet through the HTTP protocol and RESTful APIs, and (3) structuring feeds using XML or JSON. The EcoHealth platform uses the Extended</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head></head><label></label><figDesc>loosely coupled modules, (2) reliability, availability, and scalability depending on storage cloud-based infrastructures, and (3) security in terms of user authenticity, as well as integrity and confidentiality by encrypting data transmitted by sensors via Internet (eg, only the assigned doctor can access a patient's record and the data provided by his/her bodysensor). [P2] mainly focuses on providing a set of non-functional features for the monitoring of Parkinsonian patients that had not previously been addressed. The authors considered such factors as keeping the cost low (by using sensors onboard a smartphone) and providing flexibility (by making it non-intrusive for the patient). Finally, this solution also deals with the issue of authentication. The system [P3] proposes the handling of large amounts of information using a distributed, scalable, open-source non-relational database called RIAK. The system that the authors describe can collect about 100 samples per second from sensors. The BodyCloud approach [P4] includes</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head></head><label></label><figDesc>Health care CPS are generally 3-tier architectures, as shown by 10 primary studies ([P1][P2][P3][P5][P6][P8][P10][P14][P15] and [P19]) and multi-tier architectures ([P4]), which represents approx. 52.4%. These systems are composed of wearable wireless networks of bodysensors, some- times also actuators (the perception tier); sensors and actuators communicate with components, commonly referred to as gateways, that support the heterogeneity of protocols of these devices (the gateway tier); and these gateways subsequently communicate through the Internet with remote (telemedicine/medical) servers (the application tier). Other primary studies focus on a layered architecture description ([P7][P9][P11] [P16][P17][P18][P21]</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head></head><label></label><figDesc>38% of primary studies-[P1][P2][P3][P4][P5][P16] and [P19], and also [P15] in another experiment-deal with this problem with gateways and middleware that have processing and communication functionalities. Specifically, [P15] shows an experiment using a device together with a gateway for data acquisitions of health-related parameters, data processing, and data transmission that were developed with an open architecture. In this case, the device-gateway protocol is a message-based protocol in which messages are translated into HTTP requests using a dedicated XML scheme, conforming to an ontology for cardiovascular information. In [P2] and [P3], health monitoring devices use</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Finally</head><label></label><figDesc>, the tier/layer that BodyCloud [P4] and RPIME [P7] define to provide developers with programming abstractions is unusual. The former provides developers with programming abstractions for rapid prototyping of BSN applications whereas the latter specializes in implementing P-RESTful (Pervasive REST) applications. The programing abstraction allows developers, mainly data analysts, to formalize BSN data sources, input data, actions to be realized on the input data (eg, storage, processing [P18], analysis), and output data. In this way, they can program customized analysis workflows over the data. In addition to the tier/layer decomposition, it is important to analyze how communication between architectural components is realized. Most approaches are based on the following architectural styles (see Figure 6): SOA [P8][P9][P16] and REST architectures [P1][P4][P5][P7][P13][P17], which represents approx. 43%-, and message bus or event-driven architectures (eg, the publish/subscribe pattern [P17]) over cloud infrastructures [P1][P3][P4][P5][P10][P13][P18][P19], which represents approx. 38%. In fact, as health care CPS/IoT demands more processing and storing capabilities, there is a trend toward using cloud infrastructures [P1]. This work synthesizes the benefits of the cloud as follows: scalability, availabil- ity, performance, and on-demand resource usage. Cloud computing fits well as an enabling technology for health care CPS/IoT, as it presents a flexible stack of computing, storage, and software services under a pay-per-use model. Software as a Service (SaaS) can provide a high-quality expe- rience for patients, physicians, and other caregivers anytime, anywhere, and seamlessly. Papers [P3][P4][P5][P10][P13] present cloud-based</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Finally, 2</head><label>2</label><figDesc>critical features of the architecture are the runtime discovery of new devices into an IoT environment (for example, a new sensor) and the dynamicity of health care CPS/IoT for being reconfigured at runtime according to changes in the environment (for example, self-optimization and self-healing). The first issue has been addressed by [P4][P5][P11] and [P15], and the second issue has been addressed by [P1][P5] (see Figure 7</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head></head><label></label><figDesc>FIGURE 7 Architecturally significant requirements</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>FIGURE 8</head><label>8</label><figDesc>FIGURE 8 Reference architecture for health care CPS</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>†</head><label></label><figDesc>Critical Appraisal Skills Programme (2017). CASP Qualitative Research Checklist. [online] Available at: URL http://www.casp-uk.net/casp-tools-checklists ‡ HL7 Inc. Official Web Page, [online] Available at: http://www.hl7 § "FoG is a motor block that manifests as a sudden and transient inability to generate effective stepping despite the intention to walk" ¶ OSGi, "Osgi alliance," [online] Available at: http://www.osgi.org # [online] Available at: http://basho.com/products/ ∥ [online] Available at: http://www.eeml.org/ ** [online] Available at: https://msdn.microsoft.com/en-us/library/ee658117.aspx ORCID Jessica Díaz http://orcid.org/0000-0001-6738-9370 Jennifer Pérez http://orcid.org/0000-0003-3192-7995</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>FIGURE 9</head><label>9</label><figDesc>FIGURE 9 Big data Venn diagram [source: Palmer, Shelly. Data science for the C-suite. New York: Digital living press; 2015]</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="true"><head>TABLE 2 Study Selection</head><label>2</label><figDesc></figDesc><table>Database 
+First Round 
+Second Round 
+Included 
+Excluded 
+
+ACM 
+1 
+0 (0.00%) 
+1 (100%) 
+
+IEEE 
+5 
+5 
+9 (90.00%) 
+1 (10.00%) 
+
+Science Direct 
+30 
+6 (20.00%) 
+24 (80.00%) 
+
+Springer 
+25 
+1 (4.00%) 
+24 (96.00%) 
+
+Web of Science 
+7 
+1 (14.29%) 
+6 (85.71%) 
+
+PubMed 
+5 
+4 (80.00%) 
+1 (20.00%) 
+
+Total 
+73 
+5 
+21 (26.92%) 
+57 (73.08%) 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="true"><head>TABLE 3 List of article identifiers</head><label>3</label><figDesc></figDesc><table>Id. 
+Ref. 
+Id. 
+Ref. 
+Id 
+Ref. 
+Id 
+Ref. 
+
+P1 
+
+28 
+
+P7 
+
+29 
+
+P13 
+
+30 
+
+P19 
+
+31 
+
+P2 
+
+32 
+
+P8 
+
+33 
+
+P14 
+
+34 
+
+P20 
+
+35 
+
+P3 
+
+36 
+
+P9 
+
+37 
+
+P15 
+
+38 
+
+P21 
+
+39 
+
+P4 
+
+40 
+
+P10 
+
+41 
+
+P16 
+
+42 
+
+P5 
+
+43 
+
+P11 
+
+44 
+
+P17 
+
+45 
+
+P6 
+
+46 
+
+P12 
+
+47 
+
+P18 
+
+48 
+
+FIGURE 3 Papers by year and by database </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="true"><head>TABLE 4 Data extraction for each study</head><label>4</label><figDesc></figDesc><table>Extracted Data 
+Description 
+
+Identity of study 
+Identifier (P1-P21) 
+
+Bibliographic data 
+Author, year of publication, title, source of publication 
+
+Key concepts 
+eHealth, telemedicine, software architecture, cyber-physical system, IoT 
+
+Type of study 
+Book, journal paper, conference paper, workshop paper 
+
+Focus of the study 
+Main topic area, concepts, motivation, objective 
+
+Architecture characterization 
+Characterization according to the schema shown in </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="false"><head>TABLE 5 Projects that supported the primary studies from the financial support</head><label>5</label><figDesc></figDesc><table>ID 
+</table></figure>
+
+			<note place="foot">PLAZA ET AL.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Preventing chronic diseases: a vital investment</title>
+	</analytic>
+	<monogr>
+		<title level="m">WHO global report</title>
+		<imprint>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The past, present and future of cyber-physical systems: a focus on models</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">A</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="4837" to="4869" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Introduction to the Internet of Things. Enabling Things to Talk</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Kramp</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Van Kranenburg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lange</surname></persName>
+		</author>
+		<idno type="doi">1-10.DOI:https://doi.org/10.1007/978-3-642-40403-0_1</idno>
+		<imprint>
+			<date type="published" when="2013" />
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin Heidelberg</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Cyber physical systems: design challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">A</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Internet of Things (iThings), and IEEE Green Computing and Communications (GreenCom) and IEEE Cyber</title>
+		<imprint>
+			<publisher>Physical and Social Computing</publisher>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="363" to="369" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Key success factors for smart and connected health software solutions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Carroll</surname></persName>
+		</author>
+		<idno type="doi">10.1109/MC.2016.340</idno>
+		<ptr target="https://doi.org/10.1109/MC.2016.340" />
+	</analytic>
+	<monogr>
+		<title level="j">Computertomographie</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="22" to="28" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Empirical studies of agile software development: a systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf Softw Technol</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="833" to="859" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Tailoring XP for large system mission critical software development. Extreme Programming and Agile Methods XP/Agile Universe</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bowers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>May</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Melander</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Baarman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ayoob</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002" />
+			<publisher>Springer</publisher>
+			<biblScope unit="page" from="269" to="301" />
+			<pubPlace>Berlin, Heidelberg</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Procedures for performing systematic reviews</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1" to="26" />
+			<pubPlace>Keele, UK, Keele University</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Wireless sensor network survey</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Yick</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Ghosal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Netw</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="2292" to="2330" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Internet of things: vision, applications and research challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Miorandi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sicari</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">De</forename><surname>Pellegrini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Chlamtac</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ad Hoc Netw</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1497" to="1516" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Richardson</surname></persName>
+		</author>
+		<idno>Lero-TR-2015-03</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Connected Health: People, Technology and Processes</title>
+		<imprint>
+			<date type="published" when="2015" />
+		</imprint>
+		<respStmt>
+			<orgName>University of Limerick</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Review of cyber-physical system in healthcare</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">A</forename><surname>Haque</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">M</forename><surname>Aziz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Rahman</surname></persName>
+		</author>
+		<idno type="doi">10.1155/2014/217415</idno>
+		<ptr target="https://doi.org/10.1155/2014/217415" />
+	</analytic>
+	<monogr>
+		<title level="j">Int J Distrib Sens Netw</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">217415</biblScope>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Foundations for the study of software architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">E</forename><surname>Perry</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">L</forename><surname>Wolf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM SIGSOFT Software engineering notes</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="40" to="52" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Software architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Garlan</surname></persName>
+		</author>
+		<ptr target="http://repository.cmu.edu/cgi/viewcontent.cgi?article=1687&amp;context=compsci" />
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+		<respStmt>
+			<orgName>Wiley Encyclopedia of Computer Science and Engineering</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">The art and science of software architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mcdermid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of First European Conference on Software Architecture, ECSA&apos;07</title>
+		<meeting>First European Conference on Software Architecture, ECSA&apos;07<address><addrLine>Berlin, Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="volume">4758</biblScope>
+			<biblScope unit="page" from="237" to="256" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The past, present, and future for software architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Kruchten</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Obbink</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Stafford</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Softw</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="22" to="30" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title level="m" type="main">ISO/IEC Standard for Systems and Software Engineering -Recommended Practice for Architectural Description of Software-Intensive Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ieee</forename><surname>Std</surname></persName>
+		</author>
+		<idno>ISO/IEC 42010 IEEE Std 1471-2000 First edition 2007-07-15</idno>
+		<imprint>
+			<date type="published" when="1471" />
+			<biblScope unit="page" from="1" to="24" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">The 4+1 view model of architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">B</forename><surname>Kruchten</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Softw</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="42" to="50" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<ptr target="https://msdn.microsoft.com/en-us/library/ee658117.aspx" />
+	</analytic>
+	<monogr>
+		<title level="j">Chapter</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">SOA Design Patterns</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Erl</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<publisher>Prentice Hall PTR</publisher>
+			<pubPlace>Upper Saddle River, NJ, USA</pubPlace>
+		</imprint>
+	</monogr>
+	<note>1st ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Microservices: an application revolution powered by the cloud</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Russinovich</surname></persName>
+		</author>
+		<ptr target="https://azure.microsoft.com/es-es/blog/microservices-an-applica-tion-revolution-powered-by-the-cloud/" />
+		<imprint>
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Fowler</forename><forename type="middle">M</forename><surname>Microservices</surname></persName>
+		</author>
+		<ptr target="http://martinfowler.com/articles/microservices.html" />
+		<imprint>
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">REST: an alternative to RPC for web services architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Fan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">First International Conference on Future Information Networks</title>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="7" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Integration of cloud computing and internet of things: a survey</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Botta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">De</forename><surname>Donato</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Persico</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Pescapé</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename></persName>
+		</author>
+		<idno type="doi">10.1016/j.future.2015.09.021</idno>
+		<ptr target="https://doi.org/10.1016/j.future.2015.09.021" />
+	</analytic>
+	<monogr>
+		<title level="j">Futur Gener Comput Syst</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="684" to="700" />
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Multi-tenant service composition based on granularity computing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Kong</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yan</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Services Computing</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="669" to="676" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Strength of evidence in systematic reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Second ACM-IEEE international symposium on Empirical software engineering and measurement, ESEM &apos;08</title>
+		<meeting>the Second ACM-IEEE international symposium on Empirical software engineering and measurement, ESEM &apos;08</meeting>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="178" to="187" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Keele</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+<note type="report_type">Technical report</note>
+	<note>Ver. 2.3 EBSE Technical Report. EBSE</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A web platform for interconnecting body sensors and improving health care</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Maia</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Batista</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Cavalcante</surname></persName>
+		</author>
+		<idno type="doi">10.1016/j.procs.2014.10.041</idno>
+		<ptr target="https://doi.org/10.1016/j.procs.2014.10.041" />
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="135" to="142" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Engineering future internet applications: the Prime approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Caporuscio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ghezzi</surname></persName>
+		</author>
+		<idno type="doi">10.1016/j.jss.2015.03.102</idno>
+		<idno>0164-1212. DOI</idno>
+		<ptr target="https://doi.org/10.1016/j.jss.2015.03.102" />
+	</analytic>
+	<monogr>
+		<title level="j">J Syst Softw</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page" from="9" to="27" />
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Cloud-based activity-aaService cyber-physical framework for human activity monitoring in mobility</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Gravina</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Pace</surname></persName>
+		</author>
+		<idno type="doi">10.1016/j.future.2016.09.006</idno>
+		<ptr target="https://doi.org/10.1016/j.future.2016.09.006" />
+	</analytic>
+	<monogr>
+		<title level="j">Futur Gener Comput Syst</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="158" to="171" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Big data, internet of things and cloud convergence-an architecture for secure e-health applications</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Suciu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Suciu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Martian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Med Syst</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page">141</biblScope>
+			<date type="published" when="2015" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">An architecture to manage motor disorders in Parkinson&apos;s disease</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Pepa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Capecci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Verdini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">G</forename><surname>Ceravolo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Spalazzi</surname></persName>
+		</author>
+		<idno type="doi">10.1109/WF-IoT.2015.7389124</idno>
+		<ptr target="https://doi.org/10.1109/WF-IoT.2015.7389124" />
+	</analytic>
+	<monogr>
+		<title level="m">2nd World Forum on Internet of Things (WF-IoT)</title>
+		<meeting><address><addrLine>Milan, IEEE</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2015" />
+			<biblScope unit="page" from="615" to="620" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">E-SURAKSHAK: a cyber-physical healthcare system with service oriented architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">H</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">A</forename><surname>Amir</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Dagale</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Kuri</surname></persName>
+		</author>
+		<idno type="doi">10.1109/ISED.2012.66</idno>
+		<ptr target="https://doi.org/10.1109/ISED.2012.66" />
+	</analytic>
+	<monogr>
+		<title level="m">International Symposium on Electronic System Design, ISED</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="177" to="182" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Robot assistant in management of diabetes in children based on the internet of things</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A-T</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Al-Nuaimy</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Muhsin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><forename type="middle">J</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Al-Ataby</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename></persName>
+		</author>
+		<idno type="doi">10.1109/JIOT.2016.2623767</idno>
+		<ptr target="https://doi.org/10.1109/JIOT.2016.2623767" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Internet of Things Journal</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="437" to="445" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">HL7 and DICOM based integration of radiology departments with healthcare enterprise information systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Blazona</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Koncar</surname></persName>
+		</author>
+		<idno type="doi">10.1016/j.ijmedinf.2007.05.001</idno>
+		<ptr target="https://doi.org/10.1016/j.ijmedinf.2007.05.001" />
+	</analytic>
+	<monogr>
+		<title level="j">Int J Med Inform</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="425" to="432" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Big data and IoT for chronic patients monitoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">G</forename><surname>Páez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Aparicio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>De Buenaga</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Ascanio</surname></persName>
+		</author>
+		<idno type="doi">10.1007/978-3-319-13102-3_68</idno>
+		<ptr target="https://doi.org/10.1007/978-3-319-13102-3_68" />
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Ubiquitous Computing and Ambient Intelligence</title>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="volume">8867</biblScope>
+			<biblScope unit="page" from="416" to="423" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Real-time medical emergency response system: exploiting IoT and big data for public health</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">M</forename><surname>Rathore</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Paul</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Wan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Med Syst</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">283</biblScope>
+			<date type="published" when="2016" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">BodyCloud: a SaaS approach for community body sensor networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Fortino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Parisi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Pirrone</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Di</forename><surname>Fatta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename></persName>
+		</author>
+		<idno type="doi">10.1016/j.future.2013.12.015</idno>
+		<ptr target="https://doi.org/10.1016/j.future.2013.12.015" />
+	</analytic>
+	<monogr>
+		<title level="j">Futur Gener Comput Syst</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="62" to="79" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Internet of things: remote patient monitoring using web services and cloud computing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mohammed</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">H</forename><surname>Lung</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Ocneanu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Thakral</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Adler</surname></persName>
+		</author>
+		<idno type="doi">10.1109/iThings.2014.45</idno>
+		<ptr target="https://doi.org/10.1109/iThings.2014.45" />
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Internet of Things (iThings), and IEEE Green Computing and Communications (GreenCom) and IEEE Cyber</title>
+		<meeting><address><addrLine>CPSCom), Taipei</addrLine></address></meeting>
+		<imprint>
+			<publisher>Physical and Social Computing</publisher>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="256" to="263" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Enabling the IoT paradigm in e-health solutions through the VIRTUS middleware</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bazzani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Conzon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Scalera</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Spirito</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">I</forename><surname>Trainito</surname></persName>
+		</author>
+		<idno type="doi">10.1109/TrustCom.2012.144</idno>
+		<ptr target="https://doi.org/10.1109/TrustCom.2012.144" />
+	</analytic>
+	<monogr>
+		<title level="m">IEEE 11th International Conference on Trust, Security and Privacy in Computing and Communications</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1954" to="1959" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Bringing pervasive embedded networks to the service cloud: a lightweight middleware approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Corredor</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">F</forename><surname>Martínez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">S</forename><surname>Familiar</surname></persName>
+		</author>
+		<idno type="doi">10.1016/j.sysarc.2011.04.005</idno>
+		<idno>1383-7621. DOI</idno>
+		<ptr target="https://doi.org/10.1016/j.sysarc.2011.04.005" />
+	</analytic>
+	<monogr>
+		<title level="j">J Syst Archit</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="916" to="933" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">iSenior-a support system for elderly citizens</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Rodrigues</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">S</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Boavida</surname></persName>
+		</author>
+		<idno type="doi">10.1109/TETC.2013.2294917</idno>
+		<ptr target="https://doi.org/10.1109/TETC.2013.2294917" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Emerging Topics in Computing</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="207" to="217" />
+			<date type="published" when="2013" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">A lightweight web of things open platform to facilitate context data management and personalized healthcare services creation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Corredor</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Metola</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Bernardos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Tarrío</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Casar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Environ Res Public Health</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="4676" to="4713" />
+			<date type="published" when="2014" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Design of cyber-physical interface for automated vital signs reading in electronic medical records systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">O</forename><surname>Méndez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ren</surname></persName>
+		</author>
+		<idno type="doi">10.1109/EIT.2012.6220696</idno>
+		<idno>1-10. DOI</idno>
+		<ptr target="https://doi.org/10.1109/EIT.2012.6220696" />
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Electro/Information Technology</title>
+		<meeting><address><addrLine>Indianapolis, IN</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Study on disease screening and monitoring system based on wireless communication and IOT</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="doi">10.1109/SCET.2012.6341961</idno>
+		<ptr target="https://doi.org/10.1109/SCET.2012.6341961" />
+	</analytic>
+	<monogr>
+		<title level="j">Spring Congress on Engineering and Technology, Xian</title>
+		<imprint>
+			<biblScope unit="volume">2012</biblScope>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Health-CPS: healthcare cyber-physical system assisted by cloud and big data</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">W</forename><surname>Tsai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">M</forename><surname>Hassan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Alamri</surname></persName>
+		</author>
+		<idno type="doi">10.1109/JSYST.2015.2460747</idno>
+		<ptr target="https://doi.org/10.1109/JSYST.2015.2460747" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Syst J</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="88" to="95" />
+			<date type="published" when="2017" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m" type="main">World Health Organization, Global age-friendly cities: a guide</title>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">Control de signos vitales</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">P</forename><surname>Penagos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">D</forename><surname>Salazar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Vera</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">The weka data mining software: an update</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Holmes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Pfahringer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Reutemann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">H</forename><surname>Witten</surname></persName>
+		</author>
+		<idno type="doi">10.1145/1656274.1656278</idno>
+		<ptr target="https://doi.org/10.1145/1656274.1656278" />
+	</analytic>
+	<monogr>
+		<title level="j">ACM SIGKDD explorations newsletter</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="10" to="18" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">The OAuth 2.0 authorization framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Hardt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IETF RFC</title>
+		<imprint>
+			<biblScope unit="volume">6749</biblScope>
+			<date type="published" when="2012-10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">A reference architecture template for software-intensive embedded systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Eklund</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Eriksson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bosch</surname></persName>
+		</author>
+		<idno type="doi">10.1145/2361999.2362022</idno>
+		<idno>104-111. DOI</idno>
+		<ptr target="https://doi.org/10.1145/2361999.2362022" />
+	</analytic>
+	<monogr>
+		<title level="j">Proceeding of the WICSA/ECSA Companion</title>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">A framework for native multi-tenancy application development and management</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">J</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><forename type="middle">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="doi">10.1109/CEC-EEE.2007.4</idno>
+		<ptr target="https://doi.org/10.1109/CEC-EEE.2007.4" />
+	</analytic>
+	<monogr>
+		<title level="m">The 9th IEEE Int. Conf. on E-Commerce Technology and The 4th IEEE Int. Conf. on Enterprise Computing, E-Commerce and E-Services</title>
+		<meeting><address><addrLine>Tokyo</addrLine></address></meeting>
+		<imprint>
+			<publisher>CEC-EEE</publisher>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="551" to="558" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Conceptualizing a framework for cyber-physical systems of systems development and deployment</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Díaz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Garbajosa</surname></persName>
+		</author>
+		<idno type="doi">10.1145/2993412.3004852</idno>
+		<ptr target="https://doi.org/10.1145/2993412.3004852" />
+	</analytic>
+	<monogr>
+		<title level="m">Proccedings of the 10th European Conference on Software Architecture Workshops, (ECSAW &apos;16</title>
+		<meeting>cedings of the 10th European Conference on Software Architecture Workshops, (ECSAW &apos;16<address><addrLine>New York, NY, USA, Article 1, 7</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Self-balancing distributed energy in power grids: an architecture based on autonomic computing</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pérez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Díaz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Vidal</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Fernández</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 47th Hawaii International Conference on System Sciences (HICSS&apos;14)</title>
+		<meeting>the 47th Hawaii International Conference on System Sciences (HICSS&apos;14)</meeting>
+		<imprint>
+			<date type="published" when="2014" />
+			<biblScope unit="page" from="2398" to="2407" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Few systematic reviews exist documenting the extent of bias: a systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">C</forename><surname>Tricco</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Tetzlaff</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sampson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Clin Epidemiol</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="422" to="434" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Software architectures for health care cyber-physical systems: A systematic literature review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Plaza</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Díaz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Pérez</surname></persName>
+		</author>
+		<idno type="doi">10.1002/smr.1930</idno>
+		<ptr target="https://doi.org/10.1002/smr.1930" />
+	</analytic>
+	<monogr>
+		<title level="j">J Softw Evol Proc</title>
+		<imprint>
+			<date type="published" when="2018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

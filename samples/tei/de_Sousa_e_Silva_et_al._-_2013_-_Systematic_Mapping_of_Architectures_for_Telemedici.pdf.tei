@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:28+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Systematic Mapping of Architectures for Telemedicine Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2013">2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Glauco</forename><surname>De Sousa E Silva</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Informatics Center</orgName>
+								<orgName type="institution">UFPB João Pessoa</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ana</forename><surname>Paula</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Nunes</forename><surname>Guimarães</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Informatics Center</orgName>
+								<orgName type="institution">UFPB João Pessoa</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hugo</forename><surname>Neves De Oliveira</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Informatics Center</orgName>
+								<orgName type="institution">UFPB João Pessoa</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Tatiana</forename><surname>Aires Tavares</surname></persName>
+							<email>tatianaires@gmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Informatics Center</orgName>
+								<orgName type="institution">UFPB João Pessoa</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Eudisley</forename><surname>Gomes Dos Anjos</surname></persName>
+							<email>eudisley@ci.ufpb.br</email>
+							<affiliation key="aff0">
+								<orgName type="department">Informatics Center</orgName>
+								<orgName type="institution">UFPB João Pessoa</orgName>
+								<address>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">CISUC -Centre for Informatics and Systems</orgName>
+								<orgName type="institution">Universidade de Coimbra</orgName>
+								<address>
+									<country key="PT">Portugal</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Systematic Mapping of Architectures for Telemedicine Systems</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">LNCS</title>
+						<imprint>
+							<biblScope unit="volume">7973</biblScope>
+							<biblScope unit="page" from="214" to="229"/>
+							<date type="published" when="2013">2013</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>telemedicine</term>
+					<term>mapping study</term>
+					<term>software architecture</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>The use of telemedicine systems is becoming increasingly common these days. Telemedicine systems exist for the purposes of education, improving the accuracy of medical diagnoses through the provision of a second opinion, and remote patient monitoring. Accordingly, the number of software solutions is increasing. Software Architecture is a subarea of Software Engineering whose goal is to study the system components, their external properties, and their relationships with other software. A good architecture can allow a system meets the mainly requirements of a project, such as performance, reliability, portability, easy maintenance, interoperability, etc. Aiming to find out what architectural styles that proposes a better performance in systems for telemedicine, a systematic mapping was done. With this mapping, it was possible to find taxonomies related to telemedicine systems, architectural styles commonly used in these systems and technologies relevant to the area.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Aiming to solve the growing social, economic and medical needs to keep ill patients in their home, telemedicine emerges as provider for remote medical information and an efficient distance health care manager. There are several advantages in using the homecare medical monitoring technologies, such as preserving the patient's comfort, quality of life and mental condition and reducing the hospitalization costs. For these reasons, strategies for developing telemedical software must be implanted in order to make the application safe and effective enough so that it can be used in a commercial context, and not only for academic purposes. Telemedicine systems have several purposes, such as access and update medical information in data centers, monitoring patients with cardiovascular or chronic disease, diagnosis and treatment of illness, remote consultations, or situations where the patient's life is in risk. In order to successfully achieve the specific requirements for the software, some critical aspects must be taken into consideration, such as the location of the physical branches connected with the system and the response time for extreme situations. These requirements give the software an additional assignment of dealing with human lives.</p><p>Thus, the development of hardware and software solutions focused on telemedicine adds complexity to the processes, particularly the Software Engineering ones that accompany from specification until the implementation of these services. A crucial step is the choice of the software architecture for the telemedicine system. The architectural solution will print the dynamics of evolution and adaptation of changing the system development. This feature is especially useful in telemedicine systems, because the addition of new features or the evolution of old ones is a need. This is due to the incorporation of technologies related to the medical field and new functionalities which require an adjustment of these systems to different realities.</p><p>In <ref type="bibr" target="#b46">[48]</ref>, software architecture is seen as the study of the overall structure of the software system, especially the relations among subsystems and components. These relationships and modularization define how the software will behave and fit in the context for which it is developed. According to <ref type="bibr">[47]</ref>, the rate of increase in the size and complexity of software, the problem goes beyond the design of algorithms and data structures of computation. Because telemedicine systems often deal with more than one physical location and data transmission by any means of communication, it should be considered the aspects of highest level to creating the application, having a better idea of the software to be coded, which makes development more organized and less susceptible to logic or architectural errors which can be costly to be corrected in the encoding step. This design step involves the definition of architectural styles to be used in the software, as well as their modifications due to suit the problem presented and considered in the requirements specification document.</p><p>Among the various types of software architectures being used in the development of telemedicine systems, some are more appropriate to a particular type of application. This paper presents the results of a systematic mapping on software architectures in telemedicine systems. This study seeks to present and explain the most used architectural styles, characteristics, benefits and its limitations. This paper's analysis was guided through taxonomies created to group the investigated systems, in order to regulate the mapping study to the most seen topics in telemedicine systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Telemedicine Systems</head><p>According to <ref type="bibr">[41]</ref>, Telemedicine is the delivery of health services, where distance is a critical factor, using all information technologies and communication for the exchange of valid information for diagnosis, treatment and prevention of diseases, research and evaluation, and for the continuing education of health professionals, all with the aim of promoting the health of individuals and their communities. This definition is extremely broad and starts relating the medical art -involving patient contact, diagnosis, treatment or even surgery -with any means of communication that can unite two or more physically distant points from letters written to electronic medical records, interconnected by networks of high-speed communication.</p><p>It is important to understand that telemedicine is a process, not a technology <ref type="bibr" target="#b41">[42]</ref>. The case study of telemedicine has become possible in recent years as a result of technological advances and continuous cost reduction <ref type="bibr" target="#b47">[49]</ref>. Telemedicine has obvious advantages in remote or rural areas where there is a shortage of health professionals. Even in urban areas, however, telemedicine has shown accelerating the process of health care, reducing unnecessary referrals, and increasing the consistency and quality of the health system. The increased contact between the team of professionals has originated educational benefits (continuing medical education) for them and has reduced professional isolation <ref type="bibr" target="#b48">[50]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Systematic Maps</head><p>Literature review of a specific area of knowledge is essential to continue the study of a particular point within the area. Thus, it is important to know what has been widely studied, developed and built in order to find a "gap" (gap to be filled) -to start a new search, for example. A literature review is basically a critical, meticulous and extensive analysis of the current publications in a particular field of knowledge. In general, the literature review is performed as part of an initial scientific study. There are methods to accomplish this task: systematic literature review and systematic mapping.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Systematic Map</head><p>"A systematic map is a defined method of constructing a scheme of classification and structure in a field of interest " <ref type="bibr" target="#b43">[44]</ref>. It is indicated as a first step to be taken by doctoral students so that their area of interest be mapped, the main vehicles for publication are known, the major papers and their types can be identified and "gaps" found.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Systematic Mapping Study</head><p>A systematic mapping (mapping study) is a specific type of systematic review <ref type="bibr" target="#b40">[40]</ref> which uses the same basic methodology of the systematic review: methodology of rigorous review, reliable and auditable. The difference, again according to <ref type="bibr" target="#b40">[40]</ref>, is that the systematic review focuses on well-defined research questions, more specific, which can be answered by experimental research, while the systematic mapping focuses on broader issues, exploratory in nature, whose purpose is to give an overview of a research area and find evidence of the area. The result of the mapping itself is considered a contribution to the literature, because through analysis of the systematic map produced one can obtain information about the research questions defined, which prevents future researchers conducting a study that already has been documented.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Process of Systematic Mapping</head><p>Using the concepts achieved in <ref type="bibr" target="#b40">[40]</ref>, <ref type="bibr" target="#b43">[44]</ref>, <ref type="bibr" target="#b44">[45]</ref>, it is possible to compile the ideas and describe the essential steps of a systematic mapping study. These steps are: defining research questions that must be answered, leading the search for relevant documents, sorting of documents; elucidation of the search string based on keywords summaries (abstracts), data extraction, and mapping results. Each process step has an outcome, the end result of the process is the systematic map. The first step is to define the subject to be mapped, ie define the scope about what you want to obtain relevant and specific data already existing in the literature and also justify the study.</p><p>Then, one should define research questions related to the subject, such as: What are the main means of publication? You can sort the papers selected following taxonomy? The research questions will be the basis for the analysis of selected papers, and their responses will form the systematic map.</p><p>The next step is to define a search protocol, which must contain all the detailed planning of the study, to guide the participants. It must include an introduction to the field of knowledge that will be mapped, a justification for the study, identifying research questions and finally, planning how the search will be performed (automatic and/or manual), the analysis (inclusion and exclusion criteria of papers and synthesis of data) and the construction of the systematic map.</p><p>The search process is the next step and is usually divided into automatic and/or manual. The manual search allows you to define the main conference area, in which the participants of the study must manually access related papers to the topic that have been published and/or presented in these conferences. The automatic search is performed after defining a search string that should contain the keywords of the topic that is being mapped, usually integrated by Boolean operators such as OR and AND. This string will be used in the search to be performed in automatic engines for obtaining related papers. These engines are able to index and locate content stored on computer systems automatically. Each search engine has a way to create strings with Boolean operators, and this must be observed to ensure the results returned.</p><p>After finalizing the automatic process of search, you should begin to examine the papers. Before starting the analysis, it should be defined the inclusion and exclusion criteria to be applied on the results returned by search engines, and it is these criteria that define which papers will be included or excluded from the mapping. These criteria must be well defined so there is no discrepancy in the evaluation of the participants, or at least that can reduce this possibility. Initially there should be some sort of triage of all returned results in all search engines used to eliminate repetition. Then, the study participants can leave for detailed analysis of the papers returned, identifying and selecting the most relevant to answer the research questions. After the selection of papers, participants will analyze them in detail in order to extract data to construct the systematic map.</p><p>Finally, it must be decided whether the papers will be read in full or will be analyzed only their abstracts and also unpublished scientific conferences or events should be analyzed. The results of the systematic mapping are usually presented in the form of graphs. <ref type="figure" target="#fig_0">Figure 1</ref> shows a summary of the steps needed to obtain the results in a systematic mapping: </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Architecture Styles</head><p>Software architecture it's necessary when the size and the complexity of software systems increase. Thus, the problem of constructing systems goes beyond the choice of algorithms and data structures. This issue also involves decisions about the structures that will form the system, the overall control structures, communications protocols, data access and synchronization, allocation of functionality to system elements, or, yet, the distribution of the physical elements of the system. The architecture exposes certain properties and encapsulates others. Ideally this representation provides a guide for an overview of the system and allows architectural designers to better analyze the system's ability to meet certain requirements and suggests a project's construction and composition of the system <ref type="bibr">[47]</ref>. One of the most important developments in current software architecture is the study of architectural styles. An architectural style, also called architectural pattern, promotes a design vocabulary, this style contains the rules that define the how the elements in that vocabulary can be combined. In essence, an architectural style provides a specialized design language for a specific class of systems, that is a set of principles, properties and behavior that provides a framework for building systems.</p><p>The use of architectural styles brings several benefits:</p><p>• Reuse of design, in which common solutions with well understood properties can be reapplied in new problems <ref type="bibr" target="#b39">[39]</ref>; • The use of architectural styles supports interoperability, ie the ability of a system to communicate transparently with another one <ref type="bibr" target="#b38">[38]</ref>.</p><p>• Code reuse, allowing, occasionally, invariant aspects of an architectural style can be "borrowed" to share implementations <ref type="bibr" target="#b39">[39]</ref>.</p><p>• The simplification of the design process and implementation of the system, which reduces the costs of implementation through reusable infrastructure, improving the integrity of the system with checks and analyzes of specific styles <ref type="bibr" target="#b38">[38]</ref>.</p><p>In a complex system a critical issue is the choice of an architecture influencing in their design and construction. A good architecture can help ensure that a system will satisfy fundamental requirements in areas such as performance, reliability, portability, scalability and interoperability. The development of a bad architecture can be disastrous for system development. There are several architectural patterns, such as Layered, Client-server, ObjectOriented, Event based, Service-oriented, etc <ref type="bibr" target="#b39">[39]</ref>. The architecture of a software system is almost never limited to a single architectural style, but the combination of styles that together complete the system. Many factors influence the choice of a style. These factors include: the ability of the organization to design and implementation, capabilities and experience of the developers and its constraints and organizational infrastructure <ref type="bibr" target="#b39">[39]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Methodology</head><p>The development of the methodology applied in the mapping study was guided by the protocol described earlier. The main goal was to build a classification scheme and structure related to the architectures of telemedicine systems</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Scope and Search Questions</head><p>Telemedicine systems make possible monitoring of patients with accurate medical data that enable the action of physicians with stability and safety even at a distance. The development of such system is increasingly common in the medical field. Problems of machine performance, sensor or network connection between the computers of telemedicine systems, especially considering sending real-time data for monitoring, can endanger patient's life. Therefore, it's important understand the architecture of this systems so the implementation can evolve and patters can be found.</p><p>The goal of this mapping study is identify patterns of architectural styles that are commonly used in telemedicine systems. A previous study of software architectures related to telehealth systems commonly seen in the literature, along with their advantages and flaws, is a good way to start designing a solid framework for the modularization of a robust system for this type of application.</p><p>We try to answer as conclusion of this paper the research questions that guided the creation of the mapping study, applying on it some rules to get a general explanation about the mapped topic, in this case, the data streaming used in telemedicine. The questions defined at the beginning of the study were: </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Source and Search Strategies</head><p>After we define the research questions, the next step was the automatic search of papers in the engines: IEEEXplore, Scopus and Science Direct. The search string used on the digital libraries was built with the following strategy:</p><p>• Search for keywords in relevant papers already seen on an informal revision;</p><p>• Identify synonymous and alternative terms of the keywords;</p><p>• Consult experts in the field;</p><p>• Use the Boolean connector OR to incorporate alternative words and synonyms; • Use the Boolean AND connector to connect keywords;</p><p>• Check the search string constructed performing pilot searches.</p><p>Using this steps, the first string search was built: "(health care OR telemedicine OR telehealth) AND (software engineering OR software architecture OR system architecture)". This string has proved inadequate to the needs of the research, since many returned results papers containing only asynchronous data exchange instead of the proposed analysis to process articles that addressed the architecture of e-health systems in real time. The string search was adjusted to "(health care OR telemedicine OR telehealth) AND (software engineering OR software architecture OR system architecture) AND (video OR streaming)". Even at this stage, it was decided that the search would be made in the title, keywords and abstract of the articles sought in each search engine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Inclusion and Exclusion Criteria</head><p>To regulate the choice of papers found in search engines, we define criteria for inclusion and exclusion in the mapping, as shown in <ref type="table" target="#tab_0">Tables 1 and Table 2</ref>.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">Methods for Data Extraction</head><p>As a primary extraction method, were read only the titles and abstracts, so that the potentially relevant articles were found for the search. The articles that met with success at least part of the inclusion criteria were moved to a later stage, which has a more detailed analysis of the content of each article. Finally, we read the full papers and understood the descriptions of their architectures, created a systematic map, which divides the resulting articles by category. This enables the analysis of the results through a graphical display, facilitating the understanding. Disagreements found by researchers acceptance and classification of articles are discussed by the whole team together and resolved.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.5">Methods for Data Synthesis</head><p>The systematic map supplied metadata about publications, which will be analyzed and discussed in the next session of this work. The patterns found in architectures, as well as the main similarities and technologies used in the systems, are highlighted with the presentation and study of taxonomies found.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Discussion</head><p>In this session, the results obtained at the main landmarks of the mapping's methodology are shown and the main topics of the interest area are discussed and analyzed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1">Quantitative Analysis of the Results</head><p>At the first step of the mapping, two hundred and fifty articles were found through automatic search. After the second stage, the results were refined and fifty seven articles were selected as relevant, according to their titles and abstracts. At the last step of the mapping some irrelevant articles were removed and the taxonomy was defined, through which the articles were classified. After this last stage, thirty seven articles were classified and arranged at the references from <ref type="bibr" target="#b0">[1]</ref> to <ref type="bibr" target="#b37">[37]</ref>. The <ref type="table">Table III</ref> shows this steps and the number of articles divided by search engine.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2">Qualitative Analysis of the Results</head><p>This session discusses the qualitative results about the data obtained in the mapping study. For that, the research questions were prepared, aiming to highlight the analysis parameters of the research area.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.1">Used Technologies</head><p>Another perspective observed was the commonly used technologies in telemedicine systems lately. As the articles were read, the predominant technologies in the telemedical field were observed. These numbers are shown in <ref type="figure">Fig. 2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fig. 2. Commonly used technologies in Telemedicine Systems</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.2">Architectural Styles</head><p>The architectural styles found in this study indicate the adoption of architectural patterns for telemedicine systems. Through a research question (Question 3: which architectural styles are more frequently seen in the researched studies?) it was possible to show the architectural styles currently in use in telemedical software.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fig. 3. Architectural Styles found in the mapping results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2.3">Occurrence of Taxonomies</head><p>Another approach adopted was the observation of the taxonomies more frequently used in the papers found by the research. It aims to show the distribution of the taxonomies in the types of telemedicine systems. The taxonomies were sorted according to its use in the telemedicine software which papers were accepted by the inclusion criteria of the study. The amounts of results obtained for each element in each taxonomy are seen in <ref type="figure">Fig. 4</ref>     </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>he possibility to build taxonomies in order to classif he mapping study for telemedicine systems presents a gr ant health care software area. For a better view about the intersections between usage, types of systems and n the research was built as can be seen in <ref type="figure">Fig. 9</ref>. It aim aturated areas of the intersection between computing and <ref type="figure">Fig. 8</ref>, there is a great concentration of telemed re, but there is a gap in the research and development or mobile ambulatories and telemedicine for catastroph ubble graphic shows a saturation in papers describ ng, notification and medical opinion. Still in this sco nal medicine and administration/information systems the interest for the development of telemedicine syste ofessionals. Otherwise, the telemedicine administrative king in research. <ref type="figure">Fig. 5</ref>, is a common type of telemedicine system, eithe here the health situation of the patients can be relativ s, where the patients can be unstable or susceptible s that may lead to death. There are diverse softw systems, depending on the application of the system, c architectural styles, as Client-Server; to more elabor technologies related to sensors, mobile devices and w elemedicine domain. The right session of the graphic presents the distribution of software architectural styles by type of telemedical application. There is a predominance of architectures based on the Client-Server model, since this architectural style is inherently distributed, which supplies the needs of most telemedicine applications involving multi-client data exchange or remote communication. The prevalence of this architectural style occurred because the systems described in the papers included in the mapping should necessarily have synchronous or asynchronous multi-client data exchange, that is, real time transmission systems. All these features are best implemented in a Client-Server style. The vast number of types of architectures found in Homecare systems shows the versatility of this kind of application, but the number of Client-Server software still prevailed.</p><p>The software modularization proposed by the SOA and Layers styles also had a good acceptance by all kinds of telemedical applications, and had a great variability, as can be seen in the graphic related to this development styles. The use of service oriented architectures also had a good acceptance in the researched papers, since they are focused on WEB applications, thereby easing the transmission of data. The software sub-modules created with these kinds of architecture also have a good disconnection, allowing the developers to insert new services without drastic architectural changes. Systems based in agents are not common in the telemedicine domain, despite of its modularization and natural bias towards the use of signal capturing, used often in telemedical applications.</p><p>Component based architectures did not show versatile results in telemedicine systems, despite of its propensity to subprogram independence. The use of this architectural style in Homecare systems is a result of the integration with the signal capture hardware, which can be distributed all over the patient's home, providing a base for the communication between the modules at the residence and the data receiving module at the hospital. <ref type="figure" target="#fig_4">Fig. 6</ref> and <ref type="figure" target="#fig_5">Fig. 7</ref> show the continuous use of Client-Server architectures over the years. That is because it is already a consolidated style, and its properties match the needs of most telemedicine systems. Recently there was a growth in the use of service and component oriented architectures, showing that these architectural styles adapted themselves to the needs of the telemedicine scope.</p><p>The technologies presented in <ref type="figure">Fig. 2</ref> were the most visible ones in the articles considered relevant to the mapping. JAVA <ref type="bibr" target="#b42">[43]</ref> technologies were the most used ones, allowing the construction of multi-platform and WEB systems easily. Sensors stayed in second place in usage, as they are responsible for capturing vital signals, a common feature in telemedical applications, mainly in Homecare and Monitoring. Mobile and Bluetooth <ref type="bibr" target="#b45">[46]</ref> technologies are gaining ground on the telemedicine area as the price of mobile phones and smartphones is getting lower, many of them containing Bluetooth communication interfaces, and easing their use in areas beyond telecommunication. WEB technologies are also being widespread in telehealth systems due to its accessibility and ease of use by the general public, which represents a significant portion of the telemedicine users.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Conclusion</head><p>In this paper, we described a systematic mapping that was developed about the area of system architecture focused on telemedicine. We also introduced the concepts of telemedicine and styles of software architectures. Furthermore, we presented a model of systematic mapping. With this model, a systematic search was being built to be able to analyze how architectural models are arranged in telemedical systems of all kinds and uses. As a result series of data representing the systematic mapping of the area were collected and organized, so an analysis was made of the distribution of the papers according to the types of systems, use categories, architectures and technologies.</p><p>It can be seen, through the systematic mapping presented, that quantitatively the Client-Server architectures have presented results in functional scope of telemedical applications, since its inherent characteristic of distribution is a significant proportion of network failures by nature. The Client-Server architectural style has, yet, a high dependence on central services (usually located in hospitals), which provides the necessary assistance in case of an emergency, especially in systems monitoring. Wide acceptance was noticed with Service-Oriented architectures (SOA) and components, showing that the use of these types of styles underwent a major expansion.</p><p>It is also noteworthy the high concentration systems for Homecare and monitoring of medical conditions of patients, which represents a saturation of these types of work.</p><p>As future work, we propose studies about architectural evolution in telemedicine systems, for example, the Arthron <ref type="bibr" target="#b49">[51]</ref>, in order to analyze the architectural behavior along with the growth of the software itself, its new features and requirements. Also, we intend deepen to study deeply the hybrid architectures and their characteristics in these types of systems. And, finally, evaluate the impact of dynamic architectures in telehealth systems.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Steps for conducting a systematic mapping</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>•</head><label></label><figDesc>Question 1: Is possible distribute the papers following taxonomy? • Question 2: Which technologies are more often used in telemedicine systems? • Question 3: Which architectural styles are seen more frequently in the researched studies? • Question 4: How are the architectural styles in telemedicine systems distributed chronologically?</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>and Fig 5.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .Fig. 5 .</head><label>45</label><figDesc>Fig. 4. Percentage of the types of systems found in the mapping</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Chronological distribution of SOA and Component Based Architectures</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Chronological distribution of Client-Server, Layered and Agent Based Architectures</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="false"><head>Table 1 .</head><label>1</label><figDesc></figDesc><table>Inclusion Criteria 
+
+1 
+Papers must present architectures for telemedicine systems 
+
+2 
+Papers must present architectures to telehealth systems with real-time data 
+transmission 
+
+3 
+Papers must present logic descriptions of the software's architecture 
+
+4 
+Papers must be in English 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table 2 . Inclusion Criteria 1 Telehealth systems that do not contains real-time data transmission 2 Papers about software architecture that have real-time data transmission but disregards telemedical context 3 Papers that do not describes the system's architecture 4 Papers that wasn't written in English</head><label>2</label><figDesc></figDesc><table></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">A Context-Aware Smart Infrastructure based on RFID Sensor-Tags and its Application to the Health-Care Domain</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Catarinucci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Colella</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Esposito</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Tarricone</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Zappatore</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Emerging Technologies &amp; Factory Automation</title>
+		<meeting><address><addrLine>Espanha</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A Gateway Design for Message Passing on The SOA Healthcare Platform</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Chu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Symposium on Service-Oriented System Engineering</title>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">A Healthcare Pattern Collection for Rural Telemedicine Services</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shyu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Luh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Lai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">8th International Conference on e-Health Networking</title>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A home healthcare system in the cloudaddressing security and privacy challenges</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Petkovic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Nalin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Baroni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Cloud Computing</title>
+		<meeting><address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A Knowledge Based Home Monitoring System for Management and Rehabilitation of Cardiovascular Patients</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Braga</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Forlani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">G</forename><surname>Signorini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers in Cardiology</title>
+		<imprint>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A System Architecture for a Telematic Support System in</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Protogerakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gramatke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Henning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">3rd International Conference on Bioinformatics and Biomedical Engineering</title>
+		<meeting><address><addrLine>China</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A Clinical Monitoring and Management System for Residential Aged Care Facilities</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">B</forename><surname>Celler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Basilakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Budge</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">H</forename><surname>Lovell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">28th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</title>
+		<meeting><address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Wearable feedback systems for rehabilitation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Sung</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Marci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Pentland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Neuroengeneering and Rehabilitation</title>
+		<imprint>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Medic: Medical embedded device for individualized care</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">A T</forename><surname>Bui</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Batalin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">K</forename><surname>Au</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">D</forename><surname>Binney</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">J</forename><surname>Kaiser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial Intelligence in Medicine</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="137" to="152" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Collaboration -a new IT-service in the next generation of regional health care networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Bruun-Rasmussen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">E</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Chronaki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Medical Informatics</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="205" to="214" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">The development of a telemonitoring system for physiological parameters based on the B/S model</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Shuicai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Peijie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Chunlan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Haomin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Yanping</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers in Biology and Medicine</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="883" to="888" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">A simple and low-cost Internet-based teleconsultation system that could effectively solve the health care access problems in underserved areas of developing countries</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">E</forename><surname>Kuntalp</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Akar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Methods and Programs in Biomedicine</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="117" to="126" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">A Service Oriented Platform for Health Services and Ambient Assisted Living</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Hein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Eichelberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Nee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schulz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Helmer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lipprandt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Advanced Information Networking and Applications Workshops</title>
+		<meeting><address><addrLine>United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A Hybrid Architectural Style for Complex Healthcare Scenarios</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Foley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Leastar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Communications Workshops</title>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A Web Enabled Health Information System for the Neonatal Intensive Care Unit (NICU)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ray</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Dogra</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Bhattacharya</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Saha</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Majumdar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Majumdar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Paria</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">D</forename><surname>Bhattacharya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE World Congress on Services</title>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">An Adaptive Multi-Disciplinary Telemedicine System</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">J</forename><surname>Chimiak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">E</forename><surname>Rainer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cook</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Fourth International Conference on Image Management and Communication</title>
+		<meeting>the Fourth International Conference on Image Management and Communication<address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">An Agent-Based Architecture for Home Care Monitoring and Education of Chronic Patients</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Capozzi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Lanzola</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Complexity in Engineering</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">An architecture for integrated regional health telematics networks</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">G</forename><surname>Katehakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Tsiknakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">C</forename><surname>Orphanoudakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 23rd Annual EMBS International Conference</title>
+		<meeting>the 23rd Annual EMBS International Conference<address><addrLine>Turkey</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">An Evolved eHealth Monitoring System for a Nuclear Medicine Department</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Sannino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>De Pietro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fourth International Conference on Developments in eSystems Engineering</title>
+		<meeting><address><addrLine>United Arab Emirates</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">An Open Test Bed for Medical Device Integration and Coordination</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Procter</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Andresen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Hatcliff</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Warren</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Spees</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Jetley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Weininger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">31st International Conference on Software Engineering</title>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Designing and Implementation of Mobile Terminal for Telehealth Care Life Support System</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Matsumoto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Ogata</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Kawaji</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The 7th International Conference on Computer Supported Cooperative Work in Design</title>
+		<meeting><address><addrLine>Brazil</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Development of a home ECG and Blood Pressure Telemonitoring Center</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Lingfeng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">22nd Annual EMBS International Conference</title>
+		<meeting><address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Development of a Ubiquitous Healthcare System Implementing Real-time Connectivity between Cardiac Patients and Medical Doctors</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">7th International Workshop on Enterprise Networking and Computing in Healthcare Industry</title>
+		<imprint>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">E-Health Support Services Based on Service-Oriented Architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">M</forename><surname>Omar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Taleb-Bendiab</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IT Professional</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="35" to="41" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Health Care Applications Based on Mobile Phone Centric Smart Sensor Network</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Quero</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">L</forename><surname>Tarrida</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">J</forename><surname>Santana</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Ermolov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Jantunen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Laine</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Eichholz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">29th Annual International Conference of the IEEE EMBS</title>
+		<meeting><address><addrLine>France</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Prospects for Expanding Telehealth: Multi-Agent Autonomic Architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Pour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Computational Intelligence for Modelling Control and Automation, and International Conference on Intelligent Agents, Web Technologies and Internet Commerce</title>
+		<meeting><address><addrLine>Australia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">HoCoS: Home Companion Software. A service oriented solution for elderly home accompanying and remote healthcare monitoring</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Dhouib</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bougueroua</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Istrate</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Pino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Bernard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">33rd Annual International Conference of the IEEE EMBS</title>
+		<meeting><address><addrLine>Boston, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Intelligent telemonitoring of critical-care patients</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Barro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Presedo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Castro</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Fernandez-Delgado</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Fraga</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Lama</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Vila</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Engineering in Medicine and Biology</title>
+		<imprint>
+			<date type="published" when="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Live Streaming of Medical Data -The Fontane Architecture for Remote Patient Monitoring and Its Experimental Evaluation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schacht</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Wierschke</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wolf</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Von Löwis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Polze</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">14th IEEE International Symposium on</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Object/Component/Service-Oriented Real-Time Distributed Computing Workshops</title>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Nextgeneration E-health communication infrastructure using converged super-broadband optical and wireless access system</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Chowdhury</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Chien</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Khire</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Jayant</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Chang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks</title>
+		<meeting><address><addrLine>Montreal, Canada</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Primary health-care system for human security in hazardous situations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Valeanul</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Vizitiu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Chiru</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Recent Advances in Space Technologies</title>
+		<meeting><address><addrLine>Istanbul, Turkey</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Securing Telehealth Applications in a Web-Based e-Health Portal</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Q</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Dssouli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Third International Conference on Availability, Reliability and Security</title>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Security analysis and implementation of web-based telemedicine services with a four-tier architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">K</forename><surname>Maji</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Mukhoty</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">K</forename><surname>Majumdar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Mukhopadhyay</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sural</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Paul</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Majumdar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Pervasive Computing Technologies for Healthcare</title>
+		<meeting><address><addrLine>Tampere, Finland</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">System design and development for a CSCW based remote oral medical diagnosis system</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">X</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fourth International Conference on Machine Learning and Cybernetics</title>
+		<meeting><address><addrLine>China</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Systems of systems applications for telemedicine</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Petcu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Petrescu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">9th RoEduNet IEEE International Conference</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">The Role of Service Oriented Architecture in Telemedicine Healthcare System</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Shaikh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Misbahuddin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computational Intelligence in Security for Information Systems</title>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Web2ohs: A Web2.0-Based Omnibearing Homecare System</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Ku</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Information Technology in Biomedicine</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Architectural Styles, Design Patterns, and Objects</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">T</forename><surname>Monroe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Kompanek</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Melton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Garlan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Computing &amp; Processing (Hardware/Software)</title>
+		<imprint>
+			<date type="published" when="1996" />
+			<biblScope unit="page" from="43" to="52" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Microsoft</surname></persName>
+		</author>
+		<ptr target="http://msdn.microsoft.com/en-us/library/ee658117.aspx" />
+		<title level="m">Architectural Patterns and Styles</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">The value of mapping studies -A participantobserver case study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><forename type="middle">D</forename><surname>Budgen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Brereton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Evaluation Assessment in Software Engeneering</title>
+		<meeting><address><addrLine>United Kingdom</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Telemedicine and health care</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">L</forename><surname>Bashshur</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Telemedicine Journal and E-Health</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+	<note>S.l.</note>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Java</surname></persName>
+		</author>
+		<ptr target="http://www.java.com/pt_BR/download/faq/whatis_java.xml" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="middle">K</forename><surname>Petersen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Feldt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Mujtaba</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mattsson</surname></persName>
+		</author>
+		<title level="m">Systematic Mapping Studies in Software Engineering</title>
+		<meeting><address><addrLine>Italy</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+		<respStmt>
+			<orgName>University of Bari</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">S</forename><surname>Ramos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">M A</forename><surname>Brasil</surname></persName>
+		</author>
+		<ptr target="http://www.infobrasil.inf.br/userfiles/16-S2-2-97124-Um%20Mapeamento%20Sistem%C3%A1tico.pdf" />
+		<title level="m">Um Mapeamento Sistemático sobre Padrões de Software para Reengenharia de Sistemas</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Bluetooth ; Garlan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shaw</surname></persName>
+		</author>
+		<ptr target="http://www.bluetooth.com/Pages/Bluetooth-Home.aspx47" />
+		<title level="m">An Introduction to Software Architecture</title>
+		<imprint>
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shaw</surname></persName>
+		</author>
+		<title level="m">The Coming-of-Age of Software Architecture Research</title>
+		<imprint>
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Wooton</surname></persName>
+		</author>
+		<ptr target="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1121135/pdf/557.pdf" />
+		<imprint>
+			<publisher>Telemedicine</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Wooton</surname></persName>
+		</author>
+		<ptr target="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2352879/pdf/bmj00570-0037.pdf" />
+		<title level="m">Telemedicine: a cautious welcome</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<title level="m" type="main">Uma Ferramenta para Gerenciamento e Transmissão de Fluxos de Vídeo em Alta Definição para Telemedicina. Anais do Salão de Ferramentas do Simpósio Brasileiro de Redes de Computadores</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">S F</forename><surname>Vieira</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Systematic Review of System-of-Systems Architecture Research</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">John</forename><surname>Klein</surname></persName>
+							<email>jklein@sei.cmu.edu</email>
+							<affiliation key="aff0">
+								<orgName type="institution">Software Engineering Institute Pittsburgh</orgName>
+								<address>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hans</forename><surname>Van Vliet</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">VU Amsterdam Amsterdam</orgName>
+								<address>
+									<country key="NL">Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Systematic Review of System-of-Systems Architecture Research</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>D211 [Software Engineering]: Software Architectures</term>
+					<term>D212 [Software Engineering]: Interoperability -data mapping</term>
+					<term>C24 [Computer Communication Networks]: Distributed Systems -distributed applications General Terms Design Keywords System of systems, architecture, systematic review</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Context: A system of systems is an assemblage of components which individually may be regarded as systems, and which possesses the additional properties that the constituent systems are operationally independent, and are managerially independent. Much has been published about the field of systems of systems by researchers and practitioners, often with the assertion that the system-of-systems design context necessitates the use of architecture approaches that are somewhat different from system-level architecture. However, no systematic review has been conducted to provide an extensive overview of system of systems architecture research. Objective: This paper presents such a systematic review. The objective of this review is to classify and provide a thematic analysis of the reported results in system of systems architecture. Method: The primary studies for the systematic review were identified using a predefined search strategy followed by an extensive manual selection process. Results: We found the primary studies published in a large number of venues, mostly domain-oriented, with no obvious center of a research community of practice. The field seems to be maturing more slowly than other software technologies: Most reported results described individuals or teams working in apparent isolation to develop solutions to particular system-of-systems architecture problems, with no techniques gaining widespread adoption. Conclusions: A comprehensive research agenda for this field should be developed, and further studies should be performed to determine whether the information system-related problems of system of systems architecture are covered by existing software architecture knowledge, and if not, to develop general methods for system-of-systems architecture.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>A system is a collection of elements that together produce some result that cannot be obtained by the elements operating individually <ref type="bibr" target="#b8">[9]</ref>. These elements of a system may themselves be large and complex, and comprised of sub-elements acting in concert. The term system of systems designates the case where the constituent elements are collaborating systems that exhibit the properties of operational independence (each constituent system operates to achieve a useful purpose independent of its' participation in the system of systems) and managerial independence (each constituent system is managed and evolved, at least in part, to achieve its' own goals rather than the system of systems goals) <ref type="bibr" target="#b14">[15]</ref>. There is consensus among researchers <ref type="bibr" target="#b3">[4]</ref> <ref type="bibr" target="#b15">[16]</ref> and practitioners <ref type="bibr" target="#b18">[18]</ref> that these properties necessitate treating a system of systems as something different from a large, complex system. While fields such as enterprise architecture and service-oriented architecture address systems that include the distinguishing characteristics noted above, "systems of systems" is treated as a distinct field by many researchers and practitioners, with its' own conferences (e.g., IEEE International Conference on System of Systems Engineering) and journals (e.g., International Journal of System of Systems Engineering).</p><p>Architecture plays a vital role in a system's ability to meet stakeholder's business and mission goals <ref type="bibr" target="#b1">[2]</ref>, hence we decided to perform a Systematic Review <ref type="bibr" target="#b11">[12]</ref> of the published literature to characterize the state of research on system-of-systems architecture. We define the architecture of a system as the set of structures needed to reason about the system, which comprise elements, relations among them, and properties of both <ref type="bibr" target="#b1">[2]</ref>. In the context of a system of systems, some structures may be comprised of elements and relations that are purely physical. For example, consider structures where the elements are radar systems, the relationship is their arrangement and orientation to detect targets in a particular geographic area, and a property is the transmission frequency of each radar so as to avoid electronic interference. While such physical structures are obviously important to achieving business and mission goals, we confined our review to research in the information system aspects of system-of-systems architectures.</p><p>The specific research questions that motivated our study are:</p><p>1. What research has been published on the subject of system-of-systems architecture?</p><p>2. What is the impact of these studies to the research and practice of system-of-systems architecture?</p><p>Previously, literature surveys on systems of systems have focused on the definition and distinguishing characteristics of systems of systems <ref type="bibr" target="#b3">[4]</ref> <ref type="bibr" target="#b7">[8]</ref>. Our research has different goals, as noted above, and we have used a systematic and rigorous approach to identifying and selecting the reviewed primary studies. Our study performed a systematic search for publications in multiple data sources and followed a pre-defined protocol for study selection and data extraction. This paper is organized as follows: Section 2 of this paper discusses the research method used for the study, Section 3 presents and discusses the results of the review. Section 4 discusses threats to validity of these results. Section 5 presents conclusions and identifies opportunities for additional research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">RESEARCH METHOD</head><p>As noted above, this study was conducted according to the systematic review methodology described by <ref type="bibr">Kitchenham and Charters [12]</ref>, following all steps and guidelines. There are many recent publications that describe the methodology, mechanics, and advantages and limitations of systematic reviews, so we discuss here only those aspects of the methodology relevant to the results reported here. The specific process that we followed to create the set of primary sources is shown in <ref type="figure" target="#fig_0">Figure 1</ref> and is described in the following sections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Search Strategy and Data Sources</head><p>The search strings used in this review were constructed using the following strategy:</p><p>• Identify the main terms based on the research questions and topics being researched;</p><p>• Determine and add synonyms, related terms, and alternative spellings as appropriate, and incorporate into the string using Boolean "or";</p><p>• Link the main terms using Boolean "and"; • Pilot the search string and iterate the steps until sufficient sensitivity <ref type="bibr" target="#b22">[22]</ref> was achieved, using a standard constructed of selected references from a recent textbook <ref type="bibr" target="#b10">[11]</ref> surveying the field of systems of systems.</p><p>We took the position that systems of systems are an independent field of research and practice (as discussed above), and focused on studies that were explicitly in that field. We Our main terms were "system of systems" and "architecture".</p><p>We considered several synonyms for "system of systems". "Service-oriented architecture" is concerned with interoperation between independent systems, but was rejected as too narrow in scope since it represents just one possible architecture style for system integration. We also considered "enterprise architecture", but rejected it as being too broad. An enterprise architecture are usually realized a set of interoperating systems, however these systems may or may not satisfy the criteria of independence of purpose and evolution that characterize a system of systems. Furthermore, in practice, an enterprise architecture frequently manifests as principles and governance processes, rather than the structures (elements and relationships) that comprise a system-of-systems architecture or a system architecture <ref type="bibr" target="#b12">[13]</ref>.</p><p>We added alternate spellings, and extended the keywords based on pilot search results.</p><p>This strategy produced the following ideal search string:</p><p>("system of systems" OR "systems of systems" OR "system-of-systems" OR "systems-of-systems") AND (architecture OR design OR implementation OR model OR interoperability OR interoperation)</p><p>Variations in the search features provided by the digital literature collections (e.g., ACM Digital Library, IEEEXplore, and Elsevier Science Direct) required adapting the ideal search string to the capabilities of each particular search engine, as has been done in other recent systematic reviews (e.g., <ref type="bibr" target="#b4">[5]</ref>). We made every effort to ensure that the adapted search strings were logically and semantically equivalent. Both authors were involved in this phase of the review, refining and reviewing the capability of the adapted search strings.</p><p>The digital sources searched for this review were: As noted above, the sensitivity (or inclusiveness) of the search was checked using a standard of 22 primary studies. These studies were selected from the references cited in Jamshidi's recent textbook <ref type="bibr" target="#b10">[11]</ref>, based on their relevance to this study's research questions.</p><formula xml:id="formula_0">•</formula><p>The search results used for this study were generated on 12 July 2012, and covered published results up to that date.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Search Results</head><p>The search strategy used for this study resulted in 1,865 initial candidate papers. Semantic ambiguity of several of the main search terms resulted in a strategy that traded off higher sensitivity against lower precision <ref type="bibr" target="#b22">[22]</ref>. For example, the terms "system of systems" and "architecture" are often used in ways that do not relate to the subject of this systematic review, but we were unable to automatically detect these semantic differences. Also, some of the search engines included full text of the paper in the search, so any paper citing a reference published in the IEEE System of Systems Engineering Conference was selected by this search strategy. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>-Primary Study Selection Process</head><p>We performed an automated de-duplication based on first author and title, which reduced the set to 1,617 papers. Next, one researcher looked at publication venue, title, and abstract, and applied the following selection criteria:</p><p>1. Include only papers from peer-reviewed journals, conferences, and workshops.</p><p>2. Include only papers written in English, with full text available.</p><p>3. Exclude papers that do not explicitly or implicitly define "system of systems" as an assemblage of constituent systems that are independently operated and independently managed (i.e. as defined by Maier <ref type="bibr" target="#b14">[15]</ref>).</p><p>4. Exclude papers that focus on defining the term "system of systems," or on the general implications of a particular definition (unless those implications explicitly address architecture). There is a rich body of publications that focus on defining and distinguishing a system of systems, and several previously published surveys collect and analyze this body of literature <ref type="bibr" target="#b3">[4]</ref> <ref type="bibr" target="#b7">[8]</ref>. In the case where a paper discussed definitions and also explicitly addressed architecture implications of a particular definition (e.g., the heuristics that Maier presents <ref type="bibr" target="#b14">[15]</ref>), we included the paper.</p><p>5. Exclude papers that address architecture concerns unrelated to information systems (e.g., papers focused only on physical architecture structures, or modeling social or political systems as a system of systems.).</p><p>6. Exclude papers that are primarily concerned with general distributed system issues, e.g., agent-based coordination, service-oriented architecture and web services, or system interoperability. From an information systems architecture perspective, systems of systems are almost always distributed systems, comprising multiple autonomous computers executing software that communicates through a computer network. The converse is not true -many distributed systems are not systems of systems, because the constituent systems do not exhibit operational and managerial independence. Many papers addressing issues related to distributed systems (e.g., coordination or interoperation) make reference to the system-ofsystems context and were selected by the automated search. We excluded papers that discussed general distributed system issues, unless the paper focused specifically on those issues within the system-of-systems context.</p><p>7. Exclude papers that deal with domain-specific algorithms, not generalizable architecture approaches (e.g., reformulating a particular algorithm to operate in a particular system-of-systems architecture).</p><p>8. Exclude papers that deal with primarily with systemof-systems requirements, acquisition, test, integration, or certification processes, unless there is also discussion of how architecture impacts those other lifecycle processes.</p><p>9. Exclude papers that deal with general system architecture concerns or approaches, with only reference to scaling up to a system-of-systems context.</p><p>Applying these inclusion and exclusion criteria looking only at the publication venue, title, and abstract resulted in 234 papers. At this point, additional filtering was performed to remove papers that presented the same results. Where we found the same authors publishing several papers that presented similar results, we retained only the most recent or most comprehensive presentation. This excluded an additional 34 papers, resulting in 200 papers.</p><p>A single researcher performed the initial exclusion screening, so a "test-retest" protocol was used to verify the exclusion decisions <ref type="bibr" target="#b11">[12]</ref>. At the conclusion of the initial exclusion process, 50 of the excluded papers were selected at random and re-evaluated. None of the re-evaluated papers was incorrectly excluded.</p><p>Two researchers then read the full text of each of the 200 papers during the data extraction process. During this step, an additional 6 papers were found to violate one of the inclusion/exclusion criteria, and so were excluded, leaving 194 primary studies in the review. The full list of primary studies is available at http://www.andrew.cmu.edu/user/jklein2/primarystudies.pdf.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Data extraction and synthesis</head><p>We read the full text of each of the 194 primary studies, and used a predefined spreadsheet form to extract and store the following data related to the research questions:</p><p>• Type of research result reported by the study, categorized using Shaw's scheme <ref type="bibr" target="#b21">[21]</ref>;</p><p>• The architecture task(s) that were the focus of the primary study, based on the categorization developed by Bass and colleagues <ref type="bibr" target="#b2">[3]</ref>;</p><p>• The system application domain (if any) that was the focus of the primary study or was used in any examples presented in the study. This was an emergent classification, with no pre-defined categories.</p><p>• The quality attributes (if any) that were the focus of the primary study. This was also an emergent classification, with no pre-defined categories. We limited the data extraction to no more than 3 discrete quality attributes for any of the studies.</p><p>• The technology maturity level indicated by the results presented in the primary study, using the classification scheme of Redwine and Riddle <ref type="bibr" target="#b19">[19]</ref>.</p><p>Each researcher initially performed data extraction independently on a set of 20 studies, and these results were discussed in detail. This led to the creation of decision trees for the Result Type and Technology Maturity data extraction, to assist the two researchers in making more consistent classification. The researchers then independently performed data extraction for the entire set of 194 primary studies. Results were compared, and disagreements were discussed and resolved.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">RESULTS AND DISCUSSION 3.1 Demographic Data</head><p>The 194 primary studies were published in 95 different venues. However, just 12 venues account for 104 of the published papers, as shown in <ref type="table" target="#tab_1">Table 1</ref>, with each of the other 83 venues having just 1 or 2 published papers. Most of the primary studies were published in conference proceedings (143), with 35 published in journals and 16 published in workshop proceedings.</p><p>The year of publication is shown in <ref type="table" target="#tab_2">Table 2</ref>. Our systematic review reveals that there was a sharp increase in the number of publications in 2008, and the number of publications has held steady each year since then.</p><p>The first International Conference on System of Systems Engineering (SoSE) was held in 2005. Although no papers from that conference were selected as primary studies for this systematic review, the creation of a new conference indicates that the community of researchers in the field had reached a tipping point and was sufficient to support a stand-alone event.</p><p>Another milestone event occurred in 2008, the United States Department of Defense (US DOD) published its' System Engineering Guide for Systems of Systems, clearly distinguishing and highlighting the significance of systems of systems. Also in 2008, the US DOD funded and launched the Systems Engineering Research Center 1 . This focus of attention and infusion of funding may have contributed to the higher publication rates since 2008.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Type of research result reported</head><p>The research results reported in each primary study were classified by selecting one of the categories defined by Shaw <ref type="bibr" target="#b21">[21]</ref>. Shaw's categorization was originally created to explain how software engineering research strategies -questions, type of results, and validations -shift as the field matures. We use the categorization to understand where researchers are focusing their effort.</p><p>We used the following decision tree to perform the classification: The specific solution category included studies that presented an architecture in some detail, with no generalization of the results as method, model, or notation. Taxonomies, frameworks, or well-argued generalizations were classified as a qualitative or descriptive model. Studies presenting a repeatable way to perform an architecture task were classified as procedure or technique. A model supporting formal or automatic analysis or code generation was classified as an analytic model; a graphical or textual notation for an analytic model, or a tool supporting such a notation, was classified as notation or tool. The report category included experience reports and guidelines for applying a technique or procedure. Benchmarks and trade studies were classified as answer or judgment. Finally, predictive models based on observed data were classified as empirical model. In cases where a study reported multiple result types, we selected a single one that was the focus of the paper.</p><p>Although these categories appear to be distinct, we found some difficulty in applying this scheme to the primary studies in this systematic review. We observed that researchers publishing their results tended to clearly define the result type in a paper's abstract, and tended to organize a paper around a single result type. On the other hand, practitioners were often less precise in defining the type of result reported in a paper, and published papers covering several result types. We did not attempt to classify authors as "researcher" or "practitioner" (this would have to be based on the affiliation reported in the publication, which itself does not necessarily distinguish researchers from practitioners, and may not be representative of the organization that the author belonged to when the reported work was conducted). In the initial data extraction from practitioner studies, there was frequent disagreement between the authors, which was resolved by independently re-reading the study and discussing the categorization until agreement was reached.</p><p>As shown in <ref type="table" target="#tab_3">Table 3</ref>, the most frequently reported result type was a procedure or technique (61 studies). These procedures were presented at multiple task levels, ranging from specific single tasks in the system development process like analyzing a particular quality attribute to comprehensive approaches for performing architecture design and evaluation for a system of systems. We found that most of these procedures seemed to be created in isolation -there was almost no reference to or building on the work of others.</p><p>The second most frequently reported result type was a qualitative or descriptive model (43 studies). Many of these models were aimed at dealing with the scale and complexity of the system-of-systems architecture context. Examples include informal taxonomies of element types and identification of significant element properties related to a particular type of analysis. Applying the ISO-42010 metamodel <ref type="bibr" target="#b9">[10]</ref>, many of these qualitative or descriptive models were framed in terms of stakeholder concerns, and partially define a viewpoint.</p><p>Specific solutions were frequently published (36 studies). These primary studies presented the architecture of a particular system of systems, usually with some accompanying discussion of drivers, notable quality attribute achievements, or particular challenges. While many primary studies presented a system-ofsystem architecture to demonstrate or validate another result type, we applied this category to studies where the primary focus was presentation of a completed architecture, with only incidental discussion of other types of results.</p><p>There were a number of analytic models published (29 studies), focused mostly on automatic manipulation of the architecture related to a particular quality attribute. We applied this category to papers that reported both an analytic model and an accompanying tool.</p><p>Finally, there were a smaller number of results in the notation or tool category (11 studies), report category (10 studies), and answer or judgment category (4 studies). Our systematic review found no papers reporting an empirical model. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Architecture Task Focus</head><p>We grouped the architecture tasks defined by Bass and colleagues <ref type="bibr" target="#b2">[3]</ref> into a smaller number of composite categories, reflecting that in practice, the tasks of design, analysis, modeling, and documentation are often performed concurrently. Each primary study was classified into a single category, as shown in <ref type="table" target="#tab_4">Table 4</ref>. Most of the primary studies focused on the design/analysis/modeling/documentation tasks that are core to creating an architecture. This category included primary studies that reported specific solution results (as described in the previous section) in which the authors discussed issues related to these architecture tasks.</p><p>There were 19 primary studies that presented results related to model-driven architecture (MDA) methods. The models created in applying MDA methods are used in many architecture tasks, but we chose to distinguish MDA results from other studies that focused on all architecture tasks, but did not apply an MDA approach. There were 18 studies in this category.</p><p>Architecture evaluation and the analysis related to evaluation was the focus of 12 primary studies.</p><p>A small number of studies <ref type="formula">(3)</ref> focused specifically on architecture tasks related to test and integration, including architecture design for testability and analysis of testability.</p><p>Finally, there were 5 studies where no focus on an architecture task could be identified. These studies presented specific solution results, with no accompanying discussion that contributed to architecture knowledge for any of the architecture task categories.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Application Domain</head><p>Many of the primary studies framed their results in the context of a particular application domain. These are summarized in <ref type="table" target="#tab_5">Table 5</ref>.</p><p>There were 74 primary studies that did not frame their results in a particular application domain. Of those that did discuss a particular application domain, the most frequently discussed was defense and national security (58 studies). The Global Earth Observation System of Systems was discussed by 20 of the primary studies. The remaining 42 primary studies discussed a variety of other application domains.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">Quality Attribute Focus</head><p>Architecture allows us to reason about a system's ability to satisfy both functional and quality requirements. There were 128 primary studies that focused on one or more quality attributes.</p><p>Quality attributes are notoriously difficult to define when only the name is given <ref type="bibr" target="#b0">[1]</ref>`, and so we did not attempt to infer an author's meaning. We performed an emergent categorization, extracting the specific terminology used in each study, recognizing that there may be some overlaps in this categorization. For example, an author referring to Quality of Service (QoS), may have intended to include availability, performance, and other qualities under that label.. We extracted up to 3 quality attributes from each study (there were 9 studies that focused on more than 3 qualities). The results are shown in <ref type="table" target="#tab_6">Table 6</ref>.</p><p>The most frequently discussed quality attribute was interoperability (45 studies). Since a system of systems is a collection of collaborating systems, interoperability is a necessary concern. Evolution was also frequently addressed (13 studies), and since a system of systems combines existing independent systems, evolution also seems to be a natural concern. Security and safety were also frequently discussed (14 and 8 studies, respectively), and these concerns arise frequently in the defense and national security application domain, which was the most frequently discussed application domain. Assurance, consistency, dependability, feasibility, manageability, monitorability, privacy, reconfigurability, robustness, selfhealing, self-configuration, supportability, survivability 1 More than three qualities discussed 9 * Multiple classification allowed -up to 3 discrete quality attributes per study</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6">Technology Maturity</head><p>The result reported by each of the primary studies was classified using the Redwine and Riddle's technology maturation model <ref type="bibr" target="#b19">[19]</ref>. This model traces the evolution of software technology from initial concept definition through six phases that culminate in popularization, as demonstrated by production quality versions of the technology and broad commercialization. The classification results are shown in <ref type="table">Table  7</ref>.</p><p>There were no basic research results, and a small number of concept development results. These may be attributed to our decision to exclude studies that focused only on defining and distinguishing the basic concepts related to systems of systems.</p><p>A majority of the results were in the development and extension category (124 studies), reflecting results that have not yet been applied to develop a system. A prototypical example of a study in this category is the work of Dimarogonas <ref type="bibr" target="#b6">[7]</ref>, which reports on a set of design tenets and rules for architecture development, with no evidence presented that the approach reported was applied in the design of a system-of-systems architecture. Also, the framework reported in this study was independently developed, not building on any previous systemof-systems architecture research.</p><p>There was some internal development and extension (30 studies), mostly reflecting author's extensions of their own previous work. Finally, 35 studies were classified as external extension and development, explicitly applying and extending the work of other researchers. Li and Yang's study <ref type="bibr" target="#b13">[14]</ref> is a prototypical example of this category, reporting a system-ofsystems architecture design process that extends system architecture, system-of-systems architecture, and software product line research and technology.</p><p>Redwine and Riddle originally noted that the maturation process takes 15-20 years, based on data through the mid-1980s. Shaw performed a similar analysis, confirming the maturation timeline using data through the 1990s <ref type="bibr" target="#b20">[20]</ref>. Many researchers cite Maier's 1998 publication <ref type="bibr" target="#b14">[15]</ref> as marking the start of the system-of-systems technology development, which puts the field approximately 14 years into the maturation process at the time of our systematic review. Compared to other software technologies, system-of-systems architecture technology appears to be maturing relatively slowly. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 7 -Technology maturity phase</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7">Impacts on research and practice</head><p>This systematic review has a number of implications for research and practice.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7.1">Relationship to Adjacent and Overlapping Fields</head><p>Among the primary studies that were framed in a particular application domain, the most frequently discussed domains deal with systems that are typically government-funded and government-acquired (defense and national defense, earth observation system, space system), and we see very little reference to the term "systems of systems" in other domains. We also note that most of the primary studies were published in venues focused on a specific application domain, rather than in venues focused on more general software engineering or information systems. This could imply that systems of systems appear more frequently in certain application domains, or that the designation of a large, complex system as a "system of systems" provides a benefit only in certain application domains, and these types of systems are simply not distinguished in other application domains. For example, in many large corporations, the information technology infrastructure satisfies the definition of system of systems (operational and managerial independence of the constituent systems, which are managed and operated by different business units and functional units), but this type of system is not typically referred to as a "system of systems".</p><p>Additional research is needed to determine if the information system aspect of system-of-systems architecture constitutes a distinct field of research and practice, or if other fields such as distributed systems, service-oriented architecture and interoperating systems, and enterprise architecture already cover it.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7.2">Relationship to Industry Platforms and Software Ecosystems</head><p>Maier classified systems of systems into three categories, based on the type of managerial control <ref type="bibr" target="#b14">[15]</ref>:</p><p> Directed: The system of system is centrally managed. Constituent systems are built primarily to fulfill system of systems purposes, with independent operation as a secondary goal (for example, stand-alone system operation may provide degraded services during a system of systems failure).  Collaborative:</p><p>The system of systems has central management, but it lacks authority over the constituent systems. Constituent systems voluntarily choose to collaborate to fulfill the system of systems purposes. Maier gives the example of the Internet as a collaborative system of systems, with the IETF setting standards but having no enforcement authority. Participants choose to comply with the standards if they want to be part of the Internet system of systems.  Virtual:</p><p>The system of systems has no central management and no centrally agreed-upon purpose. Maier's example here is the World Wide Web, where there is no central governance. There are incentives for cooperation and compliance to core standards, which emerge and evolve based on market forces.</p><p>Collaborative and virtual systems of systems are related to industry platforms and software ecosystems. An industry platform provides the core technology that allows systems constructed by different organizations to interact to produce some value <ref type="bibr" target="#b5">[6]</ref>. In both collaborative and virtual systems of systems, an industry platform can broker interactions between participating systems and provide incentives to join the system of systems and to behave in particular ways in the system of systems. The relationships among the systems using an industry platform and among the organizations constructing those systems create an ecosystem with cooperation and competition among participants <ref type="bibr" target="#b17">[17]</ref>.</p><p>Our systematic review uncovered little research in industry platforms as part of system-of-system architectures, or in links between systems of systems and software ecosystems. Research in this area is needed to address how an industry platform for a system of systems is scoped and defined, addressing issues such as which features and variabilities might be included in a platform, what architecture approaches (e.g., patterns, tactics, and heuristics) are useful in this design context, and how to assess the cost and value of these design alternatives in order to make design decisions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7.3">Pace of Maturation</head><p>Our classification using the Redwine and Riddle model of technology maturation shows that a majority of the studies fall into a middle maturity stage of development and extension. As noted above, system-of-systems architecture technology is maturing at a relatively slow rate, compared to other software engineering fields. This is supported by our finding that the majority of the studies reporting results that were procedure or technique, and we see many studies reporting results of researchers and practitioners working in apparent isolation to create new approaches to solve system-of-systems architecture problems, with no particular approaches gaining widespread adoption.</p><p>This leads to a set of questions that impacts both research and practice:</p><p> What types of architecture knowledge are needed to design, analyze, evaluate, and evolve system-of-system architectures? What design and organizational pattern, tactics, and heuristics apply, given a particular technical problem and technical and non-technical constraints? How should this knowledge be organized to support the tasks and workflows used in working on system-of-systems architectures?  Are there general methods for designing and evolving system-of-systems architectures, or does the scale, complexity, and non-technical constraints of each system of systems require a unique solution approach?  Are there general methods for analyzing and evaluating system-of-systems architectures? Given the scale and complexity of a system of systems, how is the coverage or completeness of an analysis or evaluation method determined?</p><p>Finally, most of the primary studies were published in conference venues, with just 35 studies published in journals. This is consistent with our finding of a relatively low level of technology maturity, since journal publication is usually indicative of more mature research results. Furthermore, most of the primary studies were published in domain-oriented venues, with no de facto home for research in general system-of-systems architecture technology. Notably, few of the primary studies were published in leading software engineering or software architecture venues. This calls for the creation of a venue to nurture and disseminate research about the questions identified above.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.8">Study Limitations and Threats to Validity</head><p>This study is limited to reviewing studies reporting research results about system-of-systems architecture, published in peerreviewed venues through 12 July 2012. We did not include any gray literature (technical reports, white papers, web blog postings, etc.).</p><p>The main threats to the validity of this research are bias in the selection of studies to include, and bias in the data extraction.</p><p>Selection bias was controlled by developing a research protocol based on the research questions. The research protocol included a search strategy and inclusion/exclusion criteria. The research protocol was developed by the first author, and reviewed by the second author to ensure correct formulation of the research questions and whether the search strategy and the inclusion/exclusion criteria followed from the research questions. The first author is an experienced consultant in the field of systems of systems, while the second author is an academic experienced in the conduct of systematic reviews.</p><p>As noted in Section 2.2 above, the semantic ambiguity in the primary search terms "system of systems" and "architecture" produced a large number of automated search results. The automated search results were manually filtered using a multistep process, as established a priori in the research protocol. The first author performed most of the manual filtering. A "testretest" protocol <ref type="bibr" target="#b11">[12]</ref> was used to check for any bias in the manual filtering -50 papers were randomly selected from the set of excluded papers and rechecked to ensure that the inclusion/exclusion criteria were consistently applied. Bias in data extraction was controlled by establishing a research protocol based on the research questions. Both authors independently performed the data extraction on all primary studies, using the same spreadsheet form. Categories for research result type and technology maturity phase were established before the data collection started, and were supported by a decision tree to guide classification decisions. Architecture task classification was initially attempted using a fine-grained categorization, but was repeated using the categorization discussed in Section 3.3 above. In all cases, where the author's independent data extraction results disagreed, there was an independent reassessment by each author and a discussion of the updated result.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions</head><p>A system of systems is a design context where scale, complexity, and certain non-technical constraints necessitate the use of architecture methods and approaches that are different from those used for system architectures. This paper reports the results of a systematic review of the research in the information system aspects of system-of-systems architecture. We found that this field is maturing more slowly than other software engineering fields, and there is a need for additional research to understand and address this slow maturation.</p><p>We found that the primary studies were published in a large number of diverse and mostly domain-oriented venues, and conclude that a publication venue focused on system-of-system architecture could contribute to the formation of a research community of practice. The SHARK workshops 2 in the field of architecture knowledge are one such successful example.</p><p>Our systematic review found that most reported research reflects individuals and teams working in apparent isolation to develop techniques to solve particular system-of-system architecture problems. Research is needed to develop more general procedures and techniques for design, analysis, evaluation, and evolution of system-of-systems architectures. The discussion above outlines several specific research opportunities, but the creation of cohesive research agenda for the field is needed.</p><p>Finally, we noted above that there are domains, such as corporate information technology infrastructures, which are creating systems-of-systems architectures but not using the "system of systems" label or directly using system of systems technology. Further research is needed to understand how fields such as enterprise architecture relate to system-of-systems architecture.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc></figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="true"><head>Table 1 -Most frequent publication venues</head><label>1</label><figDesc></figDesc><table>Venue 
+# of studies 
+
+International Conference on System of 
+Systems Engineering (SoSE) 
+
+27 
+
+IEEE Systems Conference (SysCon) 
+13 
+Systems Engineering 
+10 
+IEEE Aerospace Conference 
+9 
+International Conference on Systems, 
+Man and Cybernetics (SMC) 
+
+11 
+
+IEEE Military Communications 
+Conference (MILCOM) 
+
+8 
+
+IEEE Systems Journal 
+8 
+Winter Simulation Conference (WSC) 
+5 
+Proceedings SPIE 
+4 
+Digital Avionics Systems Conference 
+3 
+Information, Knowledge, Systems 
+Management 
+
+3 
+
+MTS/IEEE Biloxi Conference 
+(OCEANS) 
+
+3 
+
+Subtotal 
+104 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table 2 -</head><label>2</label><figDesc></figDesc><table>Number of primary studies published each year 
+
+Year 
+# 
+
+1993 
+2 
+1994 
+2 
+1995 
+0 
+1996 
+0 
+1997 
+0 
+1998 
+3 
+1999 
+0 
+2000 
+2 
+2001 
+4 
+2002 
+3 
+2003 
+4 
+2004 
+5 
+2006 
+12 
+2007 
+10 
+2008 
+13 
+2009 
+28 
+2010 
+34 
+2011 
+30 
+2012 
+13* 
+* This study included papers published through 
+12 July 2012, approximately ½ of the year 2012. 
+
+1 http://www.sercuarc.org/about_us/view/8 (accessed 10 Jan 
+2013). 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="true"><head>Table 3 -Type of research result reported</head><label>3</label><figDesc></figDesc><table>Result Type 
+# 
+
+Procedure or technique 
+61 
+Qualitative or descriptive model 
+43 
+Specific solution 
+36 
+Analytic model 
+29 
+Notation or tool 
+11 
+Report 
+10 
+Answer or judgment 
+4 
+Empirical model 
+0 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="true"><head>Table 4 -Architecture task focus</head><label>4</label><figDesc></figDesc><table>Architecture Task 
+# 
+
+Design/Analysis/Modeling/Documentation 137 
+Model-driven architecture 
+19 
+Evaluation/Analysis 
+12 
+All tasks (not model-driven architecture) 
+18 
+No architecture task 
+5 
+Test (design for test, testability analysis of 
+an architecture) 
+
+3 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="true"><head>Table 5 -Application domain</head><label>5</label><figDesc></figDesc><table>Application Domain 
+# 
+
+No specific application domain 
+74 
+Defense and national security 
+58 
+Earth observation system 
+20 
+Space system 
+8 
+Modeling and simulation 
+6 
+Sensor network 
+5 
+Healthcare, electric power grid 
+4 
+Business information system 
+3 
+Transportation system 
+3 
+Astronomy 
+2 
+Cloud computing, crisis 
+management system, enterprise 
+architecture, home automation, 
+human tracking, SCADA, or social 
+computing 
+
+1 each </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6" validated="true"><head>Table 6 -Quality attribute focus</head><label>6</label><figDesc></figDesc><table>Quality Attribute Discussed 
+#* 
+
+No specific quality attributes discussed 
+66 
+Interoperability 
+45 
+Security 
+14 
+Evolution 
+13 
+Performance 
+9 
+Safety 
+8 
+Testability 
+6 
+QoS, reusability, risk 
+5 
+Adaptability, complexity, correctness, 
+coupling, flexibility, reliability 
+
+3 
+
+Availability, compliance, composability, 
+cost, efficiency 
+
+2 
+
+</table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">ACKNOWLEDGEMENTS</head><p>Copyright 2013 ACM. This material is based upon work funded and supported by the Department of Defense under Contract No. FA8721-05-C-0003 with Carnegie Mellon University for the operation of the Software Engineering Institute, a federally funded research and development center. This material has been approved for public release and unlimited distribution. DM-0000190.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Third Edition</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Barbacci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Ellison</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Lattanze</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Stafford</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Weinstock</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Wood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Quality Attribute Workshops (QAWs)</title>
+		<meeting><address><addrLine>Pittsburgh, Pennsylvania</addrLine></address></meeting>
+		<imprint/>
+		<respStmt>
+			<orgName>Software Engineering Institute, Carnegie Mellon University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Software Architecture in Practice, Third Edition</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bass</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Clements</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kazman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012" />
+			<publisher>Addison-Wesley Professional</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">A Workshop on Architecture Competence</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bass</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Clements</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Kazman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Siviy</surname></persName>
+		</author>
+		<idno>CMU/SEI-2009-TN-005</idno>
+		<ptr target="http://www.sei.cmu.edu/library/abstracts/reports/09tn005.cfm" />
+		<imprint>
+			<date type="published" when="2009" />
+			<pubPlace>Pittsburgh, Pennsylvania</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Software Engineering Institute, Carnegie Mellon University</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical Note</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">System of Systems -the meaning of of</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Boardman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE/SMC International Conference on System of Systems Engineering (SoSE)</title>
+		<meeting>IEEE/SMC International Conference on System of Systems Engineering (SoSE)</meeting>
+		<imprint>
+			<date type="published" when="2006-04" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Variability management in software product lines: a systematic review</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">Ali</forename><surname>Babar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Ali</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 13th International Software Product Line Conference</title>
+		<meeting>13th International Software Product Line Conference</meeting>
+		<imprint>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="81" to="90" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The Evolution of Platform Thinking</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Cusumano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Communications of the ACM</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="32" to="34" />
+			<date type="published" when="2010-01" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A theoretical approach to C4ISR architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Dimarogonas</surname></persName>
+		</author>
+		<idno type="doi">doi:10.1109/MILCOM.2004.1493242</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE Military Communications Conference (MILCOM)</title>
+		<meeting>IEEE Military Communications Conference (MILCOM)</meeting>
+		<imprint>
+			<date type="published" when="2004" />
+			<biblScope unit="page" from="28" to="33" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">System-ofSystems Engineering Management: A Review of Modern History and a Path Forward</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Gorod</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Sauser</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Boardman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="484" to="499" />
+			<date type="published" when="2008-12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">A Consensus of the INCOSE Fellows</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Incose</surname></persName>
+		</author>
+		<ptr target="http://www.incose.org/practice/fellowsconsensus.aspx" />
+		<imprint>
+			<date type="published" when="2012-08-18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">ISO/IEC/IEEE 42010: Systems and Software Engineering -Architecture description</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Iso/Iec/</forename><surname>Ieee</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">System of Systems Engineering: Innovations for the 21st Century</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jamshidi</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+			<publisher>John Wiley &amp; Sons, Inc</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering (Version 2.3)</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<idno>EBSE 2007-001</idno>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University Department of Computer Science</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Technical Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Gartner Defines the Term &apos;Enterprise Architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Lapkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Gartner Group</title>
+		<imprint>
+			<date type="published" when="2006-07" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Enhance value by building trustworthy software-reliant system of systems from software product lines</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="doi">doi:10.1109/PLEASE.2012.6229761</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 3rd International Workshop on Product Line Approaches in Software Engineering (PLEASE)</title>
+		<meeting>3rd International Workshop on Product Line Approaches in Software Engineering (PLEASE)</meeting>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="13" to="16" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-ofsystems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="267" to="284" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Research Challenges for Systems-ofSystems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">W</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE International Conference on</title>
+		<meeting>IEEE International Conference on</meeting>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Man</forename><surname>Systems</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Cybernetics</forename></persName>
+			<affiliation>
+				<orgName type="collaboration">SMC</orgName>
+			</affiliation>
+		</author>
+		<idno type="doi">doi:10.1109/ICSMC.2005.1571630</idno>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="page" from="3149" to="3154" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">G</forename><surname>Messerschmitt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Szyperski</surname></persName>
+		</author>
+		<title level="m">Software Ecosystem: Understanding an Indispensable Technology and Industry</title>
+		<meeting><address><addrLine>Cambridge, MA, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>MIT Press</publisher>
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Systems Engineering Guide for Systems of Systems, Version 1.0</title>
+	</analytic>
+	<monogr>
+		<title level="m">ODUSD(A&amp;T)</title>
+		<imprint>
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+	<note>ODUSD(A&amp;T)</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Software technology maturation</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">T</forename><surname>Redwine</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jr</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">E</forename><surname>Riddle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 8th International Conference on Software Engineering (ICSE)</title>
+		<meeting>8th International Conference on Software Engineering (ICSE)</meeting>
+		<imprint>
+			<date type="published" when="1985" />
+			<biblScope unit="page" from="189" to="200" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">The coming-of-age of software architecture research</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shaw</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 23rd International Conference on Software Engineering (ICSE)</title>
+		<meeting>23rd International Conference on Software Engineering (ICSE)</meeting>
+		<imprint>
+			<date type="published" when="2001" />
+			<biblScope unit="page" from="656" to="664" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">What makes good research in software engineering?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shaw</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal on Software Tools for Technology Transfer (STTT)</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="7" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Identifying relevant studies in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Babar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Tel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="625" to="637" />
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

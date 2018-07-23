@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/hcadavid/tools/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-19T15:27+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Systematic Literature Review on the Description of Software Architectures for Systems of Systems</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Milena</forename><surname>Guessi</surname></persName>
+							<email>milena@icmc.usp.br</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Dept. of Computer Systems</orgName>
+								<orgName type="department" key="dep2">Dept. of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos-SP</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Valdemar</forename><forename type="middle">V G</forename><surname>Neto</surname></persName>
+							<email>valdemarneto@usp.br</email>
+							<affiliation key="aff1">
+								<orgName type="department">Dept. of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos-SP</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thiago</forename><surname>Bianchi</surname></persName>
+							<email>tbianchi@icmc.usp.br</email>
+							<affiliation key="aff2">
+								<orgName type="department">Dept. of Computer Systems</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos-SP</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Katia</forename><forename type="middle">R</forename><surname>Felizardo</surname></persName>
+							<email>katiarf@icmc.usp.br</email>
+							<affiliation key="aff3">
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos-SP</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Flavio</forename><surname>Oquendo</surname></persName>
+							<email>flavio.oquendo@irisa.fr</email>
+							<affiliation key="aff4">
+								<orgName type="department">Dept. of Computer Systems</orgName>
+								<orgName type="institution">IRISA -University of South Brittany Vannes</orgName>
+								<address>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Elisa</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="laboratory">IRISA Research Group at Univer-sity of South Brittany</orgName>
+								<orgName type="institution">University of São Paulo</orgName>
+								<address>
+									<settlement>São Carlos-SP</settlement>
+									<country>Brazil, France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Systematic Literature Review on the Description of Software Architectures for Systems of Systems</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1145/2695664.2695795</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract>
+				<p>Software architectures have been recognized as the backbone to the success of any software system. In addition, they are responsible to aggregate quality attributes, such as interoperability, dependability, and maintainability, to these systems. In parallel, currently, a new class of complex software systems has emerged, referred as Systems of Systems (SoS), resulting from a number of operationally and managerially independent software systems working together to fulfill a mission that none system alone could provide. Considering their complexity, the development of SoS has demanded special attention to their software architectures. In this scenario, the description of such architectures, i.e., the way that these architectures are represented/documented, becomes quite important as it can improve communication as well as evaluation and maintenance of these architectures. Despite its relevance, there is still no complete panorama about architectural descriptions of SoS. The main contribution of this paper is to present results of a Systematic Literature Review (SLR) on how SoS software architectures have been described. As main result, there are already important contributions in that direction; however, there is a lack of consensus on how better dealing with these descriptions. We conclude this paper with directions on how a consensus could be achieved and which aspects of the SoS architectural descriptions require further investigation. * This author is also with</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>As software architectures abstract from implementation details, they enable to focus on the architectural decisions that impact software systems quality <ref type="bibr" target="#b1">[2]</ref>. In this sense, software architectures can contribute to several aspects of quality in software systems, among them maintainability, dependability, and interoperability <ref type="bibr" target="#b31">[31]</ref>. While the software architecture is embedded in the overall software system structure, the architecture description is a tangible artifact expressing a software architecture <ref type="bibr" target="#b21">[21]</ref>. Several studies have explored architecture descriptions in the communication among stakeholders, evaluation of software architectures, and assessment of software systems quality <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b7">8]</ref>.</p><p>In parallel, a System of Systems (SoS) is formed when complex systems are joined together. The literature often relates five characteristics with SoS <ref type="bibr" target="#b25">[25]</ref>: (i) operational independence, i.e., its constituents have autonomy to execute individually; (ii) managerial independence, i.e., its constituents present a life cycle on their own and have autonomy for managing their own resources; (iii) emergent behavior, i.e., global functions are obtained by assembling different constituents together rather than from a single constituent; (iv) geographical distribution, i.e., its constituents are not necessarily in the same environment; and (v) incremental development: new functions can be added, modified, or removed in accordance with emergent needs of the SoS. Several examples of SoS exist in industry and academy <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b32">32]</ref>.</p><p>As software systems evolve and are composed into larger, complex structures, new SoS can emerge. In this perspec-tive, software architectures can bring several benefits for the construction of SoS as they constitute the basis for supporting reuse <ref type="bibr" target="#b2">[3]</ref>. While some studies exist regarding the development of SoS <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b34">34]</ref>, there is still a lack of research dedicated to their architectural description <ref type="bibr" target="#b28">[28]</ref>. In this context, the main contribution of this paper is to present such panorama by performing a Systematic Literature Review (SLR) <ref type="bibr" target="#b22">[22]</ref>. Given the outline on this research area, we indicate some interesting research lines that should be pursued next.</p><p>This paper is organized as follows. First, Section 2 introduces the main concepts regarding architecture descriptions and SoS. Section 3 summarizes the research protocol for this SLR and presents its main results. Section 4 discusses the maturity of research in this field. Section 5 outlines directions for future research. Finally, Section 6 presents our final remarks about this SLR.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">BACKGROUND</head><p>Architecture descriptions are essential for documenting, assessing, and evolving software architectures. But, in order to fulfill its different roles in software systems life cycle, architecture descriptions must provide accurate and reliable information about the software architecture. In this sense, the ISO/IEC/IEEE 42010 standard <ref type="bibr" target="#b21">[21]</ref> constitutes an important effort towards creating better architectural descriptions. The main contribution of this standard is to define a common vocabulary and the basic elements set from which architecture descriptions can be created. For example, this standard recommends the definition of an architecture framework, i.e., the guidelines for creating architecture descriptions for a given domain or stakeholder community, in terms of viewpoints, model kinds, and stakeholders.</p><p>In parallel, we observe the emergence of SoS as a new class of software systems. In this sense, while some of the characteristics stated in the previous section may be shared with other domains, such as embedded systems, it is the conjunction of all these five characteristics that sets SoS apart from conventional software systems. For example, an aircraft software system is a complex, embedded software system which encompasses entertainment, navigation, localization, engine, and control systems. However, an aircraft software system is not regarded as an SoS because its sub-systems do not self-operate or self-manage <ref type="bibr" target="#b6">[7]</ref>. But, once a software system becomes able to self-operate and self-manage, it will have more chances of joining in complex system structures that can be viewed as SoS. Thus, a national air traffic control system which manages aircrafts, airports, weather observation, and radar systems is an SoS as its constituents are distributed, self-managed, and self-operated. Important characteristics for the success of SoS, such as adaptability, interoperability, and reliability, can be accomplished with an appropriate software architecture design. Furthermore, architecture descriptions can support the communication of the software architecture to all its stakeholders and the analysis and development of SoS. In order to create accurate and reliable descriptions for SoS, formal and semiformal architecture descriptions will be necessary. Although several studies have been investigating the development of SoS, the construction of software architectures for SoS and, in particular, their architecture description are still open topics of research in the Software Engineering field <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b23">23]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">SYSTEMATIC LITERATURE REVIEW</head><p>Our SLR was conducted in the software architecture context, aiming at identifying all relevant primary studies related to the description of SoS' software architecture. It was conducted from <ref type="bibr">November 1st, 2013</ref><ref type="bibr">to February 20th, 2014</ref> and involved six people (three software engineering researchers, one systematic review specialist, and two domain experts). In short, the process for performing SLR is composed by three main phases: (i) planning; (ii) conduction; and (iii) reporting. These phases are presented in the next sections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Planning</head><p>During the planning phase, the objectives of our SLR and the protocol were defined. A protocol guides the conduction of the SLR and is composed of research questions, search strategy, primary study selection criteria, and data extraction and synthesis methods. But, due to space restrictions, we only briefly introduce the main aspects of our protocol.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.1">Research Questions</head><p>Aiming to find all relevant primary studies related to the description of software architectures of SoS, the following research questions (RQ) were established: RQ1: How the literature has addressed the architecture description of SoS? RQ2: Which techniques have been used in the description of software architectures of SoS? RQ3: What is the purpose of the SoS architecture description? RQ4: Is the architecture description particular to a given type of SoS?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.2">Search Strategy</head><p>We composed the initial search string from the main keywords identified in these RQs, which are "software architecture", "architecture description", and "system-of-systems". Then, we added synonyms, variations, and related terms for each keyword. The final search string is a combination of these keywords using the logical operator AND with the identified synonyms, variations, and related terms using the logical operator OR: ("system of systems" OR "system-ofsystems" OR "systems of systems" OR "systems-of-systems") AND ("software architecture" OR "software architectures" OR "software structure" OR "architecting" OR "software model" OR "software models" OR "software design" OR ontology OR ontologies OR taxonomy OR taxonomies OR vocabulary) AND (representation OR representations OR representing OR description OR descriptions OR describing OR style OR styles OR framework OR frameworks OR viewpoint OR viewpoints OR view OR views OR pattern OR patterns)). To reduce the likelihood for bias, we calibrated our search string in a pilot search in a single database. As a consequence of this pilot search, we decided to remove the term "model" from the original search string as it is overused in the Software Engineering domain.</p><p>After the definition of the search string, we selected the most commonly used publication databases to conduct SLR in Software Engineering <ref type="bibr" target="#b12">[13]</ref>, namely: ACM Digital Library, IEEE Xplore, ISI Web of Science, and Scopus. SpringerLink was not considered in this SLR as it is already indexed by Scopus. It is important to notice that all databases required minor changes to the search string. In addition, we limited the search scope to title, abstract, and keywords of primary studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.3">Selection Criteria</head><p>The selection criteria help in the identification of relevant primary studies. Therefore, Inclusion Criteria (IC) are used to select those primary studies which present or propose an architecture description, model, or structure for SoS. Conversely, Exclusion Criteria (EC) are used to remove those primary studies that do not address the main topics covered in this SLR, are not available, or are directly related to an included primary study of the same author.</p><p>The selection of relevant primary studies was further broken down into three steps: (i) selection of primary studies based on their title and abstract; (ii) selection of primary studies based on their full text; and (iii) revision of included primary studies using VTM techniques <ref type="bibr" target="#b26">[26]</ref>, i.e., visual data mining applied to text documents to gain insights and detect interesting knowledge. In particular, VTM techniques were used in this SLR for identifying primary studies that for any reason diverged from the group of included primary studies. Disagreements among researchers in any of the previous steps were solved in consensus meetings.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.4">Data Extraction and Synthesis Method</head><p>After the first selection, we created a data extraction form to document the selection process of our SLR. In this form, reviewers could fill in several details about each primary study including its domain, the type of SoS identified by the authors, the quality attributes mentioned, the techniques employed (if any), and the purpose of the architecture description. Each primary study was revised in parallel by two reviewers. After completing this task, a third reviewer was designated to merge and validate the extracted data of each primary study. If any inconsistencies or mismatches were observed, discussions took place in order to solve them.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Conduction</head><p>During the conduction phase, primary studies were retrieved, selected, and evaluated according to the protocol. To support the organization and analysis of primary studies we used JabRef 1 , an open source reference management system. It is worth highlighting that our SLR is based on primary studies indexed until December 23, 2013.</p><p>Our search retrieved 300 primary studies in total. After removing repeated studies, only 215 primary studies remained for selection analysis. After reading titles, abstracts, and, when necessary, the introduction of each study, 104 primary studies were selected to be read in full. After applying the selection criteria and reaching a consensus among all reviewers, 43 primary studies were included. We observed fair agreement rates among reviewers during the first and second steps of the selection process. We attributed the high rate of disagreement between reviewers to poor abstract content, which failed in making the study contribution clearer. Finally, VTM techniques and associated tool -Revis 2 -were applied to validate the selection activity and support the inclusion and exclusion decisions. <ref type="figure">Figure 1</ref> presents visualizations (content and citation maps) generated using Revis. We explored the content maps in two ways: (i) a clustering algorithm was applied to the map <ref type="figure">(Fig. 1a)</ref>, creating groups of highly related (similar) documents. Studies with different classifications (included or excluded) on the same cluster were reviewed by us following the traditional method; (ii) each primary study of the map was connected to its neighbor using the KNN (K-Nearest Neighbor) technique <ref type="figure">(Fig. 1b)</ref>. Thus, we selected for revision included primary studies that had only excluded studies as neighbors. The citation map <ref type="figure">(Fig. 1c)</ref> depicts shared references among primary studies. Based on this map, we identified two groups of primary studies for revision: (i) included primary studies having no connection to other studies, i.e., study did not share citations or references -isolated studies in terms of references; and (ii) included studies sharing references with excluded studies. As a result, 18 primary studies were selected for revision. The primary studies marked by arrows in <ref type="figure">Fig. 1</ref> represent some of these studies. We highlight that using VTM techniques was an important aid for the validity of our SLR. Moreover, reviewers also recognized this focused revision as more efficient. After a careful selection process, only 38 3 primary studies were included. The primary studies included in the final selection correspond to the relevant papers that meet RQ addressed by this SLR.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Reporting</head><p>In the light of the challenges faced for architecting SoS, an adequate architecture description becomes even more imperative. The following analysis is based on the 38 primary studies identified in our SLR. To investigate how the literature has approached the architecture description of SoS, we discuss each research question separately.</p><p>To answer the first RQ, we observed the methodologies and architecture frameworks which encompassed the architecture description of SoS. We observed three architecture frameworks, namely: DoDAF <ref type="bibr" target="#b11">[12]</ref> (Department of Defense Architecture Framework), ESA-AF <ref type="bibr" target="#b17">[17]</ref> (European Space Architectural Framework), and SoSE <ref type="bibr" target="#b5">[6]</ref> (SoS Engineering). DoD-AF was the most popular among them. DoDAF provides a common communication language for the design of SoS in the military domain. Although DoDAF contributes for documenting SoS from a systems engineering perspective (e.g., work-flow, human resources, capabilities), it does not provide a methodology for developing the SoS. ESA-AF is an architectural methodology for the representation of interface specifications, data policies, security requirements, and financial regulations tailored for the European space-based SoS. Finally, SoSE has also been proposed for developing a functional architecture model for an SoS, which results in comprehensive system specifications and capability description. The viewpoints proposed in these architecture frameworks could be realized by different ADLs according to intended audience and/or data being represented. For example, <ref type="bibr" target="#b9">Dagli and Kilicay (2009)</ref> suggest to create a common language for stakeholders of the SoS using DoDAF and then use UML for capturing different static models of the SoS. Moreover, these UML models can be also converted into executable models (such as Petri nets) for analyzing emergent behavior of the SoS.</p><p>We also observed in our SLR two primary studies concerning architectural styles and patterns for SoS. Architecture styles commonly used for SoS are net-centric, layered, Figure 1: Generated visualizations for primary studies included in our SLR. Green dots in this figure indicate included primary study while red dots indicate excluded primary studies and agent-based <ref type="bibr" target="#b9">[10]</ref>. In addition, we also found a reference framework for realizing Component-Based Systems of Systems (CBSoS), which enables to derive different SoS from a generic architecture infrastructure <ref type="bibr" target="#b24">[24]</ref>. This approach is also interesting for the SoS domain because it is not bound to a specific ADL (Architecture Description Language) or implementation language.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.1">Techniques for Describing the Software Architecture of SoS</head><p>An important distinction between techniques can be made regarding their formalism level. In this sense, it is possible to distinguish formal ADLs, which have formally defined syntax and semantics, semi-formal ADLs, which have defined syntax and semantics, and informal ADLs, which have neither and are often presented as custom box-and-lines diagrams.</p><p>In our SLR, we observed the use of formal, semi-formal, and informal techniques, such as ADLs, ontologies, and architecture frameworks respectively. <ref type="figure" target="#fig_1">Figure 2</ref> shows the distribution of primary studies into the formalism levels.  <ref type="bibr" target="#b33">[33]</ref>. CFML (Capability Focused Modeling Language) is a declarative notation for describing SoS architecture alternatives <ref type="bibr" target="#b20">[20]</ref>. Once architecture alternatives have been described using CFML, it is possible to evaluate the alternatives according to mission dependent metrics, such as probability of mission success and time to completion. MSC Assertions are a formal-language extension for UML message sequence diagram superimposed with UML statecharts <ref type="bibr" target="#b8">[9]</ref>. With MSCAssertions it is possible to distinguish events that can occur from the ones that must occur <ref type="bibr" target="#b8">[9]</ref>. Petri nets and colored petri nets are utilized as enablers for executable model generation <ref type="bibr" target="#b9">[10]</ref>.</p><p>Recently, ontologies have gained relevance in the Software Engineering domain as a possible mediator between different languages and technologies. In this SLR, we observed a concern among researchers and practitioners of SoS to provide a common vocabulary as a baseline for interoperability and understandability among the people involved in SoS and the constituents of an SoS. For example, Henrie <ref type="bibr" target="#b19">[19]</ref> extended the definition of common terms used in traditional systems engineering to the SoS domain aiming to establish a terminology framework that will assist engineers in understanding, discussing, and designing complex systems. <ref type="bibr" target="#b29">Nikolic and Dijkema (2007)</ref> used OWL to establish the language used in the communication among agents of an agent-based architecture. By requiring all agents to accept this ontology, a high level of modularity becomes possible. In the same perspective, <ref type="bibr" target="#b27">Moschoglou et al. (2012)</ref> used WSMO, which provides a rich conceptual model and a formal language (WSML) to semantically describe all relevant aspects of Web services for publishing constituent system capabilities for enabling automatic capability discovery, selection, and composition at runtime.</p><p>Even though we identified a similar number of primary studies using semi-formal ADLs, only three ADLs were identified, namely: UML, SysML, and UPDM <ref type="bibr" target="#b18">[18]</ref> (Unified Profile for DoDAF and MODAF). In this sense, most studies used UML or SysML, which are recognized OMG standards for architecture descriptions. UPDM provides a consistent, standardized means to describe DoDAF 1.5 and MODAF 1.2 architectures in UML-based tools as well as a standard for interchange <ref type="bibr" target="#b18">[18]</ref>.</p><p>We also observed the combination of formal and semiformal ADLs. For example, <ref type="bibr" target="#b9">Dagli and Kilicay-Ergin (2009)</ref> suggested the use of UML or SySML to capture SoS static structure, such as user requirements and complex relationships between constituents, whereas Petri nets or colored Petri nets can be used for building executable models of the SoS. In the same perspective, <ref type="bibr" target="#b30">Payne et al. (2012)</ref> advocated that SysML is not sufficient for defining interface and lacks analysis support. In their study, the authors used formal specification languages, such as VDM <ref type="bibr" target="#b13">[14]</ref>, to define interfaces and concrete system specifications and to reason about their properties. VDM supports the description of data and functionality in the form of executable code or as contracts. Similarly, <ref type="bibr" target="#b4">Bryans et al. (2013)</ref> used SysML to specify interfaces among the constituents and then complemented this specification using CML <ref type="bibr" target="#b4">[5]</ref>. A CML model is a collection of process definitions, which encapsulate state and operations written in VDM <ref type="bibr" target="#b13">[14]</ref> and interact with the environment via synchronous communications. The use of formal interface descriptions enable the specification of pre-and postconditions for operations, which also supports event ordering.</p><p>Nonetheless, we also found primary studies using informal notations, such as box-and-lines and textual descriptions, specially in proposals of an architectural style and a report about the software architecture of an SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.2">Purposes of the Architecture Description of SoS</head><p>The use of proper techniques in architecture descriptions enhances their potential of use beyond documentation. In our SLR, we observed the purpose of using architecture descriptions at different stages of SoS life cycle. In particular, we classified the purpose of architecture descriptions among design or analysis, development or modeling, simulation or evaluation, and maintenance or evolution. <ref type="figure" target="#fig_2">Figure 3</ref> shows the distribution of included primary studies in these categories. From this, it is possible to observe that most studies use or suggest architecture descriptions for developing and modeling SoS. As second most common purpose, we observe the design and analysis of SoS. Our results also show that architecture descriptions have not yet been sufficiently explored for the maintenance and evolution of SoS. In particular, only two studies suggested the use of architecture descriptions throughout the entire SoS life cycle. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.3">Influences of SoS Type to the Architecture Description</head><p>According to <ref type="bibr" target="#b25">Maier (1998)</ref> classification, the managerial control distinguishes three classes of systems of systems. In Directed SoS, such as integrated air defense networks, the constituents are centrally managed to fulfill defined purposes. Even though the constituents have the capability of operating independently, their function is subjected to a central control. In Collaborative SoS, such as the Internet, the central management organization does not have coercive power to run the SoS, but there are centrally agreed upon purposes and the constituents must voluntarily collaborate in order to accomplish these purposes. Finally, in Virtual SoS, such as the World Wide Web, the constituents are not subjected to a central authority nor centrally agreed upon purposes. In this scenario, large-scale behavior emerges deliberately or accidentally. A fourth type of SoS is frequently mentioned in the literature called Acknowledged SoS, which is basically a compromise between Directed and Collaborative SoS <ref type="bibr" target="#b10">[11]</ref>. As in Directed SoS, an Acknowledged SoS have objectives, a designated manager, and resources for the SoS, but it is not centrally managed. As in Collaborative SoS, changes in the constituents of an Acknowledged SoS for meeting SoS needs are based on agreement and collaboration.</p><p>Therefore, it was also an objective of this SLR to investigate if the SoS type of the SoS played an important role in the architecture description. In <ref type="table">Table 1</ref>, we present which concerns were identified for each type of SoS. To avoid misclassifying the SoS type, we maintained the classification used in the primary study. However, many studies did not explicitly state the SoS type. In particular, in many of the studies that did not specify an SoS type (i.e., in 11 of the 19 studies in this category), a concern for the architecture description was not explicitly stated either.</p><p>From <ref type="table">Table 1</ref> it is possible to identify common concerns that surpass a particular SoS type, such as interoperability, integrability, adaptability, correctness, dependability, and safety. First of all, interoperability is the baseline for SoS creation. Certainly, the constituents must be able to share information in order to function as a whole. Secondly, integrability is the ability of incorporating new constituents to an existing SoS. Thirdly, adaptability is related to the SoS's capacity of adjusting its own behavior to different conditions or contexts, such as the inclusion or loss of any constituent. All together, interoperability, integrability, and adaptability give the SoS the ability of evolution, i.e., the SoS is now able to incorporate new capabilities (integrability) provided it can adapt to a new context (adaptability) or to a different demand (scalability). If the constituents conform to a particular standard or condition, it is possible to verify and validate the correctness of the resulting SoS. Finally, as a SoS is planned to endure for long periods of time, it must be dependable. In particular, different quality attributes can be used to determine SoS dependability, namely: availability, safety, security, and maintainability (or sustainability) <ref type="bibr" target="#b8">[9]</ref>. In this context, safety is a recurrent concern as many SoS operate critical missions -such as in military, smart grids, and health systems-where there is potential financial, personnel, and environmental impact.</p><p>Although several included primary studies do not focus on a particular SoS type, they often address common concerns for SoS. However, given the particularities of each SoS <ref type="table">Table 1</ref>: Concerns identified per SoS type. The concerns are ordered by decreasing frequency of appearance SoS Type # Concerns Directed 8 (3) interoperability, (1) collaborative, (1) correctness, (1) communication, (1) integrability, (1) dependability, (1) real-time, (1) reuse, and (1) safety Acknowledged 1 (1) correctness, and (1) schedule Collaborative 8 (3) interoperability, (3) adaptability, (1) capability, (1) evolution, (1) integrability, (1) openness, (1) realtime, (1) scalability, and (1) sustainability Virtual 2 (1) autonomy, (1) cost, (1) dependability, (1) integrability, (1) interoperability, (1) orchestration, (1) robust, (1) safety, and (1) sustainability Not specified 19 (2) correctness, (2) dependability,(2) integrability, (2) interoperability, (2) security, (1)adaptability, (1) availability, (1) collaboration, (1) completeness, (1) cost, (1) evolution, (1) extendability, (1) interdependence, (1) maintainability, (1) performance, (1) risk, (1)safety, (1) scalability, and (1) schedule type, it is important to investigate if general approaches or techniques for architecture descriptions of SoS are in fact adequate for all types of SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Threats to Validity</head><p>We identified two main threats to the validity of this SLR related to inclusion of primary studies and bias in data extraction. In order to gather as many relevant primary studies as possible, we focused our research in publication databases that are considered the most relevant for Software Engineering <ref type="bibr" target="#b12">[13]</ref>. Nonetheless, to mitigate this threat, we also considered studies suggested by a specialist in Software Architecture and SoS. These suggestions did not introduce bias in our research since none of these studies were written by the specialist and he is not related to the authors of the suggested studies. The data extraction process can also introduce bias since it requires interpretation from the reviewers. To mitigate this threat, a specialist was designated to review the extracted data from included primary studies. Inconsistencies and mismatches identified by the specialist were solved among the reviewers until a consensus was reached. VTM techniques further contributed in this direction by pointing out primary studies that for any reason diverged from the group of included primary studies. This information was also used for triggering focused discussion sessions between reviewers and specialists on selected primary studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">MATURITY OF RESEARCH</head><p>We classified the contribution into three categories according to the maturity of research presented: (i) complete study, which presents a validation of their proposal in a case study or experimental research; (ii) ongoing study, which presents partial results that still require more detailed validation; and (iii) perspectives or position study, which presents new, interesting ideas or directions on architecture descriptions for SoS. <ref type="figure">Figure 4</ref> shows the distributions of primary studies for each category. It is important to highlight that most primary studies included did not present a full validation of their proposals (i.e., 20 of the 38). In addition, many primary studies considered as complete studies were descriptions of actual SoS, which means that they often include a single or limited case study. Therefore, more research is definitely needed in order to validate these proposals and achieve a better understanding on the requirements of SoS architecture description.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Figure 4: Validation of primary study contributions</head><p>Another indication for the maturity of research developed in this area regards the type of publication vehicles where they appear. <ref type="figure" target="#fig_3">Figure 5</ref> categorizes primary studies by type of publication vehicle. The majority of included primary studies were published as proceedings of conferences and workshops while only few of them were published in journals. The International Conference on System of Systems Engineering (SoSE) contributed with most of the primary studies in this category. Nonetheless, the software architecture is the focus of the recent International Workshop on Software Engineering for Systems of Systems (SESoS). Since journals usually prioritize research papers with mature, validated results, the lack of publications in journals is a strong indication that more research on the architecture description of SoS is needed.</p><p>Finally, we also analyzed if there was a country leading investigations in this domain. We observed that the majority of primary studies was developed by research groups located in the USA. The remaining research groups are spread out, in particular in China and United Kingdom. As illustrated in <ref type="figure">Figure 6</ref>, we also noticed small collaboration between research groups in different countries. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">PERSPECTIVES OF RESEARCH</head><p>Developing SoS brings additional challenges. For example, an SoS should be able to connect constituents through interoperability arrangements that do not require tight coupling or strong integrations <ref type="bibr" target="#b6">[7]</ref>. In addition, new constituents and purposes can emerge dynamically in a way that it was not predicted at design time. But, many of the challenges faced for developing SoS can be dealt at the architectural level. For example, a dynamic architecture can support changes in the configuration of the SoS which can continue to operate in the event of losing one of its constituents. A serviceoriented architectural style can provide the means for discovering, publishing, and performing new capabilities at runtime. Furthermore, establishing common protocols, standards, and interfaces at the architectural level and enforcing them throughout the SoS, ensure that its constituents can interoperate cohesively and its development can be delegated to third parties <ref type="bibr" target="#b25">[25]</ref>.</p><p>The architecture description is the main artifact used for expressing a software architecture. In this sense, architectural descriptions can be used not merely for documentation, but also for supporting the analysis, design, and evaluation of SoS software architecture. Nonetheless, we did not find in our SLR sufficient evidences of architecture descriptions being used for maintenance and evolution of SoS. Given the studies analyzed in this SLR, we conclude that an adequate description for SoS should encompass both static and dynamic behaviors. To do so, formal grounds are essential if we also intend to use architecture descriptions in the simulation and evaluation of SoS behavior. Although a number of formal languages were identified in this SLR, we did not find a consensus on which of them is more appropriate for describing SoS.</p><p>To make the architecture description accessible to all stakeholders, formal languages could be complemented or combined to semi-formal languages as a compromise between the accuracy and correctness obtained with formal languages and the understandability and ease of use obtained with semi-formal languages. But, this will also require to deal with some limitations brought by semi-formal languages, such as potential ambiguous, inaccurate, and omitted information.</p><p>We also observe that detailed investigations on which are the best languages and architecture frameworks for describing the software architecture of SoS are still required. Ideally, an architectural framework for SoS should enable the creation of architecture descriptions supporting different stages of SoS life cycle. In this sense, different abstraction and formalisms levels could be required at each stage. Despite that, DoDAF, which is the most popular architecture framework identified in this SLR, is focused on the military domain and offers little support to describe software architectures <ref type="bibr" target="#b7">[8]</ref>. Moreover, DoDAF lacks a proper description of quality attributes <ref type="bibr" target="#b14">[15]</ref>. Thus, a comprehensive architecture framework framing important quality attributes for SoS needs to be established yet.</p><p>Finally, we observed quality attributes that are shared among several SoS types. Therefore, quality attributes such as interoperability, integrability, adaptability, and interdependency require special attention in the architecture description. In this direction, it is interesting to investigate which ADLs and viewpoints are capable of capturing these quality attributes for SoS. Moreover, mapping these quality attributes to their respective stakeholders can help to customize the architecture description for a particular audience. Relating these quality attributes to viewpoints will also contribute for better recommendations on which are the required views for describing SoS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">CONCLUSIONS</head><p>Architecture descriptions could support design, simulation, and validation of SoS provided adequate formalism levels are chosen. In this study, we presented a comprehensive panorama about architecture descriptions for SoS revealing languages, quality attributes, and perspectives of use. In particular, we observe that more research is needed for effectively using architecture descriptions in the evaluation and evolution of SoS, which will require accurate, formal descriptions for predicting SoS emergent behavior. Thereby, we established a set of research lines to be addressed in future studies, including the establishment of architecture viewpoints framing important quality attributes for SoS and a consensus on the formalism level required at each stage of their life cycle. By indicating several opportunities for research, we expect this SLR can be used as a baseline for future studies concerning SoS architecture description.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Primary studies and its level of formalism to describe software architectures of SoS Regarding the use of ADLs, the majority of studies suggested the use of formal/semi-formal notations. We identified several formal ADLs for use in the architecture description of SoS, such as: CML (COMPASS Modelling Language), CFML (Capability Focused Modeling Language), FSM (Finite State Machine), MSC Assertions (Message Sequence Charts Assertions), Petri-nets/colored Petri-nets, Fuzzy Models, OWL (Web Ontology Language), WSMO (Web Service Modeling Ontology), and Description Logic. CML is specifically designed for SoS modeling and analysis [33]. CFML (Capability Focused Modeling Language) is a declarative notation for describing SoS architecture alternatives [20]. Once architecture alternatives have been described using CFML, it is possible to evaluate the alternatives according to mission dependent metrics, such as probability of mission success and time to completion. MSC Assertions are a formal-language extension for UML message sequence diagram superimposed with UML statecharts [9]. With MSCAssertions it is possible to distinguish events that can occur from the ones that must occur[9]. Petri nets and colored petri nets are utilized as enablers for executable model generation [10]. Recently, ontologies have gained relevance in the Software Engineering domain as a possible mediator between different languages and technologies. In this SLR, we observed a concern among researchers and practitioners of SoS to provide a common vocabulary as a baseline for interoperability and understandability among the people involved in SoS and the constituents of an SoS. For example, Henrie [19] extended the definition of common terms used in traditional systems engineering to the SoS domain aiming to establish a terminology framework that will assist engineers in understanding, discussing, and designing complex systems. Nikolic and Dijkema (2007) used OWL to establish the language used in the communication among agents of an agent-based architecture. By requiring all agents to accept this ontology, a high level of modularity becomes possible. In the same perspective, Moschoglou et al. (2012) used WSMO, which provides a rich conceptual model and a formal language (WSML) to semantically describe all relevant aspects of Web services for publishing constituent system capabilities for enabling automatic capability discovery, selection, and composition at runtime. Even though we identified a similar number of primary studies using semi-formal ADLs, only three ADLs were identified, namely: UML, SysML, and UPDM [18] (Unified Profile for DoDAF and MODAF). In this sense, most studies used UML or SysML, which are recognized OMG standards</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Architecture description purpose</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 5 :</head><label>5</label><figDesc>Figure 5: Primary study type</figDesc></figure>
+
+			<note place="foot" n="1"> http://jabref.sourceforge.net 2 http://ccsl.icmc.usp.br/pt-br/projects/revis</note>
+
+			<note place="foot" n="3"> The complete reference of included primary studies is available for download at https://www.dropbox.com/sh/ ly4bacl2tjfdpgr/AADNz0o1_9sefPYY98YEF2Aza?dl=0.</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgments</head><p>This work is supported by grants 2012/24290-5, 2014/01646-4, and 2014/02244-7 from São Paulo Research Foundation (FAPESP).</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Using an architecture description language for quantitative analysis of real-time systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Vestal</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Cornhill</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Lewis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">WOSP&apos; 2002</title>
+		<imprint>
+			<date type="published" when="2002" />
+			<biblScope unit="page" from="203" to="210" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">A Formal Approach to Software Architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">J</forename><surname>Allen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997" />
+		</imprint>
+		<respStmt>
+			<orgName>Carnegie Mellon University</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">PhD thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Babar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dingsøyr</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Lago</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Van Vliet</surname></persName>
+		</author>
+		<title level="m">Software Architecture Knowledge Management: Theory and Practice</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Challenges for SoS Architecture Description</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Batista</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SESoS&apos; 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="35" to="37" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Semi-formal and formal interface specification for system of systems architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bryans</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Holt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Perry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SysCon&apos; 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="612" to="619" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Architecture model developing method for system-of-system</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">L</forename><surname>Butterfield</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><forename type="middle">F</forename><surname>Krikorian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">D</forename><surname>Shivananda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Gula</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+	<note>Patent N. US2009018806-A1 ; US7979247-B2</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A System-of-Systems Engineering GEOSS: Architectural Approach</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">L</forename><surname>Butterfield</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">S</forename><surname>Pearlman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">C</forename><surname>Vickroy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="321" to="332" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+				<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Clements</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Bachmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Bass</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Garlan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Ivers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Little</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Merson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Nord</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Stafford</surname></persName>
+		</author>
+		<title level="m">Documenting Software Architectures: Views and Beyond</title>
+		<imprint>
+			<publisher>Addison-Wesley</publisher>
+			<date type="published" when="2011" />
+		</imprint>
+	</monogr>
+	<note>2 edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Specification, validation and run-time monitoring of soa based system-of-systems temporal behaviors</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Drusinksy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Shing</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE&apos; 2007</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">System of systems architecting</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Dagli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Kilicay-Ergin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">System of Systems Engineering</title>
+		<imprint>
+			<publisher>Wiley Online Library</publisher>
+			<date type="published" when="2009" />
+			<biblScope unit="page" from="77" to="100" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Understanding the Current State of US Defense Systems of Systems and the Implications for Systems Engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">S</forename><surname>Dahmann</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">J</forename><surname>Baldwin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SysCon&apos; 2008</title>
+		<imprint>
+			<date type="published" when="2008" />
+			<biblScope unit="page" from="1" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">DoD Architecture Framework v.2.02</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Dod</surname></persName>
+		</author>
+		<ptr target="http://dodcio.defense.gov/Portals/0/Documents/DODAF/DoDAF_v2-02_web.pdf(12/08/2014" />
+	</analytic>
+	<monogr>
+		<title level="m">World Wide Web</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>Online</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Evidencebased software engineering for practitioners</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dybå</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Jorgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="58" to="65" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Validated Designs For Object-oriented Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fitzgerald</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">G</forename><surname>Larsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Plat</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Verhoef</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005" />
+			<publisher>Springer-Verlag TELOS</publisher>
+		</imprint>
+	</monogr>
+	<note>1 edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">System of Systems (SoS) Architecture Centric Acquisition</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gagliardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bergey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Wood</surname></persName>
+		</author>
+		<ptr target="https://resources.sei.cmu.edu/asset_files/Presentation/2010_017_001_53032.pdf(12/08/2014" />
+	</analytic>
+	<monogr>
+		<title level="m">World Wide Web</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+	<note>On-line</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">work plan toward convergence, as accepted as a living document art GEO-III</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Geo</forename><surname>Geo</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+	<note>Available in http</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Plenarydocs</surname></persName>
+		</author>
+		<idno>v3.pdf (12/08/2014</idno>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Introducing the european space agency architectural framework for space-based systems of systems engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Gianni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Lindman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fuchs</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Suzic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">CSDM&apos; 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="335" to="346" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The Unified Profile for DoDAF/MODAF (UPDM) enabling systems of systems on many levels</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Hause</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SysCon&apos; 2010</title>
+		<imprint>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="426" to="431" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Towards a common system of systems vocabulary</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Henrie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Delaney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SMC&apos; 2005</title>
+		<imprint>
+			<date type="published" when="2005" />
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="2732" to="2737" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">A method for the generation and evaluation of architecture alternatives on the cloud</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Iacobucci</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Mavris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE&apos; 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="137" to="142" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+				<title level="m">/IEC/IEEE 42010 -Systems and software engineering -Architecture description</title>
+		<imprint>
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Guidelines for performing systematic literature reviews in software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Kitchenham</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Charters</surname></persName>
+		</author>
+		<idno>EBSE 2007-001</idno>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+		<respStmt>
+			<orgName>Keele University and Durham University Joint</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A Systematic Review of Systems-of-Systems Architecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Van Vliet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">QoSA&apos; 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="13" to="21" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Software engineering of component-based systems-ofsystems: A reference framework</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Loiret</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Rouvoy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Seinturier</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Merle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">CBSE/CompArch&apos; 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="61" to="65" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Architecting principles for systems-ofsystems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Engineering</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="267" to="284" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">A Visual Text Mining Approach for Systematic Reviews</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Malheiros</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Hohn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Pinho</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Mendonca</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ESEM&apos; 2007</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="245" to="254" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A semantic mediation framework for architecting federated ubiquitous systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Moschoglou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Eveleigh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Holzer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Sarkani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE&apos; 2012</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="485" to="490" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">The state of the art and future perspectives in systems of systems software architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">Y</forename><surname>Nakagawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Gonçalves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Guessi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">B R</forename><surname>Oliveira</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Oquendo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SeSoS/ECSA&apos; 2013</title>
+		<imprint>
+			<date type="published" when="2013" />
+			<biblScope unit="page" from="13" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Framework for understanding and shaping systems of systems the case of industry and infrastructure development in seaport regions</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Nikolic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Dijkema</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE&apos; 2007</title>
+		<imprint>
+			<date type="published" when="2007" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Interface specification for system-of-systems architectures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bryans</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fitzgerald</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Riddle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE&apos; 2012</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="567" to="572" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Towards a discipline of software engineering</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">I</forename><surname>Wasserman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="23" to="31" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A system of systems approach to e-enabling the commercial airline applications from an airframer&apos;s perspective</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">R</forename><surname>Wilber</surname></persName>
+		</author>
+		<ptr target="http://home.iitk.ac.in/~lbehera/indous2/Talks_files/Day%202/Rick%20Wilber.pdf(12/08/2014" />
+	</analytic>
+	<monogr>
+		<title level="m">World Wide Web</title>
+		<imprint>
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+	<note>Online</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Features of CML: a Formal Modelling Language for Systems of Systems</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Woodcock</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Cavalcanti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Fitzgerald</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Larsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Miyazawa</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Perry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SoSE&apos; 2012</title>
+		<imprint>
+			<date type="published" when="2012" />
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Modeling system of systems: A generic method based on system characteristics and interface</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Dvoryanchikova</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Lobov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">L M</forename><surname>Lastra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IN-DIN&apos; 2011</title>
+		<imprint>
+			<date type="published" when="2011" />
+			<biblScope unit="page" from="361" to="368" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
